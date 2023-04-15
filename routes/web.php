@@ -21,3 +21,4 @@ Route::get('/forgot_password', [home::class, 'forgot_password'])->name('forgot_p
 Route::get('/signup', [home::class, 'signup'])->name('signup');
 Route::get('/about', [home::class, 'about'])->name('about');
 Route::get('/index', [home::class, 'index'])->name('index');
+Route::get('/auth_doc', [home::class, 'auth_doc'])->name('auth_doc');

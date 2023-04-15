@@ -27,4 +27,8 @@ class home extends Controller
     {
         return view('welcome');
     }
+    public function auth_doc()
+    {
+        return view('auth_doc');
+    }
 }

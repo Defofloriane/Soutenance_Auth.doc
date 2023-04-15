@@ -3,12 +3,10 @@
 <head>
   <title>Auth.Doc - Log In</title>
   <meta charset="utf-8">
-  <meta name="description" content="A minimal and responsive HTML5 landing page built on lightweight, clean and customizable code.">
-  <meta name="viewport" content="width=device-width">
-  <link rel="apple-touch-icon-precomposed" href="media/favicon.png">
-  <link rel="icon" href="media/favicon.png">
-  <link rel="mask-icon" href="media/favicon.svg" color="rgb(36,38,58)">
-  <link rel="shortcut icon" href="media/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/images/logo-sm.png">
+  <link rel="icon" href="assets/images/logo-sm.png">
+  <link rel="mask-icon" href="assets/images/logo-sm.png" color="rgb(36,38,58)">
+  <link rel="shortcut icon" href="assets/images/logo-sm.png">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="page page-onboarding preload">
@@ -36,7 +34,7 @@
               <input id="remember-me" type="checkbox" name="remember-me">
               <label for="remember-me" class="checkbox">Remember Me</label>
             </div>
-            <a href="#" class="button button-primary full-width" role="button">Log In</a>
+            <a href="{{route('auth_doc')}}" class="button button-primary full-width" role="button">Log In</a>
           </form>
         </div>
         <div class="center max-width-s space-top">
