@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\home;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,5 @@ Route::get('/signup', [home::class, 'signup'])->name('signup');
 Route::get('/about', [home::class, 'about'])->name('about');
 Route::get('/index', [home::class, 'index'])->name('index');
 Route::get('/auth_doc', [home::class, 'auth_doc'])->name('auth_doc');
+Route::post('/customRegistration', [home::class, 'customRegistration'])->name('customRegistration');
+Route::post('/customLogin', [home::class, 'customLogin'])->name('customLogin');

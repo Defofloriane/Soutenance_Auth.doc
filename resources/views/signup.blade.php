@@ -20,20 +20,31 @@
         <div class="max-width-s">
           <h5>Welcome!</h5>
           <p class="paragraph">Enter your details to create an account.</p>
-          <form>
+          <form action="{{route('customRegistration')}}" method="POST">
+            @csrf
             <div class="form-group">
               <label for="name">Name:</label>
-              <input id="name" type="text" name="name">
+              <input id="name" type="name" name="name" required>
+              @if ($errors->has('name'))
+              <span class="text-danger">{{ $errors->first('name') }}</span>
+              @endif
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-              <input id="email" type="email" name="email">
+              <input id="email" type="email" name="email" required>
+              @if ($errors->has('email'))
+              <span class="text-danger">{{ $errors->first('email') }}</span>
+              @endif
             </div>
             <div class="form-group">
               <label for="password">Password:</label>
-              <input id="password" type="password" name="signup-password">
+              <input id="password" type="password" name="password" required>
+              @if ($errors->has('password'))
+              <span class="text-danger">{{ $errors->first('password') }}</span>
+              @endif
             </div>
-            <a href="#" class="button button-primary full-width space-top" role="button">Create Account</a>
+            <button type="submit" class="button button-primary full-width space-top" role="button">Create Account</button>
+            {{-- <a href="#" type="submit" class="button button-primary full-width space-top" role="button">Create Account</a> --}}
           </form>
         </div>
         <div class="center max-width-s space-top">

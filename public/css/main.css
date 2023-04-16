@@ -1735,7 +1735,7 @@ form label {
 
 form input[type="email"],
 form input[type="password"],
-form input[type="text"],
+form input[type="name"],
 form select,
 form textarea {
   -webkit-appearance: none;
