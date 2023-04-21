@@ -1,0 +1,7 @@
+mysql://b157c685b2dfeb:7cd5b643@us-cdbr-east-06.cleardb.net/heroku_93716695ad82d78?reconnect=true
+
+user:b157c685b2dfeb
+pwd: 7cd5b643
+host:us-cdbr-east-06.cleardb.net
+port:3306
+dbname:heroku_93716695ad82d78

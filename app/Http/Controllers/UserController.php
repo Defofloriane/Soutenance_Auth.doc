@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Services\MyService;
+
 
 class UserController extends Controller
 {
@@ -15,9 +15,12 @@ class UserController extends Controller
 
     public function endpoint(Request $request) {
         $data = $request->all();
-        return response()->json([
-            'message' => 'Données reçues avec succès !',
-            'data' => $data
+        $users  = User::create([
+            'name' => $data['name'],
+            'password' => $data['password'],
+            'email' => $data['email'],
         ]);
+
+        return response()->json($users);
     }
 }
