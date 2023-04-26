@@ -25,3 +25,4 @@ Route::get('/index', [home::class, 'index'])->name('index');
 Route::get('/auth_doc', [home::class, 'auth_doc'])->name('auth_doc');
 Route::post('/customRegistration', [home::class, 'customRegistration'])->name('customRegistration');
 Route::post('/customLogin', [home::class, 'customLogin'])->name('customLogin');
+Route::get('/signOut', [home::class, 'signOut'])->name('signOut');

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
+
 
 
 class home extends Controller
@@ -59,8 +63,9 @@ class home extends Controller
         return view('welcome');
     }
     public function auth_doc()
-    {
-        return view('auth_doc');
+    { 
+        $name = ''; // valeur initiale
+        return view('auth_doc', compact('name'));
     }
     public function customLogin(Request $request)
     {
@@ -91,17 +96,13 @@ class home extends Controller
              return redirect("login")->withSuccess('Login details are not valid');
         }
 
-        // echo(  $email);
-        // if (Auth::attempt($credentials)) {
-        //     echo('Some message here.');
-        //     return redirect()->intended('home')
-        //                 ->withSuccess('Signed in');
-                        
-        // }else{
-        //     // echo($credentials);
-        //     echo("credentials");
-        //     // return redirect("login")->withSuccess('Login details are not valid');
-        // }
+    
      
+    }
+    public function signOut() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('login');
     }
 }
