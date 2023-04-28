@@ -26,3 +26,10 @@ Route::get('/auth_doc', [home::class, 'auth_doc'])->name('auth_doc');
 Route::post('/customRegistration', [home::class, 'customRegistration'])->name('customRegistration');
 Route::post('/customLogin', [home::class, 'customLogin'])->name('customLogin');
 Route::get('/signOut', [home::class, 'signOut'])->name('signOut');
+
+Route::controller(home::class)->group(function () {
+    Route::get('webcam', 'index')->name('webcam.capture');
+    Route::post('webcam', 'store');
+});
+Route::get('/ocr', [home::class,'ocr'])->name('ocr');
+Route::post('/upload', [home::class,'upload'])->name('upload');

@@ -1,0 +1,24 @@
+#image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    position: relative;
+    margin-bottom: 20px; 
+  }
+  
+  #image-container img,
+  #image-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #captured-image {
+    margin-right: 10px; /* add margin to the right of the image */
+  }
+  .prima{
+    margin-bottom: 20px; 
+  }
+  
