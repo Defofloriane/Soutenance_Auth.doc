@@ -21,6 +21,8 @@
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/card.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
 
 </head>
 
@@ -142,7 +144,8 @@
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                             href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="ml-1 nav-user-name hidden-sm">Nick</span>
+                            {{-- <span class="">{{ $name }}</span> --}}
+                            
                             <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -151,7 +154,7 @@
                             <a class="dropdown-item" href="#"><i data-feather="settings"
                                     class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
                             <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item" href="#"><i data-feather="power"
+                            <a class="dropdown-item" href="{{route('signOut')}}"><i data-feather="power"
                                     class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                         </div>
                     </li>
@@ -165,10 +168,17 @@
                         </button>
                     </li>
                     <li class="creat-btn">
-                        <div class="nav-link">
-                            <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i
-                                    class="fas fa-plus mr-2"></i>Import Report Cart</a>
-                        </div>
+                       
+                        <form method="POST" action="{{ route('upload') }}"  enctype="multipart/form-data">
+                            @csrf
+                            <div class="nav-link">
+                                <input class=" btn btn-sm btn-soft-primary"  type="file" name="name_file" id="name_file">
+                                <button class=" btn btn-sm btn-soft-primary"  type="submit">upload</button>  
+                                
+                            </div>
+                           
+                        </form>
+                       
                     </li>
                 </ul>
             </nav>
@@ -213,71 +223,80 @@
                 </div>
                 <!--end row-->
                 <!-- end page title end breadcrumb -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Take Repord card </h4>
-                                <p class="text-muted mb-0">Take photo</p>
-                            </div>
-                            <!--end card-header-->
-                            <div class="card-body">
-                                <a href="assets/images/small/img-1.jpg" class="image-popup-vertical-fit">
-                                    <img src="assets/images/small/img-1.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                            <!--end card-body-->
-                        </div>
-                        <!--end card-->
-                    </div>
-                    <!--end col-->
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Auth.doc Gallery</h4>
-                                <p class="text-muted mb-0">You may put any HTML content in each gallery item.</p>
-                            </div>
-                            <!--end card-header-->
-                            <div class="card-body">
-                                <div class="popup-gallery d-flex">
-                                    <a href="assets/images/small/img-2.jpg" title="The Cleaner">
-                                        <img src="assets/images/small/img-2.jpg" alt="" class="img-fluid">
-                                    </a>
-                                    <a href="assets/images/small/img-3.jpg" title="The Cleaner">
-                                        <img src="assets/images/small/img-3.jpg" alt="" class="img-fluid">
-                                    </a>
-                                    <a href="assets/images/small/img-4.jpg" title="The Cleaner">
-                                        <img src="assets/images/small/img-4.jpg" alt="" class="img-fluid">
-                                    </a>
+                <div class="container">
+              
+                     
+                    <form method="POST" action="{{ route('webcam.capture') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Take Repord card </h4>
+                                        <p class="text-muted mb-0" >Take photo</p>
+                                    </div>
+                                    <!--end card-header-->
+                                   
+                                    <div class="card-body">
+                                        <div id="my_camera">
+                                            <img src="assets/images/small/img-1.jpg" alt="" class="img-fluid"  id="captured-image" onclick="startCamera()"  name="image" >
+
+                                        </div>
+                                        {{-- <div id="image-container" >
+                                        </div> --}}
+                                        <br/>
+                                        <input  class="btn btn-primary" type=button value="Take repord Card" onClick="take_snapshot()">
+                                        <input type="hidden" name="image" class="image-tag">
+                                    
+                                    </div>
+                                 
                                 </div>
                             </div>
-                            <!--end card-body-->
-                        </div>
-                        <!--end card-->
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Popup With Video And Map</h4>
-                                <p class="text-muted mb-0">In this example Auth.doces are automatically disabled on
-                                    small screen size and default behavior of link is triggered.</p>
-                            </div>
-                            <!--end card-header-->
-                            <div class="card-body">
-                                <div class="button-items">
-                                    <a class="btn btn-outline-primary popup-youtube"
-                                        href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open YouTube video</a>
-                                    <a class="btn btn-outline-primary popup-vimeo"
-                                        href="https://vimeo.com/45830194">Open Vimeo video</a>
-                                    <a class="btn btn-outline-primary popup-gmaps"
-                                        href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">Open
-                                        Google Map</a>
-                                </div>
-                            </div>
-                            <!--end card-body-->
-                        </div>
-                        <!--end card-->
-                    </div>
-                    <!--end col-->
-                </div>
+                            <div class="col-lg-6">                       {{--11111111111111111111111111111 --}}
+                                                   
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Auth.doc Gallery</h4>
+                                                                <p class="text-muted mb-0" >Your photo results.</p>
+                                                            </div>
+                                                            <!--end card-header-->
+                                                            <div class="card-body" id="results" >
+                                                             
+                                                                
+                                                            </div>
+                                                            <div class="col-md-6 prima">
+                                                                <button class="btn btn-primary">Submit</button>
+
+                                                                <br/>
+                            
+                                                            </div>
+                                                            <!--end card-body-->
+                                                        </div>
+                                                        <!--end card-->
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h4 class="card-title">Les differents resultats de votre releve</h4>
+                                                                <p class="text-muted mb-0">In this example Auth.doces are automatically disabled on
+                                                                    small screen size and default behavior of link is triggered.</p>
+                                                            </div>
+                                                            <!--end card-header-->
+                                                            <div class="card-body">
+                                                                <div class="button-items">
+                                                                    <a class="btn btn-outline-primary popup-youtube"
+                                                                        href="http://www.youtube.com/watch?v=0O2aH4XLbto">Valider</a>
+                                                                    <a class="btn btn-outline-primary popup-vimeo"
+                                                                        href="https://vimeo.com/45830194">pas Correcte</a>
+                                                                    <a class="btn btn-outline-primary popup-gmaps"
+                                                                        href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">
+                                                                        Take Another photo</a>
+                                                                </div>
+                                                            </div>
+                                                            <!--end card-body-->
+                                                        </div>
+                                                        <!--end card-->
+                                                    </div>                   
+                            
+             
                 <!--end row-->
 
             </div><!-- container -->
@@ -291,10 +310,61 @@
         <!-- end page content -->
     </div>
     <!-- end page-wrapper -->
+        
+<script language="JavaScript">
+    var aspectRatio = 1.4142; // A4 paper aspect ratio (width / height)
+    var canvasWidth = 490; // set canvas width
+    var canvasHeight = Math.round(canvasWidth / aspectRatio) ; // calculate canvas height based on aspect ratio
+
+    Webcam.set({
+        width: canvasWidth,
+        height: canvasHeight,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+    
+    Webcam.attach( '#my_camera' );
+    
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
+
+    
+</script>
+<script>
+ function startCamera() {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                var video = document.createElement('video');
+                video.srcObject = stream;
+                video.play();
+                document.getElementById('image-container').replaceChild(video, document.getElementById('captured-image'));
+            })
+            .catch(function(error) {
+                console.log('Error: ', error);
+            });
+    }
+}
+
+function captureImage() {
+    var video = document.querySelector('video');
+    var canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+    var dataUrl = canvas.toDataURL('images/jpeg');
+    document.getElementById('captured-image-data').value = dataUrl;
+    video.parentNode.replaceChild(document.getElementById('captured-image'), video);
+}
 
 
 
 
+</script>
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -311,7 +381,7 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
-
+   
 </body>
 
 </html>
