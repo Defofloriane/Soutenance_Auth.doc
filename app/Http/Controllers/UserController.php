@@ -66,13 +66,13 @@ foreach ($blocks as $key => $value) {
 //recuperation des donnees dans la dan le text
         preg_match('/Matricule\s*:\s*(\w+)/', $text, $matricule);
         preg_match('/Décision\s*(\w+)/', $text, $decision);
-        preg_match('/N°\s*:\s*([\w/-]+)/',$text,$numero);
+        preg_match('',$text,$numero);
         // preg_match('',$text,$nom);
-        preg_match('/Année\s+Académique\s*:\s*([\w/]+)/',$text,$anne);
-        preg_match('/filière\s*:\s*(.*?)\s*Level/',$text,$filiere);
-        // preg_match('',$text,$specialite);
-        preg_match('/\(MGP\):\s*([\d.,/]+)/',$text,$mgp);
-        preg_match('/Décision\s*:\s*(\w+)/',$text,$decision);
+        preg_match('',$text,$anne);
+        preg_match('',$text,$filiere);
+        preg_match('',$text,$specialite);
+        preg_match('',$text,$mgp);
+        preg_match('',$text,$decision);
            $data=([
            "matricule"=> $matricule[1],
            "decision"=> $decision[1],
