@@ -28,6 +28,7 @@ class UserController extends Controller
         $meta_data = stream_get_meta_data($temp);
         $target_path = $meta_data['uri'];
 //extraction du text sur aws 
+
 $client = new TextractClient([
     'version' => 'latest',
     'region' => 'us-east-1',
@@ -66,13 +67,6 @@ foreach ($blocks as $key => $value) {
 //recuperation des donnees dans la dan le text
         preg_match('/Matricule\s*:\s*(\w+)/', $text, $matricule);
         preg_match('/Décision\s*(\w+)/', $text, $decision);
-        preg_match('',$text,$numero);
-        // preg_match('',$text,$nom);
-        preg_match('',$text,$anne);
-        preg_match('',$text,$filiere);
-        preg_match('',$text,$specialite);
-        preg_match('',$text,$mgp);
-        preg_match('',$text,$decision);
            $data=([
            "matricule"=> $matricule[1],
            "decision"=> $decision[1],
