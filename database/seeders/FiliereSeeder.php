@@ -12,6 +12,18 @@ class FiliereSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $filiere=[
+            [
+               'id_filiere' => 'ICT4D',
+               'nom_filiere' => 'INFORMATION AND COMMUNICATION TECHNOLOGY AND DEVELOPMENT',
+               'departement'=>'FS'
+            ],
+            [
+                'id_filiere' => 'MATH',
+                'nom_filiere' => 'MATHEMATIQUE',
+                'departement'=>'FS'
+             ]
+
+            ];
     }
 }

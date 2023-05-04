@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('annee_academiques', function (Blueprint $table) {
             $table->id('id_annee');
-            $table->date('annee_debut');
-            $table->date('annee_fin');
+            $table->date('annee');
             $table->timestamps();
         });
     }

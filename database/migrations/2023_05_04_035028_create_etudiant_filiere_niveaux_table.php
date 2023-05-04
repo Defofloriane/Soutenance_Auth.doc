@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('releves', function (Blueprint $table) {
-            $table->string('id_releve')->primary();
+        Schema::create('etudiant_filiere_niveaux', function (Blueprint $table) {
             $table->string('etudiant');
-            $table->string('decision');
             $table->string('filiere');
             $table->string('niveau');
-            $table->double('mgp');
-            $table->string('anneeAcademique');
             $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade');
+            $table->foreign('filiere')->references('id_filiere')->on('filieres')->onDelete('cascade');
+            $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,7 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('releves');
+        Schema::dropIfExists('etudiant_filiere_niveaux');
     }
-    
 };

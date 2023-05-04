@@ -67,14 +67,24 @@ foreach ($blocks as $key => $value) {
 //recuperation des donnees dans la dan le text
         preg_match('/Matricule\s*:\s*(\w+)/', $text, $matricule);
         preg_match('/Décision\s*(\w+)/', $text, $decision);
+        preg_match('/Filière\s*:\s*([^\n]+)\s*Level/i', $text, $filiere);
+        preg_match('/\(MGP\):\s*([\d.,]+)/', $text, $mgp);//\(MGP\):\s*([\d.,/]+)
+        preg_match('/Année Académique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
+        preg_match('/N°:([^\n]+)\s*Noms/', $text, $numero);
+//hachage des information avec l'algorithme HMAC SHA256
+$secretKey = 'auth.document';
            $data=([
            "matricule"=> $matricule[1],
            "decision"=> $decision[1],
-            $text
+           "filiere"=> $filiere[1],
+           "mgp"=> $mgp[1],
+           "annee"=> $annee[1],
+           "numero"=> $numero[1],
            ]);
+$dataToString=json_encode($data);
+$hmacFromIonicGenerated = hash_hmac('sha256', $dataToString, $secretKey);
+
           return response()->json($data); 
 }
-//fonction qui extrait le text sur une image
 
-  
 }

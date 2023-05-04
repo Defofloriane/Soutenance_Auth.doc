@@ -12,6 +12,15 @@ class SpecialiteSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $specialite=[
+            [
+              'id_specialite'=>'GL',
+              'nom_specialite'=>'GENIE LOGICIEL',
+            ],
+            [
+                'id_specialite'=>'SECU',
+                'nom_specialite'=>'SECURITE',
+             ]
+        ];
     }
 }

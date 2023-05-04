@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ues', function (Blueprint $table) {
             $table->string('id_ue')->primary();
-            $table->string('intitule');
+            $table->string('nom_ue');
             $table->integer('credit');
             $table->timestamps();
         });

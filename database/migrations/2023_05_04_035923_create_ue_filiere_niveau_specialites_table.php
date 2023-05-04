@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etudiant_filieres', function (Blueprint $table) {
-            $table->string('etudiant');
+        Schema::create('ue_filiere_niveau_specialites', function (Blueprint $table) {
+            $table->string('ue');
             $table->string('filiere');
-            $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade');
+            $table->string('specialite');
+            $table->foreign('ue')->references('id_ue')->on('ues')->onDelete('cascade');
             $table->foreign('filiere')->references('id_filiere')->on('filieres')->onDelete('cascade');
+            $table->foreign('specialite')->references('id_specialite')->on('specialites')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etudiant_filieres');
+        Schema::dropIfExists('ue_filiere_niveau_specialites');
     }
 };

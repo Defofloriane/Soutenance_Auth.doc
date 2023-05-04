@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('etudiant');
             $table->string('ue');
             $table->double('note');
+            $table->string('decision');
+            $table->string('mention');
             $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ue')->references('id_ue')->on('ues')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

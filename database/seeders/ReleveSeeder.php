@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Releve;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,16 @@ class ReleveSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $releve=[
+            [
+                'id_releve'=>'00097/EDG/L2/FS/ICT/222122',
+                'etudiant'=>'20R2198',
+                'decision'=>'ADMIS',
+                'niveau'=>'LiCENCE',
+                'mgp'=>3.39,
+                'anneeAcademique'=>'2021/2022',
+            ],
+            ];
+            Releve::insert($releve);
     }
 }
