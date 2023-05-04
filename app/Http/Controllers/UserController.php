@@ -85,20 +85,18 @@ $secretKey = 'auth.document';
            "annee"=> $annee[1],
            "numero"=> $numero[1],
            ]);
-$datas= $numero[1].' '.$matricule[1].' '.$decision[1].' '.$filiere[1].' '.$niveau[1].' '.$mgp[1].' '.$annee[1];
-// $hmac1 = hash_hmac('sha256', $data, $secretKey);
-// $hmac2=Hashe::where(['hache'=>$hmac1])->first();
-// if($hmac2){
-//     $info=[
-//         "data"=>$data,
-//        ];
-// }
-// else{
-//     $info=[
-//         "data"=>null,
-//        ];
-// }
-return response()->json($data);      
+$datas= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim($mgp[1]).trim($annee[1]);
+$hmac1 = hash_hmac('sha256', $datas, $secretKey);
+$hmac2=Hashe::where(['hache'=>$hmac1])->first();
+$info=array();
+if(!$hmac2){
+    return response()->json($data);   
+}
+else{
+    $data=null;
+    return response()->json($data);
+}
+     
 }
 
 public function hachage(){
@@ -106,14 +104,14 @@ public function hachage(){
      $id_releve='00097/EDG/L2/FS/ICT/222122';
      $etudiant='20R2198';
      $decision='ADMIS';
-     $filiere='INFORMATION AND COMMUNICATION FOR DEVELOPMENT';
-     $niveau='LiCENCE 2';
-     $mgp=3.39;
+     $filiere='INFORMATION AND COMMUNICATION TECHNOLOGY FOR DEVELOPMENT';
+     $niveau='LICENCE 2';
+     $mgp='3,39';
     $anneeAcademique='2021/2022';
     $secretKey = 'auth.document';
-    $data= $id_releve.' '.$etudiant.' '.$decision.' '.$filiere.' '.$niveau.' '.$mgp.' '.$anneeAcademique;
-    $hmac1 = hash_hmac('sha256', $data, $secretKey);
-    // $save=Hashe::create(['hache' => $hmac1]);
+    $datas= trim($id_releve).trim($etudiant).trim($decision).trim($filiere).trim($niveau).trim($mgp).trim($anneeAcademique);
+    $hmac1 = hash_hmac('sha256', $datas, $secretKey);
+     $save=Hashe::create(['hache' => $hmac1]);
     return response()->json($hmac1);
 }
 
