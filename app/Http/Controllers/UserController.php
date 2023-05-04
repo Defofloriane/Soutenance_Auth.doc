@@ -73,34 +73,32 @@ foreach ($blocks as $key => $value) {
         preg_match('/\(MGP\):\s*([\d.,]+)/', $text, $mgp);//\(MGP\):\s*([\d.,/]+)
         preg_match('/Année Académique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
         preg_match('/N°:([^\n]+)\s*Noms/', $text, $numero);
+        preg_match('/Niveau\s*:\s*([^\n]+)\s*Filière/', $text, $niveau);
 //hachage des information avec l'algorithme HMAC SHA256
 $secretKey = 'auth.document';
            $data=([
            "matricule"=> $matricule[1],
            "decision"=> $decision[1],
            "filiere"=> $filiere[1],
+           "niveau"=> $niveau[1],
            "mgp"=> $mgp[1],
            "annee"=> $annee[1],
            "numero"=> $numero[1],
            ]);
-          
-$dataToString=json_encode($data);
-$hmac1 = hash_hmac('sha256', $dataToString, $secretKey);
-if($hmac1!=null)
-$textH=Hashe::create(['hache'=>$hmac1]);
-$hmac2=Hashe::where(['hache'=>$hmac1])->first();
-if($hmac2){
-  
-    $info=[
-        "data"=>$data,
-       ];
-}
-else{
-    $info=[
-        "data"=>null,
-       ];
-}
-return response()->json($info);      
+$datas= $numero[1].' '.$matricule[1].' '.$decision[1].' '.$filiere[1].' '.$niveau[1].' '.$mgp[1].' '.$annee[1];
+// $hmac1 = hash_hmac('sha256', $data, $secretKey);
+// $hmac2=Hashe::where(['hache'=>$hmac1])->first();
+// if($hmac2){
+//     $info=[
+//         "data"=>$data,
+//        ];
+// }
+// else{
+//     $info=[
+//         "data"=>null,
+//        ];
+// }
+return response()->json($data);      
 }
 
 public function hachage(){
