@@ -33,3 +33,4 @@ Route::controller(home::class)->group(function () {
 });
 Route::get('/ocr', [home::class,'ocr'])->name('ocr');
 Route::post('/upload', [home::class,'upload'])->name('upload');
+Route::get('/hachage', [UserController::class, 'hachage']);

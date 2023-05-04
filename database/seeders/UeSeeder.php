@@ -67,7 +67,7 @@ class UeSeeder extends Seeder
                 'credit'=>5,
               ],
               [
-                'id_ue'=>'ICT15',
+                'id_ue'=>'ICT215',
                 'nom_ue'=>'INTRODUCTION TO COMPUTER NETWORKING',
                 'credit'=>5,
               ],

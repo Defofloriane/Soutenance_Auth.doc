@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\Hashe;
 use App\Models\InfoReleve;
+use App\Models\Releve;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Aws\Textract\TextractClient;
-
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 { 
@@ -81,10 +83,40 @@ $secretKey = 'auth.document';
            "annee"=> $annee[1],
            "numero"=> $numero[1],
            ]);
+          
 $dataToString=json_encode($data);
-$hmacFromIonicGenerated = hash_hmac('sha256', $dataToString, $secretKey);
+$hmac1 = hash_hmac('sha256', $dataToString, $secretKey);
+if($hmac1!=null)
+$textH=Hashe::create(['hache'=>$hmac1]);
+$hmac2=Hashe::where(['hache'=>$hmac1])->first();
+if($hmac2){
+  
+    $info=[
+        "data"=>$data,
+       ];
+}
+else{
+    $info=[
+        "data"=>null,
+       ];
+}
+return response()->json($info);      
+}
 
-          return response()->json($data); 
+public function hachage(){
+    $hachage=Hashe::all();
+     $id_releve='00097/EDG/L2/FS/ICT/222122';
+     $etudiant='20R2198';
+     $decision='ADMIS';
+     $filiere='INFORMATION AND COMMUNICATION FOR DEVELOPMENT';
+     $niveau='LiCENCE 2';
+     $mgp=3.39;
+    $anneeAcademique='2021/2022';
+    $secretKey = 'auth.document';
+    $data= $id_releve.' '.$etudiant.' '.$decision.' '.$filiere.' '.$niveau.' '.$mgp.' '.$anneeAcademique;
+    $hmac1 = hash_hmac('sha256', $data, $secretKey);
+    // $save=Hashe::create(['hache' => $hmac1]);
+    return response()->json($hmac1);
 }
 
 }
