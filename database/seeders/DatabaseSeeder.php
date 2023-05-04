@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
        $this->call([
         EtudiantSeeder::class,
-        UeSeeder::class,
-        Note::class,
+        // UeSeeder::class,
+        // NoteSeeder::class,
         ReleveSeeder::class,
        ]);
     }
