@@ -15,6 +15,7 @@ class UeSeeder extends Seeder
     public function run(): void
     {
         $ue=[
+            //UE ICT L2
             [
               'id_ue'=>'ENGL303',
               'nom_ue'=>'ENGLISH II',
@@ -75,7 +76,17 @@ class UeSeeder extends Seeder
                 'nom_ue'=>'NETWORK ADMINISTRATION',
                 'credit'=>5,
               ],
-              //uekougaba
+              [
+                'id_ue'=>'ICT217',
+                'nom_ue'=>'SOFTWAREE ENGINEERING',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT218',
+                'nom_ue'=>'ADVANCED MOBILE APPLICATION DEVELOPMENT',
+                'credit'=>5,
+              ],
+               //UE ICT L3(KOUGABa)
               [
                 'id_ue'=>'ENGL303',
                 'nom_ue'=>'ENGLISH III',
@@ -140,6 +151,67 @@ class UeSeeder extends Seeder
                 'id_ue'=>'ICT318',
                 'nom_ue'=>'JAVA ENTREPRISE EDITION ',
                 'credit'=>4,
+              ],
+              //UE ICT L1
+              [
+                'id_ue'=>'ENGL104',
+                'nom_ue'=>'ENGLISH',
+                'credit'=>3,
+              ],
+              [
+                'id_ue'=>'ICT101',
+                'nom_ue'=>'INTRODUCTION TO BUSINESS INFORMATION SYSTEMS',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT102',
+                'nom_ue'=>'OBJECT ORIENTED PROGRAMMING',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT103',
+                'nom_ue'=>'INTRODUCTION TO PROGRAMMING',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT104',
+                'nom_ue'=>'COMPUTERS SYSTEMS',
+                'credit'=>6,
+              ],
+              [
+                'id_ue'=>'ICT105',
+                'nom_ue'=>'INTRODUCTION TO ALGORITHMS',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT106',
+                'nom_ue'=>'DATA STRUCTURES AND PATTERNS I',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT107',
+                'nom_ue'=>'MATHEMATICS FOR COMPUTER SCIENCE I',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT108',
+                'nom_ue'=>'CREATING WEB APLLICATION',
+                'credit'=>6,
+              ],
+              [
+                'id_ue'=>'ICT109',
+                'nom_ue'=>'DISCRETE MATHEMATIS I',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT110',
+                'nom_ue'=>'DATABASE ANALYSIS AND DESIGN',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT111',
+                'nom_ue'=>'COMPUTER AND LOGIC ESSENTIALS',
+                'credit'=>5,
               ],
             ];
             Ue::insert($ue);
