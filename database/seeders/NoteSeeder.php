@@ -98,6 +98,98 @@ class NoteSeeder extends Seeder
                 'decision'=>'CA',
                 'mention'=>'B'
              ],
+             //etudiant kougaba l3
+             [
+               'etudiant'=>'19K2779',
+               'ue'=>'ENGL 303',
+               'note'=>38,00,
+               'decision'=>'CANT',
+               'mention'=>'D'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT300',
+               'note'=>84,10,
+               'decision'=>'CA',
+               'mention'=>'A'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT301',
+               'note'=>68,00,
+               'decision'=>'CA',
+               'mention'=>'B'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT302',
+               'note'=>61,25,
+               'decision'=>'CA',
+               'mention'=>'B-'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT303',
+               'note'=>62,70,
+               'decision'=>'CA',
+               'mention'=>'B-'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT304',
+               'note'=>43,95,
+               'decision'=>'CANT',
+               'mention'=>'D+'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT305',
+               'note'=>73,25,
+               'decision'=>'CA',
+               'mention'=>'B+'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT306',
+               'note'=>72,50,
+               'decision'=>'CA',
+               'mention'=>'B+'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT307',
+               'note'=>44,00,
+               'decision'=>'CANT',
+               'mention'=>'D+'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT308',
+               'note'=>57,00,
+               'decision'=>'CA',
+               'mention'=>'C+'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT310',
+               'note'=>76,26,
+               'decision'=>'CA',
+               'mention'=>'A-'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT317',
+               'note'=>63,00,
+               'decision'=>'CA',
+               'mention'=>'B-'
+            ],
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT 318',
+               'note'=>75,75,
+               'decision'=>'CA',
+               'mention'=>'A-'
+            ],
             ];
             Note::insert($note);
     }

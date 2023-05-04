@@ -75,6 +75,72 @@ class UeSeeder extends Seeder
                 'nom_ue'=>'NETWORK ADMINISTRATION',
                 'credit'=>5,
               ],
+              //uekougaba
+              [
+                'id_ue'=>'ENGL303',
+                'nom_ue'=>'ENGLISH III',
+                'credit'=>3,
+              ],
+              [
+                'id_ue'=>'ICT300',
+                'nom_ue'=>'INTERNSHIP',
+                'credit'=>11,
+              ],
+              [
+                'id_ue'=>'ICT301',
+                'nom_ue'=>'SOFTWARE ARCHITECTURE AND DESIGN',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT302',
+                'nom_ue'=>'INTRODUCTION TO ARTIFICIAL INTELLIGENCE',
+                'credit'=>4,
+              ],
+              [
+                'id_ue'=>'ICT303',
+                'nom_ue'=>'DATA COMMUNICATION AND SECURITY',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT304',
+                'nom_ue'=>'SOFTWARE TESTING AND SECURITY',
+                'credit'=>4,
+              ],
+              [
+                'id_ue'=>'ICT305',
+                'nom_ue'=>'WEB APLLICATION DEVELOPMENT',
+                'credit'=>4,
+              ],
+              [
+                'id_ue'=>'ICT306',
+                'nom_ue'=>'BUSSINESS INTELLIGENCE',
+                'credit'=>4,
+              ],
+              [
+                'id_ue'=>'ICT307',
+                'nom_ue'=>'COMPUTER SYSTEMS ENGINEERING',
+                'credit'=>5,
+              ],
+              [
+                'id_ue'=>'ICT308',
+                'nom_ue'=>'SOFTWARE DEVELOPMENT IN JAVA II',
+                'credit'=>4,
+              ],
+              [
+                'id_ue'=>'ICT310',
+                'nom_ue'=>'PROFESSIONAL ISSUES IN IT',
+                'credit'=>3,
+              ],
+              [
+                'id_ue'=>'ICT317',
+                'nom_ue'=>'INFORMATIONAL SYSTEM ',
+                'credit'=>4,
+              ],
+              [
+                'id_ue'=>'ICT318',
+                'nom_ue'=>'JAVA ENTREPRISE EDITION ',
+                'credit'=>4,
+              ],
             ];
             Ue::insert($ue);
     }
