@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('est_inscrit_dans', function (Blueprint $table) {
-            $table->string('etudiant');
-            $table->string('niveau');
-            $table->string('filiere');
-            $table->string('annee');
-            $table->foreign('annee')->references('id_annee')->on('annee_academiques')->onDelete('cascade');
-            $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
-            $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade');
-            $table->foreign('filiere')->references('id_filiere')->on('filieres')->onDelete('cascade');
+            // $table->string('etudiant');
+            // $table->string('niveau');
+            // $table->string('filiere');
+            // $table->string('annee');
+            // $table->foreign('annee')->references('id_annee')->on('annee_academiques')->onDelete('cascade');
+            // $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
+            // $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade');
+            // $table->foreign('filiere')->references('id_filiere')->on('filieres')->onDelete('cascade');
             $table->timestamps();
         });
     }

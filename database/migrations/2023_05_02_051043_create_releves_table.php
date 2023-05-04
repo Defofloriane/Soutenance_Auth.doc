@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('niveau');
             $table->double('mgp');
             $table->string('anneeAcademique');
-            $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade');
             $table->timestamps();
         });
     }
