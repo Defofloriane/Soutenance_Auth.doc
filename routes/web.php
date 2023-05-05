@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\home;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReleveController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +35,7 @@ Route::controller(home::class)->group(function () {
 });
 Route::get('/ocr', [home::class,'ocr'])->name('ocr');
 Route::post('/upload', [home::class,'upload'])->name('upload');
+// Route::get('/details', [home::class,'details'])->name('details');
+Route::get('/details', [ReleveController::class,'reveleEtudiant'])->name('details');
+Route::get('/view_etudiant', [ReleveController::class,'view_etudiant'])->name('view_etudiant');
 Route::get('/hachage', [UserController::class, 'hachage']);

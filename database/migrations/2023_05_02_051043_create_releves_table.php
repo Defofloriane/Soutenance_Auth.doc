@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('releves', function (Blueprint $table) {
             $table->string('id_releve')->primary();
-            $table->string('etudiant');
+            $table->string('etudiant');//matricule etudiant
             $table->string('decision');
-            $table->string('filiere');
-            $table->string('niveau');
+            $table->string('filiere');//id_filere
+            $table->string('niveau');//id_niveau
             $table->double('mgp');
-            $table->string('anneeAcademique');
+            $table->string('anneeAcademique');// id dans la table annee academeique
             $table->timestamps();
+            // $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
+            // $table->foreign('etudiant')->references('matricule')->on('etudiants')->onDelete('cascade');
+            // $table->foreign('filiere')->references('filiere')->on('filieres')->onDelete('cascade');
         });
     }
 

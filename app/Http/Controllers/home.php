@@ -28,6 +28,10 @@ class home extends Controller
     {
         return view('login');
     }
+    public function details()
+    {
+        return view('details');
+    }
     public function forgot_password()
     {
         return view('forgot-password');

@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\EtudiantUe;
@@ -24,12 +24,13 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
        $this->call([
+         UserSeeder::class,
         EtudiantSeeder::class,
         FaculteSeeder::class,
         DepartementSeeder::class,
         FiliereSeeder::class,
         NiveauSeeder::class,
-        // ReleveSeeder::class,
+        ReleveSeeder::class,
         // SpecialiteSeeder::class,
          UeSeeder::class,
          NoteSeeder::class,
