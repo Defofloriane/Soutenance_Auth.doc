@@ -121,11 +121,13 @@ public function hachage(){
     // $faculte_id = Faculte::where(['id_faculte'=>'fs'])->firstOrFail()->id_faculte;
     // $depMath=Departement::where(['id_departement'=>'depMath'])->firstOrFail()->id_departement;
     // $ue=Ue::where(['id_ue'=>'ICT216'])->firstOrFail()->id_ue;
-     $data=Etudiant::where(['matricule'=>'19K2779'])->firstOrFail()->matricule;
+     $data=Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule;
      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
                 ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
                 ->where('notes.etudiant', '=', $data)
+                ->where('niveaux.nom_niveau','=','LICENCE 2')
                 ->select('notes.*', 'ues.nom_ue')
+                ->distinct()
                 ->get();
     return response()->json($notes);
 }

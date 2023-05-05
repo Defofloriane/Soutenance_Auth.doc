@@ -21,7 +21,7 @@ class NoteSeeder extends Seeder
         $note=[
             [
                'etudiant'=>$etudiant_id,
-               'ue'=>Ue::where(['id_ue'=>'ENGL303'])->firstOrFail()->id_ue,
+               'ue'=>Ue::where(['id_ue'=>'ENGL203'])->firstOrFail()->id_ue,
                'note'=>50.50,
                'decision'=>'CA',
                'mention'=>'C'
@@ -109,85 +109,85 @@ class NoteSeeder extends Seeder
             $note2=[
                 //etudiant kougaba l2
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ENGL303',
+               'etudiant'=>$etudiant_id2 ,
+              'ue'=>Ue::where(['id_ue'=>'ENGL203'])->firstOrFail()->id_ue,
                'note'=>53.00,
                'decision'=>'CA',
                'mention'=>'C'
             ],
             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT201',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT201'])->firstOrFail()->id_ue,
                 'note'=>72.50,
                 'decision'=>'CA',
                 'mention'=>'B+'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT202',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT202'])->firstOrFail()->id_ue,
                 'note'=>72.50,
                 'decision'=>'CA',
                 'mention'=>'B+'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT203',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT203'])->firstOrFail()->id_ue,
                 'note'=>70.00,
                 'decision'=>'CA',
                 'mention'=>'B+'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT204',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT204'])->firstOrFail()->id_ue,
                 'note'=>51.00,
                 'decision'=>'CA',
                 'mention'=>'C'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT205',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT205'])->firstOrFail()->id_ue,
                 'note'=>49.00,
                 'decision'=>'CANT',
                 'mention'=>'C-'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT206',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT206'])->firstOrFail()->id_ue,
                 'note'=>39.75,
                 'decision'=>'CANT',
                 'mention'=>'D'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT207',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT207'])->firstOrFail()->id_ue,
                 'note'=>51.50,
                 'decision'=>'CA',
                 'mention'=>'C'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT208',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT208'])->firstOrFail()->id_ue,
                 'note'=>61.25,
                 'decision'=>'CA',
                 'mention'=>'B-'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT210',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT210'])->firstOrFail()->id_ue,
                 'note'=>45.00,
                 'decision'=>'CANT',
                 'mention'=>'C-'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT217',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT217'])->firstOrFail()->id_ue,
                 'note'=>64.00,
                 'decision'=>'CA',
                 'mention'=>'B-'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT218',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT218'])->firstOrFail()->id_ue,
                 'note'=>54.75,
                 'decision'=>'CA',
                 'mention'=>'C'
@@ -196,85 +196,85 @@ class NoteSeeder extends Seeder
             $note3=[
                //etudiant kougaba l1
              [
-               'etudiant'=>'19K2779',
-               'ue'=>'ENGL104',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ENGL104'])->firstOrFail()->id_ue,
                'note'=>62.00,
                'decision'=>'CA',
                'mention'=>'B-'
             ],
             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT101',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT101'])->firstOrFail()->id_ue,
                 'note'=>55.25,
                 'decision'=>'CA',
                 'mention'=>'C+'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT102',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT102'])->firstOrFail()->id_ue,
                 'note'=>60.00,
                 'decision'=>'CA',
                 'mention'=>'B-'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT103',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT103'])->firstOrFail()->id_ue,
                 'note'=>35.00,
                 'decision'=>'CANT',
                 'mention'=>'D'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'IC104',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT104'])->firstOrFail()->id_ue,
                 'note'=>51.50,
                 'decision'=>'CA',
                 'mention'=>'C'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT105',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT105'])->firstOrFail()->id_ue,
                 'note'=>50.04,
                 'decision'=>'CA',
                 'mention'=>'C'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT106',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT106'])->firstOrFail()->id_ue,
                 'note'=>42.50,
                 'decision'=>'CANT',
                 'mention'=>'D+'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT107',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT107'])->firstOrFail()->id_ue,
                 'note'=>44.63,
                 'decision'=>'CANT',
                 'mention'=>'D+'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT108',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT108'])->firstOrFail()->id_ue,
                 'note'=>67.00,
                 'decision'=>'CA',
                 'mention'=>'B'
              ],
              [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT109',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT109'])->firstOrFail()->id_ue,
                'note'=>55.50,
                'decision'=>'CA',
                'mention'=>'C+'
             ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT110',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT110'])->firstOrFail()->id_ue,
                 'note'=>38.00,
                 'decision'=>'CANT',
                 'mention'=>'D'
              ],
              [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT111',
+                'etudiant'=>$etudiant_id2 ,
+                'ue'=>Ue::where(['id_ue'=>'ICT111'])->firstOrFail()->id_ue,
                 'note'=>62.63,
                 'decision'=>'CA',
                 'mention'=>'B-'
@@ -283,92 +283,92 @@ class NoteSeeder extends Seeder
             $note4=[
                 //etudiant kougaba l3
              [
-               'etudiant'=>'19K2779',
-               'ue'=>'ENGL 303',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ENGL303'])->firstOrFail()->id_ue,
                'note'=>38.00,
                'decision'=>'CANT',
                'mention'=>'D'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT300',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT300'])->firstOrFail()->id_ue,
                'note'=>84.10,
                'decision'=>'CA',
                'mention'=>'A'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT301',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT301'])->firstOrFail()->id_ue,
                'note'=>68.00,
                'decision'=>'CA',
                'mention'=>'B'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT302',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT302'])->firstOrFail()->id_ue,
                'note'=>61.25,
                'decision'=>'CA',
                'mention'=>'B-'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT303',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT303'])->firstOrFail()->id_ue,
                'note'=>62.70,
                'decision'=>'CA',
                'mention'=>'B-'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT304',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT304'])->firstOrFail()->id_ue,
                'note'=>43.95,
                'decision'=>'CANT',
                'mention'=>'D+'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT305',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT305'])->firstOrFail()->id_ue,
                'note'=>73.25,
                'decision'=>'CA',
                'mention'=>'B+'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT306',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT306'])->firstOrFail()->id_ue,
                'note'=>72.50,
                'decision'=>'CA',
                'mention'=>'B+'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT307',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT307'])->firstOrFail()->id_ue,
                'note'=>44.00,
                'decision'=>'CANT',
                'mention'=>'D+'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT308',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT308'])->firstOrFail()->id_ue,
                'note'=>57.00,
                'decision'=>'CA',
                'mention'=>'C+'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT310',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT310'])->firstOrFail()->id_ue,
                'note'=>76.26,
                'decision'=>'CA',
                'mention'=>'A-'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT317',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT317'])->firstOrFail()->id_ue,
                'note'=>63.00,
                'decision'=>'CA',
                'mention'=>'B-'
             ],
             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT 318',
+               'etudiant'=>$etudiant_id2 ,
+               'ue'=>Ue::where(['id_ue'=>'ICT318'])->firstOrFail()->id_ue,
                'note'=>75.75,
                'decision'=>'CA',
                'mention'=>'A-'
