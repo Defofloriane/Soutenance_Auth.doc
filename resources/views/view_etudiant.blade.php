@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Dastyle - Admin & Dashboard Template</title>
+    <title>Auth.doc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="author" />
@@ -22,7 +22,24 @@
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #select {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            width: 200px;
+        }
 
+        #select:hover,
+        #select:focus {
+            outline: none;
+            border-color: #5c5cff;
+        }
+    </style>
 </head>
 
 <body class="dark-sidenav">
@@ -49,7 +66,7 @@
                             class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('index')}}"><i
+                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
                                     class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
@@ -59,7 +76,7 @@
                             class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                      
+
                         <li>
                             <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span
                                     class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
@@ -72,39 +89,42 @@
                                 <li><a href="apps-new-project.html">New Project</a></li>
                             </ul>
                         </li>
-                       
-                        </li>
-                    </ul>
+
                 </li>
+            </ul>
+            </li>
 
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="lock"
-                            class="align-self-center menu-icon"></i><span>Authentication</span><span
-                            class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
-                                    class="ti-control-record"></i>Add Admin</a></li>
-                       
-                    </ul>
-                </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="lock"
+                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
+                                class="ti-control-record"></i>Add Admin</a></li>
 
-                <hr class="hr-dashed hr-menu">
-                <li class="menu-label my-2">olders</li>
+                </ul>
+            </li>
+
+            <hr class="hr-dashed hr-menu">
+            <li class="menu-label my-2">olders</li>
 
 
-                <li>
-                    <a href="{{route('view_etudiant')}}"><i data-feather="layers"
-                            class="align-self-center menu-icon"></i><span >Etudiant</span><span
-                            class="badge badge-soft-success menu-arrow">Exemple</span></a>
-                </li>
+            <li>
+                <a href="{{ route('view_etudiant') }}"><i data-feather="layers"
+                        class="align-self-center menu-icon"></i><span>Etudiant</span><span
+                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
+            </li>
 
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Pages</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
-                     
-                    </ul>
-                </li>  
+            <li>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Pages</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
+                                class="ti-control-record"></i>Repord card</a></li>
+
+                </ul>
+            </li>
             </ul>
             <div class="update-msg text-center">
                 <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
@@ -276,10 +296,15 @@
                         </button>
                     </li>
                     <li class="creat-btn">
-                        <div class="nav-link">
-                            <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i
-                                    class="fas fa-plus mr-2"></i>New Task</a>
-                        </div>
+                        <form method="POST" action="{{ route('upload') }}"  enctype="multipart/form-data">
+                            @csrf
+                            <div class="nav-link">
+                                <input class=" btn btn-sm btn-soft-primary"  type="file" name="name_file" id="name_file">
+                                <button class=" btn btn-sm btn-soft-primary"  type="submit">upload</button>  
+                                
+                            </div>
+                           
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -296,171 +321,196 @@
                         <div class="page-title-box">
                             <div class="row">
                                 <div class="col-auto align-self-center">
-                                    {{-- <select class="form-select" id="Dash_Date">
-                                        <option value="">Matricule</option>
-                                        @foreach ($etudiants as $etudiant)
-                                        <option value="{{ $etudiant->matricule }}">
-                                            {{ $etudiant->matricule }}</option>
-                                        @endforeach
-                                    </select> --}}
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        <i data-feather="download" class="align-self-center icon-xs"></i>
+                                    <select class="form-select" id="select">
+                                        <option value="" style="color: gray;" disabled selected>Matricule
+                                        </option>
+                                        <option value="">{{ $etudiant->matricule }}</option>
+                                        <option value="20V2512">20V2512</option>
+                                        <option value="20V2412">20V2412</option>
+                                        <option value="19K2779">19K2779</option>
+                                    </select>
+                                    <a href="#" class="btn btn-sm btn-outline-primary" id="add-matricule">
+                                        <i data-feather="plus" class="align-self-center icon-xs"></i>
                                     </a>
                                 </div>
-                                <!--end col-->
                             </div>
-                            
-                              
-                            <!--end row-->
+
+                            <script>
+                                const select = document.getElementById('select');
+                                const addMatriculeButton = document.getElementById('add-matricule');
+
+                                addMatriculeButton.addEventListener('click', function() {
+                                    const matriculeToAdd = prompt('Enter matricule to add:');
+                                    if (matriculeToAdd) {
+                                        const option = document.createElement('option');
+                                        option.value = matriculeToAdd;
+                                        option.text = matriculeToAdd;
+                                        select.insertBefore(option, select.firstChild);
+                                        select.value = matriculeToAdd;
+                                    }
+                                });
+                            </script>
+
+                            <!--end col-->
                         </div>
-                        <!--end page-title-box-->
+
+
+                        <!--end row-->
                     </div>
-                    <!--end col-->
+                    <!--end page-title-box-->
                 </div>
-                <!--end row-->
-                <!-- end page title end breadcrumb -->
+                <!--end col-->
+            </div>
+            <!--end row-->
+            <!-- end page title end breadcrumb -->
 
 
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel"
-                                aria-labelledby="Profile_Post_tab">
-                                <div class="row">
-                                  
-                                  
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel"
+                            aria-labelledby="Profile_Post_tab">
+                            <div class="row">
 
-                                    <div class="card  mx-auto">
 
-                                        <div class="card-body">
-                                            <ul class="list-unstyled mb-0">
-                                                <div class="card-header">
-                                                    <h4 class="card-title">Default Datatable</h4>
-                                                    <p class="text-muted mb-0">DataTables has most features enabled by
-                                                        default, so all you need to do to use it with your own tables is to call
-                                                        the construction function: <code>$().DataTable();</code>.
-                                                    </p>
-                                                </div><!--end card-header-->
-                                              
-                                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Salary</th>
-                                                        </tr>
-                                                        </thead>
-                    
-                    
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>$320,800</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Ashton Cox</td>
-                                                            <td>Junior Technical Author</td>
-                                                            <td>San Francisco</td>
-                                                            <td>66</td>
-                                                            <td>2009/01/12</td>
-                                                            <td>$86,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cedric Kelly</td>
-                                                            <td>Senior Javascript Developer</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>22</td>
-                                                            <td>2012/03/29</td>
-                                                            <td>$433,060</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Airi Satou</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>33</td>
-                                                            <td>2008/11/28</td>
-                                                            <td>$162,700</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Brielle Williamson</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>New York</td>
-                                                            <td>61</td>
-                                                            <td>2012/12/02</td>
-                                                            <td>$372,000</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Herrod Chandler</td>
-                                                            <td>Sales Assistant</td>
-                                                            <td>San Francisco</td>
-                                                            <td>59</td>
-                                                            <td>2012/08/06</td>
-                                                            <td>$137,500</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rhona Davidson</td>
-                                                            <td>Integration Specialist</td>
-                                                            <td>Tokyo</td>
-                                                            <td>55</td>
-                                                            <td>2010/10/14</td>
-                                                            <td>$327,900</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Colleen Hurst</td>
-                                                            <td>Javascript Developer</td>
-                                                            <td>San Francisco</td>
-                                                            <td>39</td>
-                                                            <td>2009/09/15</td>
-                                                            <td>$205,500</td>
-                                                        </tr>
-                                                       
-                                                        </tbody>
-                                                    </table>
-                    
-                                                </div>
+
+                                <div class="card  mx-auto">
+
+                                    <div class="card-body">
+                                        <ul class="list-unstyled mb-0">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Student's global information</h4>
+                                                <p class="text-muted mb-0">
+                                                    some summary information of the students present in the database, your Last Name  ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
+                                                </p>
                                             </div>
-                                        </div> <!-- end col -->
-                                            </ul>
-                                        </div>
-                                        <!--end card-body-->
+                                            <!--end card-header-->
+
+                                            <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th> Last Name </th>
+                                                        <th>First Name</th>
+                                                        <th>Matricule</th>
+                                                        <th>Level</th>
+                                                        <th>Filiere</th>
+                                                        <th>Anne Scolaire</th>
+                                                        <th>Decision</th>
+                                                        <th>MGP</th>
+                                                        
+                                                    </tr>
+                                                </thead>
+
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>kemgne defo</td>
+                                                        <td>Floriane Ingrid</td>
+                                                        <td>20V2512</td>
+                                                        <td>Licence 3</td>
+                                                        <td>ICT4D</td>
+                                                        <td>2022/2023</td>
+                                                        <td>Admis</td>
+                                                        <td>3.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Garrett Winters</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>63</td>
+                                                        <td>2011/07/25</td>
+                                                        <td>$170,750</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ashton Cox</td>
+                                                        <td>Junior Technical Author</td>
+                                                        <td>San Francisco</td>
+                                                        <td>66</td>
+                                                        <td>2009/01/12</td>
+                                                        <td>$86,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cedric Kelly</td>
+                                                        <td>Senior Javascript Developer</td>
+                                                        <td>Edinburgh</td>
+                                                        <td>22</td>
+                                                        <td>2012/03/29</td>
+                                                        <td>$433,060</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Airi Satou</td>
+                                                        <td>Accountant</td>
+                                                        <td>Tokyo</td>
+                                                        <td>33</td>
+                                                        <td>2008/11/28</td>
+                                                        <td>$162,700</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Brielle Williamson</td>
+                                                        <td>Integration Specialist</td>
+                                                        <td>New York</td>
+                                                        <td>61</td>
+                                                        <td>2012/12/02</td>
+                                                        <td>$372,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Herrod Chandler</td>
+                                                        <td>Sales Assistant</td>
+                                                        <td>San Francisco</td>
+                                                        <td>59</td>
+                                                        <td>2012/08/06</td>
+                                                        <td>$137,500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Rhona Davidson</td>
+                                                        <td>Integration Specialist</td>
+                                                        <td>Tokyo</td>
+                                                        <td>55</td>
+                                                        <td>2010/10/14</td>
+                                                        <td>$327,900</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Colleen Hurst</td>
+                                                        <td>Javascript Developer</td>
+                                                        <td>San Francisco</td>
+                                                        <td>39</td>
+                                                        <td>2009/09/15</td>
+                                                        <td>$205,500</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
 
                                     </div>
-                                    <!--end card-->
                                 </div>
-                                <!--end col-->
-
-                            </div>
-                            <!--end row-->
+                            </div> <!-- end col -->
+                            </ul>
                         </div>
-        
+                        <!--end card-body-->
 
                     </div>
+                    <!--end card-->
                 </div>
+                <!--end col-->
+
             </div>
+            <!--end row-->
+        </div>
 
-        </div><!-- container -->
 
-        <footer class="footer text-center text-sm-left">
-            {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+    </div>
+    </div>
+    </div>
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-left">
+        {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
                     class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span> --}}
-        </footer>
-        <!--end footer-->
+    </footer>
+    <!--end footer-->
     </div>
     <!-- end page content -->
     </div>
