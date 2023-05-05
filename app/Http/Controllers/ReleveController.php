@@ -25,7 +25,11 @@ class ReleveController extends Controller
    }
    public function view_etudiant(){
     $data=Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule;
+    $etudiants=Etudiant::all();
     $etudiant=Etudiant::where(['matricule'=>'20R2198'])->first();
+    $donneSuplemntaire = [];
+     $releves = Releve::all();
+    $releve=Releve::where(['etudiant'=>'20R2198'])->first();
     $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
     ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
     ->where('notes.etudiant', '=', $data)
@@ -33,6 +37,8 @@ class ReleveController extends Controller
     ->select('notes.*', 'ues.nom_ue')
     ->distinct()
     ->get();
-    return view('view_etudiant',compact('notes','etudiant'));
+    // $data = [$releves, $etudiant];
+    // return json_encode($etudiant);
+    return view('view_etudiant',compact('releves','etudiants','etudiant'));
    }
 }
