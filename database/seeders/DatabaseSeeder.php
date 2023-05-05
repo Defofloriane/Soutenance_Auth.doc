@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         DepartementSeeder::class,
         FiliereSeeder::class,
         NiveauSeeder::class,
-        // ReleveSeeder::class,
+        ReleveSeeder::class,
         // SpecialiteSeeder::class,
          UeSeeder::class,
          NoteSeeder::class,

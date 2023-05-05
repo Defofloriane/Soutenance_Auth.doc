@@ -94,15 +94,19 @@ $hmac1 = hash_hmac('sha256', $datas, $secretKey);
 $hmac2=Hashe::where(['hache'=>$hmac1])->first();
 // $info=array();
 if($hmac2){
-    $etudiant=Etudiant::where(['etudiant'=>$matricule[1]])->get();
-    $ue=Ue::where(['ue'=>'']);
-    return response()->json($data);   
-}
-else{
-    $data=null;
-    return response()->json($data);
-}
-     
+    $releve=Releve::where(['etudiant'=>'20R2198'])->get();
+    $etudiant=Etudiant::where(['matricule'=>'20R2198'])->get();
+    $data=Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule;
+     $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+                ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+                ->where('notes.etudiant', '=', $data)
+                ->where('niveaux.nom_niveau','=','LICENCE 2')
+                ->select('notes.*', 'ues.nom_ue','ues.credit')
+                ->distinct()
+                ->get();
+    $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant]);
+    return response()->json($DataSend);   
+}    
 }
 
 public function hachage(){
@@ -117,16 +121,15 @@ public function hachage(){
     $secretKey = 'auth.document';
     $datas= trim($id_releve).trim($etudiant).trim($decision).trim($filiere).trim($niveau).trim($mgp).trim($anneeAcademique);
     $hmac1 = hash_hmac('sha256', $datas, $secretKey);
+
     //  $save=Hashe::create(['hache' => $hmac1]);
-    // $faculte_id = Faculte::where(['id_faculte'=>'fs'])->firstOrFail()->id_faculte;
-    // $depMath=Departement::where(['id_departement'=>'depMath'])->firstOrFail()->id_departement;
-    // $ue=Ue::where(['id_ue'=>'ICT216'])->firstOrFail()->id_ue;
+     $releve=Releve::where(['etudiant'=>'20R2198'])->get();
      $data=Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule;
      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
                 ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
                 ->where('notes.etudiant', '=', $data)
                 ->where('niveaux.nom_niveau','=','LICENCE 2')
-                ->select('notes.*', 'ues.nom_ue')
+                ->select('notes.*', 'ues.nom_ue','ues.credit')
                 ->distinct()
                 ->get();
     return response()->json($notes);
