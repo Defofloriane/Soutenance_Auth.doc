@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('id_ue')->primary();
             $table->string('nom_ue');
             $table->integer('credit');
+            $table->string('niveau');
+            $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
             $table->timestamps();
         });
     }

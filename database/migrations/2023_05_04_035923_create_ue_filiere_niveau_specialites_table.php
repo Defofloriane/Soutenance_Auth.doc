@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('ue_filiere_niveau_specialites', function (Blueprint $table) {
             $table->string('ue');
             $table->string('filiere');
-            $table->string('specialite');
+            $table->string('niveau');
+            $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
             $table->foreign('ue')->references('id_ue')->on('ues')->onDelete('cascade');
             $table->foreign('filiere')->references('id_filiere')->on('filieres')->onDelete('cascade');
-            $table->foreign('specialite')->references('id_specialite')->on('specialites')->onDelete('cascade');
+            // $table->foreign('specialite')->references('id_specialite')->on('specialites')->onDelete('cascade');
             $table->timestamps();
         });
     }

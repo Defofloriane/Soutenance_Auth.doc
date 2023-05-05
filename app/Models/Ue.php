@@ -19,4 +19,10 @@ class Ue extends Model
         'nom_ue',
         'credit',
     ];
+
+    protected $table="ues";
+
+    public function etudiants(){
+        return $this->belongsTo(Etudiant::class);
+    }
 }

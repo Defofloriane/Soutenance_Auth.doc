@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\EtudiantUe;
+use App\Models\Faculte;
+use App\Models\Filiere;
 use App\Models\Note;
 use Illuminate\Database\Seeder;
 
@@ -22,9 +25,19 @@ class DatabaseSeeder extends Seeder
         // ]);
        $this->call([
         EtudiantSeeder::class,
-        // UeSeeder::class,
-        // NoteSeeder::class,
-        ReleveSeeder::class,
+        FaculteSeeder::class,
+        DepartementSeeder::class,
+        FiliereSeeder::class,
+        NiveauSeeder::class,
+        // ReleveSeeder::class,
+        // SpecialiteSeeder::class,
+         UeSeeder::class,
+         NoteSeeder::class,
+        // UeFiliereNiveauSpecialiteSeeder::class,
+        
+    
+
+       
        ]);
     }
 }

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Departement extends Model
 {
     use HasFactory;
+    protected $table = 'departements';
+
+    public function filieres()
+    {
+        return $this->hasMany(Filiere::class);
+    }
+    public function faculte()
+    {
+        return $this->belongsTo(Faculte::class);
+    }
 }

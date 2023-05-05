@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Departement;
 use App\Models\Etudiant;
+use App\Models\Faculte;
 use App\Models\Hashe;
 use App\Models\InfoReleve;
+use App\Models\Note;
 use App\Models\Releve;
+use App\Models\Ue;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Aws\Textract\TextractClient;
@@ -88,8 +92,10 @@ $secretKey = 'auth.document';
 $datas= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim($mgp[1]).trim($annee[1]);
 $hmac1 = hash_hmac('sha256', $datas, $secretKey);
 $hmac2=Hashe::where(['hache'=>$hmac1])->first();
-$info=array();
-if(!$hmac2){
+// $info=array();
+if($hmac2){
+    $etudiant=Etudiant::where(['etudiant'=>$matricule[1]])->get();
+    $ue=Ue::where(['ue'=>'']);
     return response()->json($data);   
 }
 else{
@@ -111,8 +117,17 @@ public function hachage(){
     $secretKey = 'auth.document';
     $datas= trim($id_releve).trim($etudiant).trim($decision).trim($filiere).trim($niveau).trim($mgp).trim($anneeAcademique);
     $hmac1 = hash_hmac('sha256', $datas, $secretKey);
-     $save=Hashe::create(['hache' => $hmac1]);
-    return response()->json($hmac1);
+    //  $save=Hashe::create(['hache' => $hmac1]);
+    // $faculte_id = Faculte::where(['id_faculte'=>'fs'])->firstOrFail()->id_faculte;
+    // $depMath=Departement::where(['id_departement'=>'depMath'])->firstOrFail()->id_departement;
+    // $ue=Ue::where(['id_ue'=>'ICT216'])->firstOrFail()->id_ue;
+     $data=Etudiant::where(['matricule'=>'19K2779'])->firstOrFail()->matricule;
+     $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+                ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+                ->where('notes.etudiant', '=', $data)
+                ->select('notes.*', 'ues.nom_ue')
+                ->get();
+    return response()->json($notes);
 }
 
 }

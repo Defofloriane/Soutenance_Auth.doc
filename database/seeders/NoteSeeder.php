@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Etudiant;
 use App\Models\Note;
+use App\Models\Ue;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,92 +15,273 @@ class NoteSeeder extends Seeder
      */
     public function run(): void
     {
+
+      $etudiant_id = Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule;
+      $etudiant_id2 = Etudiant::where(['matricule'=>'19K2779'])->firstOrFail()->matricule;
         $note=[
             [
-               'etudiant'=>'20R2198',
-               'ue'=>'ENGL303',
+               'etudiant'=>$etudiant_id,
+               'ue'=>Ue::where(['id_ue'=>'ENGL303'])->firstOrFail()->id_ue,
                'note'=>50.50,
                'decision'=>'CA',
                'mention'=>'C'
             ],
             [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT201',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT201'])->firstOrFail()->id_ue,
                 'note'=>83.00,
                 'decision'=>'CA',
                 'mention'=>'A'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT202',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT202'])->firstOrFail()->id_ue,
                 'note'=>77.75,
                 'decision'=>'CA',
                 'mention'=>'A-'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT203',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT203'])->firstOrFail()->id_ue,
                 'note'=>69.00,
                 'decision'=>'CA',
                 'mention'=>'B'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT204',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT204'])->firstOrFail()->id_ue,
                 'note'=>90.25,
                 'decision'=>'CA',
                 'mention'=>'A'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT205',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT205'])->firstOrFail()->id_ue,
                 'note'=>81.00,
                 'decision'=>'CA',
                 'mention'=>'A'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT206',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT206'])->firstOrFail()->id_ue,
                 'note'=>62.00,
                 'decision'=>'CA',
                 'mention'=>'B-'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT207',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT207'])->firstOrFail()->id_ue,
                 'note'=>82.75,
                 'decision'=>'CA',
                 'mention'=>'A'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT208',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT208'])->firstOrFail()->id_ue,
                 'note'=>78.00,
                 'decision'=>'CA',
                 'mention'=>'A-'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT210',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT210'])->firstOrFail()->id_ue,
                 'note'=>75.00,
                 'decision'=>'CA',
                 'mention'=>'A-'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT215',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT215'])->firstOrFail()->id_ue,
                 'note'=>55.75,
                 'decision'=>'CA',
                 'mention'=>'C+'
              ],
              [
-                'etudiant'=>'20R2198',
-                'ue'=>'ICT216',
+                'etudiant'=>$etudiant_id,
+                'ue'=>Ue::where(['id_ue'=>'ICT216'])->firstOrFail()->id_ue,
                 'note'=>68.00,
                 'decision'=>'CA',
                 'mention'=>'B'
              ],
-             //etudiant kougaba l3
+            
+           
+            ];    
+            $note2=[
+                //etudiant kougaba l2
+            [
+               'etudiant'=>'19K2779',
+               'ue'=>'ENGL303',
+               'note'=>53.00,
+               'decision'=>'CA',
+               'mention'=>'C'
+            ],
+            [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT201',
+                'note'=>72.50,
+                'decision'=>'CA',
+                'mention'=>'B+'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT202',
+                'note'=>72.50,
+                'decision'=>'CA',
+                'mention'=>'B+'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT203',
+                'note'=>70.00,
+                'decision'=>'CA',
+                'mention'=>'B+'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT204',
+                'note'=>51.00,
+                'decision'=>'CA',
+                'mention'=>'C'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT205',
+                'note'=>49.00,
+                'decision'=>'CANT',
+                'mention'=>'C-'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT206',
+                'note'=>39.75,
+                'decision'=>'CANT',
+                'mention'=>'D'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT207',
+                'note'=>51.50,
+                'decision'=>'CA',
+                'mention'=>'C'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT208',
+                'note'=>61.25,
+                'decision'=>'CA',
+                'mention'=>'B-'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT210',
+                'note'=>45.00,
+                'decision'=>'CANT',
+                'mention'=>'C-'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT217',
+                'note'=>64.00,
+                'decision'=>'CA',
+                'mention'=>'B-'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT218',
+                'note'=>54.75,
+                'decision'=>'CA',
+                'mention'=>'C'
+             ],      
+            ] ;   
+            $note3=[
+               //etudiant kougaba l1
+             [
+               'etudiant'=>'19K2779',
+               'ue'=>'ENGL104',
+               'note'=>62.00,
+               'decision'=>'CA',
+               'mention'=>'B-'
+            ],
+            [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT101',
+                'note'=>55.25,
+                'decision'=>'CA',
+                'mention'=>'C+'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT102',
+                'note'=>60.00,
+                'decision'=>'CA',
+                'mention'=>'B-'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT103',
+                'note'=>35.00,
+                'decision'=>'CANT',
+                'mention'=>'D'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'IC104',
+                'note'=>51.50,
+                'decision'=>'CA',
+                'mention'=>'C'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT105',
+                'note'=>50.04,
+                'decision'=>'CA',
+                'mention'=>'C'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT106',
+                'note'=>42.50,
+                'decision'=>'CANT',
+                'mention'=>'D+'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT107',
+                'note'=>44.63,
+                'decision'=>'CANT',
+                'mention'=>'D+'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT108',
+                'note'=>67.00,
+                'decision'=>'CA',
+                'mention'=>'B'
+             ],
+             [
+               'etudiant'=>'19K2779',
+               'ue'=>'ICT109',
+               'note'=>55.50,
+               'decision'=>'CA',
+               'mention'=>'C+'
+            ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT110',
+                'note'=>38.00,
+                'decision'=>'CANT',
+                'mention'=>'D'
+             ],
+             [
+                'etudiant'=>'19K2779',
+                'ue'=>'ICT111',
+                'note'=>62.63,
+                'decision'=>'CA',
+                'mention'=>'B-'
+             ],
+            ];
+            $note4=[
+                //etudiant kougaba l3
              [
                'etudiant'=>'19K2779',
                'ue'=>'ENGL 303',
@@ -190,177 +373,10 @@ class NoteSeeder extends Seeder
                'decision'=>'CA',
                'mention'=>'A-'
             ],
-            //etudiant kougaba l2
-            [
-               'etudiant'=>'19K2779',
-               'ue'=>'ENGL303',
-               'note'=>53.00,
-               'decision'=>'CA',
-               'mention'=>'C'
-            ],
-            [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT201',
-                'note'=>72.50,
-                'decision'=>'CA',
-                'mention'=>'B+'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT202',
-                'note'=>72.50,
-                'decision'=>'CA',
-                'mention'=>'B+'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT203',
-                'note'=>70.00,
-                'decision'=>'CA',
-                'mention'=>'B+'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT204',
-                'note'=>51.00,
-                'decision'=>'CA',
-                'mention'=>'C'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT205',
-                'note'=>49.00,
-                'decision'=>'CANT',
-                'mention'=>'C-'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT206',
-                'note'=>39.75,
-                'decision'=>'CANT',
-                'mention'=>'D'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT207',
-                'note'=>51.50,
-                'decision'=>'CA',
-                'mention'=>'C'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT208',
-                'note'=>61.25,
-                'decision'=>'CA',
-                'mention'=>'B-'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT210',
-                'note'=>45.00,
-                'decision'=>'CANT',
-                'mention'=>'C-'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT217',
-                'note'=>64.00,
-                'decision'=>'CA',
-                'mention'=>'B-'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT218',
-                'note'=>54.75,
-                'decision'=>'CA',
-                'mention'=>'C'
-             ],
-             //etudiant kougaba l1
-             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ENGL104',
-               'note'=>62.00,
-               'decision'=>'CA',
-               'mention'=>'B-'
-            ],
-            [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT101',
-                'note'=>55.25,
-                'decision'=>'CA',
-                'mention'=>'C+'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT102',
-                'note'=>60.00,
-                'decision'=>'CA',
-                'mention'=>'B-'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT103',
-                'note'=>35.00,
-                'decision'=>'CANT',
-                'mention'=>'D'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'IC104',
-                'note'=>51.50,
-                'decision'=>'CA',
-                'mention'=>'C'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT105',
-                'note'=>50.04,
-                'decision'=>'CA',
-                'mention'=>'C'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT106',
-                'note'=>42.50,
-                'decision'=>'CANT',
-                'mention'=>'D+'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT107',
-                'note'=>44.63,
-                'decision'=>'CANT',
-                'mention'=>'D+'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT108',
-                'note'=>67.00,
-                'decision'=>'CA',
-                'mention'=>'B'
-             ],
-             [
-               'etudiant'=>'19K2779',
-               'ue'=>'ICT109',
-               'note'=>55.50,
-               'decision'=>'CA',
-               'mention'=>'C+'
-            ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT110',
-                'note'=>38.00,
-                'decision'=>'CANT',
-                'mention'=>'D'
-             ],
-             [
-                'etudiant'=>'19K2779',
-                'ue'=>'ICT111',
-                'note'=>62.63,
-                'decision'=>'CA',
-                'mention'=>'B-'
-             ],
-            ];
+         ];
             Note::insert($note);
+            Note::insert($note2);
+            Note::insert($note3);
+            Note::insert($note4);
     }
 }
