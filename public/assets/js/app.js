@@ -23,37 +23,35 @@
             var title = '';
             var range = '';
 
-            if ((end - start) < 100 || label == 'Today') {
-                title = 'Today:';
-                range = start.format('MMM D');
-            } else if (label == 'Yesterday') {
-                title = 'Yesterday:';
-                range = start.format('MMM D');
+            if ((end - start) < 100 || label == 'Matricule') {
+                title = 'Matricule:';
+                // range = start.format('MMM D');
+            } else if (label == '20R2198') {
+                title = '20R2198:';
+                // range = start.format('MMM D');
             } else {
-                range = start.format('MMM D') + ' - ' + end.format('MMM D');
+                // range = start.format('MMM D') + ' - ' + end.format('MMM D');
             }
 
-            picker.find('#Select_date').html(range);
-            picker.find('#Day_Name').html(title);
+            // picker.find('#Select_date').html(range);
+            // picker.find('#Day_Name').html(title);
         }
 
         picker.daterangepicker({
-            startDate: start,
             endDate: end,
             opens: 'left',
-            applyClass: "btn btn-sm btn-primary",
-            cancelClass: "btn btn-sm btn-secondary",
+            // applyClass: "btn btn-sm btn-primary",
+            // cancelClass: "btn btn-sm btn-secondary",
             ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                'Matricule': [moment(), moment()],
+                '20R2198': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '20V2512': [moment().subtract(6, 'days'), moment()],
+                '20V2412': [moment().subtract(29, 'days'), moment()],
+                '19K2779': [moment().startOf('month'), moment().endOf('month')],
             }
         }, cb);
 
-        cb(start, end, '');
+        cb( end, '');
     }
    
     function initMetisMenu() {

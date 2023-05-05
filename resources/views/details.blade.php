@@ -350,7 +350,7 @@
                                 <!--end row-->
                                 <div class="row">
                                     <div class="col-3">
-                                        <div class="card">
+                                        <div class="card ">
                                             <div class="card-body  text-center">
                                                 <img src="assets/images/widgets/project2.jpg" alt=""
                                                     class="rounded-circle d-block mx-auto mt-2" height="70">
@@ -371,8 +371,8 @@
                                     </div>
                                     <!--end col-->
                                     <div class="col-3">
-                                        <div class="card">
-                                            <div class="card-body  text-center">
+                                        <div class="card w-100">
+                                            <div class="card-body">
                                                 <img src="assets/images/widgets/project4.jpg" alt=""
                                                     class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Book My
@@ -538,7 +538,7 @@
                                     </div>
                                     <!--end row-->
 
-                                    <div class="card">
+                                    <div class="card w-100">
 
                                         <div class="card-body">
                                             <ul class="list-unstyled mb-0">
@@ -711,7 +711,7 @@
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                N°: 00097/EDG/L2/Ict/20212022 </div>
+                                                                N° : {{ $releve->id_releve }} </div><!--to change dans la table releve-->
                                                           </div>
                                                         <main class="w-100 d-flex flex-column align-items-center">
                                                            
@@ -798,7 +798,7 @@
                                                                         </div>
                                                                         <div
                                                                             class="form-value ps-4 pt-1 text-uppercase">
-                                                                            License 1</div>
+                                                                           {{$releve->niveau}}</div>
                                                                     </div>
 
                                                                     <div class="d-flex form-item ms-5 ps-5">
@@ -808,9 +808,7 @@
                                                                             <span class="english_subtitle"> Discipline
                                                                             </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">INFORMATION
-                                                                            AND COMMUNICATION TECHNOLOGIE FOR
-                                                                            DEVELOPMENT</div>
+                                                                        <div class="form-value ps-4 pt-1">{{$releve->filiere}}</div>
                                                                     </div>
                                                                 </section>
 
@@ -834,7 +832,7 @@
                                                                             <span class="english_subtitle"> Academic
                                                                                 year </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">2020/2021
+                                                                        <div class="form-value ps-4 pt-1">{{$releve->anneeAcademique}}<!--to change dans la table releve-->
                                                                         </div>
                                                                     </div>
                                                                 </section>
@@ -906,7 +904,7 @@
                                                                 <span
                                                                     class="w-100 decision-data d-flex flex-column w-auto">
                                                                     <span> Crédit Capitalisés: 60/60 (100.00%) </span>
-                                                                    <span> Moyenne Générale Pondérée (MGP): 2.34/4<!--to change-->
+                                                                    <span> Moyenne Générale Pondérée (MGP): {{$releve->mgp}}/4<!--to change-->
                                                                     </span>
                                                                     <span> Decision: <b> ADMIS </b> </span><!--to change-->
                                                                 </span>
