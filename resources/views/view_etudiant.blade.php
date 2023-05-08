@@ -324,7 +324,7 @@
                                     <select class="form-select" id="select">
                                         <option value="" style="color: gray;" disabled selected>Matricule
                                         </option>
-                                        <option value="">{{ $etudiant->matricule }}</option>
+                                        {{-- <option value="">{{ $etudiant->matricule }}</option> --}}
                                         <option value="20V2512">20V2512</option>
                                         <option value="20V2412">20V2412</option>
                                         <option value="19K2779">19K2779</option>
@@ -399,30 +399,32 @@
                                                         <th>Anne Scolaire</th>
                                                         <th>Decision</th>
                                                         <th>MGP</th>
+                                                        <th>Check</th>
                                                         
                                                     </tr>
                                                 </thead>
 
 
                                                 <tbody>
-                                                    @foreach($etudiants as $etudiant)
-                                                    @foreach($releves as $releve)
-                                                      @if($releve->etudiant === $etudiant->matricule)
-                                                      
-                                                            <tr>
-                                                              <td>{{ $etudiant->nom }}</td>
-                                                              <td>{{ $etudiant->prenom }}</td>
-                                                              <td>{{ $etudiant->matricule }}</td>
-                                                              <td>{{ $releve->niveau }}</td>
-                                                              <td>{{ $releve->filiere }}</td><!--filiere-->
-                                                              <td>{{ $releve->anneeAcademique }}</td>
-                                                              <td>{{ $releve->decision }}</td>
-                                                              <td>{{ $releve->mgp }}</td>
-                                                            </tr>
+                                                        @foreach($etudiants as $etudiant)
+                                                        @foreach($releves as $releve)
+                                                        @if($releve->etudiant === $etudiant->matricule)
                                                         
-                                                      @endif
+                                                                <tr>
+                                                                <td>{{ $etudiant->nom }}</td>
+                                                                <td>{{ $etudiant->prenom }}</td>
+                                                                <td>{{ $etudiant->matricule }}</td>
+                                                                <td>{{ $releve->niveau }}</td>
+                                                                <td>{{ $releve->filiere }}</td><!--filiere-->
+                                                                <td>{{ $releve->anneeAcademique }}</td>
+                                                                <td>{{ $releve->decision }}</td>
+                                                                <td>{{ $releve->mgp }}</td>
+                                                                <td><a href="{{ route('details', ['id' => $releve->id]) }}">Afficher le relevé</a></td>
+                                                                </tr>
+                                                            
+                                                        @endif
+                                                        @endforeach
                                                     @endforeach
-                                                  @endforeach
                                                   
                                                 </tbody>
                                             </table>

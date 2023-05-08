@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Dastyle - Admin & Dashboard Template</title>
+    <title>Auth.doc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="author" />
@@ -124,131 +124,34 @@
     <div class="page-wrapper">
         <!-- Top Bar Start -->
         <div class="topbar">
+                  
+            
             <!-- Navbar -->
             <nav class="navbar-custom">
                 <ul class="list-unstyled topbar-nav float-right mb-0">
                     <li class="dropdown hide-phone">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i data-feather="search" class="topbar-icon"></i>
-                        </a>
+                        
+                       
+ 
+                      
 
-                        <div class="dropdown-menu dropdown-menu-right dropdown-lg p-0">
-                            <!-- Top Search Bar -->
-                            <div class="app-search-topbar">
-                                <form action="#" method="get">
-                                    <input type="search" name="search" class="from-control top-search mb-0"
-                                        placeholder="Type text...">
-                                    <button type="submit"><i class="ti-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
+  
+                
                     </li>
 
                     <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i data-feather="bell" class="align-self-center topbar-icon"></i>
-                            <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
+                        
+                        {{-- <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
 
-                            <h6
-                                class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
-                                Notifications <span class="badge badge-primary badge-pill">2</span>
-                            </h6>
+                          
                             <div class="notification-menu" data-simplebar>
-                                <!-- item-->
-                                <a href="#" class="dropdown-item py-3">
-                                    <small class="float-right text-muted pl-2">2 min ago</small>
-                                    <div class="media">
-                                        <div class="avatar-md bg-soft-primary">
-                                            <i data-feather="shopping-cart" class="align-self-center icon-xs"></i>
-                                        </div>
-                                        <div class="media-body align-self-center ml-2 text-truncate">
-                                            <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                            <small class="text-muted mb-0">Dummy text of the printing and
-                                                industry.</small>
-                                        </div>
-                                        <!--end media-body-->
-                                    </div>
-                                    <!--end media-->
-                                </a>
-                                <!--end-item-->
-                                <!-- item-->
-                                <a href="#" class="dropdown-item py-3">
-                                    <small class="float-right text-muted pl-2">10 min ago</small>
-                                    <div class="media">
-                                        <div class="avatar-md bg-soft-primary">
-                                            <img src="assets/images/users/user-4.jpg" alt=""
-                                                class="thumb-sm rounded-circle">
-                                        </div>
-                                        <div class="media-body align-self-center ml-2 text-truncate">
-                                            <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
-                                            <small class="text-muted mb-0">It is a long established fact that a
-                                                reader.</small>
-                                        </div>
-                                        <!--end media-body-->
-                                    </div>
-                                    <!--end media-->
-                                </a>
-                                <!--end-item-->
-                                <!-- item-->
-                                <a href="#" class="dropdown-item py-3">
-                                    <small class="float-right text-muted pl-2">40 min ago</small>
-                                    <div class="media">
-                                        <div class="avatar-md bg-soft-primary">
-                                            <i data-feather="users" class="align-self-center icon-xs"></i>
-                                        </div>
-                                        <div class="media-body align-self-center ml-2 text-truncate">
-                                            <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
-                                            <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                        </div>
-                                        <!--end media-body-->
-                                    </div>
-                                    <!--end media-->
-                                </a>
-                                <!--end-item-->
-                                <!-- item-->
-                                <a href="#" class="dropdown-item py-3">
-                                    <small class="float-right text-muted pl-2">1 hr ago</small>
-                                    <div class="media">
-                                        <div class="avatar-md bg-soft-primary">
-                                            <img src="assets/images/users/user-5.jpg" alt=""
-                                                class="thumb-sm rounded-circle">
-                                        </div>
-                                        <div class="media-body align-self-center ml-2 text-truncate">
-                                            <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                            <small class="text-muted mb-0">It is a long established fact that a
-                                                reader.</small>
-                                        </div>
-                                        <!--end media-body-->
-                                    </div>
-                                    <!--end media-->
-                                </a>
-                                <!--end-item-->
-                                <!-- item-->
-                                <a href="#" class="dropdown-item py-3">
-                                    <small class="float-right text-muted pl-2">2 hrs ago</small>
-                                    <div class="media">
-                                        <div class="avatar-md bg-soft-primary">
-                                            <i data-feather="check-circle" class="align-self-center icon-xs"></i>
-                                        </div>
-                                        <div class="media-body align-self-center ml-2 text-truncate">
-                                            <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
-                                            <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                        </div>
-                                        <!--end media-body-->
-                                    </div>
-                                    <!--end media-->
-                                </a>
-                                <!--end-item-->
+                             
+                               
+                               
                             </div>
                             <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
-                                View all <i class="fi-arrow-right"></i>
-                            </a>
-                        </div>
+                           
+                        </div> --}}
                     </li>
 
                     <li class="dropdown">
@@ -268,8 +171,33 @@
                         </div>
                     </li>
                 </ul>
-                <!--end topbar-nav-->
+                <form method="POST" action="{{ route('search') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="niveau" >Selectionner le niveau de l etudiant et entrer son Matricule / Nom complet</label>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="app-search-topbar">
+                              <input type="search" name="search" class="form-control top-search mb-0" placeholder="Matricule/Name">
+                              <button type="submit"><i class="ti-search"></i></button>
+                            </div> 
+                            &nbsp;&nbsp; &nbsp;&nbsp;
+                            <select  id="niveau" name="niveau" class="custom-select">
+                                <option value="Licence 1">Niveau 1</option>
+                                <option value="Licence 2">Niveau 2</option>
+                                <option value="Licence 3">Niveau 3</option>
+                              </select>
+                            
+                          </div>
+                        
+                       
 
+                    </div>
+                    
+                </form>
+                <!--end topbar-nav-->
+                <div class="col-auto align-self-center">
+                  
+                </div>
                 <ul class="list-unstyled topbar-nav mb-0">
                     <li>
                         <button class="nav-link button-menu-mobile">
@@ -294,18 +222,9 @@
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="page-title-box">
+                        <div class="">
                             <div class="row">
-                                <div class="col-auto align-self-center">
-                                    <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
-                                        <span class="day-name" id="Day_Name">Today:</span>&nbsp;
-                                        <span class="" id="Select_date">Jan 11</span>
-                                        <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        <i data-feather="download" class="align-self-center icon-xs"></i>
-                                    </a>
-                                </div>
+                               
                                 <!--end col-->
                             </div>
                             <!--end row-->
@@ -327,13 +246,13 @@
                                 <div class="row mb-4">
                                     <div class="col">
                                         <form>
-                                            <div class="input-group input-group-lg">
+                                            <div class="input-group input-group-lg" >
                                                 <input type="text" id="example-input1-group2"
                                                     name="example-input1-group2" class="form-control"
                                                     placeholder="Search">
                                                 <span class="input-group-append">
                                                     <button type="button" class="btn btn-soft-primary"><i
-                                                            class="fas fa-search"></i></button>
+                                                            class="fas fa-search " ></i></button>
                                                 </span>
                                             </div>
                                         </form>
@@ -653,8 +572,50 @@
                                                         right:0;
                                                         
                                                     }
-                                                </style>
+                                                    .app-search-topbar.active {
+    
+}
 
+
+
+.top-search:focus {
+    outline: none;
+}
+.app-search-topbar {
+  padding: -23px;
+  border-radius:700px;
+}
+.hide-phone{
+    padding-top: 10px;
+ margin-bottom: 10px;
+
+
+}
+.app-search-topbar {
+  padding-left: 4px;
+  padding-right : 8px;
+  border-radius: 100px;
+}
+.topbar{
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-top: 12px;
+}
+
+
+
+
+                                                </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var searchIcon = document.querySelector('.topbar-icon');
+        var searchForm = document.querySelector('.app-search-topbar');
+
+        searchIcon.addEventListener('click', function() {
+            searchForm.classList.add('active');
+        });
+    });
+</script>
 
                                                 </head>
 
@@ -711,7 +672,8 @@
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                N° : {{ $releve->id_releve }} </div><!--to change dans la table releve-->
+                                                                N° : {{ isset($releve) ? $releve->id_releve : '' }}
+                                                             </div><!--to change dans la table releve-->
                                                           </div>
                                                         <main class="w-100 d-flex flex-column align-items-center">
                                                            
@@ -732,7 +694,8 @@
 
                                                                         <div
                                                                             class="form-value ps-4 pt-1 text-uppercase">
-                                                                            {{ $etudiant->nom }}  {{ $etudiant->prenom }} </div>
+                                                                            {{ isset($etudiant) ? $etudiant->nom : '' }}    {{ isset($etudiant) ? $etudiant->prenom : '' }}
+                                                                        </div>
 
                                                                     </div>
                                                                     
@@ -745,7 +708,9 @@
                                                                             <span class="english_subtitle">
                                                                                 Registration N° </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1"> {{ $etudiant->matricule }}</div>
+                                                                        <div class="form-value ps-4 pt-1">
+                                                                             {{ isset($etudiant) ? $etudiant->matricule : '' }}  
+                                                                            </div>
                                                                     </div>
                                                                 </section>
                                                                 <section
@@ -759,7 +724,9 @@
                                                                         </div>
                                                                         <div
                                                                             class="form-value ps-4 pt-1 text-uppercase">
-                                                                             {{ $etudiant->date_naissance }}</div>
+                                                                             {{-- {{ $etudiant->date_naissance }} --}}
+                                                                             {{ isset($etudiant) ? $etudiant->date_naissance : '' }}  
+                                                                            </div>
                                                                     </div>
                                                                     &nbsp;
                                                                     <div class="d-flex form-item ms-5 ps-5">
@@ -798,7 +765,9 @@
                                                                         </div>
                                                                         <div
                                                                             class="form-value ps-4 pt-1 text-uppercase">
-                                                                           {{$releve->niveau}}</div>
+                                                                           {{-- {{$releve->niveau}} --}}
+                                                                           {{ isset($releve) ? $releve->niveau : '' }}  
+                                                                        </div>
                                                                     </div>
 
                                                                     <div class="d-flex form-item ms-5 ps-5">
@@ -808,7 +777,10 @@
                                                                             <span class="english_subtitle"> Discipline
                                                                             </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">{{$releve->filiere}}</div>
+                                                                        <div class="form-value ps-4 pt-1">
+                                                                            {{-- {{$releve->filiere}} --}}
+                                                                            {{ isset($releve) ? $releve->filiere : '' }}  
+                                                                        </div>
                                                                     </div>
                                                                 </section>
 
@@ -832,7 +804,10 @@
                                                                             <span class="english_subtitle"> Academic
                                                                                 year </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">{{$releve->anneeAcademique}}<!--to change dans la table releve-->
+                                                                        <div class="form-value ps-4 pt-1">
+                                                                            {{-- {{$releve->anneeAcademique}} --}}
+                                                                            {{ isset($releve) ? $releve->anneeAcademique : '' }} 
+                                                                            <!--to change dans la table releve-->
                                                                         </div>
                                                                     </div>
                                                                 </section>
@@ -884,18 +859,27 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody >
+                                                                        @if (isset($notes))
                                                                         @foreach($notes as $note)
-                                                                        <tr >
-                                                                            <td>{{ $note->ue }}</td><!--code de l ue-->
-                                                                            <td>{{ $note->nom_ue }}/</td><!--nom de l ue-->
-                                                                            <td>{{ $note->credit }}</td><!--credit de l ue-->
-                                                                            <td>{{ $note->note }}</td><!--note de l ue-->
-                                                                            <td>{{ $note->mention }}</td><!--mensipon de l ue-->
-                                                                            <td>4</td><!--semestre de l ue A AJOUTER-->
-                                                                            <td>2021</td><!--anne que tu compose la matiere  de l ue A AJOUTER-->
-                                                                            <td>{{ $note->decision }}</td><!--decision de l ue-->
-                                                                        </tr>
+                                                                            <tr>
+                                                                                <td>{{ $note->ue }}</td>
+                                                                                <td>{{ $note->nom_ue }}</td>
+                                                                                <td>{{ $note->credit }}</td>
+                                                                                <td>{{ $note->note }}</td>
+                                                                                <td>{{ $note->mention }}</td>
+                                                                                <td>4</td><!--semestre de l ue A AJOUTER-->
+                                                                                <td>2021</td><!--anne que tu compose la matiere  de l ue A AJOUTER-->
+                                                                                <td>{{ $note->decision }}</td>
+                                                                            </tr>
                                                                         @endforeach
+                                                                    @else
+                                                                        <tr>
+                                                                            <td colspan="8">Aucune note trouvée pour cet étudiant</td>
+                                                                        </tr>
+                                                                    @endif
+                                                                    
+                                                                        
+                                                                       
                                                                     </tbody>
                                                                 </table>
                                                             </section>
@@ -904,7 +888,10 @@
                                                                 <span
                                                                     class="w-100 decision-data d-flex flex-column w-auto">
                                                                     <span> Crédit Capitalisés: 60/60 (100.00%) </span>
-                                                                    <span> Moyenne Générale Pondérée (MGP): {{$releve->mgp}}/4<!--to change-->
+                                                                    <span> Moyenne Générale Pondérée (MGP): 
+                                                                        {{-- {{$releve->mgp}} --}}
+                                                                        {{ isset($releve) ? $releve->mgp : '' }} 
+                                                                        /4<!--to change-->
                                                                     </span>
                                                                     <span> Decision: <b> ADMIS </b> </span><!--to change-->
                                                                 </span>
@@ -1039,7 +1026,40 @@
 
 
 
-
+                                                            {{-- @if(isset($etudiant))
+                                                            <h3>Récapitulatif des notes de l'étudiant {{ $etudiant->nom }} {{ $etudiant->prenom }} (matricule: {{ $etudiant->matricule }})</h3>
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Code UE</th>
+                                                                        <th>Nom UE</th>
+                                                                        <th>Crédits</th>
+                                                                        <th>Note</th>
+                                                                        <th>Mention</th>
+                                                                        <th>Semestre</th>
+                                                                        <th>Année</th>
+                                                                        <th>Décision</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @foreach($notes as $note)
+                                                                        <tr>
+                                                                            <td>{{ $note->ue }}</td>
+                                                                            <td>{{ $note->nom_ue }}</td>
+                                                                            <td>{{ $note->credit }}</td>
+                                                                            <td>{{ $note->note }}</td>
+                                                                            <td>{{ $note->mention }}</td>
+                                                                            <td>{{ $note->semestre }}</td>
+                                                                            <td>{{ $note->annee }}</td>
+                                                                            <td>{{ $note->decision }}</td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        @elseif(isset($message))
+                                                            <p>{{ $message }}</p>
+                                                        @endif --}}
+                                                                                                       
 
                                             </ul>
                                         </div>
