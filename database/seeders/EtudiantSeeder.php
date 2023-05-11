@@ -18,13 +18,15 @@ class EtudiantSeeder extends Seeder
                 'matricule'=>'20R2198',
                 'nom'=>'EZO\'O',
                 'prenom'=>'DAVID GAEL',
-                'date_naissance'=>'2001/08/04'
+                'date_naissance'=>'2001/08/04',
+                'lieu_naissance'=>'AKOM',
             ],
             [
                 'matricule'=>'19K2779',
                 'nom'=>'KOUGABA',
                 'prenom'=>'MARLIN BLERIAUX',
-                'date_naissance'=>'1997/02/14'
+                'date_naissance'=>'1997/02/14',
+                'lieu_naissance'=>'DOUALA',
 
             ],
            

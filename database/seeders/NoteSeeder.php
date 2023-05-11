@@ -241,7 +241,8 @@ class NoteSeeder extends Seeder
                 'ue'=>Ue::where(['id_ue'=>'ICT102'])->firstOrFail()->id_ue,
                 'note'=>60.00,
                 'decision'=>'CA',
-                'mention'=>'B-'
+                'mention'=>'B-',
+                'semestre'=>'1'
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -312,7 +313,8 @@ class NoteSeeder extends Seeder
                 'ue'=>Ue::where(['id_ue'=>'ICT111'])->firstOrFail()->id_ue,
                 'note'=>62.63,
                 'decision'=>'CA',
-                'mention'=>'B-'
+                'mention'=>'B-',
+                'semestre'=>'1'
              ],
             ];
             $note4=[
