@@ -39,6 +39,7 @@
             outline: none;
             border-color: #5c5cff;
         }
+        
     </style>
 </head>
 
@@ -111,13 +112,13 @@
 
             <li>
                 <a href="{{ route('view_etudiant') }}"><i data-feather="layers"
-                        class="align-self-center menu-icon"></i><span>Etudiant</span><span
+                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
                         class="badge badge-soft-success menu-arrow">Exemple</span></a>
             </li>
 
             <li>
                 <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Pages</span><span class="menu-arrow"><i
+                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
@@ -324,7 +325,7 @@
                                     <select class="form-select" id="select">
                                         <option value="" style="color: gray;" disabled selected>Matricule
                                         </option>
-                                        <option value="">{{ $etudiant->matricule }}</option>
+                                        {{-- <option value="">{{ $etudiant->matricule }}</option> --}}
                                         <option value="20V2512">20V2512</option>
                                         <option value="20V2412">20V2412</option>
                                         <option value="19K2779">19K2779</option>
@@ -399,87 +400,53 @@
                                                         <th>Anne Scolaire</th>
                                                         <th>Decision</th>
                                                         <th>MGP</th>
+                                                        <th>Check</th>
                                                         
                                                     </tr>
                                                 </thead>
 
 
                                                 <tbody>
-                                                    <tr>
-                                                        <td>kemgne defo</td>
-                                                        <td>Floriane Ingrid</td>
-                                                        <td>20V2512</td>
-                                                        <td>Licence 3</td>
-                                                        <td>ICT4D</td>
-                                                        <td>2022/2023</td>
-                                                        <td>Admis</td>
-                                                        <td>3.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Garrett Winters</td>
-                                                        <td>Accountant</td>
-                                                        <td>Tokyo</td>
-                                                        <td>63</td>
-                                                        <td>2011/07/25</td>
-                                                        <td>$170,750</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Ashton Cox</td>
-                                                        <td>Junior Technical Author</td>
-                                                        <td>San Francisco</td>
-                                                        <td>66</td>
-                                                        <td>2009/01/12</td>
-                                                        <td>$86,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cedric Kelly</td>
-                                                        <td>Senior Javascript Developer</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>22</td>
-                                                        <td>2012/03/29</td>
-                                                        <td>$433,060</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Airi Satou</td>
-                                                        <td>Accountant</td>
-                                                        <td>Tokyo</td>
-                                                        <td>33</td>
-                                                        <td>2008/11/28</td>
-                                                        <td>$162,700</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Brielle Williamson</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>New York</td>
-                                                        <td>61</td>
-                                                        <td>2012/12/02</td>
-                                                        <td>$372,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Herrod Chandler</td>
-                                                        <td>Sales Assistant</td>
-                                                        <td>San Francisco</td>
-                                                        <td>59</td>
-                                                        <td>2012/08/06</td>
-                                                        <td>$137,500</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Rhona Davidson</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>Tokyo</td>
-                                                        <td>55</td>
-                                                        <td>2010/10/14</td>
-                                                        <td>$327,900</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Colleen Hurst</td>
-                                                        <td>Javascript Developer</td>
-                                                        <td>San Francisco</td>
-                                                        <td>39</td>
-                                                        <td>2009/09/15</td>
-                                                        <td>$205,500</td>
-                                                    </tr>
+                                                        @foreach($etudiants as $etudiant)
+                                                        @foreach($releves as $releve)
+                                                        @if($releve->etudiant === $etudiant->matricule)
+                                                        
+                                                                <tr>
+                                                                <td>{{ $etudiant->nom }}</td>
+                                                                <td>{{ $etudiant->prenom }}</td>
+                                                                <td>{{ $etudiant->matricule }}</td>
+                                                                <td>{{ $releve->niveau }}</td>
+                                                                <td>{{ $releve->filiere }}</td><!--filiere-->
+                                                                <td>{{ $releve->anneeAcademique }}</td>
+                                                                <td>{{ $releve->decision }}</td>
+                                                                <td>{{ $releve->mgp }}</td>
+                                                                 
+                                                                    <td>
+                                                                        <form method="POST" action="{{ route('show') }}">
+                                                                            @csrf
+                                                                            <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}">
+                                                                            <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
+                                                                        </form>
 
+
+                                                                        {{-- <form method="POST" action="{{ route('details.show', $releve->id_releve) }}">
+                                                                            @csrf
+                                                                            <input type="hidden" name="_method" value="POST">
+                                                                            <button type="submit">Voir les détails</button>
+                                                                        </form> --}}
+                                                                        
+
+                                                                        {{-- <a href="{{ route('details.show', $releve->id_releve) }}">Voir les détails</a> --}}
+
+                                                                        {{-- <a href="{{ route('releve') }}">Afficher le relevé</a> --}}
+                                                                    </td>
+
+                                                                </tr>
+                                                            
+                                                        @endif
+                                                        @endforeach
+                                                    @endforeach
+                                                  
                                                 </tbody>
                                             </table>
 

@@ -22,6 +22,7 @@ class UserController extends Controller
         $users = User::all();
         return response()->json($users);
     }
+ 
 
     public function endpoint(Request $request) {
         $image = $request->input('file');
