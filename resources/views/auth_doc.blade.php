@@ -94,12 +94,12 @@
 
                 <li>
                     <a href=" {{route('view_etudiant')}}"><i data-feather="layers"
-                            class="align-self-center menu-icon"></i><span >Etudiant</span><span
+                            class="align-self-center menu-icon"></i><span >List Etudiant</span><span
                             class="badge badge-soft-success menu-arrow">Exemple</span></a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Repord Card</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
                      

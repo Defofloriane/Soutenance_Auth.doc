@@ -40,3 +40,6 @@ Route::get('/details', [ReleveController::class,'reveleEtudiant'])->name('detail
 Route::get('/view_etudiant', [ReleveController::class,'view_etudiant'])->name('view_etudiant');
 Route::post('/search', [ReleveController::class,'search'])->name('search');
 Route::get('/hachage', [UserController::class, 'hachage']);
+Route::post('/show', [ReleveController::class, 'show'])->name('show');
+// Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
+

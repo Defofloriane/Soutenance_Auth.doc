@@ -69,4 +69,28 @@ class ReleveController extends Controller
       return view('details', ['etudiant' => $etudiant, 'notes' => $notes, 'releve' => $releve]);
      
    }
+   public function afficher()
+   {
+      //  $releve = Releve::find($id);
+      return view('details');
+   }
+   public function show(Request $request)
+   {
+   //  dd($id);
+    // Récupérez les données de la base de données en fonction de l'ID
+   //  $details = Releve::find($id);
+   $id_releve = request('id_releve');
+    $releve = Releve::where('id_releve', $id_releve)->firstOrFail();
+    $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
+    $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+    ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+    ->where('notes.etudiant', '=', $releve->etudiant)
+    ->where('niveaux.nom_niveau','=',$releve->niveau)
+    ->select('notes.*', 'ues.nom_ue','ues.credit')
+    ->distinct()
+    ->get();
+   //  return $etudiant;
+    // Passez les données à la vue de détails
+    return view("details",compact('releve','etudiant','notes'));
+   }
 }
