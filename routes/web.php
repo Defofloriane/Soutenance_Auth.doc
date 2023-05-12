@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\home;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReleveController;
+use App\Http\Controllers\AttestationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,5 +48,6 @@ Route::delete('/admin_delete/{id}', [home::class,'admin_delete'])->name('admin_d
 Route::post('/search', [ReleveController::class,'search'])->name('search');
 Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');
+Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 
