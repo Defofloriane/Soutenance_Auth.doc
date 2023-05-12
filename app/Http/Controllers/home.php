@@ -41,6 +41,49 @@ class home extends Controller
     {
         return view('signup');
     }
+    public function view_admin(){
+        $admins = User::all();
+        return View('view_admin',compact('admins'));
+     }
+     public function admin_update(Request $request, $id)
+     {
+         // Validation des données du formulaire
+         $validatedData = $request->validate([
+             'name' => 'required',
+             'email' => 'required|email|unique:users,email,'.$id,
+             // Ajouter les autres champs de saisie ici
+         ]);
+     
+         // Récupération de l'administrateur à modifier
+         $admin = User::findOrFail($id);
+     
+         // Mise à jour des données de l'administrateur
+         $admin->name = $validatedData['name'];
+         $admin->email = $validatedData['email'];
+         // Modifier les autres champs de saisie ici
+     
+         // Sauvegarde des modifications
+         $admin->save();
+     
+         // Ajout du message de succès à la session
+         Session::flash('success', 'Admin updated successfully');
+     
+         // Redirection vers la page d'administration des utilisateurs
+         return redirect()->route('view_admin');
+     }
+     
+     public function admin_delete($id)
+     {
+         // Récupération de l'administrateur à supprimer
+         $admin = User::findOrFail($id);
+     
+         // Suppression de l'administrateur de la base de données
+         $admin->delete();
+     
+         // Redirection vers la page d'administration des utilisateurs
+          return redirect()->route('view_admin')->with('danger', 'Admin deleted successfully');
+     }
+
     public function customRegistration(Request $request)
     {  
         $request->validate([

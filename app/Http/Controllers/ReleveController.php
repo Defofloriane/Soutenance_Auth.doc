@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use App\Models\Note;
 use App\Models\Releve;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class ReleveController extends Controller
     return View('details');
 //    return response()->json($notes);
    }
+  
    public function view_etudiant(){
     $data=Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule;
     $etudiants=Etudiant::all();

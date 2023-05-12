@@ -84,6 +84,8 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
                                     class="ti-control-record"></i>Add Admin</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
+                                        class="ti-control-record"></i>List Admin</a></li>
                        
                     </ul>
                 </li>
@@ -735,7 +737,7 @@
                                                                             </span>
                                                                             <span class="english_subtitle"> At </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">DOUALA</div>
+                                                                        <div class="form-value ps-4 pt-1">     {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</div>
                                                                     </div>
                                                                 </section>
                                                                 <section
@@ -867,7 +869,7 @@
                                                                                 <td>{{ $note->credit }}</td>
                                                                                 <td>{{ $note->note }}</td>
                                                                                 <td>{{ $note->mention }}</td>
-                                                                                <td>4</td><!--semestre de l ue A AJOUTER-->
+                                                                                <td>{{ $note->semestre }}</td><!--semestre de l ue A AJOUTER-->
                                                                                 <td>2021</td><!--anne que tu compose la matiere  de l ue A AJOUTER-->
                                                                                 <td>{{ $note->decision }}</td>
                                                                             </tr>

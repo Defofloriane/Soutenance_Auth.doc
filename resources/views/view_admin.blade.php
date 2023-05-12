@@ -41,6 +41,33 @@
         }
         
     </style>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    {{-- <script>
+        $(document).ready(function() {
+            // Masquer le formulaire par défaut
+            $('form#edit-admin').addClass('d-none');
+            
+            // Afficher le formulaire lorsqu'on clique sur le bouton "Update"
+            $('button.update-btn').click(function() {
+                $('form#edit-admin').removeClass('d-none');
+            });
+        });
+    </script> --}}
+    <!-- srcipt de suppression--->
+    <script>
+        document.querySelectorAll('[data-confirm]').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                var message = this.getAttribute('data-confirm');
+                if (confirm(message)) {
+                    var form = this.closest('form');
+                    form.submit();
+                }
+            });
+        });
+    </script>
+    
+    
 </head>
 
 <body class="dark-sidenav">
@@ -104,7 +131,6 @@
                                 class="ti-control-record"></i>Add Admin</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
                                     class="ti-control-record"></i>List Admin</a></li>
-
                 </ul>
             </li>
 
@@ -323,19 +349,7 @@
                     <div class="col-sm-12">
                         <div class="page-title-box">
                             <div class="row">
-                                <div class="col-auto align-self-center">
-                                    <select class="form-select" id="select">
-                                        <option value="" style="color: gray;" disabled selected>Matricule
-                                        </option>
-                                        {{-- <option value="">{{ $etudiant->matricule }}</option> --}}
-                                        <option value="20V2512">20V2512</option>
-                                        <option value="20V2412">20V2412</option>
-                                        <option value="19K2779">19K2779</option>
-                                    </select>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" id="add-matricule">
-                                        <i data-feather="plus" class="align-self-center icon-xs"></i>
-                                    </a>
-                                </div>
+                               
                             </div>
 
                             <script>
@@ -383,9 +397,9 @@
                                     <div class="card-body">
                                         <ul class="list-unstyled mb-0">
                                             <div class="card-header">
-                                                <h4 class="card-title">Student's global information</h4>
+                                                <h4 class="card-title">List Administrator</h4>
                                                 <p class="text-muted mb-0">
-                                                    some summary information of the students present in the database, your Last Name  ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
+                                                   The List of different administrators.You can change or Delete an administrator if you have the rigth.
                                                 </p>
                                             </div>
                                             <!--end card-header-->
@@ -394,64 +408,84 @@
                                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
                                                     <tr>
-                                                        <th> Last Name </th>
-                                                        <th>First Name</th>
-                                                        <th>Matricule</th>
-                                                        <th>Level</th>
-                                                        <th>Filiere</th>
-                                                        <th>Anne Scolaire</th>
-                                                        <th>Decision</th>
-                                                        <th>MGP</th>
-                                                        <th>Check</th>
+                                                        <th> Name</th>
+                                                        <th>Email</th>
+                                                        <th>Change</th>
+                                                        <th>Delete</th>
                                                         
                                                     </tr>
                                                 </thead>
 
 
                                                 <tbody>
-                                                        @foreach($etudiants as $etudiant)
-                                                        @foreach($releves as $releve)
-                                                        @if($releve->etudiant === $etudiant->matricule)
-                                                        
+                                                      
+                                                    @foreach($admins as $admin)
                                                                 <tr>
-                                                                <td>{{ $etudiant->nom }}</td>
-                                                                <td>{{ $etudiant->prenom }}</td>
-                                                                <td>{{ $etudiant->matricule }}</td>
-                                                                <td>{{ $releve->niveau }}</td>
-                                                                <td>{{ $releve->filiere }}</td><!--filiere-->
-                                                                <td>{{ $releve->anneeAcademique }}</td>
-                                                                <td>{{ $releve->decision }}</td>
-                                                                <td>{{ $releve->mgp }}</td>
-                                                                 
+                                                                <td>{{$admin->name}} </td>
+                                                                <td> {{$admin->email}}</td>
+                                                          
                                                                     <td>
-                                                                        <form method="POST" action="{{ route('show') }}">
+                                                                        <form >
                                                                             @csrf
-                                                                            <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}">
-                                                                            <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
+                                                                            {{-- <button class="edit-button btn-sm btn-soft-primary"  type="submit">Update</button> --}}
+                                                                            <button class="btn btn-sm btn-soft-primary edit-button" data-admin-id="{{ $admin->id }}">Update</button>
+
+
+                                                                            <!-- Champs du formulaire ici -->
+                                                                            {{-- <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}"> --}}
+
                                                                         </form>
 
 
-                                                                        {{-- <form method="POST" action="{{ route('details.show', $releve->id_releve) }}">
+                                                                    </td>
+                                                                                                            
+                                                                    <td>
+                                                                        <form method="POST" action="{{ route('admin_delete', $admin->id) }}">
                                                                             @csrf
-                                                                            <input type="hidden" name="_method" value="POST">
-                                                                            <button type="submit">Voir les détails</button>
-                                                                        </form> --}}
+                                                                            @method('DELETE')
+                                                                            <button class="btn btn-sm btn-soft-danger" type="submit" data-confirm="Are you sure you want to delete this admin?">Delete</button>
+                                                                        </form>
                                                                         
 
-                                                                        {{-- <a href="{{ route('details.show', $releve->id_releve) }}">Voir les détails</a> --}}
 
-                                                                        {{-- <a href="{{ route('releve') }}">Afficher le relevé</a> --}}
                                                                     </td>
 
                                                                 </tr>
-                                                            
-                                                        @endif
-                                                        @endforeach
-                                                    @endforeach
+                                                                @endforeach
                                                   
                                                 </tbody>
                                             </table>
-
+                                            {{-- <form id="edit-form" method="POST" action="{{ route('admin_update', $admin->id) }}" class="d-none"> --}}
+                                                @foreach ($admins as $admin)
+                                                <form id="edit-form-{{ $admin->id }}" method="POST" action="{{ route('admin_update', $admin->id) }}" class="d-none">
+                                            
+                                                    @csrf
+                                                    @method('PUT')
+                                            
+                                                    <div class="form-group">
+                                                        <label for="name">Name:</label>
+                                                        <input type="text" class="form-control" id="name" name="name" value="{{ $admin->name }}">
+                                                    </div>
+                                            
+                                                    <div class="form-group">
+                                                        <label for="email">Email:</label>
+                                                        <input type="email" class="form-control" id="email" name="email" value="{{ $admin->email }}">
+                                                    </div>
+                                            
+                                                    <button class="btn btn-sm btn-soft-primary" data-admin-id="{{ $admin->id }}">Update</button>
+                                            
+                                                </form>
+                                            @endforeach
+                                            
+                                            
+                                            
+                                            @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+                                            
+                                            
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -486,7 +520,24 @@
     <!-- end page-wrapper -->
 
 
-
+    
+    <script>
+                                                const editButtons = document.querySelectorAll('.edit-button');
+                                            
+                                                editButtons.forEach(button => {
+                                                    button.addEventListener('click', function(event) {
+                                                        event.preventDefault();
+                                                        const adminId = this.getAttribute('data-admin-id');
+                                                        const editForm = document.querySelector(`#edit-form-${adminId}`);
+                                                        const formAction = editForm.getAttribute('action');
+                                                        const newFormAction = formAction.replace(`${adminId}`, adminId);
+                                                        editForm.setAttribute('action', newFormAction);
+                                                        editForm.classList.remove('d-none');
+                                                    });
+                                                });
+                                            </script>
+   
+      
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>

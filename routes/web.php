@@ -38,6 +38,11 @@ Route::post('/upload', [home::class,'upload'])->name('upload');
 // Route::get('/details', [home::class,'details'])->name('details');
 Route::get('/details', [ReleveController::class,'reveleEtudiant'])->name('details');
 Route::get('/view_etudiant', [ReleveController::class,'view_etudiant'])->name('view_etudiant');
+Route::get('/view_admin', [home::class,'view_admin'])->name('view_admin');
+Route::put('/admin/{id}', [home::class, 'admin_update'])->name('admin_update');
+Route::delete('/admin_delete/{id}', [home::class,'admin_delete'])->name('admin_delete');
+
+
 Route::post('/search', [ReleveController::class,'search'])->name('search');
 Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');

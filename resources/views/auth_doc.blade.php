@@ -84,6 +84,8 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
                                     class="ti-control-record"></i>Add Admin</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
+                                        class="ti-control-record"></i>List Admin</a></li>
                        
                     </ul>
                 </li>
