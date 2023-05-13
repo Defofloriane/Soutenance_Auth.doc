@@ -1206,6 +1206,30 @@
 
                                                                
                                                             </section>
+                                                            <br>
+                                                            <section
+                                                            class="w-100 d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex flex-column">
+                                                                <span></span>
+                                                                <span class="english_subtitle">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    <span style="text-decoration: underline;"></span> </span> 
+                                                            </div>
+                                                            <div class="form-value ps-4 pt-1">
+                                                            </div>
+                                                            <div class="d-flex form-item">
+                                                                <div class="d-flex flex-column">
+                                                                    <span class="english_subtitle">
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a/FS.Imprimé le 06/01/2023</span>
+                                                                       <span class="english_subtitle"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight GICA</span>
+                                                                       <span class="english_subtitle"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUNGO</span>
+                                                                     
+                                                                </div>
+                                                               
+                                                            </div> 
+                                                           
+                                                        </section>
                                             </ul>
                                         </div>
                                         <!--end card-body-->
