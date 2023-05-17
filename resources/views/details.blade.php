@@ -34,10 +34,9 @@
                 <span>
                     <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                 </span>
-                <span>
-                    <img src="assets/images/logo.png" alt="logo-large" class="logo-lg logo-light">
-                    <img src="assets/images/logo-dark.png" alt="logo-large" class="logo-lg logo-dark">
-                </span>
+            
+                    <h4 class="logo-lg logo-light">Auth.doc</h4>
+             
             </a>
         </div>
         <!--end logo-->
@@ -61,15 +60,12 @@
                     <ul class="nav-second-level" aria-expanded="false">
                       
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
                                     class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="apps-project-overview.html">Overview</a></li>
-                                <li><a href="apps-project-projects.html">Projects</a></li>
-                                <li><a href="apps-project-board.html">Board</a></li>
-                                <li><a href="apps-project-teams.html">Teams</a></li>
-                                <li><a href="apps-project-files.html">Files</a></li>
-                                <li><a href="apps-new-project.html">New Project</a></li>
+                                <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
+                                {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
+    
                             </ul>
                         </li>
                        
@@ -95,7 +91,7 @@
 
 
                 <li>
-                    <a href="{{route('view_etudiant')}}"><i data-feather="layers"
+                    <a href=" {{route('view_etudiant')}}"><i data-feather="layers"
                             class="align-self-center menu-icon"></i><span >List Etudiant</span><span
                             class="badge badge-soft-success menu-arrow">Exemple</span></a>
                 </li>
@@ -1091,8 +1087,8 @@
         </div><!-- container -->
 
         <footer class="footer text-center text-sm-left">
-            {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span> --}}
+            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
         </footer>
         <!--end footer-->
     </div>

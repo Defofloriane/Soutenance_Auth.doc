@@ -19,6 +19,10 @@ class Ue extends Model
         'nom_ue',
         'credit',
     ];
+    protected $primaryKey = 'id_ue'; // Nom de la colonne clé primaire
+    protected $keyType = 'string';
+    // protected $primaryKey = 'id_ue';
+
 
     protected $table="ues";
 
