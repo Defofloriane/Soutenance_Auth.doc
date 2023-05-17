@@ -310,6 +310,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
+                                @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                    <a href="{{ route('details_releve', ['id' => isset($releve) ? $releve->id_releve : '', 'etudiant' => isset($etudiant) ? $etudiant : '', 'notes' => isset($notes) ? $notes : '']) }}">Voir le relevé</a>
+                                </div>
+                            @endif
                                 <div class="card-header">
                                     <h4 class="card-title">Select ton niveau par le code de ce niveau</h4>
                                     <p class="text-muted mb-0">Selectionner ton niveu et Votre faculte

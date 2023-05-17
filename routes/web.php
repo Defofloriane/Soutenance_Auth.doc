@@ -47,7 +47,6 @@ Route::delete('/admin_delete/{id}', [home::class,'admin_delete'])->name('admin_d
 
 
 Route::post('/search', [ReleveController::class,'search'])->name('search');
-Route::get('/add_releves', [ReleveController::class,'add_releve'])->name('add_releves');
 
 Route::post('/add_releve', [ReleveController::class,'add_releve'])->name('add_releve');
 Route::get('/view_add_releve', [ReleveController::class,'view_add_releve'])->name('view_add_releve');

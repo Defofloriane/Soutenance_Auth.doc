@@ -46,9 +46,10 @@ class ReleveController extends Controller
       
       //recupere ldes informations sur le blade
       $niveau = $request->session()->get('niveau');
-      if ($niveau == '1') {
+      dd(  $niveau );
+      if ($niveau == 'L1') {
          $id_niv = "L1";
-      }elseif($niveau == '2'){
+      }elseif($niveau == 'L2'){
          $id_niv = "L1";
       }else{
          $id_niv = "L3";
@@ -79,8 +80,8 @@ echo "Somme des chiffres de la date de naissance : " . $sum;
       // Créer une instance d'Etudiant avec les données
       $etudiant = new Etudiant();
       $etudiant->matricule = $matricule;
-      $etudiant->nom = $lastName;
-      $etudiant->prenom = $firstName;
+      $etudiant->nom = $firstName;
+      $etudiant->prenom = $lastName;
       $etudiant->date_naissance = $formattedBirthDay;
       $etudiant->lieu_naissance = $placeBirth;
       // Enregistrer l'étudiant dans la base de données
@@ -235,10 +236,30 @@ echo "Somme des chiffres de la date de naissance : " . $sum;
 
       // Message de succès
        $request->session()->put('success', 'Le relevé a été ajouté avec succès.');
-
       
-      // Redirection vers la page de visualisation du relevé
-      // return redirect()->route('details', ['id' => $releve->id_releve,'etudiant' => $etudiant, 'notes' => $notes, 'releve' => $releve]);
+     $releve = Releve::where('etudiant',$matricule)
+         ->first();
+      // if (!$releve) {
+      //    $message = "Aucun relevé trouvé pour l'étudiant $etudiant->matricule";
+      //    return view('view_etudiant', ['message' => $message], compact('releves', 'etudiants', 'etudiant'));
+      // }
+      $etudiant=Etudiant::where(['matricule'=>$matricule])->get();
+      dd( $etudiant);
+
+      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+         ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+         ->where('notes.etudiant', '=', $matricule)
+         ->where('niveaux.nom_niveau', '=', $niveau)
+         ->select('notes.*', 'ues.nom_ue', 'ues.credit')
+         ->distinct()
+         ->get();
+         dd( $notes);
+
+      //  $notes = Note::where('etudiant', $releve->etudiant)->get();
+      return view('details',compact('releves', 'etudiant', 'notes'));
+    
+      
+     
 
       
 
@@ -326,4 +347,8 @@ echo "Somme des chiffres de la date de naissance : " . $sum;
       // Passez les données à la vue de détails
       return view("details", compact('releve', 'etudiant', 'notes'));
    }
+  
+
 }
+
+
