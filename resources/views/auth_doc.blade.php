@@ -61,15 +61,12 @@
                     <ul class="nav-second-level" aria-expanded="false">
                       
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
                                     class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="apps-project-overview.html">Overview</a></li>
-                                <li><a href="apps-project-projects.html">Projects</a></li>
-                                <li><a href="apps-project-board.html">Board</a></li>
-                                <li><a href="apps-project-teams.html">Teams</a></li>
-                                <li><a href="apps-project-files.html">Files</a></li>
-                                <li><a href="apps-new-project.html">New Project</a></li>
+                                <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
+                                {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
+    
                             </ul>
                         </li>
                        
@@ -84,6 +81,8 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
                                     class="ti-control-record"></i>Add Admin</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
+                                        class="ti-control-record"></i>List Admin</a></li>
                        
                     </ul>
                 </li>
@@ -105,6 +104,13 @@
                      
                     </ul>
                 </li>  
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                     
+                    </ul>
+                </li>
             </ul>
 
             <div class="update-msg text-center">

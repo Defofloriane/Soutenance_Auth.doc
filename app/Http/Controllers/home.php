@@ -20,6 +20,15 @@ use Exception;
 use Intervention\Image\ImageManagerStatic as Image;
 use PhpParser\Node\Stmt\Return_;
 use Aws\Textract\TextractClient;
+use App\Models\Departement;
+use App\Models\Etudiant;
+use App\Models\Faculte;
+use App\Models\Hashe;
+use App\Models\InfoReleve;
+use App\Models\Note;
+use App\Models\Releve;
+use App\Models\Ue;
+use Illuminate\Support\Facades\Hash;
 
 
 class home extends Controller
@@ -41,6 +50,49 @@ class home extends Controller
     {
         return view('signup');
     }
+    public function view_admin(){
+        $admins = User::all();
+        return View('view_admin',compact('admins'));
+     }
+     public function admin_update(Request $request, $id)
+     {
+         // Validation des données du formulaire
+         $validatedData = $request->validate([
+             'name' => 'required',
+             'email' => 'required|email|unique:users,email,'.$id,
+             // Ajouter les autres champs de saisie ici
+         ]);
+     
+         // Récupération de l'administrateur à modifier
+         $admin = User::findOrFail($id);
+     
+         // Mise à jour des données de l'administrateur
+         $admin->name = $validatedData['name'];
+         $admin->email = $validatedData['email'];
+         // Modifier les autres champs de saisie ici
+     
+         // Sauvegarde des modifications
+         $admin->save();
+     
+         // Ajout du message de succès à la session
+         Session::flash('success', 'Admin updated successfully');
+     
+         // Redirection vers la page d'administration des utilisateurs
+         return redirect()->route('view_admin');
+     }
+     
+     public function admin_delete($id)
+     {
+         // Récupération de l'administrateur à supprimer
+         $admin = User::findOrFail($id);
+     
+         // Suppression de l'administrateur de la base de données
+         $admin->delete();
+     
+         // Redirection vers la page d'administration des utilisateurs
+          return redirect()->route('view_admin')->with('danger', 'Admin deleted successfully');
+     }
+
     public function customRegistration(Request $request)
     {  
         $request->validate([
@@ -221,7 +273,8 @@ return $file;
           echo $e->getMessage();
         }
     }
-    public function upload(Request $request){
+//pour uploder les fichiers
+public function upload(Request $request){
   
 try {
     $client = new TextractClient([
@@ -264,95 +317,123 @@ try {
         }
     }
   
-$tab_joints = implode(" ", $tab);
-return $tab_joints;
+$text = implode(" ", $tab);
+return $text;
 
-//recuperation des donnees du releve
-// La chaîne de caractères contenant le texte du relevé de notes
-// $texte =   $tab_joints; // Remplacez ceci par votre propre texte
+// recuperation des donnees dans la dans le text avec l'utilisation des expression regulieres
+preg_match('/Matricule\s*:\s*(\w+)/', $text, $matricule);
+if(empty($matricule)){
+  preg_match('/Matricule:\s*(\w+)/', $text, $matricule);
+  if(empty($matricule)){
+      preg_match('/Matricule\s*:(\w+)/', $text, $matricule);
+      if(empty($matricule)){
+          preg_match('/Matricule\s*(\w+)/', $text, $matricule);
+      }
+  }
+}
+preg_match('/Décision\s*(\w+)\s*NC/i', $text, $decision);
+if(empty($decision)){
+  preg_match('/Décision\s*:\s*(\w+)\s*NC/i', $text, $decision);
+  if(empty($decision)){
+      preg_match('/Décision:\s*(\w+)\s*NC/i', $text, $decision);
+      if(empty($decision)){
+          preg_match('/Décision\s*:(\w+)\s*NC/i', $text, $decision);
+           if(empty($decision)){
+          preg_match('/Décision\s*:\s*(\w+)\s*CANT/i', $text, $decision);
+             if(empty($decision)){
+                preg_match('/Décision\s*(\w+)\s*CANT/i', $text, $decision);
+        }
+      }
+      }
+  }
+}
+preg_match('/Filière\s*:\s*([^\n]+)\s*Level/i', $text, $filiere);
+if(empty($filiere)){
+  preg_match('/Filière:\s*([^\n]+)\s*Level/i', $text, $filiere);
+  if(empty($filiere)){
+      preg_match('/Filière\s*:([^\n]+)\s*Level/i', $text, $filiere);
+      if(empty($filiere)){
+          preg_match('/Filière\s*([^\n]+)\s*Level/i', $text, $filiere);
+      }
+  }
 
-// // Utilisez des expressions régulières pour extraire les informations nécessaires
-// // Extraire le nom et le prénom
-// if (preg_match('/Noms et Prénoms : ([^\n]+)/', $texte, $matches)) {
-//     $nom_prenom = $matches[1];
-// }
+}
+preg_match('/\(MGP\):\s*([\d.,]+)/', $text, $mgp);//\(MGP\):\s*([\d.,/]+)
+if(empty($mgp)){
+  preg_match('/\(MGP\)\s*:\s*([\d.,]+)/', $text, $mgp);
+  if(empty($mgp)){
+      preg_match('/\(MGP\)\s*:([\d.,]+)/', $text, $mgp);
+      if(empty($mgp)){
+          preg_match('/\(MGP\)\s*([\d.,]+)/', $text, $mgp);
+        }
+    }
+}
+preg_match('/Année Académique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
+if(empty($annee)){
+  preg_match('/Année Academique\s*:\s*([^\n]+)\s*Academic/', $text, $annee);
+  if(empty($annee)){
+      preg_match('/Année Académique:\s*([^\n]+)\s*Academic/', $text, $annee);
+      if(empty($annee)){
+          preg_match('/Année Académique\s*:([^\n]+)\s*Academic/', $text, $annee);
+        }
+    }
+}
+preg_match('/N°\s*:\s*([^\n]+)\s*Noms/', $text, $numero);
+if(empty($numero)){
+  preg_match('/N°:([^\n]+)\s*Surname/i', $text, $numero);
+  if(empty($numero)){
+      preg_match('/N°\s*:\s*([^\n]+)\s*Surname/', $text, $numero);
+      if(empty($numero)){
+          preg_match('/N°:\s*([^\n]+)\s*/', $text, $numero);
+          if(empty($numero)){
+              preg_match('/N°\s*:([^\n]+)\s*/', $text, $numero);
+              if(empty($numero)){
+                  preg_match('/N°\s*([^\n]+)\s*/', $text, $numero);
+                }
+            }
+        }
+    }
+}
+preg_match('/Niveau\s*:\s*([^\n]+)\s*Filière/', $text, $niveau);
+if(empty($niveau)){
+  preg_match('/Niveau:\s*([^\n]+)\s*Filière/', $text, $niveau);
+  if(empty($niveau)){
+      preg_match('/Niveau\s*:([^\n]+)\s*Filière/', $text, $niveau);
+  }
+}
+//hachage des information avec l'algorithme HMAC SHA256
+$secretKey = 'auth.document';
+           $data=([
+           "matricule"=> $matricule[1],
+           "decision"=> $decision[1],
+           "filiere"=> $filiere[1],
+           "niveau"=> $niveau[1],
+           "mgp"=> $mgp[1],
+           "annee"=> $annee[1],
+           "numero"=> $numero[1],
+           ]);
+$datas= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim($mgp[1]).trim($annee[1]);
+$hmac1 = hash_hmac('sha256', $datas, $secretKey);
+$hmac2=Hashe::where(['hache'=>$hmac1])->first();
+if($hmac2){
+    $releve=Releve::where(['etudiant'=>$matricule[1]])->get();
+    $etudiant=Etudiant::where(['matricule'=>$matricule[1]])->get();
+    $data=Etudiant::where(['matricule'=>$matricule[1]])->firstOrFail()->matricule;
+     $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+                ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+                ->where('notes.etudiant', '=', $data)
+                ->where('niveaux.nom_niveau','=',$niveau[1])
+                ->select('notes.*', 'ues.nom_ue','ues.credit')
+                ->distinct()
+                ->get();
+    $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
+    $data=(['text'=>$text]);
+    return response()->json($DataSend);   
+}else{
+    return response()->json((['message'=>'no'])); 
+}  
 
-// // Extraire le matricule
-// if (preg_match('/Matricule : ([^\n]+)/', $texte, $matches)) {
-//     $matricule = $matches[1];
-// }
 
-// // Extraire le numéro de relevé
-// if (preg_match('/RELEVE DE NOTES\/TRANSCRIPT No:([^\n]+)/', $texte, $matches)) {
-//     $num_releve = $matches[1];
-// }
-// $pattern = '/No:(\d{5}\/\w{3}\/\w{2}\/\w{3}\/\w{3}\/\d{6})/';
-// preg_match($pattern, $text, $matches);
-
-// $numero_releve = $matches[1];
-// // Extraire la MGP
-// if (preg_match('/Moyenne Générale Pondérée \(MGP\): ([^\n]+)/', $texte, $matches)) {
-//     $mgp = $matches[1];
-// }
-
-// // Extraire la décision
-// if (preg_match('/Décision : ([^\n]+)/', $texte, $matches)) {
-//     $decision = $matches[1];
-// }
-
-// // Afficher les résultats
-// echo "Nom et prénom : " . $nom_prenom . "<br>";
-// echo "Matricule : " . $matricule . "<br>";
-// echo "Numéro du relevé : " . $num_releve . "<br>";
-// echo "MGP : " . $mgp . "<br>";
-// echo "Décision : " . $decision . "<br>";
-// // affichage
-// echo "Relevenumero unique".$num_releve ." du candidat".$nom_prenom." "."de matricule".$matricule."avec une mgp de".$mgp." et la decision". $decision.$numero_releve."</br>";
-
-// return $tab_joints;
-
-//     $json = json_encode($tab, JSON_UNESCAPED_UNICODE);
-// return response($json)->header('Content-Type', 'application/json; charset=UTF-8');
-//     // /DICTOINNAIRE begin 
-// // Charger le fichier JSON contenant le dictionnaire de mots
-// $dictionary = json_decode(file_get_contents('dictionary.json'), true);
-
-
-// $json = json_encode($dictionary, JSON_UNESCAPED_UNICODE);
-
-// return response($json)
-//     ->header('Content-Type', 'application/json; charset=UTF-8');
-
-// return $dictionary;
-// // Fonction pour suggérer une correction de mot
-// function suggestCorrection($word, $dictionary) {
-//   // Si le mot est dans le dictionnaire, retourner le mot tel quel
-//   if (array_key_exists($word, $dictionary)) {
-//     return $word;
-//   }
-  
-//   // Sinon, trouver tous les mots du dictionnaire qui sont similaires
-//   // au mot donné (par exemple, en utilisant l'algorithme de Levenshtein)
-//   $similarWords = [];
-//   foreach ($dictionary as $dictWord => $value) {
-//     if (levenshtein($word, $dictWord) <= 2) {
-//       $similarWords[] = $dictWord;
-//     }
-//   }
-  
-//   // Si des mots similaires ont été trouvés, retourner le premier de la liste
-//   if (!empty($similarWords)) {
-//     return $similarWords[0];
-//   }
-  
-//   // Si aucun mot similaire n'a été trouvé, retourner le mot original
-//   return $word;
-// }
-
-// // Utiliser la fonction pour suggérer une correction pour un mot donné
-// $wordToCorrect = 'helo';
-// $correctedWord = suggestCorrection($wordToCorrect, $dictionary);
-// echo "Le mot correct est : " . $correctedWord;
 } catch (RequestException $e) {
   echo $e->getMessage();
 }

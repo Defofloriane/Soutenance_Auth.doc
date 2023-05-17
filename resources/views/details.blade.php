@@ -34,10 +34,9 @@
                 <span>
                     <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                 </span>
-                <span>
-                    <img src="assets/images/logo.png" alt="logo-large" class="logo-lg logo-light">
-                    <img src="assets/images/logo-dark.png" alt="logo-large" class="logo-lg logo-dark">
-                </span>
+            
+                    <h4 class="logo-lg logo-light">Auth.doc</h4>
+             
             </a>
         </div>
         <!--end logo-->
@@ -61,15 +60,12 @@
                     <ul class="nav-second-level" aria-expanded="false">
                       
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
                                     class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="apps-project-overview.html">Overview</a></li>
-                                <li><a href="apps-project-projects.html">Projects</a></li>
-                                <li><a href="apps-project-board.html">Board</a></li>
-                                <li><a href="apps-project-teams.html">Teams</a></li>
-                                <li><a href="apps-project-files.html">Files</a></li>
-                                <li><a href="apps-new-project.html">New Project</a></li>
+                                <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
+                                {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
+    
                             </ul>
                         </li>
                        
@@ -84,6 +80,8 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
                                     class="ti-control-record"></i>Add Admin</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
+                                        class="ti-control-record"></i>List Admin</a></li>
                        
                     </ul>
                 </li>
@@ -93,7 +91,7 @@
 
 
                 <li>
-                    <a href="{{route('view_etudiant')}}"><i data-feather="layers"
+                    <a href=" {{route('view_etudiant')}}"><i data-feather="layers"
                             class="align-self-center menu-icon"></i><span >List Etudiant</span><span
                             class="badge badge-soft-success menu-arrow">Exemple</span></a>
                 </li>
@@ -105,6 +103,13 @@
                      
                     </ul>
                 </li>  
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                     
+                    </ul>
+                </li>
             </ul>
 
             <div class="update-msg text-center">
@@ -694,7 +699,7 @@
 
                                                                         <div
                                                                             class="form-value ps-4 pt-1 text-uppercase">
-                                                                            {{ isset($etudiant) ? $etudiant->nom : '' }}    {{ isset($etudiant) ? $etudiant->prenom : '' }}
+                                                                            {{-- {{ isset($etudiant) ? $etudiant->nom : '' }}    {{ isset($etudiant) ? $etudiant->prenom : '' }} --}}
                                                                         </div>
 
                                                                     </div>
@@ -735,7 +740,7 @@
                                                                             </span>
                                                                             <span class="english_subtitle"> At </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">DOUALA</div>
+                                                                        <div class="form-value ps-4 pt-1">     {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</div>
                                                                     </div>
                                                                 </section>
                                                                 <section
@@ -867,7 +872,7 @@
                                                                                 <td>{{ $note->credit }}</td>
                                                                                 <td>{{ $note->note }}</td>
                                                                                 <td>{{ $note->mention }}</td>
-                                                                                <td>4</td><!--semestre de l ue A AJOUTER-->
+                                                                                <td>{{ $note->semestre }}</td><!--semestre de l ue A AJOUTER-->
                                                                                 <td>2021</td><!--anne que tu compose la matiere  de l ue A AJOUTER-->
                                                                                 <td>{{ $note->decision }}</td>
                                                                             </tr>
@@ -1021,7 +1026,61 @@
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
-
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                                                        <div class="content-recap w-100 mt-3 bloc">
+                                                                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                                                            <script type="text/javascript">
+                                                                                function generateBarCode() {
+                                                                                    var nric = $('hhhh').val();
+                                                                                    var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=150x150';
+                                                                                    $('#barcode').attr('src', url);
+                                                                                }
+                                                                            </script>
+                                                                          <?php
+                                                                          $type = 'png';
+                                                                          $data = file_get_contents('https://api.qrserver.com/v1/create-qr-code/?data=20U4660&amp;size=100x100');
+                                                                          $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                                                                          ?>
+                                                                           <?php echo '<div class="company-logo">
+                                                                            <img src="' .
+                                                            $base64 .
+                                                            '"  alt="base" />
+                                                                        </div>';
+                                                        ?>
+                                                                        </div>
+                                                                    </div>
                                                             </section>
 
 
@@ -1082,8 +1141,8 @@
         </div><!-- container -->
 
         <footer class="footer text-center text-sm-left">
-            {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span> --}}
+            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
         </footer>
         <!--end footer-->
     </div>
@@ -1093,7 +1152,7 @@
 
 
 
-
+   
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

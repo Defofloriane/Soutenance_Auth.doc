@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\home;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReleveController;
+use App\Http\Controllers\AttestationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +39,20 @@ Route::get('/ocr', [home::class,'ocr'])->name('ocr');
 Route::post('/upload', [home::class,'upload'])->name('upload');
 // Route::get('/details', [home::class,'details'])->name('details');
 Route::get('/details', [ReleveController::class,'reveleEtudiant'])->name('details');
+// Route::get('/details', [ReleveController::class,'add_releve'])->name('details');
 Route::get('/view_etudiant', [ReleveController::class,'view_etudiant'])->name('view_etudiant');
+Route::get('/view_admin', [home::class,'view_admin'])->name('view_admin');
+Route::put('/admin/{id}', [home::class, 'admin_update'])->name('admin_update');
+Route::delete('/admin_delete/{id}', [home::class,'admin_delete'])->name('admin_delete');
+
+
 Route::post('/search', [ReleveController::class,'search'])->name('search');
+
+Route::post('/add_releve', [ReleveController::class,'add_releve'])->name('add_releve');
+Route::get('/view_add_releve', [ReleveController::class,'view_add_releve'])->name('view_add_releve');
+Route::post('/get_ue_credit', [ReleveController::class,'get_ue_credit'])->name('get_ue_credit');
 Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');
+Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 
