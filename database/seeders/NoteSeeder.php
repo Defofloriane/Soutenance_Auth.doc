@@ -26,7 +26,8 @@ class NoteSeeder extends Seeder
                'note'=>50.50,
                'decision'=>'CA',
                'mention'=>'C',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                 'etudiant'=>$etudiant_id,
@@ -34,7 +35,8 @@ class NoteSeeder extends Seeder
                 'note'=>83.00,
                 'decision'=>'CA',
                 'mention'=>'A',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -42,7 +44,8 @@ class NoteSeeder extends Seeder
                 'note'=>77.75,
                 'decision'=>'CA',
                 'mention'=>'A-',
-                'semestre'=>'2'
+                'semestre'=>'2',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -50,7 +53,8 @@ class NoteSeeder extends Seeder
                 'note'=>69.00,
                 'decision'=>'CA',
                 'mention'=>'B',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -58,7 +62,8 @@ class NoteSeeder extends Seeder
                 'note'=>90.25,
                 'decision'=>'CA',
                 'mention'=>'A',
-                'semestre'=>'2'
+                'semestre'=>'2',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -66,7 +71,8 @@ class NoteSeeder extends Seeder
                 'note'=>81.00,
                 'decision'=>'CA',
                 'mention'=>'A',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -74,7 +80,8 @@ class NoteSeeder extends Seeder
                 'note'=>62.00,
                 'decision'=>'CA',
                 'mention'=>'B-',
-                'semestre'=>'2'
+                'semestre'=>'2',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -82,7 +89,8 @@ class NoteSeeder extends Seeder
                 'note'=>82.75,
                 'decision'=>'CA',
                 'mention'=>'A',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -90,7 +98,8 @@ class NoteSeeder extends Seeder
                 'note'=>78.00,
                 'decision'=>'CA',
                 'mention'=>'A-',
-                'semestre'=>'4'
+                'semestre'=>'4',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -98,7 +107,8 @@ class NoteSeeder extends Seeder
                 'note'=>75.00,
                 'decision'=>'CA',
                 'mention'=>'A-',
-                'semestre'=>'2'
+                'semestre'=>'2',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -106,7 +116,8 @@ class NoteSeeder extends Seeder
                 'note'=>55.75,
                 'decision'=>'CA',
                 'mention'=>'C+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id,
@@ -114,7 +125,8 @@ class NoteSeeder extends Seeder
                 'note'=>68.00,
                 'decision'=>'CA',
                 'mention'=>'B',
-                'semestre'=>'2'
+                'semestre'=>'2',
+                'annee'=>2022
              ],
             
            
@@ -127,7 +139,8 @@ class NoteSeeder extends Seeder
                'note'=>53.00,
                'decision'=>'CA',
                'mention'=>'C',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                 'etudiant'=>$etudiant_id2 ,
@@ -135,7 +148,8 @@ class NoteSeeder extends Seeder
                 'note'=>72.50,
                 'decision'=>'CA',
                 'mention'=>'B+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -143,7 +157,8 @@ class NoteSeeder extends Seeder
                 'note'=>72.50,
                 'decision'=>'CA',
                 'mention'=>'B+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -151,7 +166,8 @@ class NoteSeeder extends Seeder
                 'note'=>70.00,
                 'decision'=>'CA',
                 'mention'=>'B+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -159,7 +175,8 @@ class NoteSeeder extends Seeder
                 'note'=>51.00,
                 'decision'=>'CA',
                 'mention'=>'C',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -167,7 +184,8 @@ class NoteSeeder extends Seeder
                 'note'=>49.00,
                 'decision'=>'CANT',
                 'mention'=>'C-',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -175,7 +193,8 @@ class NoteSeeder extends Seeder
                 'note'=>39.75,
                 'decision'=>'CANT',
                 'mention'=>'D',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -183,7 +202,8 @@ class NoteSeeder extends Seeder
                 'note'=>51.50,
                 'decision'=>'CA',
                 'mention'=>'C',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -191,7 +211,8 @@ class NoteSeeder extends Seeder
                 'note'=>61.25,
                 'decision'=>'CA',
                 'mention'=>'B-',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -199,7 +220,8 @@ class NoteSeeder extends Seeder
                 'note'=>45.00,
                 'decision'=>'CANT',
                 'mention'=>'C-',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -207,7 +229,8 @@ class NoteSeeder extends Seeder
                 'note'=>64.00,
                 'decision'=>'CA',
                 'mention'=>'B-',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -215,7 +238,8 @@ class NoteSeeder extends Seeder
                 'note'=>54.75,
                 'decision'=>'CA',
                 'mention'=>'C',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],      
             ] ;   
             $note3=[
@@ -226,7 +250,8 @@ class NoteSeeder extends Seeder
                'note'=>62.00,
                'decision'=>'CA',
                'mention'=>'B-',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                 'etudiant'=>$etudiant_id2 ,
@@ -234,7 +259,8 @@ class NoteSeeder extends Seeder
                 'note'=>55.25,
                 'decision'=>'CA',
                 'mention'=>'C+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -242,7 +268,8 @@ class NoteSeeder extends Seeder
                 'note'=>60.00,
                 'decision'=>'CA',
                 'mention'=>'B-',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -250,7 +277,8 @@ class NoteSeeder extends Seeder
                 'note'=>35.00,
                 'decision'=>'CANT',
                 'mention'=>'D',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -258,7 +286,8 @@ class NoteSeeder extends Seeder
                 'note'=>51.50,
                 'decision'=>'CA',
                 'mention'=>'C',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -266,7 +295,8 @@ class NoteSeeder extends Seeder
                 'note'=>50.04,
                 'decision'=>'CA',
                 'mention'=>'C',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -274,7 +304,8 @@ class NoteSeeder extends Seeder
                 'note'=>42.50,
                 'decision'=>'CANT',
                 'mention'=>'D+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -282,7 +313,8 @@ class NoteSeeder extends Seeder
                 'note'=>44.63,
                 'decision'=>'CANT',
                 'mention'=>'D+',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -290,7 +322,8 @@ class NoteSeeder extends Seeder
                 'note'=>67.00,
                 'decision'=>'CA',
                 'mention'=>'B',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                'etudiant'=>$etudiant_id2 ,
@@ -298,7 +331,8 @@ class NoteSeeder extends Seeder
                'note'=>55.50,
                'decision'=>'CA',
                'mention'=>'C+',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -306,7 +340,8 @@ class NoteSeeder extends Seeder
                 'note'=>38.00,
                 'decision'=>'CANT',
                 'mention'=>'D',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
              [
                 'etudiant'=>$etudiant_id2 ,
@@ -314,7 +349,8 @@ class NoteSeeder extends Seeder
                 'note'=>62.63,
                 'decision'=>'CA',
                 'mention'=>'B-',
-                'semestre'=>'1'
+                'semestre'=>'1',
+                'annee'=>2022
              ],
             ];
             $note4=[
@@ -325,7 +361,8 @@ class NoteSeeder extends Seeder
                'note'=>38.00,
                'decision'=>'CANT',
                'mention'=>'D',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -333,7 +370,8 @@ class NoteSeeder extends Seeder
                'note'=>84.10,
                'decision'=>'CA',
                'mention'=>'A',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -341,7 +379,9 @@ class NoteSeeder extends Seeder
                'note'=>68.00,
                'decision'=>'CA',
                'mention'=>'B',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
+
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -349,7 +389,8 @@ class NoteSeeder extends Seeder
                'note'=>61.25,
                'decision'=>'CA',
                'mention'=>'B-',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -357,7 +398,8 @@ class NoteSeeder extends Seeder
                'note'=>62.70,
                'decision'=>'CA',
                'mention'=>'B-',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -365,7 +407,8 @@ class NoteSeeder extends Seeder
                'note'=>43.95,
                'decision'=>'CANT',
                'mention'=>'D+',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -373,7 +416,8 @@ class NoteSeeder extends Seeder
                'note'=>73.25,
                'decision'=>'CA',
                'mention'=>'B+',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -381,7 +425,8 @@ class NoteSeeder extends Seeder
                'note'=>72.50,
                'decision'=>'CA',
                'mention'=>'B+',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -389,7 +434,8 @@ class NoteSeeder extends Seeder
                'note'=>44.00,
                'decision'=>'CANT',
                'mention'=>'D+',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -397,7 +443,8 @@ class NoteSeeder extends Seeder
                'note'=>57.00,
                'decision'=>'CA',
                'mention'=>'C+',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -405,7 +452,8 @@ class NoteSeeder extends Seeder
                'note'=>76.26,
                'decision'=>'CA',
                'mention'=>'A-',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -413,7 +461,8 @@ class NoteSeeder extends Seeder
                'note'=>63.00,
                'decision'=>'CA',
                'mention'=>'B-',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
             [
                'etudiant'=>$etudiant_id2 ,
@@ -421,7 +470,8 @@ class NoteSeeder extends Seeder
                'note'=>75.75,
                'decision'=>'CA',
                'mention'=>'A-',
-               'semestre'=>'1'
+               'semestre'=>'1',
+               'annee'=>2022
             ],
          ];
             Note::insert($note);

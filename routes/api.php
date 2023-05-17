@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -20,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('api')->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/endpoint', [UserController::class, 'endpoint']);
+    Route::post('/decode', [ApiController::class, 'decode']);
 });

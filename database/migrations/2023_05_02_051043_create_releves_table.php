@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('decision');
             $table->string('filiere');//id_filere
             $table->string('niveau');//id_niveau
-            $table->double('mgp');
+            $table->float('mgp');
             $table->string('anneeAcademique');// id dans la table annee academeique
             $table->timestamps();
             // $table->foreign('niveau')->references('id_niveau')->on('niveaux')->onDelete('cascade');
