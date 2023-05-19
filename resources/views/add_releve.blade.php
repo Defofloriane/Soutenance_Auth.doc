@@ -346,7 +346,7 @@
                                                         <option value="MATHS L3">MATHS L3</option> --}}
                                                     </optgroup>   
                                                 </select> 
-                                            </div><!-- end col -->   
+                                            </div>   
                                        
                                         <div class="col-md-6">
                                             <label class="mb-3">Anne Academique</label>
