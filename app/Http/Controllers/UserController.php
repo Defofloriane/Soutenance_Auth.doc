@@ -253,21 +253,21 @@ if($hmac2==$hmac1){
 
 
 public function hachage(){
-     $etudiant='20R2198';
-     $niveau='LICENCE 2';
+     $matricule='20V2412';
+     $niveau='LICENCE 3';
     $secretKey = 'auth.document';
-    $donnees=Releve::where(['etudiant'=>$etudiant, 'niveau'=>$niveau])->first();
+    $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
     $datas= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)implode(".", explode(',',$donnees->mgp ))).trim($donnees->anneeAcademique);
      $hmac1 = hash_hmac('sha256', $datas, $secretKey);
 
-     $save=Hashe::create(['hache' => $hmac1]);
+    //  $save=Hashe::create(['hache' => $hmac1]);
     $releve=Releve::where(['id_releve'=>'09875/KMB/L2/FS/ICT/212022','etudiant'=>'19K2779'])->get();
-    $etudiant=Etudiant::where(['matricule'=>'19K2779'])->get();
-    $data=Etudiant::where(['matricule'=>'19K2779'])->firstOrFail()->matricule;
+    $etudiant=Etudiant::where(['matricule'=>$matricule])->get();
+    $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
                 ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
-                ->where('notes.etudiant', '=', $data)
-                ->where('niveaux.nom_niveau','=','LICENCE 2')
+                ->where('notes.etudiant', '=', $matricule)
+                ->where('niveaux.nom_niveau','=',$niveau)
                 ->select('notes.*', 'ues.nom_ue','ues.credit')
                 ->distinct()
                 ->get();
@@ -371,7 +371,7 @@ $text="REPUBLIQUE DU CAMEROUN REPUBLIC OF CAMEROON Pala-Travall-Patrie Peace Wor
            "numero"=> $numero[1],
            ]);
 
-    return response()->json($datas);
+    return response()->json($etudiant);
 }
 
 }

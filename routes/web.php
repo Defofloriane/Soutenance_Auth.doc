@@ -54,5 +54,6 @@ Route::post('/get_ue_credit', [ReleveController::class,'get_ue_credit'])->name('
 Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');
 Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
+Route::get('/details_releve',[ReleveController::class, 'details_releve'])->name('details_releve');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 

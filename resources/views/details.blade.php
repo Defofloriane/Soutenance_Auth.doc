@@ -676,7 +676,7 @@
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                    
                                                                 N° : {{ isset($releve) ? $releve->id_releve : '' }}
                                                              </div><!--to change dans la table releve-->
                                                           </div>
@@ -699,7 +699,7 @@
 
                                                                         <div
                                                                             class="form-value ps-4 pt-1 text-uppercase">
-                                                                            {{-- {{ isset($etudiant) ? $etudiant->nom : '' }}    {{ isset($etudiant) ? $etudiant->prenom : '' }} --}}
+                                                                             {{ isset($etudiant) ? $etudiant->nom : '' }}    {{ isset($etudiant) ? $etudiant->prenom : '' }} 
                                                                         </div>
 
                                                                     </div>

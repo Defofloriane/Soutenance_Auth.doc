@@ -48,11 +48,11 @@ class ReleveController extends Controller
       $niveau = $request->session()->get('niveau');
       dd(  $niveau );
       if ($niveau == 'L1') {
-         $id_niv = "L1";
+         $id_niv = "LICENCE 1";
       }elseif($niveau == 'L2'){
-         $id_niv = "L1";
+         $id_niv = "LICENCE 2";
       }else{
-         $id_niv = "L3";
+         $id_niv = "LICENCE 3";
       }
       $anneeAcademique = $request->session()->get('anneeAcademique');
       $id_anne = str_replace('/', '', $anneeAcademique);
