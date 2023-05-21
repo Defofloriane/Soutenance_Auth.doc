@@ -219,7 +219,7 @@ $sum = array_sum(str_split($birthDayDigits));
 
       // Enregistrement du relevé dans la base de données
       $releve = new Releve();
-       $id_new_rel = "000$sum/$initia2/$id_niv/FS/ICT/$id_anne"; 
+       $id_new_rel = "000$sum/$initia2/$niveau/FS/ICT/$id_anne"; 
       $releve->id_releve = $id_new_rel;// Générez un ID unique pour chaque relevé
       $releve->etudiant = $matricule;
       $releve->decision = $decision_releve; // Définissez la décision appropriée
