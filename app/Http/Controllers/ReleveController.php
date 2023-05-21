@@ -46,7 +46,6 @@ class ReleveController extends Controller
       
       //recupere ldes informations sur le blade
       $niveau = $request->session()->get('niveau');
-      dd(  $niveau );
       if ($niveau == 'L1') {
          $id_niv = "LICENCE 1";
       }elseif($niveau == 'L2'){
@@ -68,14 +67,10 @@ $birthDayDigits = preg_replace('/[^0-9]/', '', $birthDay);
 // Calculer la somme des chiffres de la date de naissance
 $sum = array_sum(str_split($birthDayDigits));
 
-echo "Somme des chiffres de la date de naissance : " . $sum;
       $placeBirth = $request->input('placeBirth'); //lieu de naissance
 
       $notes = $request->input('notes');
-      echo "Etudiant: " . $firstName . " " .  $lastName . " Niveau " .  $niveau . " anneeAcamdemique: " .
-         $anneeAcademique . " matricule : "  . $matricule . "nee le " .   $birthDay . " a " . $placeBirth."  ";
-      // echo $notes["code_ue"];
-      // return $notes;
+    
 
       // Créer une instance d'Etudiant avec les données
       $etudiant = new Etudiant();
@@ -218,18 +213,18 @@ echo "Somme des chiffres de la date de naissance : " . $sum;
           $initial2 = strtoupper(substr($part, 0, 1));
       }
       $initia2 = $initial1.$initial2;
-      echo  "$initia2\n";
 
       $formatted_mgp = number_format($mgp, 2);
 
 
       // Enregistrement du relevé dans la base de données
       $releve = new Releve();
-      $releve->id_releve = "000$sum/$initia2/$id_niv/FS/ICT/$id_anne"; // Générez un ID unique pour chaque relevé
+       $id_new_rel = "000$sum/$initia2/$id_niv/FS/ICT/$id_anne"; 
+      $releve->id_releve = $id_new_rel;// Générez un ID unique pour chaque relevé
       $releve->etudiant = $matricule;
       $releve->decision = $decision_releve; // Définissez la décision appropriée
       $releve->filiere = "INFORMATION AND COMMUNICATION TECHNOLOGIE"; // Définissez la filière appropriée
-      $releve->niveau = $request->session()->get('niveau');
+      $releve->niveau = $id_niv;
       $releve->mgp = $formatted_mgp;
       $releve->anneeAcademique = $anneeAcademique;
       $releve->save();
@@ -237,28 +232,20 @@ echo "Somme des chiffres de la date de naissance : " . $sum;
       // Message de succès
        $request->session()->put('success', 'Le relevé a été ajouté avec succès.');
       
-     $releve = Releve::where('etudiant',$matricule)
-         ->first();
-      // if (!$releve) {
-      //    $message = "Aucun relevé trouvé pour l'étudiant $etudiant->matricule";
-      //    return view('view_etudiant', ['message' => $message], compact('releves', 'etudiants', 'etudiant'));
-      // }
-      $etudiant=Etudiant::where(['matricule'=>$matricule])->get();
-      dd( $etudiant);
-
-      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
-         ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
-         ->where('notes.etudiant', '=', $matricule)
-         ->where('niveaux.nom_niveau', '=', $niveau)
-         ->select('notes.*', 'ues.nom_ue', 'ues.credit')
-         ->distinct()
-         ->get();
-         dd( $notes);
-
-      //  $notes = Note::where('etudiant', $releve->etudiant)->get();
-      return view('details',compact('releves', 'etudiant', 'notes'));
+       $releve = Releve::where('id_releve', $id_new_rel)->firstOrFail();
+       $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
+       $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+          ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+          ->where('notes.etudiant', '=', $releve->etudiant)
+          ->where('niveaux.nom_niveau', '=',$id_niv)
+          ->select('notes.*', 'ues.nom_ue', 'ues.credit')
+          ->distinct()
+          ->get();
+       //  return $etudiant;
+      //  dd($etudiant,$id_niv,$releve,$notes);
+       // Passez les données à la vue de détails
+       return view("details", compact('releve', 'etudiant', 'notes'));
     
-      
      
 
       
