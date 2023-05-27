@@ -1068,17 +1068,20 @@
                                                                                     $('#barcode').attr('src', url);
                                                                                 }
                                                                             </script>
-                                                                          <?php
+                                                                          <!-- <?php
                                                                           $type = 'png';
-                                                                          $data = file_get_contents('https://api.qrserver.com/v1/create-qr-code/?data=20U4660&amp;size=100x100');
+                                                                          $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
+                                                                          $nouvelleVariable =  $hmacInfo;
+                                                                          $taille = '&amp;size=100x100';
+
+                                                                            // Concaténation des parties de la chaîne avec la variable
+                                                                          $chaineModifiee = $chaine . $nouvelleVariable . $taille;
+                                                                          $data = file_get_contents($chaineModifiee);
                                                                           $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                                                                          ?>
+                                                                          ?> -->
                                                                            <?php echo '<div class="company-logo">
-                                                                            <img src="' .
-                                                            $base64 .
-                                                            '"  alt="base" />
-                                                                        </div>';
-                                                        ?>
+                                                                            <img src="' .   $base64 .      '"  alt="base" />  </div>';
+                                                                            ?>
                                                                         </div>
                                                                     </div>
                                                             </section>

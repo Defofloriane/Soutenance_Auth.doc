@@ -218,7 +218,7 @@ if(empty($niveau)){
   }
 }
 //hachage des information avec l'algorithme HMAC SHA256
-$secretKey = 'auth.document';
+
         //    $data=([
         //    "matricule"=> $matricule[1],
         //    "decision"=> $decision[1],
@@ -229,6 +229,7 @@ $secretKey = 'auth.document';
         //    "numero"=> $numero[1],
         //    ]);
 $data1= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim((float)implode(".", explode(',',$mgp[1]))).trim($annee[1]);
+$secretKey = 'auth.document';
 $hmac1 = hash_hmac('sha256', $data1, $secretKey);
 $donnees=Releve::where(['etudiant'=>$matricule[1], 'niveau'=>$niveau[1]])->first();
 $data2= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);

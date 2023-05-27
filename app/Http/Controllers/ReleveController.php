@@ -322,6 +322,13 @@ $sum = array_sum(str_split($birthDayDigits));
       //  $details = Releve::find($id);
       $id_releve = request('id_releve');
       $releve = Releve::where('id_releve', $id_releve)->firstOrFail();
+
+      //hachage des informations 
+     $secretKey = 'auth.document';//cle secrete
+     $donnees= Releve::where('id_releve', $id_releve)->firstOrFail();
+     $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
+      $hmac=hash_hmac('sha256', $data, $secretKey);
+       $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
       $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
       $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
          ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
@@ -332,7 +339,7 @@ $sum = array_sum(str_split($birthDayDigits));
          ->get();
       //  return $etudiant;
       // Passez les données à la vue de détails
-      return view("details", compact('releve', 'etudiant', 'notes'));
+      return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
    }
   
 
