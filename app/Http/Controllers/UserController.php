@@ -61,196 +61,170 @@ class UserController extends Controller
 
 // teste sur la lumunosite de l'image
 if($lumunosite>=65 && $lumunosite<=72){ // si la luminosite est normal donc compris entre 65% et 72% on ne fais rien
-    $valeur = 0;
-    $valeur_contraste = 0;
-}
-else if($lumunosite>72){
-  $valeur=70-$lumunosite;
-  $valeur_contraste=10;
-}
-else if($lumunosite<65){
-$valeur=65-$lumunosite;
-$valeur_contraste=10;
-}
 
+    $client = new TextractClient([
+        'version' => 'latest',
+        'region' => 'us-east-1',
+        'credentials' => [
+            'key'    => 'AKIARB7V4G6A67JPFWX6',
+            'secret' => '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'
+        ],
         
-// // Création de l'image à partir du fichier initial
-// $image = @imagecreatefromjpeg($target_path);
-
-// // Appliquer le filtre de luminosité
-// imagefilter($image, IMG_FILTER_BRIGHTNESS, $valeur);
-
-// // Appliquer le filtre de contraste à l'image modifiée précédemment
-// imagefilter($image, IMG_FILTER_CONTRAST, $valeur_contraste);
-
-// // Créer un flux de sortie temporaire pour l'image modifiée
-// $nom_fichier_sortie = 'image.jpg';
-// imagejpeg($image, $nom_fichier_sortie);
-// imagedestroy($image);
-
-
-$client = new TextractClient([
-    'version' => 'latest',
-    'region' => 'us-east-1',
-    'credentials' => [
-        'key'    => 'AKIARB7V4G6A67JPFWX6',
-        'secret' => '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'
-    ],
-    
-]);
-$filename = $target_path;
-$file = fopen($filename, "rb");
-$contents = fread($file, filesize($filename));
-fclose($file);
-$options = [
-    'Document' => [
-        'Bytes' => $contents
-    ],
-    'FeatureTypes' => ['FORMS','TABLES'], 
-];
-$result = $client->analyzeDocument($options);
-$blocks = $result['Blocks'];
-$tab=array();
-foreach ($blocks as $key => $value) {
-    if (isset($value['BlockType']) && $value['BlockType']) {
-        $blockType = $value['BlockType'];
-        if (isset($value['Text']) && $value['Text']) {
-            $text = $value['Text'];
-            if ($blockType == 'WORD') {
-            array_push($tab,$text);
-            } else if ($blockType == 'LINE') {
-            }
-        }
-    }
-}
-  $text=implode(" ",$tab);       
-// recuperation des donnees dans la dans le text avec l'utilisation des expression regulieres
-preg_match('/Matricule\s*:\s*(\w+)/', $text, $matricule);
-if(empty($matricule)){
-  preg_match('/Matricule:\s*(\w+)/', $text, $matricule);
-  if(empty($matricule)){
-      preg_match('/Matricule\s*:(\w+)/', $text, $matricule);
-      if(empty($matricule)){
-          preg_match('/Matricule\s*(\w+)/', $text, $matricule);
-      }
-  }
-}
-preg_match('/Décision\s*(\w+)\s*NC/i', $text, $decision);
-if(empty($decision)){
-  preg_match('/Décision\s*:\s*(\w+)\s*NC/i', $text, $decision);
-  if(empty($decision)){
-      preg_match('/Décision:\s*(\w+)\s*NC/i', $text, $decision);
-      if(empty($decision)){
-          preg_match('/Décision\s*:(\w+)\s*NC/i', $text, $decision);
-           if(empty($decision)){
-          preg_match('/Décision\s*:\s*(\w+)\s*CANT/i', $text, $decision);
-             if(empty($decision)){
-                preg_match('/Décision\s*(\w+)\s*CANT/i', $text, $decision);
-        }
-      }
-      }
-  }
-}
-preg_match('/Filière\s*:\s*([^\n]+)\s*Level/i', $text, $filiere);
-if(empty($filiere)){
-  preg_match('/Filière:\s*([^\n]+)\s*Level/i', $text, $filiere);
-  if(empty($filiere)){
-      preg_match('/Filière\s*:([^\n]+)\s*Level/i', $text, $filiere);
-      if(empty($filiere)){
-          preg_match('/Filière\s*([^\n]+)\s*Level/i', $text, $filiere);
-      }
-  }
-
-}
-preg_match('/\(MGP\):\s*([\d.,]+)/', $text, $mgp);//\(MGP\):\s*([\d.,/]+)
-if(empty($mgp)){
-  preg_match('/\(MGP\)\s*:\s*([\d.,]+)/', $text, $mgp);
-  if(empty($mgp)){
-      preg_match('/\(MGP\)\s*:([\d.,]+)/', $text, $mgp);
-      if(empty($mgp)){
-          preg_match('/\(MGP\)\s*([\d.,]+)/', $text, $mgp);
-        }
-    }
-}
-preg_match('/Année Académique\s*:\s*([^\n]+)\s*Option/i', $text, $annee);
-if(empty($annee)){
-  preg_match('/Année Academique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
-  if(empty($annee)){
-      preg_match('/Année Académique:\s*([^\n]+)\s*Academic/', $text, $annee);
-      if(empty($annee)){
-          preg_match('/Année Académique\s*:([^\n]+)\s*Academic/', $text, $annee);
-           if(empty($annee)){
-              preg_match('/Année Académique:\s*([^\n]+)\s*Option/i', $text, $annee);
-              if(empty($annee)){
-                  preg_match('/Année Academique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
-            }
-        }
-        }
-    }
-}
-preg_match('/N°\s*:\s*([^\n]+)\s*Noms/', $text, $numero);
-if(empty($numero)){
-  preg_match('/N°:([^\n]+)\s*Surname/i', $text, $numero);
-  if(empty($numero)){
-      preg_match('/N°\s*:\s*([^\n]+)\s*Surname/', $text, $numero);
-      if(empty($numero)){
-          preg_match('/N°:\s*([^\n]+)\s*/', $text, $numero);
-          if(empty($numero)){
-              preg_match('/N°\s*:([^\n]+)\s*/', $text, $numero);
-              if(empty($numero)){
-                  preg_match('/N°\s*([^\n]+)\s*/', $text, $numero);
-                  if(empty($numero)){
-                    preg_match('/°:\s*([^\n]+)\s*/', $text, $numero);
-                    if(empty($numero)){
-                        preg_match('/°:([^\n]+)\s*/', $text, $numero);
-                      }
-                  }
+    ]);
+    $filename = $target_path;
+    $file = fopen($filename, "rb");
+    $contents = fread($file, filesize($filename));
+    fclose($file);
+    $options = [
+        'Document' => [
+            'Bytes' => $contents
+        ],
+        'FeatureTypes' => ['FORMS','TABLES'], 
+    ];
+    $result = $client->analyzeDocument($options);
+    $blocks = $result['Blocks'];
+    $tab=array();
+    foreach ($blocks as $key => $value) {
+        if (isset($value['BlockType']) && $value['BlockType']) {
+            $blockType = $value['BlockType'];
+            if (isset($value['Text']) && $value['Text']) {
+                $text = $value['Text'];
+                if ($blockType == 'WORD') {
+                array_push($tab,$text);
+                } else if ($blockType == 'LINE') {
                 }
             }
         }
     }
+      $text=implode(" ",$tab);       
+    // recuperation des donnees dans la dans le text avec l'utilisation des expression regulieres
+    preg_match('/Matricule\s*:\s*(\w+)/', $text, $matricule);
+    if(empty($matricule)){
+      preg_match('/Matricule:\s*(\w+)/', $text, $matricule);
+      if(empty($matricule)){
+          preg_match('/Matricule\s*:(\w+)/', $text, $matricule);
+          if(empty($matricule)){
+              preg_match('/Matricule\s*(\w+)/', $text, $matricule);
+          }
+      }
+    }
+    preg_match('/Décision\s*(\w+)\s*NC/i', $text, $decision);
+    if(empty($decision)){
+      preg_match('/Décision\s*:\s*(\w+)\s*NC/i', $text, $decision);
+      if(empty($decision)){
+          preg_match('/Décision:\s*(\w+)\s*NC/i', $text, $decision);
+          if(empty($decision)){
+              preg_match('/Décision\s*:(\w+)\s*NC/i', $text, $decision);
+               if(empty($decision)){
+              preg_match('/Décision\s*:\s*(\w+)\s*CANT/i', $text, $decision);
+                 if(empty($decision)){
+                    preg_match('/Décision\s*(\w+)\s*CANT/i', $text, $decision);
+            }
+          }
+          }
+      }
+    }
+    preg_match('/Filière\s*:\s*([^\n]+)\s*Level/i', $text, $filiere);
+    if(empty($filiere)){
+      preg_match('/Filière:\s*([^\n]+)\s*Level/i', $text, $filiere);
+      if(empty($filiere)){
+          preg_match('/Filière\s*:([^\n]+)\s*Level/i', $text, $filiere);
+          if(empty($filiere)){
+              preg_match('/Filière\s*([^\n]+)\s*Level/i', $text, $filiere);
+          }
+      }
+    
+    }
+    preg_match('/\(MGP\):\s*([\d.,]+)/', $text, $mgp);//\(MGP\):\s*([\d.,/]+)
+    if(empty($mgp)){
+      preg_match('/\(MGP\)\s*:\s*([\d.,]+)/', $text, $mgp);
+      if(empty($mgp)){
+          preg_match('/\(MGP\)\s*:([\d.,]+)/', $text, $mgp);
+          if(empty($mgp)){
+              preg_match('/\(MGP\)\s*([\d.,]+)/', $text, $mgp);
+            }
+        }
+    }
+    preg_match('/Année Académique\s*:\s*([^\n]+)\s*Option/i', $text, $annee);
+    if(empty($annee)){
+      preg_match('/Année Academique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
+      if(empty($annee)){
+          preg_match('/Année Académique:\s*([^\n]+)\s*Academic/', $text, $annee);
+          if(empty($annee)){
+              preg_match('/Année Académique\s*:([^\n]+)\s*Academic/', $text, $annee);
+               if(empty($annee)){
+                  preg_match('/Année Académique:\s*([^\n]+)\s*Option/i', $text, $annee);
+                  if(empty($annee)){
+                      preg_match('/Année Academique\s*:\s*([^\n]+)\s*Option/', $text, $annee);
+                }
+            }
+            }
+        }
+    }
+    preg_match('/N°\s*:\s*([^\n]+)\s*Noms/', $text, $numero);
+    if(empty($numero)){
+      preg_match('/N°:([^\n]+)\s*Surname/i', $text, $numero);
+      if(empty($numero)){
+          preg_match('/N°\s*:\s*([^\n]+)\s*Surname/', $text, $numero);
+          if(empty($numero)){
+              preg_match('/N°:\s*([^\n]+)\s*/', $text, $numero);
+              if(empty($numero)){
+                  preg_match('/N°\s*:([^\n]+)\s*/', $text, $numero);
+                  if(empty($numero)){
+                      preg_match('/N°\s*([^\n]+)\s*/', $text, $numero);
+                      if(empty($numero)){
+                        preg_match('/°:\s*([^\n]+)\s*/', $text, $numero);
+                        if(empty($numero)){
+                            preg_match('/°:([^\n]+)\s*/', $text, $numero);
+                          }
+                      }
+                    }
+                }
+            }
+        }
+    }
+    preg_match('/Niveau\s*:\s*([^\n]+)\s*Filière/', $text, $niveau);
+    if(empty($niveau)){
+      preg_match('/Niveau:\s*([^\n]+)\s*Filière/', $text, $niveau);
+      if(empty($niveau)){
+          preg_match('/Niveau\s*:([^\n]+)\s*Filière/', $text, $niveau);
+      }
+    }
+    
+    $data1= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim((float)implode(".", explode(',',$mgp[1]))).trim($annee[1]);
+    $secretKey = 'auth.document';
+    $hmac1 = hash_hmac('sha256', $data1, $secretKey);
+    $donnees=Releve::where(['etudiant'=>$matricule[1], 'niveau'=>$niveau[1]])->first();
+    $data2= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
+    $hmac2=hash_hmac('sha256', $data2, $secretKey);
+    if($hmac2==$hmac1){
+        $releve=Releve::where(['etudiant'=>$matricule[1]])->get();
+        $etudiant=Etudiant::where(['matricule'=>$matricule[1]])->get();
+        $data=Etudiant::where(['matricule'=>$matricule[1]])->firstOrFail()->matricule;
+         $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+                    ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+                    ->where('notes.etudiant', '=', $data)
+                    ->where('niveaux.nom_niveau','=',$niveau[1])
+                    ->select('notes.*', 'ues.nom_ue','ues.credit')
+                    ->distinct()
+                    ->get();
+        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
+        return response()->json($DataSend);   
+    }else{
+        return response()->json((['message'=>'no','text'=>$text,'data1'=>$data1,'data2'=>$data2])); 
+    }  
+  
 }
-preg_match('/Niveau\s*:\s*([^\n]+)\s*Filière/', $text, $niveau);
-if(empty($niveau)){
-  preg_match('/Niveau:\s*([^\n]+)\s*Filière/', $text, $niveau);
-  if(empty($niveau)){
-      preg_match('/Niveau\s*:([^\n]+)\s*Filière/', $text, $niveau);
-  }
-}
-//hachage des information avec l'algorithme HMAC SHA256
 
-        //    $data=([
-        //    "matricule"=> $matricule[1],
-        //    "decision"=> $decision[1],
-        //    "filiere"=> $filiere[1],
-        //    "niveau"=> $niveau[1],
-        //    "mgp"=> (float)implode(".", explode(',',$mgp[1])),
-        //    "annee"=> $annee[1],
-        //    "numero"=> $numero[1],
-        //    ]);
-$data1= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim((float)implode(".", explode(',',$mgp[1]))).trim($annee[1]);
-$secretKey = 'auth.document';
-$hmac1 = hash_hmac('sha256', $data1, $secretKey);
-$donnees=Releve::where(['etudiant'=>$matricule[1], 'niveau'=>$niveau[1]])->first();
-$data2= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
-$hmac2=hash_hmac('sha256', $data2, $secretKey);
-if($hmac2==$hmac1){
-    $releve=Releve::where(['etudiant'=>$matricule[1]])->get();
-    $etudiant=Etudiant::where(['matricule'=>$matricule[1]])->get();
-    $data=Etudiant::where(['matricule'=>$matricule[1]])->firstOrFail()->matricule;
-     $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
-                ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
-                ->where('notes.etudiant', '=', $data)
-                ->where('niveaux.nom_niveau','=',$niveau[1])
-                ->select('notes.*', 'ues.nom_ue','ues.credit')
-                ->distinct()
-                ->get();
-    $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
-    return response()->json($DataSend);   
-}else{
-    return response()->json((['message'=>'no','text'=>$text,'data1'=>$data1,'data2'=>$data2])); 
-}  
+else if($lumunosite>72){
+    return response()->json((['message'=>'ls']));
 }
+else if($lumunosite<65){
+    return response()->json((['message'=>'li']));
+}
+
+}
+
 
 
 public function hachage(){

@@ -22,4 +22,5 @@ Route::middleware('api')->group(function () {
     Route::get('/users', [UserController::class, 'index']);
     Route::post('/endpoint', [UserController::class, 'endpoint']);
     Route::post('/decode', [ApiController::class, 'decode']);
+    Route::post('/getUser', [ApiController::class, 'getUser']);
 });

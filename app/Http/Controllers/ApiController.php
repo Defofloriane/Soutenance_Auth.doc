@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use App\Models\Note;
 use App\Models\Releve;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -44,5 +45,17 @@ class ApiController extends Controller
         return response()->json($DataSend);
    }
   
+}
+public function getUser(Request $request){
+   $DataSend=(['message'=>'no']); 
+   $data=$request->all();
+   $email=$data['email'];
+   $password=$data['password'];
+   $user=User::where(['email'=>$email,'password'=>$password])->first();
+
+   if($user){
+      $DataSend=(['user'=>$user,'message'=>'ok']);
+   }
+   return response()->json($DataSend);
 }
 }
