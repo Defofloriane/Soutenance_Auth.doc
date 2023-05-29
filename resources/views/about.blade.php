@@ -3,8 +3,7 @@
 <head>
   <title>Auth.Doc - About</title>
   <meta charset="utf-8">
-  <link rel="apple-touch-icon-precomposed" href="assets/images/logo-sm.png">
-  <link rel="icon" href="assets/images/logo-sm.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
   <link rel="mask-icon" href="assets/images/logo-sm.png" color="rgb(36,38,58)">
   <link rel="shortcut icon" href="assets/images/logo-sm.png">
   <link rel="stylesheet" href="css/main.css">
@@ -13,7 +12,7 @@
 
   <header class="header-main">
     <nav>
-      <a href="{{route('index')}}" class="logo" rel="home"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><path d="M7.335 1.023l2.462.434a1 1 0 0 1 .811 1.159L8.004 17.388a2 2 0 0 1-2.317 1.622l-3.94-.694a1 1 0 0 1-.81-1.159L3.28 3.862a3.5 3.5 0 0 1 4.054-2.839zm7.039 3.272l7.878 1.39a1 1 0 0 1 .812 1.158l-1.997 11.325a5.5 5.5 0 0 1-6.372 4.461l-4.431-.78a1 1 0 0 1-.812-1.16l2.605-14.771a2 2 0 0 1 2.317-1.623z" fill="currentColor"/></svg><span>Opalin</span></a>
+      <a href="{{route('index')}}" href="crm-index.html" class="logo">  <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm"><span>Auth.doc</span></a>
       <div class="nav-toggle"></div>
       <ul class="inline">
         <li><a href="{{route('index')}}">Home</a></li>
@@ -30,8 +29,8 @@
 
     <section class="bg-gradient-light center padding padding-top">
       <div class="max-width-m">
-        <p class="muted">Who We Are</p>
-        <h1 class="hero">We're a community of designers and developers creating tools for the web.</h1>
+        <p class="muted">what is this?</p>
+        <h1 class="hero">Auth.doc </h1>
       </div>
     </section>
 
@@ -51,10 +50,10 @@
         <p class="paragraph serif">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
         <div class="row margin-top">
           <div class="col-one-half">
-            <img class="full-width rounded" src="media/content/about-02.jpg" srcset="media/content/about-02.jpg 1x, media/content/about-02@2x.jpg 2x" alt="About">
+            <img class="full-width rounded" src="assets/images/about1.png" alt="About">
           </div>
           <div class="col-one-half">
-            <img class="full-width rounded" src="media/content/about-03.jpg" srcset="media/content/about-03.jpg 1x, media/content/about-03@2x.jpg 2x" alt="About">
+            <img class="full-width rounded" src="assets/images/about2.png" alt="About">
           </div>
         </div>
       </div>
@@ -62,30 +61,44 @@
 
     <section class="bg-image-07 dark overlay padding padding-bottom padding-top">
       <div class="center max-width-m">
-        <h2>Want to join the team?</h2>
-        <p class="paragraph">We’re hiring. Work from anywhere.</p>
-        <a href="#" class="button button-secondary space-top" role="button">Job Openings</a>
+        <h2>GROUP MEMBERS?</h2>
+        <p class="paragraph">we collaborated on this project</p>
+        <a href="#" class="button button-secondary space-top" role="button">Contact us</a>
       </div>
     </section>
 
     <section class="bg-gradient-light center padding">
       <div class="max-width-l">
         <div class="margin-bottom max-width-m">
-          <h3>Our Investors</h3>
-          <p class="paragraph">We've completed a $120 million Series B financing round.</p>
+          <h3>Groups Members</h3>
+          <p class="paragraph">we collaborated on this project Auth.doc</p>
         </div>
         <div class="row min-two-columns">
           <div class="col-one-fourth">
-            <img src="media/content/trusted-company.png" srcset="media/content/trusted-company.png 1x, media/content/trusted-company@2x.png 2x" alt="Trusted Company">
+            <img src="assets/images/essola.jpeg"  alt="Essola web">
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+            <span>Developpeur Ionic </span>
+
           </div>
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
           <div class="col-one-fourth">
-            <img src="media/content/trusted-company.png" srcset="media/content/trusted-company.png 1x, media/content/trusted-company@2x.png 2x" alt="Trusted Company">
+            <img src="assets/images/ff.jpg"  alt="Floriane web">
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+            <span>Developpeur Laravel </span>
           </div>
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+         
           <div class="col-one-fourth">
-            <img src="media/content/trusted-company.png" srcset="media/content/trusted-company.png 1x, media/content/trusted-company@2x.png 2x" alt="Trusted Company">
-          </div>
-          <div class="col-one-fourth">
-            <img src="media/content/trusted-company.png" srcset="media/content/trusted-company.png 1x, media/content/trusted-company@2x.png 2x" alt="Trusted Company">
+            <img src="assets/images/vanel.jpeg"  alt="Floriane web">
+          &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+            <span>Aide Assistant </span>
           </div>
         </div>
       </div>
@@ -94,44 +107,8 @@
   </main>
 
   <footer class="footer-main">
-    <div class="padding">
-      <div class="row center-desktop max-width-l">
-        <div class="col-two-fifths">
-          <h6>Opalin ®</h6>
-          <p>We're a completely remote company, working across twenty countries with over 20,000 customers.</p>
-        </div>
-        <div class="col-one-fifth">
-          <h6>Info</h6>
-          <ul class="blank">
-            <li><a href="#">Getting Started</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Design</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="col-one-fifth">
-          <h6>Support</h6>
-          <ul class="blank">
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Requirements</a></li>
-            <li><a href="#">License</a></li>
-            <li><a href="#">Updates</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-one-fifth">
-          <h6>Connect</h6>
-          <ul class="blank">
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Medium</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <p class="copyright"><span>HTML Template by </span><a href="https://uiuxassets.com/" target="_blank">UI/UX Assets</a><span> - © 2018, all rights reserved.</span></p>
+      <p class="copyright">  &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+        class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span></p>
   </footer>
 
   <script src="js/main.js"></script>

@@ -31,6 +31,29 @@
                 margin-top: 20px;
                 margin-left: 1%;
             }
+            .nav{
+                margin-top: 6%;
+            }
+            .radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group label {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  background-color: rgb(41, 76, 253);;
+  color: #fff;
+}
+
+
         </style>
     </head>
 
@@ -141,118 +164,17 @@
                 <!-- Navbar -->
                 <nav class="navbar-custom">    
                     <ul class="list-unstyled topbar-nav float-right mb-0">  
-                        <li class="dropdown hide-phone">
-                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i data-feather="search" class="topbar-icon"></i>
-                            </a>
-                            
-                            <div class="dropdown-menu dropdown-menu-right dropdown-lg p-0">
-                                <!-- Top Search Bar -->
-                                <div class="app-search-topbar">
-                                    <form action="#" method="get">
-                                        <input type="search" name="search" class="from-control top-search mb-0" placeholder="Type text...">
-                                        <button type="submit"><i class="ti-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>                      
+                                          
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i data-feather="bell" class="align-self-center topbar-icon"></i>
-                                <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
-                            
-                                <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
-                                    Notifications <span class="badge badge-primary badge-pill">2</span>
-                                </h6> 
-                                <div class="notification-menu" data-simplebar>
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="shopping-cart" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing and industry.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">10 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="assets/images/users/user-4.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">40 min ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">                                                    
-                                                <i data-feather="users" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">UX 3 Task complete.</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">1 hr ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <img src="assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle">
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
-                                                <small class="text-muted mb-0">It is a long established fact that a reader.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                    <!-- item-->
-                                    <a href="#" class="dropdown-item py-3">
-                                        <small class="float-right text-muted pl-2">2 hrs ago</small>
-                                        <div class="media">
-                                            <div class="avatar-md bg-soft-primary">
-                                                <i data-feather="check-circle" class="align-self-center icon-xs"></i>
-                                            </div>
-                                            <div class="media-body align-self-center ml-2 text-truncate">
-                                                <h6 class="my-0 font-weight-normal text-dark">Payment Successfull</h6>
-                                                <small class="text-muted mb-0">Dummy text of the printing.</small>
-                                            </div><!--end media-body-->
-                                        </div><!--end media-->
-                                    </a><!--end-item-->
-                                </div>
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary">
-                                    View all <i class="fi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </li>
+                       
 
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <span class="ml-1 nav-user-name hidden-sm">Nick</span>
+                                <span class="ml-1 nav-user-name hidden-sm">Name admin</span>
                                 <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />                                 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i data-feather="settings" class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
-                                <div class="dropdown-divider mb-0"></div>
                                 <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                             </div>
                         </li>
@@ -265,8 +187,9 @@
                             </button>
                         </li> 
                         <li class="creat-btn">
-                            <div class="nav-link">
-                                <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i class="fas fa-plus mr-2"></i>Import Fichier Excel</a>
+                            <div class="nav ">
+                             
+                               
                             </div>                                
                         </li>                           
                     </ul>
@@ -291,16 +214,7 @@
                                             <li class="breadcrumb-item active">Etudiants</li>
                                         </ol>
                                     </div><!--end col-->
-                                    <div class="col-auto align-self-center">
-                                        <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
-                                            <span class="day-name" id="Day_Name">Today:</span>&nbsp;
-                                            <span class="" id="Select_date">Jan 11</span>
-                                            <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">
-                                            <i data-feather="download" class="align-self-center icon-xs"></i>
-                                        </a>
-                                    </div><!--end col-->  
+                                    
                                 </div><!--end row-->                                                              
                             </div><!--end page-title-box-->
                         </div><!--end col-->
@@ -323,53 +237,66 @@
                                 </div><!--end card-header-->
                                 <div class="card-body bootstrap-select-1">
                                     <form method="POST" action="{{ route('get_ue_credit') }}">
-                                        @csrf
-                                    <div class="row">
-                                           
-                                            <div class="col-md-6">
-                                                <label class="mb-6">Niveau</label>
-                                                <select id="niveau_select" name="niveau" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
-                                                    <option value="">Niveau Scolaire</option>
-                                                    <optgroup label="Au Niveau 1">
-                                                        <option value="L1">ICT L1</option>
-                                                        {{-- <option value="INFO L1">INF0 L1</option>
-                                                        <option value="MATHS L1">MATHS L1</option> --}}
+                                            @csrf
+                                        <div class="row">
+                                            
+                                                <div class="col-md-4">
+                                                    <label class="mb-6">Niveau</label>
+                                                    <select id="niveau_select" name="niveau" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                        <option value="">Niveau Scolaire</option>
+                                                        <optgroup label="Au Niveau 1">
+                                                            <option value="L1">ICT L1</option>
+                                                            {{-- <option value="INFO L1">INF0 L1</option>
+                                                            <option value="MATHS L1">MATHS L1</option> --}}
+                                                        </optgroup>
+                                                        <optgroup label="Au Niveau 2">
+                                                            <option value="L2">ICT L2</option>
+                                                            {{-- <option value="INFO L2">INF0 L2</option>
+                                                            <option value="MATHS L2">MATHS L2</option> --}}
+                                                        </optgroup>
+                                                        <optgroup label="Au Niveau 3">
+                                                            <option value="L3">ICT L3</option>
+                                                            {{-- <option value="INFO L3">INF0 L3</option>
+                                                            <option value="MATHS L3">MATHS L3</option> --}}
+                                                        </optgroup>   
+                                                    </select> 
+                                                </div>   
+                                        
+                                            <div class="col-md-4">
+                                                <label class="mb-3">Anne Academique</label>
+                                                <select name="anneeAcamdemique" class="select2 mb-3 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Annee Academique" required>
+                                                    <optgroup label="Votre Anne Academique">
+                                                        <option value="2022/2023">2022/2023</option>
+                                                        <option value="2021/2022">2021/2022</option>
+                                                        <option value="2020/2021">2020/2021</option>
+                                                        <option value="2019/2020">2020/2021</option>
+                                                        <option value="2018/2019">2020/2021</option>
+                                                        <option value="2017/2018">2020/2021</option>
                                                     </optgroup>
-                                                    <optgroup label="Au Niveau 2">
-                                                        <option value="L2">ICT L2</option>
-                                                        {{-- <option value="INFO L2">INF0 L2</option>
-                                                        <option value="MATHS L2">MATHS L2</option> --}}
-                                                    </optgroup>
-                                                    <optgroup label="Au Niveau 3">
-                                                        <option value="L3">ICT L3</option>
-                                                        {{-- <option value="INFO L3">INF0 L3</option>
-                                                        <option value="MATHS L3">MATHS L3</option> --}}
-                                                    </optgroup>   
+                                                
                                                 </select> 
-                                            </div>   
-                                       
-                                        <div class="col-md-6">
-                                            <label class="mb-3">Anne Academique</label>
-                                            <select name="anneeAcamdemique" class="select2 mb-3 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Annee Academique" required>
-                                                <optgroup label="Votre Anne Academique">
-                                                    <option value="2022/2023">2022/2023</option>
-                                                    <option value="2021/2022">2021/2022</option>
-                                                    <option value="2020/2021">2020/2021</option>
-                                                    <option value="2019/2020">2020/2021</option>
-                                                    <option value="2018/2019">2020/2021</option>
-                                                    <option value="2017/2018">2020/2021</option>
-                                                </optgroup>
-                                               
-                                            </select> 
-                                        </div> <!-- end col -->  
-                                        <button id="eltb" class="btn btn-primary mb-3" >Valider le niveau</button>  
-                                    </div><!-- end row --> 
-                                </form>   
+                                            </div> <!-- end col -->  
+                                            <div class="col-md-4">
+                                                <label >Mehode D ajout</label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="radio1" name="radios" value="Excel">
+                                                    <label for="radio1">Excel</label>
+                                                
+                                                    <input type="radio" id="radio2" name="radios" value="Manuel">
+                                                    <label for="radio2">Manuel</label>
+                                                
+                                                
+                                                </div>
+                                                
+                                            </div>
+                                            <button id="eltb" class="btn btn-primary mb-3" >Valider le niveau</button>  
+                                        </div><!-- end row --> 
+                                    </form>   
                                     
                                 </div><!-- end card-body --> 
                             </div> <!-- end card -->         
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-8" id="manuel-form" style="display: none;">
                                     <div class="card">
                                         <div class="card-header">
                                             <h4 class="card-title">Les Notes d'un Etudiant</h4>
@@ -503,63 +430,111 @@
                                     </div><!--end card-->
                                 </div><!--end col-->
         
-                                <div class="col-lg-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Validation Etudiant</h4>
-                                            <p class="text-muted mb-0">Verification du nom, prenom et matricule de l etudiant <code class="highlighter-rouge">&lt;Et matricule&gt;</code>s are only 
-                                               Afficahe de sa <code class="highlighter-rouge">MGP</code>Moyenne Generale Pondere <code class="highlighter-rouge">/4.00</code>.
-                                            </p>
-                                        </div><!--end card-header-->
-                                        <div class="card-body">
-                                           
-                                                <div class="form-row">
-                                                    <div class="col-md-4 mb-3">
-                                                        <label for="validationTooltip01">First name</label>
-                                                        <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required>
-                                                        <div class="valid-tooltip">
-                                                            Looks good!
-                                                        </div>
-                                                    </div><!--end col-->
-                                                    <div class="col-md-4 mb-3">
-                                                        <label for="validationTooltip02">Last name</label>
-                                                        <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required>
-                                                        <div class="valid-tooltip">
-                                                            Looks good!
-                                                        </div>
-                                                    </div><!--end col-->
-                                                    <div class="col-md-4 mb-3">
-                                                        <label for="validationTooltipUsername">Matricule</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text" id="validationTooltipUsernamePrepend">#000000A</span>
-                                                            </div>
-                                                            <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Matricule" aria-describedby="validationTooltipUsernamePrepend" required>
+                               <!--end col-->
+                            </div><!--end row-->    
+                            <div class="col-lg-8" id="excel-form" style="display: none;"">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Soumetre Via Excel</h4>
+                                        <p class="text-muted mb-0">Vous pouvez Soumetre Le(s) Etudiant(s) en utilisant<code class="highlighter-rouge"></code>
+                                           <code class="highlighter-rouge">Excel. </code>Mais d abord charger ces  <code class="highlighter-rouge">informations du formulaire</code>.
+                                        </p>
+                                    </div><!--end card-header-->
+                                    <div class="card-body" >
+                                       
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label class="mb-6">Filiere</label>
+                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                        <option value="">Filiere</option>
+                                                        <optgroup label="FAC SCIENCE">
+                                                            <option value="ICT">ICT</option>
+                                                            <option value="INFO">INFO</option>
+                                                            <option value="MATHS">MATHS</option>
+                                                            <option value="PHYSIQUE">PHYSIQUE</option>
+                                                            <option value="CHIMIE">CHIMIE</option>
+                                                            <option value="BIOS">BIOS</option>
+                                                        
+                                                        </optgroup>
+                                                        <optgroup label="FAC LETTRE">
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                        
+                                                        </optgroup>
+                                                        
+                                                    </select> 
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="mb-6">Type Evaluation</label>
+                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                        <option value="">Type  Evaluation</option>
+                                                        <optgroup label="Controle continue">
+                                                            <option value="CC">CC</option>
+                                                        </optgroup>
+                                                        <optgroup label="Section Normale">
+                                                            <option value="SN">SN</option>
                                                            
-                                                        </div>
-                                                    </div><!--end col-->
-                                                </div><!--end form-row-->
-        
-                                                <div class="form-row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="validationTooltip03">MGP</label>
-                                                        <input type="text" class="form-control" id="validationTooltip03" placeholder="MGP" required>
-                                                        <div class="invalid-tooltip">
-                                                            Please provide a valid city.
-                                                        </div>
-                                                    </div><!--end col-->
-                                                    
-                                                </div><!--end form-row-->
-                                                {{-- <button class="btn btn-primary" type="submit">Submit form</button> --}}
-                                                <form method="POST" action="{{ route('add_releve') }}">
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                                </form>
-                                                                               
-                                        </div><!--end card-body-->
-                                    </div><!--end card-->
-                                </div><!--end col-->
-                            </div><!--end row-->                      
+                                                        </optgroup>
+                                                        <optgroup label="Travaux Pratique">
+                                                            <option value="TP">TP</option>
+                                                           
+                                                        </optgroup>
+                                                        <optgroup label="Rattrapage">
+                                                            <option value="S3/S4">S3/S4</option>
+                                                           
+                                                        </optgroup>
+                                                        
+                                                    </select> 
+                                                </div>
+                                               
+                                                <div class="col-md-3">
+                                                    <label class="mb-6">Matiere</label>
+                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                        <option value="">Liste des matieres</option>
+                                                        <optgroup label="Code Ue">
+                                                            <option value="Ict 202">Ict 202</option>
+                                                            <option value="Ict 203">Ict 203</option>
+                                                            <option value="Ict 204">Ict 204</option>
+                                                            <option value="Ict 218">Ict 218</option>
+                                                           
+                                                        </optgroup>
+                                                      
+                                                        
+                                                    </select> 
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="mb-6">Matiere A TP</label>
+                                                    <div class="radio-group">
+                                                        <input type="radio" id="yes" name="radios" value="OUI">
+                                                        <label for="yes">OUI</label>
+                                                      
+                                                        <input type="radio" id="no" name="radios" value="NON">
+                                                        <label for="no">NON</label>
+                                                      
+                                                     
+                                                      </div>
+                                                      
+                                                </div>
+                                                
+                                            </div>
+                                            <form id="eltb" method="POST" action="{{route('import_excel')}}" enctype="multipart/form-data">
+                                                @csrf
+                                                <input class="btn btn-sm btn-soft-primary " value="Import Fichier Excel" type="file" accept=".xlsx, .xls" name="excel_file" id="excel_file">
+                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                <button class="btn btn-primary" type="submit" id="submit_btn" disabled>Upload/.xlsx, .xls</button>  
+            
+                                                <!-- Code HTML du formulaire -->
+                                            </form>
+                                            
+                                            {{-- <button class="btn btn-primary" type="submit">Submit form</button> --}}
+                                           
+                                                                           
+                                    </div><!--end card-body-->
+                                </div><!--end card-->
+                            </div>                  
                         </div> <!-- end col -->
                          <!-- end col -->
                     </div> <!-- end row --> 
@@ -591,9 +566,48 @@
 
                     
                 }
+                
+              
+
             </script>
-            
-   
+
+        <script>
+document.getElementById('excel_file').addEventListener('change', function() {
+    var submitBtn = document.getElementById('submit_btn');
+    submitBtn.disabled = this.files.length === 0;
+
+    // if (submitBtn.disabled) {
+    //     submitBtn.classList.add('btn btn-sm btn-soft-primary');
+    // } else {
+    //     submitBtn.classList.remove('btn btn-sm btn-soft-primary');
+    // }
+});
+
+
+        </script>
+        <script>
+            // Récupérer les éléments du DOM
+const radioExcel = document.getElementById("radio1");
+const radioManuel = document.getElementById("radio2");
+const excelForm = document.getElementById("excel-form");
+const manuelForm = document.getElementById("manuel-form");
+
+// Ajouter des écouteurs d'événements pour les changements de sélection
+radioExcel.addEventListener("change", function() {
+  if (this.checked) {
+    excelForm.style.display = "block";
+    manuelForm.style.display = "none";
+  }
+});
+
+radioManuel.addEventListener("change", function() {
+  if (this.checked) {
+    excelForm.style.display = "none";
+    manuelForm.style.display = "block";
+  }
+});
+
+        </script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/metismenu.min.js"></script>
