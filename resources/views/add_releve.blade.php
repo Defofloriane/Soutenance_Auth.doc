@@ -432,7 +432,7 @@
         
                                <!--end col-->
                             </div><!--end row-->    
-                            <div class="col-lg-8" id="excel-form" style="display: none;"">
+                            <div class="col-lg-8" id="excel-form" style="display: none;">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Soumetre Via Excel</h4>

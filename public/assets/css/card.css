@@ -21,4 +21,37 @@
   .prima{
     margin-bottom: 20px; 
   }
+  .ocr {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 10px;
+  }
   
+  .ocr img {
+    width: 100px;
+    height: 80px;
+    margin-top: 4px;
+
+  }
+  
+  
+  .ocr h4 {
+    margin-top: 5px;
+    text-align: center;
+    color: rgb(92, 92, 240);
+  }
+  
+  p span{
+    color: rgb(92, 92, 240);
+  }
+  .col-one-half{
+    justify-content: center;
+    display: flex;
+  }

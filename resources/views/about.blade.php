@@ -38,16 +38,39 @@
       <div class="max-width-l">
         <div class="row reduce-spacing">
           <div class="col-one-half">
-            <p class="paragraph serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p class="paragraph serif">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <p class="paragraph serif">The term used
+              for document authentication is: integrity check. Recognized as one of the principles of computer security which consists in determining whether the data has not been altered (by accident or intentionally).</p>
+            <p class="paragraph serif"></p>
           </div>
           <div class="col-one-half">
-            <p class="paragraph serif">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
-            <p class="paragraph serif">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            <p class="paragraph serif">In order to uphold these principles,
+              many processes are used, including hash functions, electronic signatures, cryptographic algorithms, etc. Authentication is often associated with integrity checking in order to better strengthen the locks.</p>
+            <p class="paragraph serif"> </p>
           </div>
         </div>
-        <img class="full-width margin-bottom margin-top rounded" src="media/content/about-01.jpg" srcset="media/content/about-01.jpg 1x, media/content/about-01@2x.jpg 2x" alt="About">
-        <p class="paragraph serif">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+        
+        <p class="paragraph serif">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Our Auth.doc solution is web and mobile to make life easier for the developer. <a href="">Mobile auth.doc download link</a></p>
+
+        
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+        <img class=" margin-bottom margin-top rounded" src="assets/images/mobile.jpeg"  alt="About">
+        <div class="row reduce-spacing">
+          <div class="col-one-half">
+            <p class="paragraph serif">The term used
+              for document authentication is: integrity check. Recognized as one of the principles of computer security which consists in determining whether the data has not been altered (by accident or intentionally).</p>
+            <p class="paragraph serif"></p>
+          </div>
+          <div class="col-one-half">
+            <p class="paragraph serif">In order to uphold these principles,
+              many processes are used, including hash functions, electronic signatures, cryptographic algorithms, etc. Authentication is often associated with integrity checking in order to better strengthen the locks.</p>
+            <p class="paragraph serif"> </p>
+          </div>
+        </div>
         <div class="row margin-top">
           <div class="col-one-half">
             <img class="full-width rounded" src="assets/images/about1.png" alt="About">
@@ -70,7 +93,7 @@
     <section class="bg-gradient-light center padding">
       <div class="max-width-l">
         <div class="margin-bottom max-width-m">
-          <h3>Groups Members</h3>
+          <h3>project developer</h3>
           <p class="paragraph">we collaborated on this project Auth.doc</p>
         </div>
         <div class="row min-two-columns">
