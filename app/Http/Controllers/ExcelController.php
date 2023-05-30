@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etudiant;
+use App\Models\Evaluation;
 use Illuminate\Http\Request;
 use LengthException;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -51,34 +53,42 @@ class ExcelController extends Controller
                   $studentData[] = $cell->getValue();
               }
              
-              $numero = $studentData[0];
-              $nomsEtPrenoms = $studentData[1];
-              $matricule = $studentData[2];
-              $niveau = $studentData[3];
+              $matricule = $studentData[0];
+              $note = $studentData[1];
+            //   $evaluation = new Evaluation;
+            //   $evaluation->type_evaluation = 'cc';
+            //   $evaluation->etudiant=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
+            //   $evaluation->ue='ict302';
+            //   $evaluation->semestre='1';
+            //   $evaluation->note_evaluation=$note;
+            //   $evaluation->save();
+            //   $matricule = $studentData[2];
+            //   $niveau = $studentData[3];
               
-              $matiere1Credits = $studentData[4];
-              $matiere1sn = $studentData[5];
-              $matiere1tp = $studentData[6];
+            //   $matiere1Credits = $studentData[4];
+            //   $matiere1sn = $studentData[5];
+            //   $matiere1tp = $studentData[6];
 
           
               // Afficher les informations de l'étudiant
-              echo "Numéro : $numero<br>";
-              echo "Noms et prénoms : $nomsEtPrenoms<br>";
-              echo "Matricule : $matricule<br>";
-              echo "Niveau : $niveau<br>";
-              echo "Crédits ENGL203CC : $matiere1Credits<br>";
-              echo "Crédits engl203SN : $matiere1sn<br>";
-              echo "Crédits engl203TP : $matiere1tp<br>";
+            //   echo "Numéro : $numero<br>";
+            //   echo "Noms et prénoms : $nomsEtPrenoms<br>";
+            //   echo "Matricule : $matricule<br>";
+            //   echo "Niveau : $niveau<br>";
+            //   echo "Crédits ENGL203CC : $matiere1Credits<br>";
+            //   echo "Crédits engl203SN : $matiere1sn<br>";
+            //   echo "Crédits engl203TP : $matiere1tp<br>";
           
               // et ainsi de suite pour les autres colonnes
           
               // ...
+            //   print_r($evaluation);
           }
           
-
+              
 // ...
 
- }
+         }
         // Redirigez ou affichez une réponse appropriée après l'importation
         // par exemple :
         // return redirect()->back()->with('success', 'Le fichier Excel a été importé avec succès.');

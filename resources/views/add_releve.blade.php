@@ -448,7 +448,7 @@
                                                     <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
                                                         <option value="">Filiere</option>
                                                         <optgroup label="FAC SCIENCE">
-                                                            <option value="ICT">ICT</option>
+                                                            <option value="ICT">ICT4D</option>
                                                             <option value="INFO">INFO</option>
                                                             <option value="MATHS">MATHS</option>
                                                             <option value="PHYSIQUE">PHYSIQUE</option>
