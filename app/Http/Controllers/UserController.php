@@ -60,7 +60,7 @@ class UserController extends Controller
    $lumunosite= ($totalBrightness / ($width * $height)) / 2.55;// ici on a le pourcentage de lumunosite de l'image
 
 // teste sur la lumunosite de l'image
-if($lumunosite>=65 && $lumunosite<=72){ // si la luminosite est normal donc compris entre 65% et 72% on ne fais rien
+if($lumunosite>=20 && $lumunosite<=90){ // si la luminosite est normal donc compris entre 65% et 72% on ne fais rien
 
     $client = new TextractClient([
         'version' => 'latest',
@@ -216,11 +216,11 @@ if($lumunosite>=65 && $lumunosite<=72){ // si la luminosite est normal donc comp
   
 }
 
-else if($lumunosite>72){
-    return response()->json((['message'=>'ls']));
+else if($lumunosite>90){
+    return response()->json((['message'=>'ls','luminosite'=> $lumunosite]));
 }
-else if($lumunosite<65){
-    return response()->json((['message'=>'li']));
+else if($lumunosite<20){
+    return response()->json((['message'=>'li','luminosite'=> $lumunosite]));
 }
 
 }
