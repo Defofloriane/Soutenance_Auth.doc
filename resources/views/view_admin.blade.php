@@ -79,10 +79,9 @@
                 <span>
                     <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                 </span>
-                <span>
-                    <img src="assets/images/logo.png" alt="logo-large" class="logo-lg logo-light">
-                    <img src="assets/images/logo-dark.png" alt="logo-large" class="logo-lg logo-dark">
-                </span>
+            
+                    <h4 class="logo-lg logo-light">Auth.doc</h4>
+             
             </a>
         </div>
         <!--end logo-->
@@ -94,7 +93,7 @@
                             class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
+                        <li class="nav-item"><a class="nav-link" href="{{route('index')}}"><i
                                     class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
@@ -104,57 +103,60 @@
                             class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-
+                      
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
                                     class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="apps-project-overview.html">Overview</a></li>
-                                <li><a href="apps-project-projects.html">Projects</a></li>
-                                <li><a href="apps-project-board.html">Board</a></li>
-                                <li><a href="apps-project-teams.html">Teams</a></li>
-                                <li><a href="apps-project-files.html">Files</a></li>
-                                <li><a href="apps-new-project.html">New Project</a></li>
+                                <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
+                                {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
+    
                             </ul>
                         </li>
+                       
+                        </li>
+                    </ul>
+                </li>
 
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="lock"
+                            class="align-self-center menu-icon"></i><span>Authentication</span><span
+                            class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
+                                    class="ti-control-record"></i>Add Admin</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
+                                        class="ti-control-record"></i>List Admin</a></li>
+                       
+                    </ul>
+                </li>
+
+                <hr class="hr-dashed hr-menu">
+                <li class="menu-label my-2">olders</li>
+
+
+                <li>
+                    <a href=" {{route('view_etudiant')}}"><i data-feather="layers"
+                            class="align-self-center menu-icon"></i><span >List Etudiant</span><span
+                            class="badge badge-soft-success menu-arrow">Exemple</span></a>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
+                     
+                    </ul>
+                </li>  
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                     
+                    </ul>
                 </li>
             </ul>
-            </li>
 
-            <li>
-                <a href="javascript: void(0);"><i data-feather="lock"
-                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
-                                class="ti-control-record"></i>Add Admin</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
-                                    class="ti-control-record"></i>List Admin</a></li>
-                </ul>
-            </li>
-
-            <hr class="hr-dashed hr-menu">
-            <li class="menu-label my-2">olders</li>
-
-
-            <li>
-                <a href="{{ route('view_etudiant') }}"><i data-feather="layers"
-                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
-                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
-                                class="ti-control-record"></i>Repord card</a></li>
-
-                </ul>
-            </li>
-            </ul>
             <div class="update-msg text-center">
                 <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
                     aria-label="Close" aria-hidden="true">

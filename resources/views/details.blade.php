@@ -898,7 +898,7 @@
                                                                         {{ isset($releve) ? $releve->mgp : '' }} 
                                                                         /4<!--to change-->
                                                                     </span>
-                                                                    <span> Decision: <b> ADMIS </b> </span><!--to change-->
+                                                                    <span> Decision: <b>   {{ isset($releve) ? $releve->decision : '' }}  </b> </span><!--to change-->
                                                                 </span>
                                                             </section>
                                                             <section class="w-100 d-flex flex-column"
@@ -1066,7 +1066,9 @@
                                                                                     var nric = $('hhhh').val();
                                                                                     var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=150x150';
                                                                                     $('#barcode').attr('src', url);
+                                                                                    // print(nric);
                                                                                 }
+                                                                            
                                                                             </script>
                                                                           <!-- <?php
                                                                           $type = 'png';

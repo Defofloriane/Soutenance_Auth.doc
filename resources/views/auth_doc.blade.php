@@ -22,6 +22,10 @@
     <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/card.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="mask-icon" href="assets/images/logo-sm.png" color="rgb(36,38,58)">
+  <link rel="shortcut icon" href="assets/images/logo-sm.png">
+  <link rel="stylesheet" href="css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
 
 </head>
@@ -133,24 +137,7 @@
             <!-- Navbar -->
             <nav class="navbar-custom">
                 <ul class="list-unstyled topbar-nav float-right mb-0">
-                    <li class="dropdown hide-phone">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i data-feather="search" class="topbar-icon"></i>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-lg p-0">
-                            <!-- Top Search Bar -->
-                            <div class="app-search-topbar">
-                                <form action="#" method="get">
-                                    <input type="search" name="search" class="from-control top-search mb-0"
-                                        placeholder="Type text...">
-                                    <button type="submit"><i class="ti-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-
+                   
                     
 
                     <li class="dropdown">
@@ -161,11 +148,7 @@
                             <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i data-feather="user"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i data-feather="settings"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
-                            <div class="dropdown-divider mb-0"></div>
+                          
                             <a class="dropdown-item" href="{{route('signOut')}}"><i data-feather="power"
                                     class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                         </div>
@@ -215,16 +198,7 @@
                                     </ol>
                                 </div>
                                 <!--end col-->
-                                <div class="col-auto align-self-center">
-                                    <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
-                                        <span class="day-name" id="Day_Name">Download</span>&nbsp;
-                                        <span class="" id="Select_date">Repord Card</span>
-                                        <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        <i data-feather="download" class="align-self-center icon-xs"></i>
-                                    </a>
-                                </div>
+                              
                                 <!--end col-->
                             </div>
                             <!--end row-->
@@ -235,17 +209,48 @@
                 </div>
                 <!--end row-->
                 <!-- end page title end breadcrumb -->
+            
+                  
                 <div class="container">
-              
-                     
-                    <form method="POST" action="{{ route('webcam.capture') }}">
+                    <div class="row" id="ocr_det">
+                        <div class="col-one-half">
+                            <div class="ocr" onclick="showDownloadLink('lien_telechargement_ocr_app')">
+                                <img src="assets/images/ocr1.jpg" alt="OCR Icon">
+                                <h4>Scan document with Ocr</h4>
+                            </div>
+                        </div>
+                        <div class="col-one-half">
+  
+                            <div class="ocr" onclick="showScanForm()">
+                                <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
+                                <h4>Scan Qr Code</h4>
+                              </div>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row reduce-spacing" id="scan-details">
+                        <div class="col-one-half">
+                          <p class="paragraph serif">The term used
+                            for document authentication is: integrity check. Recognized as one of the principles of computer security which consists in determining whether the data has not been altered
+                             (by accident or intentionally).Auth.doc will allow us to authenticate the repord card , We can use <span>Ocr (optical character recognition).</span></p>
+                          <p class="paragraph serif"></p>
+                        </div>
+                        <div class="col-one-half">
+                          <p class="paragraph serif">In order to uphold these principles,
+                            many processes are used, including hash functions, electronic signatures, cryptographic algorithms, etc. Authentication is often associated with integrity checking in order to better strengthen the locks.
+                            we can use <span>Qr-code.</span></p>
+                          <p class="paragraph serif"> </p>
+                        </div>
+                    </div>
+                    <form method="POST" action="{{ route('webcam.capture') }}" id="scan-form" style="display: none;">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Take Repord card </h4>
-                                        <p class="text-muted mb-0" >Take photo</p>
+                                        <h4 class="card-title">Scan Qr-codw </h4>
+                                        <span class="text-muted mb-0" >Scan Qr-code here</span>
                                     </div>
                                     <!--end card-header-->
                                    
@@ -257,50 +262,39 @@
                                         {{-- <div id="image-container" >
                                         </div> --}}
                                         <br/>
-                                        <input  class="btn btn-primary" type=button value="Take repord Card" onClick="take_snapshot()">
+                                        <input  class="btn btn-primary" type=button value="Scan Qr-code" onClick="take_snapshot()">
                                         <input type="hidden" name="image" class="image-tag">
                                     
                                     </div>
                                  
                                 </div>
                             </div>
-                            <div class="col-lg-6">                       {{--11111111111111111111111111111 --}}
+                            <div class="col-lg-5">                       {{--11111111111111111111111111111 --}}
                                                    
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h4 class="card-title">Auth.doc Gallery</h4>
-                                                                <p class="text-muted mb-0" >Your photo results.</p>
+                                                                <h4 class="card-title">Information d entete du Qr-code</h4>
+                                                                <p class="text-muted mb-0" >results.</p>
                                                             </div>
                                                             <!--end card-header-->
                                                             <div class="card-body" id="results" >
                                                              
                                                                 
                                                             </div>
-                                                            <div class="col-md-6 prima">
-                                                                <button class="btn btn-primary">Submit</button>
-
-                                                                <br/>
-                            
-                                                            </div>
                                                             <!--end card-body-->
                                                         </div>
                                                         <!--end card-->
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h4 class="card-title">Les differents resultats de votre releve</h4>
-                                                                <p class="text-muted mb-0">In this example Auth.doces are automatically disabled on
-                                                                    small screen size and default behavior of link is triggered.</p>
+                                                                <h4 class="card-title">Les differents resultats de votre releve affirme que:</h4>
+                                                            
                                                             </div>
                                                             <!--end card-header-->
                                                             <div class="card-body">
                                                                 <div class="button-items">
                                                                     <a class="btn btn-outline-primary popup-youtube"
-                                                                        href="http://www.youtube.com/watch?v=0O2aH4XLbto">Valider</a>
-                                                                    <a class="btn btn-outline-primary popup-vimeo"
-                                                                        href="https://vimeo.com/45830194">pas Correcte</a>
-                                                                    <a class="btn btn-outline-primary popup-gmaps"
-                                                                        href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom">
-                                                                        Take Another photo</a>
+                                                                        href="http://www.youtube.com/watch?v=0O2aH4XLbto">Document?</a>
+                                                                    
                                                                 </div>
                                                             </div>
                                                             <!--end card-body-->
@@ -314,8 +308,8 @@
             </div><!-- container -->
 
             <footer class="footer text-center text-sm-left">
-                {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                        class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span> --}}
+                &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+                        class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
             </footer>
             <!--end footer-->
         </div>
@@ -323,6 +317,25 @@
     </div>
     <!-- end page-wrapper -->
         
+    <script>
+      function showDownloadLink(link) {
+  // Afficher la boîte de dialogue avec le lien du site
+  alert("Cliquez sur le lien pour télécharger l'application OCR :\n" + link);
+}
+
+
+
+
+function showScanForm() {
+  // Affichage du formulaire de scan
+  document.getElementById("scan-form").style.display = "block";
+  document.getElementById("scan-details").style.display = "none";
+  document.getElementById("ocr_det").style.display = "none";
+  
+
+}
+
+    </script>
 <script language="JavaScript">
     var aspectRatio = 1.4142; // A4 paper aspect ratio (width / height)
     var canvasWidth = 490; // set canvas width
