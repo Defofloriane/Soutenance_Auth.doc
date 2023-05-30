@@ -240,7 +240,7 @@
                                             @csrf
                                         <div class="row">
                                             
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <label class="mb-6">Niveau</label>
                                                     <select id="niveau_select" name="niveau" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
                                                         <option value="">Niveau Scolaire</option>
@@ -262,7 +262,7 @@
                                                     </select> 
                                                 </div>   
                                         
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <label class="mb-3">Anne Academique</label>
                                                 <select name="anneeAcamdemique" class="select2 mb-3 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Annee Academique" required>
                                                     <optgroup label="Votre Anne Academique">
@@ -276,7 +276,7 @@
                                                 
                                                 </select> 
                                             </div> <!-- end col -->  
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <label >Mehode D ajout</label>
                                                 <div class="radio-group">
                                                     <input type="radio" id="radio1" name="radios" value="Excel">
@@ -289,8 +289,32 @@
                                                 </div>
                                                 
                                             </div>
-                                            <button id="eltb" class="btn btn-primary mb-3" >Valider le niveau</button>  
+                                            <div class="col-md-3">
+                                                <label class="mb-6">Filiere</label>
+                                                <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                    <option value="">Filiere</option>
+                                                    <optgroup label="FAC SCIENCE">
+                                                        <option value="ICT">ICT</option>
+                                                        <option value="INFO">INFO</option>
+                                                        <option value="MATHS">MATHS</option>
+                                                        <option value="PHYSIQUE">PHYSIQUE</option>
+                                                        <option value="CHIMIE">CHIMIE</option>
+                                                        <option value="BIOS">BIOS</option>
+                                                    
+                                                    </optgroup>
+                                                    <optgroup label="FAC LETTRE">
+                                                        <option value="Vegetal1">Vegetal1</option>
+                                                        <option value="Vegetal1">Vegetal1</option>
+                                                        <option value="Vegetal1">Vegetal1</option>
+                                                        <option value="Vegetal1">Vegetal1</option>
+                                                        <option value="Vegetal1">Vegetal1</option>
+                                                    
+                                                    </optgroup>
+                                                    
+                                                </select> 
+                                            </div>
                                         </div><!-- end row --> 
+                                        <button id="eltb" class="btn btn-primary mb-3" type="submit" >Valider le niveau</button>  
                                     </form>   
                                     
                                 </div><!-- end card-body --> 
@@ -432,7 +456,7 @@
         
                                <!--end col-->
                             </div><!--end row-->    
-                            <div class="col-lg-8" id="excel-form" style="display: none;">
+                            <div class="col-lg-12" id="excel-form" style="display: none;">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Soumetre Via Excel</h4>
@@ -443,30 +467,7 @@
                                     <div class="card-body" >
                                        
                                             <div class="row">
-                                                <div class="col-md-3">
-                                                    <label class="mb-6">Filiere</label>
-                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
-                                                        <option value="">Filiere</option>
-                                                        <optgroup label="FAC SCIENCE">
-                                                            <option value="ICT">ICT</option>
-                                                            <option value="INFO">INFO</option>
-                                                            <option value="MATHS">MATHS</option>
-                                                            <option value="PHYSIQUE">PHYSIQUE</option>
-                                                            <option value="CHIMIE">CHIMIE</option>
-                                                            <option value="BIOS">BIOS</option>
-                                                        
-                                                        </optgroup>
-                                                        <optgroup label="FAC LETTRE">
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                        
-                                                        </optgroup>
-                                                        
-                                                    </select> 
-                                                </div>
+                                              
                                                 <div class="col-md-3">
                                                     <label class="mb-6">Type Evaluation</label>
                                                     <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
@@ -490,7 +491,7 @@
                                                     </select> 
                                                 </div>
                                                
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <label class="mb-6">Matiere</label>
                                                     <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
                                                         <option value="">Liste des matieres</option>
@@ -505,7 +506,7 @@
                                                         
                                                     </select> 
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <label class="mb-6">Matiere A TP</label>
                                                     <div class="radio-group">
                                                         <input type="radio" id="yes" name="radios" value="OUI">
@@ -518,7 +519,21 @@
                                                       </div>
                                                       
                                                 </div>
-                                                
+                                                <div class="col-md-2">
+                                                    <label class="mb-6">Semestre</label>
+                                                    <select id="semestre" name="semestre" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                        <option value="">Semestre</option>
+                                                        <optgroup label="Semestre">
+                                                            <option value="1">Semestre 1</option>
+                                                            <option value="2">Semestre 2</option>
+                                                            <option value="3">Semestre 3</option>
+                                                            <option value="4">Semestre 4</option>
+                                                           
+                                                        </optgroup>
+                                                      
+                                                        
+                                                    </select> 
+                                                </div>
                                             </div>
                                             <form id="eltb" method="POST" action="{{route('import_excel')}}" enctype="multipart/form-data">
                                                 @csrf
@@ -575,12 +590,6 @@
 document.getElementById('excel_file').addEventListener('change', function() {
     var submitBtn = document.getElementById('submit_btn');
     submitBtn.disabled = this.files.length === 0;
-
-    // if (submitBtn.disabled) {
-    //     submitBtn.classList.add('btn btn-sm btn-soft-primary');
-    // } else {
-    //     submitBtn.classList.remove('btn btn-sm btn-soft-primary');
-    // }
 });
 
 
@@ -591,6 +600,7 @@ const radioExcel = document.getElementById("radio1");
 const radioManuel = document.getElementById("radio2");
 const excelForm = document.getElementById("excel-form");
 const manuelForm = document.getElementById("manuel-form");
+
 
 // Ajouter des écouteurs d'événements pour les changements de sélection
 radioExcel.addEventListener("change", function() {

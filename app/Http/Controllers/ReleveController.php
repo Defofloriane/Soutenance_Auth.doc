@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\Filiere;
 use App\Models\Note;
 use App\Models\Ue;
 use App\Models\Releve;
@@ -22,14 +23,20 @@ class ReleveController extends Controller
    {
       $niveau = $request->input('niveau');
       $anneeAcademique = $request->input('anneeAcamdemique');
+      $filiere = $request->input('filiere');
       // Recherche des UE correspondantes au niveau
       $request->session()->put('niveau', $niveau);
+      $request->session()->put('filiere', $filiere);
       $request->session()->put('anneeAcademique', $anneeAcademique);
 
       $resultats = Ue::select('id_ue', 'credit','nom_ue')
          ->where('niveau', '=', $niveau)
          ->get();
-
+         $listeMatiere = Ue::where([
+            'niveau' => $niveau,
+            'filiere' => $filiere,
+         ]) ->first();
+         dd(   $listeMatiere);
       return view('add_releve', ['resultats' => $resultats]);
       //  return view('add_releve',compact('ues'));
 

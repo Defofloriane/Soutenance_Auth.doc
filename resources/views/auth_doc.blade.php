@@ -213,12 +213,35 @@
                   
                 <div class="container">
                     <div class="row" id="ocr_det">
+                       
                         <div class="col-one-half">
-                            <div class="ocr" onclick="showDownloadLink('lien_telechargement_ocr_app')">
-                                <img src="assets/images/ocr1.jpg" alt="OCR Icon">
-                                <h4>Scan document with Ocr</h4>
-                            </div>
-                        </div>
+                            <div class="col-one-half">
+                                <div class="ocr" onclick="showDownloadLink('http://127.0.0.1:8000/index')">
+                                  <img src="assets/images/ocr1.jpg" alt="OCR Icon">
+                                  <h4>Scan document with Ocr</h4>
+                                </div>
+                              </div>
+                              <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="downloadModalLabel">Télécharger l'application Mobile <span> Auth.doc </span></h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Cliquez sur le lien pour télécharger l'application mobile pour Use l ocr :</p>
+                                      <p id="downloadLink"><a id="downloadHref" href="#" target="_blank"></a></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>  
+                          
                         <div class="col-one-half">
   
                             <div class="ocr" onclick="showScanForm()">
@@ -318,10 +341,15 @@
     <!-- end page-wrapper -->
         
     <script>
-      function showDownloadLink(link) {
-  // Afficher la boîte de dialogue avec le lien du site
-  alert("Cliquez sur le lien pour télécharger l'application OCR :\n" + link);
+function showDownloadLink(link) {
+  // Afficher le lien de téléchargement dans la boîte de dialogue modale
+  var downloadLinkElement = document.getElementById("downloadHref");
+  downloadLinkElement.innerText = link;
+  downloadLinkElement.href = link;
+  $('#downloadModal').modal('show');
 }
+
+
 
 
 

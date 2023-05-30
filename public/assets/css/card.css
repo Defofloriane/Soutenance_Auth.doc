@@ -51,6 +51,9 @@
   p span{
     color: rgb(92, 92, 240);
   }
+  h5 span{
+    color: rgb(92, 92, 240);
+  }
   .col-one-half{
     justify-content: center;
     display: flex;
