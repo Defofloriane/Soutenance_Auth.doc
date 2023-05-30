@@ -295,7 +295,7 @@
                                                 <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
                                                     <option value="">Filiere</option>
                                                     <optgroup label="FAC SCIENCE">
-                                                        <option value="ICT">ICT</option>
+                                                        <option value="ICT4D">ICT4D</option>
                                                         <option value="INFO">INFO</option>
                                                         <option value="MATHS">MATHS</option>
                                                         <option value="PHYSIQUE">PHYSIQUE</option>
@@ -303,14 +303,7 @@
                                                         <option value="BIOS">BIOS</option>
                                                     
                                                     </optgroup>
-                                                    <optgroup label="FAC LETTRE">
-                                                        <option value="Vegetal1">Vegetal1</option>
-                                                        <option value="Vegetal1">Vegetal1</option>
-                                                        <option value="Vegetal1">Vegetal1</option>
-                                                        <option value="Vegetal1">Vegetal1</option>
-                                                        <option value="Vegetal1">Vegetal1</option>
-                                                    
-                                                    </optgroup>
+                                                  
                                                     
                                                 </select> 
                                             </div>
@@ -466,32 +459,10 @@
                                         </p>
                                     </div><!--end card-header-->
                                     <div class="card-body" >
-                                       
+                                        <form id="eltb" method="POST" action="{{route('import_excel')}}" enctype="multipart/form-data">
+                                            @csrf
                                             <div class="row">
-                                                <div class="col-md-3">
-                                                    <label class="mb-6">Filiere</label>
-                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
-                                                        <option value="">Filiere</option>
-                                                        <optgroup label="FAC SCIENCE">
-                                                            <option value="ICT">ICT4D</option>
-                                                            <option value="INFO">INFO</option>
-                                                            <option value="MATHS">MATHS</option>
-                                                            <option value="PHYSIQUE">PHYSIQUE</option>
-                                                            <option value="CHIMIE">CHIMIE</option>
-                                                            <option value="BIOS">BIOS</option>
-                                                        
-                                                        </optgroup>
-                                                        <optgroup label="FAC LETTRE">
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                            <option value="Vegetal1">Vegetal1</option>
-                                                        
-                                                        </optgroup>
-                                                        
-                                                    </select> 
-                                                </div>
+                                                
 
                                                 <div class="col-md-3">
                                                     <label class="mb-6">Type Evaluation</label>
@@ -518,14 +489,19 @@
                                                
                                                 <div class="col-md-2">
                                                     <label class="mb-6">Matiere</label>
-                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                    <select id="filiere_select" name="matiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
                                                         <option value="">Liste des matieres</option>
+
                                                         <optgroup label="Code Ue">
-                                                            <option value="Ict 202">Ict 202</option>
-                                                            <option value="Ict 203">Ict 203</option>
-                                                            <option value="Ict 204">Ict 204</option>
-                                                            <option value="Ict 218">Ict 218</option>
-                                                           
+                                                            
+                                                      
+                                                            @if ($listeMatiere)
+                                                            
+                                                            @foreach($listeMatiere as $matiere)
+                                                            <option value="{{ $matiere->id_ue }}">{{ $matiere->id_ue }}</option>
+                                                            @endforeach
+                                                            @endif
+
                                                         </optgroup>
                                                       
                                                         
@@ -534,10 +510,10 @@
                                                 <div class="col-md-2">
                                                     <label class="mb-6">Matiere A TP</label>
                                                     <div class="radio-group">
-                                                        <input type="radio" id="yes" name="radios" value="OUI">
+                                                        <input type="radio" id="yes" name="radioschoose" value="OUI">
                                                         <label for="yes">OUI</label>
                                                       
-                                                        <input type="radio" id="no" name="radios" value="NON">
+                                                        <input type="radio" id="no" name="radioschoose" value="NON">
                                                         <label for="no">NON</label>
                                                       
                                                      
@@ -560,8 +536,7 @@
                                                     </select> 
                                                 </div>
                                             </div>
-                                            <form id="eltb" method="POST" action="{{route('import_excel')}}" enctype="multipart/form-data">
-                                                @csrf
+                                   
                                                 <input class="btn btn-sm btn-soft-primary " value="Import Fichier Excel" type="file" accept=".xlsx, .xls" name="excel_file" id="excel_file">
                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                 <button class="btn btn-primary" type="submit" id="submit_btn" disabled>Upload/.xlsx, .xls</button>  

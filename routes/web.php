@@ -56,7 +56,7 @@ Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');
 Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
 Route::get('/details_releve',[ReleveController::class, 'details_releve'])->name('details_releve');
-Route::post('/import_excel',[ExcelController::class, 'import_excel'])->name('import_excel');
+Route::post('/import_excel',[ReleveController::class, 'import_excel'])->name('import_excel');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 // Route::post('/import-excel', 'ExcelController@import')->name('import.excel');
 
