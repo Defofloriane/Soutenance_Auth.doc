@@ -287,6 +287,7 @@
                                                 
                                                 
                                                 </div>
+                                            
                                                 
                                             </div>
                                             <div class="col-md-3">
@@ -467,7 +468,31 @@
                                     <div class="card-body" >
                                        
                                             <div class="row">
-                                              
+                                                <div class="col-md-3">
+                                                    <label class="mb-6">Filiere</label>
+                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                        <option value="">Filiere</option>
+                                                        <optgroup label="FAC SCIENCE">
+                                                            <option value="ICT">ICT4D</option>
+                                                            <option value="INFO">INFO</option>
+                                                            <option value="MATHS">MATHS</option>
+                                                            <option value="PHYSIQUE">PHYSIQUE</option>
+                                                            <option value="CHIMIE">CHIMIE</option>
+                                                            <option value="BIOS">BIOS</option>
+                                                        
+                                                        </optgroup>
+                                                        <optgroup label="FAC LETTRE">
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                            <option value="Vegetal1">Vegetal1</option>
+                                                        
+                                                        </optgroup>
+                                                        
+                                                    </select> 
+                                                </div>
+
                                                 <div class="col-md-3">
                                                     <label class="mb-6">Type Evaluation</label>
                                                     <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
