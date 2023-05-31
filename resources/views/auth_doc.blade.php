@@ -278,10 +278,13 @@
                                     <!--end card-header-->
                                    
                                     <div class="card-body">
-                                        <div id="my_camera">
+                                        <div class="description wow fadeInLeft">
+                                            <div name="reader" id="reader" width="600px" ></div>
+                                        </div>
+                                        {{-- <div id="my_camera">
                                             <img src="assets/images/small/img-1.jpg" alt="" class="img-fluid"  id="captured-image" onclick="startCamera()"  name="image" >
 
-                                        </div>
+                                        </div> --}}
                                         {{-- <div id="image-container" >
                                         </div> --}}
                                         <br/>
@@ -417,6 +420,43 @@ function captureImage() {
 
 
 
+</script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script>
+  function onScanSuccess(decodedText, decodedResult) {
+       $('#result').val(decodedText);
+       alert(decodedText);
+      html5QrcodeScanner.clear().then(_ => {
+      }).catch(error => {
+          alert('something wrong');
+      });
+
+  }
+
+  function onScanFailure(error) {
+  }
+
+  let html5QrcodeScanner = new Html5QrcodeScanner(
+      "reader", {
+          fps: 10,
+          qrbox: {
+              width: 250,
+              height: 250
+          }
+      },
+      /* verbose= */
+      false);
+  html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 </script>
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
