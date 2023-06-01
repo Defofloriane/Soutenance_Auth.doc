@@ -49,20 +49,26 @@
             <ul class="metismenu left-sidenav-menu">
                 <li class="menu-label mt-0">Main</li>
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"> <i data-feather="home"
+                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('index')}}"><i class="ti-control-record"></i>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
+                                    class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="grid"
+                            class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
+                                    class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
+                                <li><a href="{{ route('view_add_releve') }}">Add Releve</a></li>
                                 {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
 
                             </ul>
@@ -73,10 +79,14 @@
             </li>
 
             <li>
-                <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="lock"
+                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i class="ti-control-record"></i>Add Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i class="ti-control-record"></i>List Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
+                                class="ti-control-record"></i>Add Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i
+                                class="ti-control-record"></i>List Admin</a></li>
 
                 </ul>
             </li>
@@ -86,27 +96,36 @@
 
 
             <li>
-                <a href=" {{route('view_etudiant')}}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>List Etudiant</span><span class="badge badge-soft-success menu-arrow">Exemple</span></a>
+                <a href=" {{ route('view_etudiant') }}"><i data-feather="layers"
+                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
+                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
             </li>
 
             <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
+                                class="ti-control-record"></i>Repord card</a></li>
 
                 </ul>
             </li>
             <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('attestation') }}"><i
+                                class="ti-control-record"></i>Attestation de reussite</a></li>
 
                 </ul>
             </li>
             </ul>
 
             <div class="update-msg text-center">
-                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg" aria-label="Close" aria-hidden="true">
+                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
+                    aria-label="Close" aria-hidden="true">
                     <i class="mdi mdi-close"></i>
                 </a>
                 <h5 class="mt-3">Auth.doc</h5>
@@ -128,14 +147,16 @@
 
 
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
+                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             {{-- <span class="">{{ $name }}</span> --}}
 
                             <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
 
-                            <a class="dropdown-item" href="{{route('signOut')}}"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
+                            <a class="dropdown-item" href="{{ route('signOut') }}"><i data-feather="power"
+                                    class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -152,7 +173,8 @@
                         <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="nav-link">
-                                <input class=" btn btn-sm btn-soft-primary" type="file" name="name_file" id="name_file">
+                                <input class=" btn btn-sm btn-soft-primary" type="file" name="name_file"
+                                    id="name_file">
                                 <button class=" btn btn-sm btn-soft-primary" type="submit">upload</button>
 
                             </div>
@@ -179,7 +201,8 @@
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item active">Scan</li>
                                         <li class="breadcrumb-item"><a href="javascript:void(0);">Hachage</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Verification</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Verification</a>
+                                        </li>
                                     </ol>
                                 </div>
                                 <!--end col-->
@@ -206,32 +229,53 @@
                                     <h4>Scan document with Ocr</h4>
                                 </div>
                             </div>
-                            <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog"
+                                aria-labelledby="downloadModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="downloadModalLabel">Télécharger l'application Mobile <span> Auth.doc </span></h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <h5 class="modal-title" id="downloadModalLabel">Télécharger l'application
+                                                Mobile <span> Auth.doc </span></h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Cliquez sur le lien pour télécharger l'application mobile pour Use l ocr :</p>
-                                            <p id="downloadLink"><a id="downloadHref" href="#" target="_blank"></a></p>
+                                            <p>Cliquez sur le lien pour télécharger l'application mobile pour Use l ocr
+                                                :</p>
+                                            <p id="downloadLink"><a id="downloadHref" href="#"
+                                                    target="_blank"></a></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Fermer</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-one-half">
+                        {{-- <div class="col-one-half">
 
                             <div class="ocr" onclick="showScanForm()">
                                 <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
                                 <h4>Scan Qr Code</h4>
+                            </div>
+                        </div> --}}
+                        <div class="col-one-half">
+                            <div class="ocr" onclick="showScanForm()">
+                                <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
+                                <h4>Scan Qr Code</h4>
+                                <?php if (isset($DataSend['message'])) : ?>
+                                <p><?php echo $DataSend['message']; ?></p>
+                                <?php endif; ?>
+
+                                <!-- Bouton pour afficher le relevé correspondant -->
+                                <?php if (isset($DataSend['releve'])) : ?>
+                                <a href="{{ route('details', ['DataSend' => $DataSend]) }}" class="btn">Voir le
+                                    relevé</a>
+                                <?php endif; ?>
                             </div>
                         </div>
 
@@ -240,18 +284,23 @@
                     <div class="row reduce-spacing" id="scan-details">
                         <div class="col-one-half">
                             <p class="paragraph serif">The term used
-                                for document authentication is: integrity check. Recognized as one of the principles of computer security which consists in determining whether the data has not been altered
-                                (by accident or intentionally).Auth.doc will allow us to authenticate the repord card , We can use <span>Ocr (optical character recognition).</span></p>
+                                for document authentication is: integrity check. Recognized as one of the principles of
+                                computer security which consists in determining whether the data has not been altered
+                                (by accident or intentionally).Auth.doc will allow us to authenticate the repord card ,
+                                We can use <span>Ocr (optical character recognition).</span></p>
                             <p class="paragraph serif"></p>
                         </div>
                         <div class="col-one-half">
                             <p class="paragraph serif">In order to uphold these principles,
-                                many processes are used, including hash functions, electronic signatures, cryptographic algorithms, etc. Authentication is often associated with integrity checking in order to better strengthen the locks.
+                                many processes are used, including hash functions, electronic signatures, cryptographic
+                                algorithms, etc. Authentication is often associated with integrity checking in order to
+                                better strengthen the locks.
                                 we can use <span>Qr-code.</span></p>
                             <p class="paragraph serif"> </p>
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('webcam.capture') }}" id="scan-form" style="display: none;">
+                    <form method="POST" action="{{ route('webcam.capture') }}" id="scan-form"
+                        style="display: none;">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
@@ -277,14 +326,15 @@
                                         {{-- <div id="image-container" >
                                         </div> --}}
                                         <br />
-                                        <input class="btn btn-primary" type=button value="Scan Qr-code" onClick="take_snapshot()">
+                                        <input class="btn btn-primary" type=button value="Scan Qr-code"
+                                            onClick="take_snapshot()">
                                         <input type="hidden" name="image" class="image-tag">
 
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="col-lg-5"> {{--11111111111111111111111111111 --}}
+                            <div class="col-lg-5"> {{-- 11111111111111111111111111111 --}}
 
                                 <div class="card">
                                     <div class="card-header">
@@ -301,13 +351,15 @@
                                 <!--end card-->
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Les differents resultats de votre releve affirme que:</h4>
+                                        <h4 class="card-title">Les differents resultats de votre releve affirme que:
+                                        </h4>
 
                                     </div>
                                     <!--end card-header-->
                                     <div class="card-body">
                                         <div class="button-items">
-                                            <a class="btn btn-outline-primary popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Document?</a>
+                                            <a class="btn btn-outline-primary popup-youtube"
+                                                href="http://www.youtube.com/watch?v=0O2aH4XLbto">Document?</a>
 
                                         </div>
                                     </div>
@@ -322,7 +374,8 @@
                         </div><!-- container -->
 
                         <footer class="footer text-center text-sm-left">
-                            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
+                            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+                                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
                         </footer>
                         <!--end footer-->
                 </div>
@@ -354,63 +407,64 @@
                 }
             </script>
             <!-- <script language="JavaScript">
-    var aspectRatio = 1.4142; // A4 paper aspect ratio (width / height)
-    var canvasWidth = 490; // set canvas width
-    var canvasHeight = Math.round(canvasWidth / aspectRatio) ; // calculate canvas height based on aspect ratio
+                var aspectRatio = 1.4142; // A4 paper aspect ratio (width / height)
+                var canvasWidth = 490; // set canvas width
+                var canvasHeight = Math.round(canvasWidth / aspectRatio); // calculate canvas height based on aspect ratio
 
-    Webcam.set({
-        width: canvasWidth,
-        height: canvasHeight,
-        image_format: 'jpeg',
-        jpeg_quality: 90
-    });
-    
-    Webcam.attach( '#my_camera' );
-    
-    function take_snapshot() {
-        Webcam.snap( function(data_uri) {
-            $(".image-tag").val(data_uri);
-            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
-        } );
-    }
+                Webcam.set({
+                    width: canvasWidth,
+                    height: canvasHeight,
+                    image_format: 'jpeg',
+                    jpeg_quality: 90
+                });
 
-    
-</script> -->
+                Webcam.attach('#my_camera');
+
+                function take_snapshot() {
+                    Webcam.snap(function(data_uri) {
+                        $(".image-tag").val(data_uri);
+                        document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
+                    });
+                }
+            </script> -->
             <!-- <script>
- function startCamera() {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
-                var video = document.createElement('video');
-                video.srcObject = stream;
-                video.play();
-                document.getElementById('image-container').replaceChild(video, document.getElementById('captured-image'));
-            })
-            .catch(function(error) {
-                console.log('Error: ', error);
-            });
-    }
-}
+                function startCamera() {
+                    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                        navigator.mediaDevices.getUserMedia({
+                                video: true
+                            })
+                            .then(function(stream) {
+                                var video = document.createElement('video');
+                                video.srcObject = stream;
+                                video.play();
+                                document.getElementById('image-container').replaceChild(video, document.getElementById(
+                                    'captured-image'));
+                            })
+                            .catch(function(error) {
+                                console.log('Error: ', error);
+                            });
+                    }
+                }
 
-function captureImage() {
-    var video = document.querySelector('video');
-    var canvas = document.createElement('canvas');
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-    var dataUrl = canvas.toDataURL('images/jpeg');
-    document.getElementById('captured-image-data').value = dataUrl;
-    video.parentNode.replaceChild(document.getElementById('captured-image'), video);
-}
-
-
-
-
-</script> -->
+                function captureImage() {
+                    var video = document.querySelector('video');
+                    var canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                    var dataUrl = canvas.toDataURL('images/jpeg');
+                    document.getElementById('captured-image-data').value = dataUrl;
+                    video.parentNode.replaceChild(document.getElementById('captured-image'), video);
+                }
+            </script> -->
             <script src="assets/js/jquery-3.3.1.min.js"></script>
             <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
             <script src="assets/js/jquery.backstretch.min.js"></script>
             <script src="assets/js/wow.min.js"></script>
             <script src="assets/js/jquery.waypoints.min.js"></script>
@@ -430,33 +484,37 @@ function captureImage() {
             <script src="assets/pages/jquery.Auth.doc.init.js"></script>
             <!-- App js -->
             <script src="assets/js/app.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> 
-  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-    <script>
-        function onScanSuccess(decodedText, decodedResult) {
-            // console.log(`Code matched = ${decodedText}`, decodedResult);
-            document.getElementById('data').value=decodedText; 
-            document.getElementById('form').submit();
-            alert(decodedText) ;    
-        }
-         
-        function onScanFailure(error) {
-
-            console.warn(`Code scan error = ${error}`);
-        }
-
-        let html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", {
-                fps: 10,
-                qrbox: {
-                    width: 250,
-                    height: 250
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+            </script>
+            <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+            <script>
+                function onScanSuccess(decodedText, decodedResult) {
+                    // console.log(`Code matched = ${decodedText}`, decodedResult);
+                    document.getElementById('data').value = decodedText;
+                    document.getElementById('form').submit();
+                    alert(decodedText);
                 }
-            },
-            false);
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-    </script>
+
+                function onScanFailure(error) {
+
+                    console.warn(`Code scan error = ${error}`);
+                }
+
+                let html5QrcodeScanner = new Html5QrcodeScanner(
+                    "reader", {
+                        fps: 10,
+                        qrbox: {
+                            width: 250,
+                            height: 250
+                        }
+                    },
+                    false);
+                html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+            </script>
 </body>
 
 </html>

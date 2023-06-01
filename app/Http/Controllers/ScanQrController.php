@@ -35,7 +35,23 @@ class ScanQrController extends Controller
           $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
        }
        //ici du gere la vu qui dit que le releve est authentique ou pas la du gere la session pour proposer un bouton au cas ou c'est authentique
-       }
+      // Gestion de la vue pour afficher le message indiquant l'authenticité du relevé
+      if ($h1 == $h2) {
+         $message = "Le relevé est authentique.";
+         if ($h1 == $h2) {
+            // ...
+            $DataSend = ['releve' => $releve, 'notes' => $notes, 'etudiant' => $etudiant, 'message' => 'ok'];
+        
+            return view('auth_doc')->with(compact('DataSend'));
+        }
+     } else {
+         $message = "Le relevé n'est pas authentique.";
+     }
+
+     // Gestion de la session pour proposer un bouton supplémentaire si le relevé est authentique
+     
+  
+      }
 
     }
 }
