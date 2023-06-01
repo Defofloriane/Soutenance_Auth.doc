@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\Evaluation;
 use App\Models\Filiere;
 use App\Models\Note;
 use App\Models\Ue;
@@ -39,12 +40,12 @@ class ReleveController extends Controller
          ])->get();
        return view('add_releve',compact('resultats','listeMatiere'));
 
-
       // return response()->json(['code_ue' => $ue->nom_ue, 'credit' => $ue->credit]);
    }
    public function view_add_releve()
    {
-      return view('add_releve');
+      $listeMatiere=null;
+      return view('add_releve',compact('listeMatiere'));
    }
    public function add_releve(Request $request)
    {
@@ -355,8 +356,9 @@ $sum = array_sum(str_split($birthDayDigits));
       $anneeAcademique = $request->session()->get('anneeAcademique');
       $chooseMat = $request->input('radioschoose');
       $matiere = $request->input('matiere');
-      $semestre = $request->session()->get('semestre');
-      dd($matiere ,$niveau , $filiere, $anneeAcademique, $chooseMat, $semestre);
+      $semestre = $request->input('semestre');
+      $evaluationtype=$request->input('evaluation');
+      // dd($matiere ,$niveau , $filiere, $anneeAcademique, $chooseMat, $semestre,$evaluationtype);
 
         $file = $request->file('excel_file');
 
@@ -399,44 +401,27 @@ $sum = array_sum(str_split($birthDayDigits));
              
               $matricule = $studentData[0];
               $note = $studentData[1];
-            //   $evaluation = new Evaluation;
-            //   $evaluation->type_evaluation = 'cc';
-            //   $evaluation->etudiant=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
-            //   $evaluation->ue='ict302';
-            //   $evaluation->semestre='1';
-            //   $evaluation->note_evaluation=$note;
-            //   $evaluation->save();
-            //   $matricule = $studentData[2];
-            //   $niveau = $studentData[3];
-              
-            //   $matiere1Credits = $studentData[4];
-            //   $matiere1sn = $studentData[5];
-            //   $matiere1tp = $studentData[6];
-
-          
-              // Afficher les informations de l'étudiant
-            //   echo "Numéro : $numero<br>";
-            //   echo "Noms et prénoms : $nomsEtPrenoms<br>";
-            //   echo "Matricule : $matricule<br>";
-            //   echo "Niveau : $niveau<br>";
-            //   echo "Crédits ENGL203CC : $matiere1Credits<br>";
-            //   echo "Crédits engl203SN : $matiere1sn<br>";
-            //   echo "Crédits engl203TP : $matiere1tp<br>";
-          
-              // et ainsi de suite pour les autres colonnes
-          
-              // ...
-            //   print_r($evaluation);
-          }
+              $etudiant = Etudiant::where('matricule', $matricule)->first();
+              $evaluation = new Evaluation();
+              $evaluation->type_evaluation = $evaluationtype;
+              $evaluation->etudiant=$etudiant->matricule;
+              $evaluation->ue=$matiere;
+              $evaluation->semestre=$semestre;
+              $evaluation->note_evaluation=$note;
+              $evaluation->save();
+            
+            }
           
               
-// ...
+// ...    
 
          }
         // Redirigez ou affichez une réponse appropriée après l'importation
         // par exemple :
         // return redirect()->back()->with('success', 'Le fichier Excel a été importé avec succès.');
-    }
+        $resultats=null;$listeMatiere=null;
+        return view('add_releve',compact('resultats','listeMatiere'));
+      }
 
 }
 

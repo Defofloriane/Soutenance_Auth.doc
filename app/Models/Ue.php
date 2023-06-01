@@ -29,4 +29,8 @@ class Ue extends Model
     public function etudiants(){
         return $this->belongsTo(Etudiant::class);
     }
+    public function evaluations()
+    {
+        return $this->hasMany(Evaluation::class);
+    }
 }

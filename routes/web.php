@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReleveController;
 use App\Http\Controllers\AttestationController;
 use App\Http\Controllers\ExcelController;
-
+use App\Http\Controllers\ScanQrController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +36,7 @@ Route::controller(home::class)->group(function () {
     Route::get('webcam', 'index')->name('webcam.capture');
     Route::post('webcam', 'store');
 });
+Route::post('webcam',[ScanQrController::class,'store'])->name('store');
 Route::get('/ocr', [home::class,'ocr'])->name('ocr');
 Route::post('/upload', [home::class,'upload'])->name('upload');
 // Route::get('/details', [home::class,'details'])->name('details');

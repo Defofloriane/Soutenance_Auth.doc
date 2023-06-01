@@ -16,4 +16,9 @@ class Etudiant extends Model
      return $this->hasMany(Ue::class);
 
     }
+
+    public function evaluations()
+    {
+        return $this->hasMany(Evaluation::class);
+    }
 }

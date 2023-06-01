@@ -466,7 +466,7 @@
 
                                                 <div class="col-md-3">
                                                     <label class="mb-6">Type Evaluation</label>
-                                                    <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                    <select id="filiere_select" name="evaluation" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
                                                         <option value="">Type  Evaluation</option>
                                                         <optgroup label="Controle continue">
                                                             <option value="CC">CC</option>
@@ -498,7 +498,7 @@
                                                             @if ($listeMatiere)
                                                             
                                                             @foreach($listeMatiere as $matiere)
-                                                            <option value="{{ $matiere->id_ue }}">{{ $matiere->id_ue }}</option>
+                                                            <option value="{{ $matiere->id_ue }}" >{{ $matiere->id_ue }}</option>
                                                             @endforeach
                                                             @endif
 
