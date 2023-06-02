@@ -259,7 +259,7 @@
                                     <h4 class="card-title">Les differents resultats de votre releve affirme que:
                                     </h4>
                                     <h3>
-                                        <p  id="message"></p>
+                                        <p id="message"></p>
                                     </h3>
                                 </div>
                                 <!--end card-header-->
@@ -268,6 +268,8 @@
                                     <form method="POST" action="{{ route('show') }}" id="mon-formulaire" style="display: none;">
                                         @csrf
                                         <input type="hidden" name="id_releve" value="" id="id_releve">
+                                        <input type="hidden" name="niveau" value="" id="niveau">
+                                        <input type="hidden" name="matricule" value="" id="matricule">
                                         <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
                                     </form>
 
@@ -362,7 +364,9 @@
                                     numero.innerHTML = "<strong>Numéro du relevé  :</strong> " + releve[0].id_releve;
                                     mgp.innerHTML = "<strong>Mgp :</strong> " + releve[0].mgp;
                                     decision.innerHTML = "<strong>" + releve[0].decision + "</strong>";
-                                    let input = document.getElementById("id_releve");
+                                    let id_releve = document.getElementById("id_releve");
+                                    let niveau_ = document.getElementById("niveau");
+                                    let matri = document.getElementById("matricule");
                                     input.value = releve[0].id_releve;
                                     let message = document.getElementById("message");
                                     message.textContent = "Document authentique"

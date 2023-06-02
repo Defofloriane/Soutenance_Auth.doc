@@ -428,6 +428,8 @@
                                                                         <form method="POST" action="{{ route('show') }}">
                                                                             @csrf
                                                                             <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
+                                                                            <input type="hidden" name="niveau" value="{{ $releve->niveau }}" id="niveau">
+                                                                            <input type="hidden" name="matricule" value="{{ $releve->matricule }}" id="matricule">
                                                                             <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
                                                                         </form>
 

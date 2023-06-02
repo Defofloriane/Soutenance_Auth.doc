@@ -329,9 +329,10 @@ $sum = array_sum(str_split($birthDayDigits));
       //  $details = Releve::find($id);
       // $id_releve = request('id_releve');
       $id_releve=$request->id_releve;
-      $releve = Releve::where('id_releve', $id_releve)->firstOrFail();
-
-      //hachage des informations 
+      $matricule=$request->matricule;
+      $niveau=$request->niveau;
+      $releve = Releve::where('id_releve', $id_releve)->first();
+      print_r($releve->id_releve);      //hachage des informations 
      $secretKey = 'auth.document';//cle secrete
      $donnees= Releve::where('id_releve', $id_releve)->firstOrFail();
      $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
@@ -347,7 +348,7 @@ $sum = array_sum(str_split($birthDayDigits));
          ->get();
       //  return $etudiant;
       // Passez les données à la vue de détails
-      return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
+      // return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
    }
   
    public function import_excel(Request $request)
