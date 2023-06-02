@@ -333,24 +333,25 @@ $sum = array_sum(str_split($birthDayDigits));
       $niveau=$request->niveau;
       $da=$request->data;
       $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-       print_r($releve);
       //hachage des informations 
-   //   $secretKey = 'auth.document';//cle secrete
-   //   $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-   //   $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
-   //    $hmac=hash_hmac('sha256', $data, $secretKey);
-   //     $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
-   //    $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
-   //    $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
-   //       ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
-   //       ->where('notes.etudiant', '=', $releve->etudiant)
-   //       ->where('niveaux.nom_niveau', '=', $releve->niveau)
-   //       ->select('notes.*', 'ues.nom_ue', 'ues.credit')
-   //       ->distinct()
-   //       ->get();
-      //  return $etudiant;
+
+     $secretKey = 'auth.document';//cle secrete
+     $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
+     $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
+      $hmac=hash_hmac('sha256', $data, $secretKey);
+       $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
+      $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
+      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+         ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+         ->where('notes.etudiant', '=', $releve->etudiant)
+         ->where('niveaux.nom_niveau', '=', $releve->niveau)
+         ->select('notes.*', 'ues.nom_ue', 'ues.credit')
+         ->distinct()
+         ->get();
+      //  return $etudiant;////
+
       // Passez les données à la vue de détails
-      // return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
+      return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
    }
   
    public function import_excel(Request $request)
