@@ -191,7 +191,7 @@
 
 
 
-                     
+
 
                     </div>
                     <br>
@@ -230,21 +230,21 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">Information d'entete du Qr-code</h4>
-                                   
-                                        <div id="info-etu">
-                                            <h3>Informations étudiant</h3>
-                                            <ul>
-                                                <li id="nom"><strong>Nom :</strong> Dupont</li>
-                                                <li id="pre"><strong>Prénom :</strong> Jean</li>
-                                                <li id="niv"><strong>Niveau :</strong> L3</li>
-                                                <li id="mat"><strong>Matricule :</strong> 123456</li>
-                                                <li id="fil"><strong>Filière :</strong> Informatique</li>
-                                                <li id="num"><strong>Numéro du relevé :</strong> Informatique</li>
-                                                <li id="mgp"><strong>Numéro du relevé :</strong> Informatique</li>
-                                                <li id="dec"><strong>Numéro du relevé :</strong> Informatique</li>
-                                            </ul>
-                                        </div>
-                                
+
+                                    <div id="info-etu">
+                                        <h3>Informations étudiant</h3>
+                                        <ul>
+                                            <li id="nom"><strong>Nom :</strong> Dupont</li>
+                                            <li id="pre"><strong>Prénom :</strong> Jean</li>
+                                            <li id="niv"><strong>Niveau :</strong> L3</li>
+                                            <li id="mat"><strong>Matricule :</strong> 123456</li>
+                                            <li id="fil"><strong>Filière :</strong> Informatique</li>
+                                            <li id="num"><strong>Numéro du relevé :</strong> Informatique</li>
+                                            <li id="mgp"><strong>Numéro du relevé :</strong> Informatique</li>
+                                            <li id="dec"><strong>Numéro du relevé :</strong> Informatique</li>
+                                        </ul>
+                                    </div>
+
                                 </div>
                                 <!--end card-header-->
                                 <div class="card-body" id="results">
@@ -258,7 +258,9 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Les differents resultats de votre releve affirme que:
                                     </h4>
-
+                                    <h3>
+                                        <p  id="message"></p>
+                                    </h3>
                                 </div>
                                 <!--end card-header-->
                                 <div class="card-body">
@@ -290,7 +292,7 @@
                         &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> ICT4D</span>
                     </footer>
                     <!--end footer-->
-                   
+
 
                 </div>
                 <!-- end page content -->
@@ -298,7 +300,7 @@
             <!-- end page-wrapper -->
 
             <script>
-             document.getElementById('info-etu').style.display = "none";
+                document.getElementById('info-etu').style.display = "none";
             </script>
 
             <script src="assets/js/jquery.min.js"></script>
@@ -362,9 +364,14 @@
                                     decision.innerHTML = "<strong>" + releve[0].decision + "</strong>";
                                     let input = document.getElementById("id_releve");
                                     input.value = releve[0].id_releve;
-                                    console.log(input.value);
+                                    let message = document.getElementById("message");
+                                    message.textContent = "Document authentique"
+                                    message.style.color = 'green';
+
                                 } else if (response.status == 400) {
-                                    alert('gagal');
+                                    let message = document.getElementById("message");
+                                    message.style.color = 'red';
+                                    message.textContent = "Document non authentique"
                                 } else {
                                     alert('error');
                                 }
@@ -407,6 +414,9 @@
                         /* verbose= */
                         false);
                     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+                    let message = document.getElementById("message");
+                    message.textContent = ""
+                    document.getElementById('info-etu').style.display = "none";
                 }
             </script>
 </body>
