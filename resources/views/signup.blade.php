@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="assets/images/logo-sm.png">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="page page-onboarding preload">
+<body class="page page-onboarding preload">    
 
   <main>
 
