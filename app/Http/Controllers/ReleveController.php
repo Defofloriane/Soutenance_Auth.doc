@@ -327,7 +327,8 @@ $sum = array_sum(str_split($birthDayDigits));
       //  dd($id);
       // Récupérez les données de la base de données en fonction de l'ID
       //  $details = Releve::find($id);
-      $id_releve = request('id_releve');
+      // $id_releve = request('id_releve');
+      $id_releve=$request->id_releve;
       $releve = Releve::where('id_releve', $id_releve)->firstOrFail();
 
       //hachage des informations 

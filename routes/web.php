@@ -39,7 +39,7 @@ Route::controller(home::class)->group(function () {
 Route::post('webcam',[ScanQrController::class,'store'])->name('store');
 Route::get('/ocr', [home::class,'ocr'])->name('ocr');
 Route::post('/upload', [home::class,'upload'])->name('upload');
-// Route::get('/details', [home::class,'details'])->name('details');
+Route::get('/details', [home::class,'details'])->name('details');
 Route::get('/details', [ReleveController::class,'reveleEtudiant'])->name('details');
 // Route::get('/details', [ReleveController::class,'add_releve'])->name('details');
 Route::get('/view_etudiant', [ReleveController::class,'view_etudiant'])->name('view_etudiant');
@@ -58,6 +58,9 @@ Route::post('/show', [ReleveController::class, 'show'])->name('show');
 Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
 Route::get('/details_releve',[ReleveController::class, 'details_releve'])->name('details_releve');
 Route::post('/import_excel',[ReleveController::class, 'import_excel'])->name('import_excel');
+Route::get('/scan_code',[ScanQrController::class,'index'])->name('index');
+Route::post('/store',[ScanQrController::class,'store'])->name('store');
+Route::post('/test',[ScanQrController::class,'test'])->name('test');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 // Route::post('/import-excel', 'ExcelController@import')->name('import.excel');
 

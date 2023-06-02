@@ -10,17 +10,15 @@ use Illuminate\Http\Request;
 class ScanQrController extends Controller
 {
     public function store(Request $request){
-      //recuperation des information lues directement du qr code
-      $datas=explode(" ",$request->data);
+      $data = $request->input('data');
+      $datas=explode(" ",$data);
       $h1=$datas[0];
       $matricule=$datas[1];
-      $niveau=$datas[2];
+      $niveau=$datas[2].' '.$datas[3];
        $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
-       if($donnees){
-       $datas= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
+       $datasH= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
        $secretKey = 'auth.document';
-       $h2 = hash_hmac('sha256', $datas, $secretKey);
-
+       $h2 = hash_hmac('sha256', $datasH, $secretKey);
        if($h1==$h2){
           $releve=Releve::where(['etudiant'=>$matricule])->get();
           $etudiant=Etudiant::where(['matricule'=>$matricule])->get();
@@ -32,26 +30,29 @@ class ScanQrController extends Controller
                       ->select('notes.*', 'ues.nom_ue','ues.credit')
                       ->distinct()
                       ->get();
-          $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
-       }
-       //ici du gere la vu qui dit que le releve est authentique ou pas la du gere la session pour proposer un bouton au cas ou c'est authentique
-      // Gestion de la vue pour afficher le message indiquant l'authenticité du relevé
-      if ($h1 == $h2) {
-         $message = "Le relevé est authentique.";
-         if ($h1 == $h2) {
-            // ...
-            $DataSend = ['releve' => $releve, 'notes' => $notes, 'etudiant' => $etudiant, 'message' => 'ok'];
-        
-            return view('auth_doc')->with(compact('DataSend'));
+          $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant]);
+          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $DataSend]);
         }
-     } else {
-         $message = "Le relevé n'est pas authentique.";
-     }
-
-     // Gestion de la session pour proposer un bouton supplémentaire si le relevé est authentique
-     
-  
-      }
+        else if($donnees && $h1!==$h2){
+            return response()->json(['status' => 400, 'message' => 'Failure']);
+        }
+        else if(count($datas)<3){
+            return response()->json(['status' => 402, 'message' => 'Failure']);
+        }
 
     }
+    public function index(){
+        return view('scan_code');
+    }
+
+    public function test(Request $request)
+   {
+      $id_releve=$request->id_releve;
+      return view("details",compact('id_releve'));
+   }
+   public function afficher()
+   {
+      //  $releve = Releve::find($id);
+      return view('details');
+   }
 }

@@ -34,9 +34,9 @@
                 <span>
                     <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                 </span>
-            
-                    <h4 class="logo-lg logo-light">Auth.doc</h4>
-             
+
+                <h4 class="logo-lg logo-light">Auth.doc</h4>
+
             </a>
         </div>
         <!--end logo-->
@@ -44,77 +44,64 @@
             <ul class="metismenu left-sidenav-menu">
                 <li class="menu-label mt-0">Main</li>
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home"
-                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('index')}}"><i
-                                    class="ti-control-record"></i>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('index')}}"><i class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid"
-                            class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                      
+
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
-                                    class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
                                 {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
-    
+
                             </ul>
                         </li>
-                       
-                        </li>
-                    </ul>
+
                 </li>
+            </ul>
+            </li>
 
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="lock"
-                            class="align-self-center menu-icon"></i><span>Authentication</span><span
-                            class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
-                                    class="ti-control-record"></i>Add Admin</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
-                                        class="ti-control-record"></i>List Admin</a></li>
-                       
-                    </ul>
-                </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i class="ti-control-record"></i>Add Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i class="ti-control-record"></i>List Admin</a></li>
 
-                <hr class="hr-dashed hr-menu">
-                <li class="menu-label my-2">olders</li>
+                </ul>
+            </li>
+
+            <hr class="hr-dashed hr-menu">
+            <li class="menu-label my-2">olders</li>
 
 
-                <li>
-                    <a href=" {{route('view_etudiant')}}"><i data-feather="layers"
-                            class="align-self-center menu-icon"></i><span >List Etudiant</span><span
-                            class="badge badge-soft-success menu-arrow">Exemple</span></a>
-                </li>
+            <li>
+                <a href=" {{route('view_etudiant')}}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>List Etudiant</span><span class="badge badge-soft-success menu-arrow">Exemple</span></a>
+            </li>
 
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
-                     
-                    </ul>
-                </li>  
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
-                     
-                    </ul>
-                </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+
+                </ul>
+            </li>
             </ul>
 
             <div class="update-msg text-center">
-                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
-                    aria-label="Close" aria-hidden="true">
+                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg" aria-label="Close" aria-hidden="true">
                     <i class="mdi mdi-close"></i>
                 </a>
                 <h5 class="mt-3">Auth.doc</h5>
@@ -129,23 +116,23 @@
     <div class="page-wrapper">
         <!-- Top Bar Start -->
         <div class="topbar">
-                  
-            
+
+
             <!-- Navbar -->
             <nav class="navbar-custom">
                 <ul class="list-unstyled topbar-nav float-right mb-0">
                     <li class="dropdown hide-phone">
-                        
-                       
- 
-                      
 
-  
-                
+
+
+
+
+
+
                     </li>
 
                     <li class="dropdown notification-list">
-                        
+
                         {{-- <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
 
                           
@@ -160,48 +147,44 @@
                     </li>
 
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="ml-1 nav-user-name hidden-sm">Nick</span>
                             <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i data-feather="user"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i data-feather="settings"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i data-feather="settings" class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
                             <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item" href="#"><i data-feather="power"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
+                            <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
                 <form method="POST" action="{{ route('search') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="niveau" >Selectionner le niveau de l etudiant et entrer son Matricule / Nom complet</label>
+                        <label for="niveau">Selectionner le niveau de l etudiant et entrer son Matricule / Nom complet</label>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="app-search-topbar">
-                              <input type="search" name="search" class="form-control top-search mb-0" placeholder="Matricule/Name">
-                              <button type="submit"><i class="ti-search"></i></button>
-                            </div> 
+                                <input type="search" name="search" class="form-control top-search mb-0" placeholder="Matricule/Name">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </div>
                             &nbsp;&nbsp; &nbsp;&nbsp;
-                            <select  id="niveau" name="niveau" class="custom-select">
+                            <select id="niveau" name="niveau" class="custom-select">
                                 <option value="Licence 1">Niveau 1</option>
                                 <option value="Licence 2">Niveau 2</option>
                                 <option value="Licence 3">Niveau 3</option>
-                              </select>
-                            
-                          </div>
-                        
-                       
+                            </select>
+
+                        </div>
+
+
 
                     </div>
-                    
+
                 </form>
                 <!--end topbar-nav-->
                 <div class="col-auto align-self-center">
-                  
+
                 </div>
                 <ul class="list-unstyled topbar-nav mb-0">
                     <li>
@@ -211,8 +194,7 @@
                     </li>
                     <li class="creat-btn">
                         <div class="nav-link">
-                            <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i
-                                    class="fas fa-plus mr-2"></i>New Task</a>
+                            <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i class="fas fa-plus mr-2"></i>New Task</a>
                         </div>
                     </li>
                 </ul>
@@ -229,7 +211,7 @@
                     <div class="col-sm-12">
                         <div class="">
                             <div class="row">
-                               
+
                                 <!--end col-->
                             </div>
                             <!--end row-->
@@ -246,26 +228,21 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade " id="Profile_Project" role="tabpanel"
-                                aria-labelledby="Profile_Project_tab">
+                            <div class="tab-pane fade " id="Profile_Project" role="tabpanel" aria-labelledby="Profile_Project_tab">
                                 <div class="row mb-4">
                                     <div class="col">
                                         <form>
-                                            <div class="input-group input-group-lg" >
-                                                <input type="text" id="example-input1-group2"
-                                                    name="example-input1-group2" class="form-control"
-                                                    placeholder="Search">
+                                            <div class="input-group input-group-lg">
+                                                <input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control" placeholder="Search">
                                                 <span class="input-group-append">
-                                                    <button type="button" class="btn btn-soft-primary"><i
-                                                            class="fas fa-search " ></i></button>
+                                                    <button type="button" class="btn btn-soft-primary"><i class="fas fa-search "></i></button>
                                                 </span>
                                             </div>
                                         </form>
                                     </div>
                                     <!--end col-->
                                     <div class="col-auto">
-                                        <button type="button" class="btn btn-soft-primary btn-lg"><i
-                                                class="fas fa-filter"></i></button>
+                                        <button type="button" class="btn btn-soft-primary btn-lg"><i class="fas fa-filter"></i></button>
                                         <button type="button" class="btn btn-soft-primary btn-lg">Add
                                             Project</button>
                                     </div>
@@ -276,8 +253,7 @@
                                     <div class="col-3">
                                         <div class="card ">
                                             <div class="card-body  text-center">
-                                                <img src="assets/images/widgets/project2.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project2.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Body Care
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -297,8 +273,7 @@
                                     <div class="col-3">
                                         <div class="card w-100">
                                             <div class="card-body">
-                                                <img src="assets/images/widgets/project4.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project4.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Book My
                                                     World</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -318,8 +293,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project3.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project3.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Banking
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -339,8 +313,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project1.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project1.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Transfer
                                                     money</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -363,8 +336,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body  text-center">
-                                                <img src="assets/images/widgets/project4.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project4.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Body Care
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -384,8 +356,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body  text-center">
-                                                <img src="assets/images/widgets/project3.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project3.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Book My
                                                     World</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -405,8 +376,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project1.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project1.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Banking
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -426,8 +396,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project2.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project2.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Transfer
                                                     money</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -447,8 +416,7 @@
                                 </div>
                                 <!--end row-->
                             </div>
-                            <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel"
-                                aria-labelledby="Profile_Post_tab">
+                            <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel" aria-labelledby="Profile_Post_tab">
                                 <div class="row">
                                     <div class="col-lg-9">
                                         <div class="row">
@@ -574,78 +542,72 @@
                                                     .bottom-left {
                                                         position: relative;
                                                         top: 0;
-                                                        right:0;
-                                                        
+                                                        right: 0;
+
                                                     }
-                                                    .app-search-topbar.active {
-    
-}
+
+                                                    .app-search-topbar.active {}
 
 
 
-.top-search:focus {
-    outline: none;
-}
-.app-search-topbar {
-  padding: -23px;
-  border-radius:700px;
-}
-.hide-phone{
-    padding-top: 10px;
- margin-bottom: 10px;
+                                                    .top-search:focus {
+                                                        outline: none;
+                                                    }
+
+                                                    .app-search-topbar {
+                                                        padding: -23px;
+                                                        border-radius: 700px;
+                                                    }
+
+                                                    .hide-phone {
+                                                        padding-top: 10px;
+                                                        margin-bottom: 10px;
 
 
-}
-.app-search-topbar {
-  padding-left: 4px;
-  padding-right : 8px;
-  border-radius: 100px;
-}
-.topbar{
-    padding-bottom: 12px;
-    padding-left: 12px;
-    padding-top: 12px;
-}
+                                                    }
 
+                                                    .app-search-topbar {
+                                                        padding-left: 4px;
+                                                        padding-right: 8px;
+                                                        border-radius: 100px;
+                                                    }
 
-
-
+                                                    .topbar {
+                                                        padding-bottom: 12px;
+                                                        padding-left: 12px;
+                                                        padding-top: 12px;
+                                                    }
                                                 </style>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var searchIcon = document.querySelector('.topbar-icon');
-        var searchForm = document.querySelector('.app-search-topbar');
+                                                <script>
+                                                    document.addEventListener('DOMContentLoaded', function() {
+                                                        var searchIcon = document.querySelector('.topbar-icon');
+                                                        var searchForm = document.querySelector('.app-search-topbar');
 
-        searchIcon.addEventListener('click', function() {
-            searchForm.classList.add('active');
-        });
-    });
-</script>
+                                                        searchIcon.addEventListener('click', function() {
+                                                            searchForm.classList.add('active');
+                                                        });
+                                                    });
+                                                </script>
 
                                                 </head>
 
                                                 <body>
 
 
-                                                    <div
-                                                        class="d-flex container-lg flex-column py-5 px-5 default_option">
+                                                    <div class="d-flex container-lg flex-column py-5 px-5 default_option">
                                                         <header class="w-100 d-flex fle x-column">
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div
-                                                                    class="d-flex content-state-data flex-column align-items-center">
+                                                            <section class="w-100 d-flex align-items-center justify-content-between">
+                                                                <div class="d-flex content-state-data flex-column align-items-center">
                                                                     <span> REPUBLIQUE DU CAMEROUN </span>
                                                                     <span> Paix - Travail - Patrie </span>
                                                                     <span> ------------------------- </span>
                                                                     <span> UNIVERSITE YAOUNDE 1 </span>
                                                                 </div>
-                                                                <div
-                                                                    class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
+                                                                <div class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
                                                                     {{-- <img src="assets/img/logo_ui.png" alt="university of yaounde 1" class="img-fluid" /> --}}
 
                                                                 </div>
-                                                                <div
-                                                                    class="d-flex content-state-data flex-column align-items-center">
+                                                                <div class="d-flex content-state-data flex-column align-items-center">
                                                                     <span> REPUBLIC OF CAMEROON </span>
                                                                     <span> Peace - Work - Fatherland </span>
                                                                     <span> ------------------------- </span>
@@ -653,9 +615,7 @@
                                                                 </div>
                                                             </section>
                                                         </header>
-                                                        <section
-                                                            class="w-100 d-flex flex-column align-items-center py-4"
-                                                            style="padding-bottom: 0px !important">
+                                                        <section class="w-100 d-flex flex-column align-items-center py-4" style="padding-bottom: 0px !important">
                                                             <span class="fs-5 fw-normal"> FACULTE DES SCIENCES </span>
                                                             <span>
                                                                 PB/P.O. Box 812 Yaoundé CAMEROUN : Tel: 222-234-496 /
@@ -675,17 +635,16 @@
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                    
+                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+
                                                                 N° : {{ isset($releve) ? $releve->id_releve : '' }}
-                                                             </div><!--to change dans la table releve-->
-                                                          </div>
+                                                            </div><!--to change dans la table releve-->
+                                                        </div>
                                                         <main class="w-100 d-flex flex-column align-items-center">
-                                                           
+
                                                             <section class="w-100">
 
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
 
                                                                     <div class="d-flex form-item">
 
@@ -697,15 +656,14 @@
 
                                                                         </div>
 
-                                                                        <div
-                                                                            class="form-value ps-4 pt-1 text-uppercase">
-                                                                             {{ isset($etudiant) ? $etudiant->nom : '' }}    {{ isset($etudiant) ? $etudiant->prenom : '' }} 
+                                                                        <div class="form-value ps-4 pt-1 text-uppercase">
+                                                                            {{ isset($etudiant) ? $etudiant->nom : '' }} {{ isset($etudiant) ? $etudiant->prenom : '' }}
                                                                         </div>
 
                                                                     </div>
-                                                                    
+
                                                                     <div class="d-flex form-item">
-                                                                       
+
                                                                         <div class="d-flex flex-column">
                                                                             {{-- <div class="form-value ps-4 pt-1 text-uppercase">N° 00097/EDG/L2/Ict/20212022 &nbsp; &nbsp;</div> --}}
                                                                             <span class="fs-5 fw-bolder bold_part">
@@ -714,12 +672,11 @@
                                                                                 Registration N° </span>
                                                                         </div>
                                                                         <div class="form-value ps-4 pt-1">
-                                                                             {{ isset($etudiant) ? $etudiant->matricule : '' }}  
-                                                                            </div>
+                                                                            {{ isset($etudiant) ? $etudiant->matricule : '' }}
+                                                                        </div>
                                                                     </div>
                                                                 </section>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-start">
+                                                                <section class="w-100 d-flex align-items-center justify-content-start">
                                                                     <div class="d-flex form-item me-5 pe-5">
                                                                         <div class="d-flex flex-column">
                                                                             <span class="fs-5 fw-bolder bold_part">
@@ -727,11 +684,10 @@
                                                                             <span class="english_subtitle"> Born on
                                                                             </span>
                                                                         </div>
-                                                                        <div
-                                                                            class="form-value ps-4 pt-1 text-uppercase">
-                                                                             {{-- {{ $etudiant->date_naissance }} --}}
-                                                                             {{ isset($etudiant) ? $etudiant->date_naissance : '' }}  
-                                                                            </div>
+                                                                        <div class="form-value ps-4 pt-1 text-uppercase">
+                                                                            {{-- {{ $etudiant->date_naissance }} --}}
+                                                                            {{ isset($etudiant) ? $etudiant->date_naissance : '' }}
+                                                                        </div>
                                                                     </div>
                                                                     &nbsp;
                                                                     <div class="d-flex form-item ms-5 ps-5">
@@ -740,11 +696,10 @@
                                                                             </span>
                                                                             <span class="english_subtitle"> At </span>
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">     {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</div>
+                                                                        <div class="form-value ps-4 pt-1"> {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</div>
                                                                     </div>
                                                                 </section>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-start">
+                                                                <section class="w-100 d-flex align-items-center justify-content-start">
                                                                     <div class="d-flex form-item">
                                                                         <div class="d-flex flex-column">
                                                                             <span class="fs-5 fw-bolder bold_part">
@@ -752,26 +707,22 @@
                                                                             <span class="english_subtitle"> Domain
                                                                             </span>
                                                                         </div>
-                                                                        <div
-                                                                            class="form-value ps-4 pt-1 text-uppercase">
+                                                                        <div class="form-value ps-4 pt-1 text-uppercase">
                                                                             SCIENCES MATHEMATIQUES ET INFORMATIQUES
                                                                         </div>
                                                                     </div>
                                                                 </section>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item me-5 pe-5 ">
                                                                         <div class="d-flex flex-column">
-                                                                            <span
-                                                                                class="fs-5 fw-bolder bold_part">Niveau
+                                                                            <span class="fs-5 fw-bolder bold_part">Niveau
                                                                                 : &nbsp;</span>
                                                                             <span class="english_subtitle"> Level
                                                                             </span>
                                                                         </div>
-                                                                        <div
-                                                                            class="form-value ps-4 pt-1 text-uppercase">
-                                                                           {{-- {{$releve->niveau}} --}}
-                                                                           {{ isset($releve) ? $releve->niveau : '' }}  
+                                                                        <div class="form-value ps-4 pt-1 text-uppercase">
+                                                                            {{-- {{$releve->niveau}} --}}
+                                                                            {{ isset($releve) ? $releve->niveau : '' }}
                                                                         </div>
                                                                     </div>
 
@@ -784,13 +735,12 @@
                                                                         </div>
                                                                         <div class="form-value ps-4 pt-1">
                                                                             {{-- {{$releve->filiere}} --}}
-                                                                            {{ isset($releve) ? $releve->filiere : '' }}  
+                                                                            {{ isset($releve) ? $releve->filiere : '' }}
                                                                         </div>
                                                                     </div>
                                                                 </section>
 
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item">
                                                                         <div class="d-flex flex-column">
                                                                             <span class="fs-5 fw-bolder bold_part">
@@ -798,8 +748,7 @@
                                                                             <span class="english_subtitle"> Option
                                                                             </span>
                                                                         </div>
-                                                                        <div
-                                                                            class="form-value ps-4 pt-1 text-uppercase">
+                                                                        <div class="form-value ps-4 pt-1 text-uppercase">
                                                                         </div>
                                                                     </div>
                                                                     <div class="d-flex form-item">
@@ -811,7 +760,7 @@
                                                                         </div>
                                                                         <div class="form-value ps-4 pt-1">
                                                                             {{-- {{$releve->anneeAcademique}} --}}
-                                                                            {{ isset($releve) ? $releve->anneeAcademique : '' }} 
+                                                                            {{ isset($releve) ? $releve->anneeAcademique : '' }}
                                                                             <!--to change dans la table releve-->
                                                                         </div>
                                                                     </div>
@@ -863,46 +812,43 @@
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tbody >
+                                                                    <tbody>
                                                                         @if (isset($notes))
                                                                         @foreach($notes as $note)
-                                                                            <tr>
-                                                                                <td>{{ $note->ue }}</td>
-                                                                                <td>{{ $note->nom_ue }}</td>
-                                                                                <td>{{ $note->credit }}</td>
-                                                                                <td>{{ $note->note }}</td>
-                                                                                <td>{{ $note->mention }}</td>
-                                                                                <td>{{ $note->semestre }}</td><!--semestre de l ue A AJOUTER-->
-                                                                                <td>2021</td><!--anne que tu compose la matiere  de l ue A AJOUTER-->
-                                                                                <td>{{ $note->decision }}</td>
-                                                                            </tr>
+                                                                        <tr>
+                                                                            <td>{{ $note->ue }}</td>
+                                                                            <td>{{ $note->nom_ue }}</td>
+                                                                            <td>{{ $note->credit }}</td>
+                                                                            <td>{{ $note->note }}</td>
+                                                                            <td>{{ $note->mention }}</td>
+                                                                            <td>{{ $note->semestre }}</td><!--semestre de l ue A AJOUTER-->
+                                                                            <td>2021</td><!--anne que tu compose la matiere  de l ue A AJOUTER-->
+                                                                            <td>{{ $note->decision }}</td>
+                                                                        </tr>
                                                                         @endforeach
-                                                                    @else
+                                                                        @else
                                                                         <tr>
                                                                             <td colspan="8">Aucune note trouvée pour cet étudiant</td>
                                                                         </tr>
-                                                                    @endif
-                                                                    
-                                                                        
-                                                                       
+                                                                        @endif
+
+
+
                                                                     </tbody>
                                                                 </table>
                                                             </section>
-                                                            <section
-                                                                class="w-100 d-flex flex-column align-items-center">
-                                                                <span
-                                                                    class="w-100 decision-data d-flex flex-column w-auto">
+                                                            <section class="w-100 d-flex flex-column align-items-center">
+                                                                <span class="w-100 decision-data d-flex flex-column w-auto">
                                                                     <span> Crédit Capitalisés: 60/60 (100.00%) </span>
-                                                                    <span> Moyenne Générale Pondérée (MGP): 
+                                                                    <span> Moyenne Générale Pondérée (MGP):
                                                                         {{-- {{$releve->mgp}} --}}
-                                                                        {{ isset($releve) ? $releve->mgp : '' }} 
+                                                                        {{ isset($releve) ? $releve->mgp : '' }}
                                                                         /4<!--to change-->
                                                                     </span>
-                                                                    <span> Decision: <b>   {{ isset($releve) ? $releve->decision : '' }}  </b> </span><!--to change-->
+                                                                    <span> Decision: <b> {{ isset($releve) ? $releve->decision : '' }} </b> </span><!--to change-->
                                                                 </span>
                                                             </section>
-                                                            <section class="w-100 d-flex flex-column"
-                                                                style="font-size: 12px">
+                                                            <section class="w-100 d-flex flex-column" style="font-size: 12px">
                                                                 <div class="d-flex">
                                                                     <div><u> Légende: </u></div>
 
@@ -1033,32 +979,32 @@
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                         <div class="content-recap w-100 mt-3 bloc">
                                                                             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                                                                             <script type="text/javascript">
@@ -1068,20 +1014,19 @@
                                                                                     $('#barcode').attr('src', url);
                                                                                     // print(nric);
                                                                                 }
-                                                                            
                                                                             </script>
-                                                                          <!-- <?php
-                                                                          $type = 'png';
-                                                                          $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
-                                                                          $nouvelleVariable =  $hmacInfo;
-                                                                          $taille = '&amp;size=100x100';
+                                                                            <!-- <?php
+                                                                                    $type = 'png';
+                                                                                    $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
+                                                                                    $nouvelleVariable =  $hmacInfo;
+                                                                                    $taille = '&amp;size=100x100';
 
-                                                                            // Concaténation des parties de la chaîne avec la variable
-                                                                          $chaineModifiee = $chaine . $nouvelleVariable . $taille;
-                                                                          $data = file_get_contents($chaineModifiee);
-                                                                          $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                                                                          ?> -->
-                                                                           <?php echo '<div class="company-logo">
+                                                                                    // Concaténation des parties de la chaîne avec la variable
+                                                                                    $chaineModifiee = $chaine . $nouvelleVariable . $taille;
+                                                                                    $data = file_get_contents($chaineModifiee);
+                                                                                    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                                                                                    ?> -->
+                                                                            <?php echo '<div class="company-logo">
                                                                             <img src="' .   $base64 .      '"  alt="base" />  </div>';
                                                                             ?>
                                                                         </div>
@@ -1107,23 +1052,23 @@
                                                                 </thead>
                                                                 <tbody>
                                                                     @foreach($notes as $note)
-                                                                        <tr>
-                                                                            <td>{{ $note->ue }}</td>
-                                                                            <td>{{ $note->nom_ue }}</td>
-                                                                            <td>{{ $note->credit }}</td>
-                                                                            <td>{{ $note->note }}</td>
-                                                                            <td>{{ $note->mention }}</td>
-                                                                            <td>{{ $note->semestre }}</td>
-                                                                            <td>{{ $note->annee }}</td>
-                                                                            <td>{{ $note->decision }}</td>
-                                                                        </tr>
+                                                                    <tr>
+                                                                        <td>{{ $note->ue }}</td>
+                                                                        <td>{{ $note->nom_ue }}</td>
+                                                                        <td>{{ $note->credit }}</td>
+                                                                        <td>{{ $note->note }}</td>
+                                                                        <td>{{ $note->mention }}</td>
+                                                                        <td>{{ $note->semestre }}</td>
+                                                                        <td>{{ $note->annee }}</td>
+                                                                        <td>{{ $note->decision }}</td>
+                                                                    </tr>
                                                                     @endforeach
                                                                 </tbody>
                                                             </table>
-                                                        @elseif(isset($message))
+                                                            @elseif(isset($message))
                                                             <p>{{ $message }}</p>
-                                                        @endif --}}
-                                                                                                       
+                                                            @endif --}}
+
 
                                             </ul>
                                         </div>
@@ -1137,7 +1082,7 @@
                             </div>
                             <!--end row-->
                         </div>
-        
+
 
                     </div>
                 </div>
@@ -1146,8 +1091,7 @@
         </div><!-- container -->
 
         <footer class="footer text-center text-sm-left">
-            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
+            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
         </footer>
         <!--end footer-->
     </div>
@@ -1157,7 +1101,7 @@
 
 
 
-   
+
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

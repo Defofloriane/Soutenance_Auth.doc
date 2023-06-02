@@ -427,7 +427,7 @@
                                                                     <td>
                                                                         <form method="POST" action="{{ route('show') }}">
                                                                             @csrf
-                                                                            <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}">
+                                                                            <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
                                                                             <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
                                                                         </form>
 

@@ -264,8 +264,9 @@
                             </div>
                         </div> --}}
                         <div class="col-one-half">
-                            <div class="ocr" onclick="showScanForm()">
-                                <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
+                            <div class="ocr" >
+                            <a href="{{ route('index') }}">
+                                <img src="assets/images/qrscanner.jpg" alt="OCR Icon"></a>
                                 <h4>Scan Qr Code</h4>
                                 <?php if (isset($DataSend['message'])) : ?>
                                 <p><?php echo $DataSend['message']; ?></p>
@@ -314,7 +315,7 @@
                                     <div class="card-body">
                                         <div class="description wow fadeInLeft">
                                             <div name="reader" id="reader" width="600px"></div>
-                                            <form action="{{ route('store') }}" method="post" id="form">
+                                            <form action="{{ route('store') }}" method="post" id="formQr">
                                                 @csrf
                                                 <input type="hidden" name="data" id="data">
                                             </form>
@@ -338,8 +339,11 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Information d entete du Qr-code</h4>
-                                        <p class="text-muted mb-0">results.</p>
+                                        <h4 class="card-title">Information d'entete du Qr-code</h4>
+                                        <div class=" info entete" id="info">
+                                        <p class="text-muted mb-0">Nom et prenom: </p>
+                                        <p class="text-muted mb-0">Numero du releve: </p>
+                                        </div>
                                     </div>
                                     <!--end card-header-->
                                     <div class="card-body" id="results">
@@ -375,7 +379,7 @@
 
                         <footer class="footer text-center text-sm-left">
                             &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
+                                    class="mdi mdi-heart text-danger"></i> ICT4D</span>
                         </footer>
                         <!--end footer-->
                 </div>
@@ -392,17 +396,11 @@
                     $('#downloadModal').modal('show');
                 }
 
-
-
-
-
-
                 function showScanForm() {
                     // Affichage du formulaire de scan
                     document.getElementById("scan-form").style.display = "block";
                     document.getElementById("scan-details").style.display = "none";
                     document.getElementById("ocr_det").style.display = "none";
-
 
                 }
             </script>
@@ -493,9 +491,9 @@
             <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
             <script>
                 function onScanSuccess(decodedText, decodedResult) {
-                    // console.log(`Code matched = ${decodedText}`, decodedResult);
+                    console.log(`Code matched = ${decodedText}`, decodedResult);
                     document.getElementById('data').value = decodedText;
-                    document.getElementById('form').submit();
+                    // document.getElementById('formQr').submit();
                     alert(decodedText);
                 }
 
