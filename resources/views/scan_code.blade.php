@@ -367,7 +367,12 @@
                                     let id_releve = document.getElementById("id_releve");
                                     let niveau_ = document.getElementById("niveau");
                                     let matri = document.getElementById("matricule");
-                                    input.value = releve[0].id_releve;
+                                    id_releve.value = releve[0].id_releve;
+                                    console.log(id_releve);
+                                    niveau_.value = releve[0].niveau;
+                                    console.log(niveau_);
+                                    matri.value = releve[0].etudiant;
+                                    console.log(matri);
                                     let message = document.getElementById("message");
                                     message.textContent = "Document authentique"
                                     message.style.color = 'green';
