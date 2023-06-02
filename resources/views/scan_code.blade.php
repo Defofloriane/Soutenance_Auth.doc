@@ -328,7 +328,7 @@
                     // alert(decodedText);
                     $('#result').val(decodedText);
                     let id = decodedText;
-                    console.log(decodedText);
+                    alert(decodedText);
                     html5QrcodeScanner.clear().then(_ => {
                         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                         $.ajax({
