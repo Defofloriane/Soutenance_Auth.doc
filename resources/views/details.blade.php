@@ -961,7 +961,7 @@
                                                                                             <span> 0.00 </span>
                                                                                         </td>
                                                                                         <td rowspan="2">
-                                                                                            <span> Passable </span>
+                                                                                            <span> Echec</span>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
