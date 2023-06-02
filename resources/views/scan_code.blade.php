@@ -356,23 +356,23 @@
                                     const mgp = document.getElementById("mgp");
                                     const decision = document.getElementById("dec");
                                     const numero = document.getElementById("num");
-                                    nom.innerHTML = "<strong>Nom :</strong> " + etudiant[0].nom;
-                                    prenom.innerHTML = "<strong>Prenom :</strong> " + etudiant[0].prenom;
-                                    matricule.innerHTML = "<strong>Matricule:</strong> " + etudiant[0].matricule;
-                                    niveau.innerHTML = "<strong>Niveau :</strong> " + releve[0].niveau;
-                                    filiere.innerHTML = "<strong>Filiere :</strong> " + releve[0].filiere;
-                                    numero.innerHTML = "<strong>Numéro du relevé  :</strong> " + releve[0].id_releve;
-                                    mgp.innerHTML = "<strong>Mgp :</strong> " + releve[0].mgp;
-                                    decision.innerHTML = "<strong>" + releve[0].decision + "</strong>";
+                                    nom.innerHTML = "<strong>Nom :</strong> " + etudiant.nom;
+                                    prenom.innerHTML = "<strong>Prenom :</strong> " + etudiant.prenom;
+                                    matricule.innerHTML = "<strong>Matricule:</strong> " + etudiant.matricule;
+                                    niveau.innerHTML = "<strong>Niveau :</strong> " + releve.niveau;
+                                    filiere.innerHTML = "<strong>Filiere :</strong> " + releve.filiere;
+                                    numero.innerHTML = "<strong>Numéro du relevé  :</strong> " + releve.id_releve;
+                                    mgp.innerHTML = "<strong>Mgp :</strong> " + releve.mgp;
+                                    decision.innerHTML = "<strong>" + releve.decision + "</strong>";
                                     let id_releve = document.getElementById("id_releve");
                                     let niveau_ = document.getElementById("niveau");
                                     let matri = document.getElementById("matricule");
-                                    id_releve.value = releve[0].id_releve;
-                                    console.log(id_releve);
-                                    niveau_.value = releve[0].niveau;
-                                    console.log(niveau_);
-                                    matri.value = releve[0].etudiant;
-                                    console.log(matri);
+                                    id_releve.value = releve.id_releve;
+                               
+                                    niveau_.value = releve.niveau;
+                                 
+                                    matri.value = releve.etudiant;
+                               
                                     let message = document.getElementById("message");
                                     message.textContent = "Document authentique"
                                     message.style.color = 'green';
