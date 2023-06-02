@@ -348,7 +348,7 @@ $sum = array_sum(str_split($birthDayDigits));
          ->select('notes.*', 'ues.nom_ue', 'ues.credit')
          ->distinct()
          ->get();
-      //  return $etudiant;
+      //  return $etudiant;////
       // Passez les données à la vue de détails
       return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
    }
