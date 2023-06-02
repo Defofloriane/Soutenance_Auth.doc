@@ -332,7 +332,7 @@ $sum = array_sum(str_split($birthDayDigits));
       $matricule=$request->matricule;
       $niveau=$request->niveau;
       $releve = Releve::where('id_releve', $id_releve)->first();
-      print_r($releve->id_releve);      //hachage des informations 
+      print_r($releve);      //hachage des informations 
      $secretKey = 'auth.document';//cle secrete
      $donnees= Releve::where('id_releve', $id_releve)->firstOrFail();
      $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
