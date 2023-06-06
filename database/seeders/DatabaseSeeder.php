@@ -35,7 +35,8 @@ class DatabaseSeeder extends Seeder
          UeSeeder::class,
          NoteSeeder::class,
         // UeFiliereNiveauSpecialiteSeeder::class,
-        HasheSeeder::class,   
+ 
+
        ]);
     }
 }

@@ -334,12 +334,11 @@ $sum = array_sum(str_split($birthDayDigits));
       $da=$request->data;
       $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
       //hachage des informations 
-
-     $secretKey = 'auth.document';//cle secrete
-     $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-     $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
+      $secretKey = 'auth.document';//cle secrete
+      $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
+      $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
       $hmac=hash_hmac('sha256', $data, $secretKey);
-       $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
+      $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
       $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
       $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
          ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
@@ -389,6 +388,7 @@ $sum = array_sum(str_split($birthDayDigits));
           $isFirstRow = true;
 
           foreach ($sheet->getRowIterator() as $row) {
+
               if ($isFirstRow) {
                   $isFirstRow = false;
                   continue; // Ignorer la première ligne (en-têtes des colonnes)
@@ -406,26 +406,113 @@ $sum = array_sum(str_split($birthDayDigits));
              
               $matricule = $studentData[0];
               $note = $studentData[1];
-              $etudiant = Etudiant::where('matricule', $matricule)->first();
+              $etudiant = Etudiant::where(['matricule'=> $matricule])->first();             
               $evaluation = new Evaluation();
               $evaluation->type_evaluation = $evaluationtype;
+              if($evaluationtype=='CC' && $chooseMat=='OUI'){
+              $evaluation->noteSur=20;
+              }
+              elseif($evaluationtype=='TP' && $chooseMat=='OUI'){
+               $evaluation->noteSur=40;
+              }
+              elseif($evaluationtype=='SN' && $chooseMat=='OUI'){
+               $evaluation->noteSur=40;
+              }
+              elseif($evaluationtype=='CC' && $chooseMat=='NON'){
+               $evaluation->noteSur=30;
+               }
+               elseif($evaluationtype=='SN' && $chooseMat=='NON'){
+                $evaluation->noteSur=70;
+               }
               $evaluation->etudiant=$etudiant->matricule;
               $evaluation->ue=$matiere;
               $evaluation->semestre=$semestre;
               $evaluation->note_evaluation=$note;
-              $evaluation->save();
-            
+              $evaluation->save();       
+
+              $noteTp=Evaluation::where(['etudiant'=>$etudiant->matricule,'type_evaluation'=>'TP','ue'=>$matiere])->first();
+              $noteCC=Evaluation::where(['etudiant'=>$etudiant->matricule,'type_evaluation'=>'CC','ue'=>$matiere])->first();
+              $noteSN=Evaluation::where(['etudiant'=>$etudiant->matricule,'type_evaluation'=>'SN','ue'=>$matiere])->first();
+              $note_total=0;
+              if($noteCC &&  $noteCC->noteSur==30 && $noteSN ){
+               $note_total=$noteCC->note_evaluation+$noteSN->note_evaluation;
+              }   
+              elseif($noteCC &&  $noteCC->noteSur==20 && $noteSN && $noteTp ){
+               $note_total=$noteCC->note_evaluation+$noteSN->note_evaluation+$noteTp->note_evaluation;
+              }   
+               
+            //   print_r($note_total);
+               // Enregistrement de la note dans la base de données
+         $notes = new Note();
+         $notes->etudiant = $matricule;
+         $notes->ue = $matiere;
+         $notes->note = $note_total;
+         // dd($note_total);
+         // Déterminez la décision et la mention en fonction de la note totale
+         // Par exemple, si la note totale est supérieure ou égale à un certain seuil, vous pouvez définir la décision et la mention comme suit :
+         if ($note_total >= 80) {
+            $notes->decision = 'CA';
+            $notes->mention = 'A';
+            $quantitePoints = 4;
+         } elseif ($note_total >= 75 && $note_total < 80) {
+            $notes->decision = 'CA';
+            $notes->mention = 'A-';
+            $quantitePoints = 3.70;
+         } elseif ($note_total >= 70 && $note_total < 75) {
+            $notes->decision = 'CA';
+            $notes->mention = 'B+';
+            $quantitePoints = 3.30;
+         } elseif ($note_total >= 65 && $note_total < 70) {
+            $notes->decision = 'CA';
+            $notes->mention = 'B';
+            $quantitePoints = 3;
+         } elseif ($note_total >= 60 && $note_total < 70) {
+            $notes->decision = 'CA';
+            $notes->mention = 'B-';
+            $quantitePoints = 2.70;
+         } elseif ($note_total >= 55 && $note_total < 60) {
+            $notes->decision = 'CA';
+            $notes->mention = 'C+';
+            $quantitePoints =2.30;
+         } elseif ($note_total >= 50 && $note_total < 55) {
+            $notes->decision = 'CA';
+            $notes->mention = 'C';
+            $quantitePoints =2;
+         } elseif ($note_total >= 45 && $note_total < 50) {
+            $notes->decision = 'CANT';
+            $notes->mention = 'C-';
+            $quantitePoints =1.70;
+         } elseif ($note_total >= 40 && $note_total < 45) {
+            $notes->decision = 'CANT';
+            $notes->mention = 'D+';
+            $quantitePoints =1.30;
+         } elseif ($note_total >= 35 && $note_total < 40) {
+            $notes->decision = 'CANT';
+            $notes->mention = 'D';
+            $quantitePoints =1;
+         } elseif ($note_total >= 30 && $note_total < 35) {
+            $notes->decision = 'Echec';
+            $notes->mention = 'E';
+            $quantitePoints =0;
+         } else {
+            $notes->decision = 'Echec';
+            $notes->mention = 'F';
+            $quantitePoints =0;
+         }
+         $notes->semestre = $semestre;
+         // dd($notes);
+         $notes->annee=2022;
+
+          $notes->save();
+                      
             }
-          
-              
-// ...    
 
          }
         // Redirigez ou affichez une réponse appropriée après l'importation
         // par exemple :
         // return redirect()->back()->with('success', 'Le fichier Excel a été importé avec succès.');
-        $resultats=null;$listeMatiere=null;
-        return view('add_releve',compact('resultats','listeMatiere'));
+         $resultats=null;$listeMatiere=null;
+         return view('add_releve',compact('resultats','listeMatiere'));
       }
 
 }

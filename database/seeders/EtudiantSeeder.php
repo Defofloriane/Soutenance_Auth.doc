@@ -29,6 +29,30 @@ class EtudiantSeeder extends Seeder
                 'lieu_naissance'=>'DOUALA',
 
             ],
+            [
+                'matricule'=>'20V2412',
+                'nom'=>'ESSOLA ESSOLA',
+                'prenom'=>'JOSEPH JULIEN',
+                'date_naissance'=>'1999/05/20',
+                'lieu_naissance'=>'BONDJOCK',
+
+            ],
+            [
+                'matricule'=>'20V2512',
+                'nom'=>'KEMGNE DEFO',
+                'prenom'=>'FLORIANE INGRIDE',
+                'date_naissance'=>'2002/01/01',
+                'lieu_naissance'=>'MBOUDA',
+
+            ],
+            [
+                'matricule'=>'20R2313',
+                'nom'=>'MBIADA FOSSO',
+                'prenom'=>'CEDRIC GEORDAN',
+                'date_naissance'=>'2001/12/09',
+                'lieu_naissance'=>'BAZOU',
+
+            ],
            
            ];
     Etudiant::insert($etudiant);
