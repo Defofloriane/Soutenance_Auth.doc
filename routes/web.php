@@ -7,7 +7,9 @@ use App\Http\Controllers\ReleveController;
 use App\Http\Controllers\AttestationController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\ScanQrController;
-
+use App\Http\Controllers\GeneratePDFController;
+use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,4 +65,5 @@ Route::post('/store',[ScanQrController::class,'store'])->name('store');
 Route::post('/test',[ScanQrController::class,'test'])->name('test');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 // Route::post('/import-excel', 'ExcelController@import')->name('import.excel');
+Route::get('/telechargerPDF', [GeneratePDFController::class, 'telechargerPDF'])->name('telechargerPDF');
 
