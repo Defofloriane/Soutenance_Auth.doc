@@ -22,8 +22,7 @@
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-    <style>@page { size: A4; margin: 0; }</style>
- <style>
+  <style>
     #downloadButton {
   border: 1px solid blue; /* Ajoute un bord de 1 pixel avec la couleur bleue */
   padding: 5px 10px; /* Ajuste le rembourrage intérieur du bouton */
@@ -532,15 +531,15 @@
                                                         }
 
                                                         table {
-                                                            border-top: 3px solid #000000 !important;
-                                                            border-right: 3px solid #000000 !important;
+                                                            border-top: 2px solid #000000 !important;
+                                                            border-right: 2px solid #000000 !important;
                                                         }
 
                                                         table th span {
                                                             display: flex;
                                                             justify-content: center;
                                                             align-items: center;
-                                                            height: 50px;
+                                                            height: 30px;
                                                             text-transform: capitalize;
                                                         }
 
@@ -664,7 +663,7 @@
                                                                     </div>
                                                                     <div
                                                                         class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
-                                                                        {{-- <img src="assets/img/logo_ui.png" alt="university of yaounde 1" class="img-fluid" /> --}}
+                                                                        <img src="assets/images/UyLogo.png" alt="university of yaounde 1" class="img-fluid" />
 
                                                                     </div>
                                                                     <div
@@ -1086,7 +1085,7 @@
                                                                                                 <span> 0.00 </span>
                                                                                             </td>
                                                                                             <td rowspan="2">
-                                                                                                <span> Passable </span>
+                                                                                                <span> Echec </span>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
