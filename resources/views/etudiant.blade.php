@@ -340,9 +340,9 @@
                                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
                                                     <tr>
-                                                        <th> Faculte </th>
+                                                        <th> Matricule</th>
                                                         <th> Name</th>
-
+                                                        <th> FirstName</th>
                                                         <th>Check</th>
 
                                                     </tr>
@@ -350,19 +350,22 @@
 
 
                                                 <tbody>
-                                                    @foreach($faculte as $faculte)
-
-
+                                                @foreach($etudiants as $etudiant)
+                                                @foreach($releves as $releve)
+                                                @if($releve->etudiant === $etudiant->matricule)
                                                     <tr>
-                                                        <td>{{ $faculte->id_faculte }}</td>
-                                                        <td>{{ $faculte->nom_faculte}}</td>
+                                                        <td>{{ $etudiant ->matricule }}</td>
+                                                        <td>{{ $etudiant ->nom}}</td>
+                                                        <td>{{ $etudiant ->prenom}}</td>
                                                        
 
                                                         <td>
-                                                            <form method="POST" action="{{ route('departement') }}">
+                                                            <form method="POST" action="{{ route('show') }}">
                                                                 @csrf
-                                                                <input type="hidden" name="id_faculte" value="{{ $faculte->id_faculte }}" id="id_faculte">
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Voir les departements</button>
+                                                                <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
+                                                                <input type="hidden" name="matricule " value="{{ $etudiant ->matricule}}" id="matricule ">
+                                                                <input type="hidden" name="niveau " value="{{ $niveau}}" id="niveau">
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
                                                             </form>
 
 
@@ -370,7 +373,9 @@
 
                                                     </tr>
 
-                                        
+                                                    @endif
+                                                   
+                                                    @endforeach
                                                     @endforeach
                                                 </tbody>
                                             </table>

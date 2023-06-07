@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Etudiant;
+use App\Models\Filiere;
+use App\Models\Niveau;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,6 +22,8 @@ class EtudiantSeeder extends Seeder
                 'prenom'=>'DAVID GAEL',
                 'date_naissance'=>'2001/08/04',
                 'lieu_naissance'=>'AKOM',
+          
+           
             ],
             [
                 'matricule'=>'19K2779',

@@ -29,7 +29,7 @@ class GeneratePDFController extends Controller
 
         // Générez le PDF dans une chaîne
         $pdfData = $pdf->Output('', 'S');
-        return response()->json(['file' => $filename]);
+        // return response()->json(['file' => $filename]);
 
         // Retournez le PDF en tant que réponse HTTP avec le type MIME approprié
         return response($pdfData)

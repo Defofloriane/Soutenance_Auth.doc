@@ -109,7 +109,7 @@
 
 
                 <li>
-                    <a href=" {{route('view_etudiant')}}"><i data-feather="layers"
+                    <a href=" {{route('faculte')}}"><i data-feather="layers"
                             class="align-self-center menu-icon"></i><span >List Etudiant</span><span
                             class="badge badge-soft-success menu-arrow">Exemple</span></a>
                 </li>
@@ -434,16 +434,6 @@
                                                                         </form>
 
 
-                                                                        {{-- <form method="POST" action="{{ route('details.show', $releve->id_releve) }}">
-                                                                            @csrf
-                                                                            <input type="hidden" name="_method" value="POST">
-                                                                            <button type="submit">Voir les détails</button>
-                                                                        </form> --}}
-                                                                        
-
-                                                                        {{-- <a href="{{ route('details.show', $releve->id_releve) }}">Voir les détails</a> --}}
-
-                                                                        {{-- <a href="{{ route('releve') }}">Afficher le relevé</a> --}}
                                                                     </td>
 
                                                                 </tr>

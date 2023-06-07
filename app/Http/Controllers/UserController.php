@@ -238,7 +238,7 @@ public function hachage(){
     //  $save=Hashe::create(['hache' => $hmac1]);
     $releve=Releve::where(['id_releve'=>'09875/KMB/L2/FS/ICT/212022','etudiant'=>'19K2779'])->get();
     $etudiant=Etudiant::where(['matricule'=>$matricule])->get();
-    $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
+    $data=Etudiant::where(['matricule'=>$matricule])->first()->matricule;
      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
                 ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
                 ->where('notes.etudiant', '=', $matricule)

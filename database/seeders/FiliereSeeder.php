@@ -19,7 +19,7 @@ class FiliereSeeder extends Seeder
         $filiereInfo=[
             [
                'id_filiere' => 'ICT4D',
-               'nom_filiere' => 'INFORMATION AND COMMUNICATION TECHNOLOGY AND DEVELOPMENT',
+               'nom_filiere' => 'INFORMATION AND COMMUNICATION TECHNOLOGY FOR DEVELOPMENT',
                'departement'=> $depInfo
             ],
             [

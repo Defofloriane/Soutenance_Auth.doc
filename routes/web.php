@@ -5,9 +5,14 @@ use App\Http\Controllers\home;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReleveController;
 use App\Http\Controllers\AttestationController;
+use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\FaculteController;
+use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\ScanQrController;
 use App\Http\Controllers\GeneratePDFController;
+use App\Http\Controllers\NiveauController;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 /*
@@ -66,4 +71,9 @@ Route::post('/test',[ScanQrController::class,'test'])->name('test');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');
 // Route::post('/import-excel', 'ExcelController@import')->name('import.excel');
 Route::get('/telechargerPDF', [GeneratePDFController::class, 'telechargerPDF'])->name('telechargerPDF');
+Route::get('/faculte',[FaculteController::class,'index'])->name('faculte');
+Route::post('/departement',[DepartementController::class,'index'])->name('departement');
+Route::post('/filiere',[FiliereController::class,'index'])->name('filiere');
+Route::post('/niveau',[NiveauController::class,'index'])->name('niveau');
+Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 

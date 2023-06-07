@@ -19,9 +19,19 @@ class EtudiantFiliereNiveauSeeder extends Seeder
         $etuFilNiv=[
             [
                'etudiant' =>Etudiant::where(['matricule'=>'20R2198'])->firstOrFail()->matricule,
-               'filiers'=>Filiere::where(['id_filiere'=>'ICT4D'])->firstOrFail()->id_filiere,
+               'filiere'=>Filiere::where(['id_filiere'=>'ICT4D'])->firstOrFail()->id_filiere,
                'niveau' =>Niveau::where(['id_niveau'=>'L2'])->firstOrFail()->id_niveau,
-            ]
+            ],
+            [
+                'etudiant' =>Etudiant::where(['matricule'=>'20V2412'])->firstOrFail()->matricule,
+                'filiere'=>Filiere::where(['id_filiere'=>'ICT4D'])->firstOrFail()->id_filiere,
+                'niveau' =>Niveau::where(['id_niveau'=>'L2'])->firstOrFail()->id_niveau,
+            ],
+             [
+                'etudiant' =>Etudiant::where(['matricule'=>'20V2412'])->firstOrFail()->matricule,
+                'filiere'=>Filiere::where(['id_filiere'=>'ICT4D'])->firstOrFail()->id_filiere,
+                'niveau' =>Niveau::where(['id_niveau'=>'L2'])->firstOrFail()->id_niveau,
+             ]
             ];
 
             EtudiantFiliereNiveau::insert($etuFilNiv);

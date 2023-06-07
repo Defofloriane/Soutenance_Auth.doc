@@ -329,8 +329,8 @@ $sum = array_sum(str_split($birthDayDigits));
       //  $details = Releve::find($id);
       // $id_releve = request('id_releve');
       $id_releve=$request->id_releve;
-      $matricule=$request->matricule;
-      $niveau=$request->niveau;
+      $matricule=$request->matricule_;
+      $niveau=$request->niveau_;
       $da=$request->data;
       $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
       //hachage des informations 
