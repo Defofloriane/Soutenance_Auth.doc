@@ -76,4 +76,5 @@ Route::post('/departement',[DepartementController::class,'index'])->name('depart
 Route::post('/filiere',[FiliereController::class,'index'])->name('filiere');
 Route::post('/niveau',[NiveauController::class,'index'])->name('niveau');
 Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
+Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->name('getAttestation');
 
