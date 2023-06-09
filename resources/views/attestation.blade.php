@@ -705,7 +705,7 @@ a:hover {
                                                         right: 500px;
                                                         padding: 0 10px;
                                                         bottom: 10%;
-                                                        font-size: 24px;
+                                                        font-size: 18px;
                                                         font-weight: bold;
                                                         font-size: 19px;
                                                     }
@@ -1211,7 +1211,33 @@ a:hover {
                                                                         
                                                                         
                                                                         </div>
-                                                                        <p>create-qr-code</p>
+                                                                        {{-- <div class="content-recap w-100 mt-3 bloc">
+                                                                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                                                            <script type="text/javascript">
+                                                                                function generateBarCode() {
+                                                                                    var nric = $('hhhh').val();
+                                                                                    var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=150x150';
+                                                                                    $('#barcode').attr('src', url);
+                                                                                    // print(nric);
+                                                                                }
+                                                                            </script>
+                                                                            <!-- <?php
+                                                                            $type = 'png';
+                                                                            $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
+                                                                            // $nouvelleVariable = $hmacInfo;
+                                                                            $taille = '&amp;size=100x100';
+                                                                            
+                                                                            // Concaténation des parties de la chaîne avec la variable
+                                                                            // $chaineModifiee = $chaine . $nouvelleVariable . $taille;
+                                                                            // $data = file_get_contents($chaineModifiee);
+                                                                            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                                                                            ?> -->
+                                                                            <?php echo '<div class="company-logo">
+                                                                                                                    <img src="' .
+                                                                                $base64 .
+                                                                                '"  alt="base" />  </div>';
+                                                                            ?>
+                                                                        </div> --}}
                                                                     </div>
 
                                                             </section>
