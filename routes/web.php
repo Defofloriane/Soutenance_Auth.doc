@@ -62,6 +62,7 @@ Route::get('/view_add_releve', [ReleveController::class,'view_add_releve'])->nam
 Route::post('/get_ue_credit', [ReleveController::class,'get_ue_credit'])->name('get_ue_credit');
 Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');
+Route::post('/showAttestation', [AttestationController::class, 'showAttestation'])->name('showAttestation');
 Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
 Route::get('/details_releve',[ReleveController::class, 'details_releve'])->name('details_releve');
 Route::post('/import_excel',[ReleveController::class, 'import_excel'])->name('import_excel');
@@ -77,4 +78,4 @@ Route::post('/filiere',[FiliereController::class,'index'])->name('filiere');
 Route::post('/niveau',[NiveauController::class,'index'])->name('niveau');
 Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->name('getAttestation');
-
+Route::get('/view_attestation', [AttestationController::class,'view_attestation'])->name('view_attestation');

@@ -196,7 +196,7 @@ a:hover {
                     <div class="form-group">
                         &nbsp;&nbsp; &nbsp;
                                                                
-                        <a href="{{ route('view_etudiant') }}">
+                        <a href="{{ route('view_attestation') }}">
                             <i class="fa fa-list"></i>
                           </a>
 
