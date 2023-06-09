@@ -467,496 +467,554 @@ a:hover {
                                     <!--end row-->
 
                                     <div class="card w-100">
+                                        <div class="contents">
+                                            <div class="card-body bg-image">
+                                                <ul class="list-unstyled mb-0">
+                                                    <style>
+                                                        * {
+                                                            position: relative;
+                                                        }
 
-                                        <div class="card-body bg-image">
-                                            <ul class="list-unstyled mb-0">
-                                                <style>
-                                                    * {
-                                                        position: relative;
-                                                    }
+                                                        .bloc {
+                                                            display: inline-block;
+                                                            margin-right: 20px;
+                                                        }
 
-                                                    .bloc {
-                                                        display: inline-block;
-                                                        margin-right: 20px;
-                                                    }
+                                                        .contents{
+                                                            background-image: url('Uy.png');
+                                                            background-repeat: no-repeat;
+                                                            background-size: cover;
+                                                        }
 
-                                                    .bg-image {
-                                                        background-image: url('Uy.png');
-                                                        background-repeat: no-repeat;
-                                                        background-size: cover;
-                                                    }
+                                                        .fs-2 {
+                                                            color: #000000;
+                                                            font-size: 40px;
+                                                            font-weight: bold;
+                                                        }
 
-                                                    .fs-2 {
-                                                        color: #000000;
-                                                        font-size: 40px;
-                                                        font-weight: bold;
-                                                    }
+                                                        .lo {
+                                                            color: #000000;
+                                                            font-size: 20px;
+                                                            font-weight: bold;
+                                                        }
 
-                                                    .lo {
-                                                        color: #000000;
-                                                        font-size: 20px;
-                                                        font-weight: bold;
-                                                    }
+                                                        .default_option {
+                                                            font-size: 14px;
+                                                            margin: 0 !important;
+                                                        }
 
-                                                    .default_option {
-                                                        font-size: 14px;
-                                                        margin: 0 !important;
-                                                    }
+                                                        .bold_part {
+                                                            font-size: 17px !important;
+                                                            color: #000000;
+                                                            font-size: 10px;
+                                                            font-weight: bold;
+                                                        }
 
-                                                    .bold_part {
-                                                        font-size: 17px !important;
-                                                        color: #000000;
-                                                        font-size: 10px;
-                                                        font-weight: bold;
-                                                    }
+                                                        .english_subtitle {
+                                                            font-style: italic;
+                                                            font-size: 13px;
+                                                            margin-top: -5px;
+                                                        
+                                                        }
+                                                        .english_subtitle1 {
+                                                            font-style: italic;
+                                                            font-size: 13px;
+                                                            font-size: 14px;
+                                                            font-weight: bold;
+                                                            text-align: center
+                                                        
+                                                        }
 
-                                                    .english_subtitle {
-                                                        font-style: italic;
-                                                        font-size: 13px;
-                                                        margin-top: -5px;
-                                                    
-                                                    }
-                                                    .english_subtitle1 {
-                                                        font-style: italic;
-                                                        font-size: 13px;
-                                                        font-size: 14px;
-                                                        font-weight: bold;
-                                                        text-align: center
-                                                    
-                                                    }
+                                                        .content-uy1-logo {
+                                                            height: 100px;
+                                                            width: 80px;
+                                                        }
 
-                                                    .content-uy1-logo {
-                                                        height: 100px;
-                                                        width: 80px;
-                                                    }
+                                                        .content-state-data span:nth-child(1),
+                                                        .content-state-data span:nth-child(4) {
+                                                            font-weight: bold;
+                                                        }
 
-                                                    .content-state-data span:nth-child(1),
-                                                    .content-state-data span:nth-child(4) {
-                                                        font-weight: bold;
-                                                    }
+                                                        table {
+                                                            border-top: 3px solid #000000 !important;
+                                                            border-right: 3px solid #000000 !important;
+                                                        }
 
-                                                    table {
-                                                        border-top: 3px solid #000000 !important;
-                                                        border-right: 3px solid #000000 !important;
-                                                    }
+                                                        table th span {
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            height: 50px;
+                                                            text-transform: capitalize;
+                                                        }
 
-                                                    table th span {
-                                                        display: flex;
-                                                        justify-content: center;
-                                                        align-items: center;
-                                                        height: 50px;
-                                                        text-transform: capitalize;
-                                                    }
+                                                        table th,
+                                                        table td:not(:nth-child(2)) {
+                                                            text-align: center;
+                                                        }
 
-                                                    table th,
-                                                    table td:not(:nth-child(2)) {
-                                                        text-align: center;
-                                                    }
+                                                        table thead,
+                                                        table tbody {
+                                                            border: none !important;
+                                                            border-bottom: 3px solid #000000 !important;
+                                                        }
 
-                                                    table thead,
-                                                    table tbody {
-                                                        border: none !important;
-                                                        border-bottom: 3px solid #000000 !important;
-                                                    }
+                                                        table tr {
+                                                            border-bottom: 1px solid #000000 !important;
+                                                        }
 
-                                                    table tr {
-                                                        border-bottom: 1px solid #000000 !important;
-                                                    }
+                                                        table tr td,
+                                                        table tr th {
+                                                            border-left: 3px solid #000000 !important;
+                                                        }
 
-                                                    table tr td,
-                                                    table tr th {
-                                                        border-left: 3px solid #000000 !important;
-                                                    }
+                                                        .content-recap {
+                                                            max-width: 650px;
+                                                        }
 
-                                                    .content-recap {
-                                                        max-width: 650px;
-                                                    }
+                                                        [rowspan] span {
+                                                            position: absolute;
+                                                            height: 100%;
+                                                            width: 100%;
+                                                            left: 0px;
+                                                            top: 0px;
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                        }
 
-                                                    [rowspan] span {
-                                                        position: absolute;
-                                                        height: 100%;
-                                                        width: 100%;
-                                                        left: 0px;
-                                                        top: 0px;
-                                                        display: flex;
-                                                        justify-content: center;
-                                                        align-items: center;
-                                                    }
+                                                        .content-recap table {
+                                                            font-size: 0.85em;
+                                                            width: 380px !important;
+                                                        }
 
-                                                    .content-recap table {
-                                                        font-size: 0.85em;
-                                                        width: 380px !important;
-                                                    }
+                                                        .content-recap table td,
+                                                        .content-recap table th {
+                                                            /* height: 14px !important; */
+                                                            padding: 0px !important;
+                                                            margin: 0px !important;
+                                                        }
 
-                                                    .content-recap table td,
-                                                    .content-recap table th {
-                                                        /* height: 14px !important; */
-                                                        padding: 0px !important;
-                                                        margin: 0px !important;
-                                                    }
+                                                        .content-recap table th span {
+                                                            height: 29px !important;
+                                                        }
 
-                                                    .content-recap table th span {
-                                                        height: 29px !important;
-                                                    }
+                                                        .bottom-left {
+                                                            position: relative;
+                                                            top: 0;
+                                                            right: 0;
 
-                                                    .bottom-left {
-                                                        position: relative;
-                                                        top: 0;
-                                                        right: 0;
+                                                        }
 
-                                                    }
-
-                                                    .app-search-topbar.active {}
-
-
-
-                                                    .top-search:focus {
-                                                        outline: none;
-                                                    }
-
-                                                    .app-search-topbar {
-                                                        padding: -23px;
-                                                        border-radius: 700px;
-                                                    }
-
-                                                    .hide-phone {
-                                                        padding-top: 10px;
-                                                        margin-bottom: 10px;
+                                                        .app-search-topbar.active {}
 
 
-                                                    }
 
-                                                    .app-search-topbar {
-                                                        padding-left: 4px;
-                                                        padding-right: 8px;
-                                                        border-radius: 100px;
-                                                    }
+                                                        .top-search:focus {
+                                                            outline: none;
+                                                        }
 
-                                                    .topbar {
-                                                        padding-bottom: 12px;
-                                                        padding-left: 12px;
-                                                        padding-top: 12px;
-                                                    }
+                                                        .app-search-topbar {
+                                                            padding: -23px;
+                                                            border-radius: 700px;
+                                                        }
 
-                                                    .dash {
-                                                        border-top: 2px solid black;
-                                                        /* définit la couleur et l'épaisseur du trait */
-                                                        width: 40%;
-                                                        /* définit la largeur du tiret */
-                                                        margin-top: 20px;
-                                                        /* définit l'espace au-dessus du tiret */
-                                                        margin-bottom: 20px;
-                                                        /* définit l'espace en-dessous du tiret */
-                                                    }
+                                                        .hide-phone {
+                                                            padding-top: 10px;
+                                                            margin-bottom: 10px;
 
-                                                    .dashv {
-                                                        border-top: 2px solid black;
-                                                        /* définit la couleur et l'épaisseur du trait */
-                                                        width: 70%;
-                                                        /* définit la largeur du tiret */
-                                                        margin-top: 20px;
-                                                        /* définit l'espace au-dessus du tiret */
-                                                        margin-bottom: 20px;
-                                                        /* définit l'espace en-dessous du tiret */
-                                                    }
 
-                                                    .dashl {
-                                                        border-top: 2px solid black;
-                                                        /* définit la couleur et l'épaisseur du trait */
-                                                        width: 100%;
-                                                        /* définit la largeur du tiret */
-                                                        margin-top: 20px;
-                                                        /* définit l'espace au-dessus du tiret */
-                                                        margin-bottom: 20px;
-                                                        /* définit l'espace en-dessous du tiret */
-                                                    }
+                                                        }
 
-                                                    .text {
-                                                        position: absolute;
-                                                        right:0;
-                                                        padding: 0 3px;
-                                                        top: 14%;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
+                                                        .app-search-topbar {
+                                                            padding-left: 4px;
+                                                            padding-right: 8px;
+                                                            border-radius: 100px;
+                                                        }
 
-                                                    }
+                                                        .topbar {
+                                                            padding-bottom: 12px;
+                                                            padding-left: 12px;
+                                                            padding-top: 12px;
+                                                        }
 
-                                                    .texte {
-                                                        position: absolute;
-                                                        right: 130px;
-                                                        padding: 0 10px;
-                                                        top: 0%;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
-                                                    }
+                                                        .dash {
+                                                            border-top: 2px solid black;
+                                                            /* définit la couleur et l'épaisseur du trait */
+                                                            width: 40%;
+                                                            /* définit la largeur du tiret */
+                                                            margin-top: 20px;
+                                                            /* définit l'espace au-dessus du tiret */
+                                                            margin-bottom: 20px;
+                                                            /* définit l'espace en-dessous du tiret */
+                                                        }
 
-                                                    .ville {
-                                                        position: absolute;
-                                                        right: 500px;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
-                                                        padding: 0 10px;
-                                                        top: 0%;
-                                                       
-                                                    }
+                                                        .dashv {
+                                                            border-top: 2px solid black;
+                                                            /* définit la couleur et l'épaisseur du trait */
+                                                            width: 70%;
+                                                            /* définit la largeur du tiret */
+                                                            margin-top: 20px;
+                                                            /* définit l'espace au-dessus du tiret */
+                                                            margin-bottom: 20px;
+                                                            /* définit l'espace en-dessous du tiret */
+                                                        }
 
-                                                    .licence {
-                                                        position: absolute;
-                                                        right: 500px;
-                                                        padding: 0 10px;
-                                                        bottom: 10%;
-                                                        font-size: 18px;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
-                                                    }
+                                                        .dashl {
+                                                            border-top: 2px solid black;
+                                                            /* définit la couleur et l'épaisseur du trait */
+                                                            width: 100%;
+                                                            /* définit la largeur du tiret */
+                                                            margin-top: 20px;
+                                                            /* définit l'espace au-dessus du tiret */
+                                                            margin-bottom: 20px;
+                                                            /* définit l'espace en-dessous du tiret */
+                                                        }
 
-                                                    .name {
-                                                        position: absolute;
-                                                        left: 130px;
-                                                        padding: 0 10px;
-                                                        top: 0%;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
-                                                    }
-                                                    .namespecialit {
-                                                        position: absolute;
-                                                        left: 130px;
-                                                        padding: 0 10px;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
-                                                    }
+                                                        .text {
+                                                            position: absolute;
+                                                            right:0;
+                                                            padding: 0 3px;
+                                                            top: 14%;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
 
-                                                    .date_naissance {
-                                                        position: absolute;
-                                                        left: 130px;
-                                                        padding: 0 10px;
-                                                        top: 2%;
-                                                        font-weight: bold;
-                                                        font-size: 19px;
-                                                    }
+                                                        }
 
-                                                    .card-body.bg-image span,
-                                                    .card-body.bg-image p,
-                                                    .card-body.bg-image tr,
-                                                    .card-body.bg-image th,
-                                                    .card-body.bg-image {
-                                                        color: #000000;
-                                                        user-select: none;
+                                                        .texte {
+                                                            position: absolute;
+                                                            right: 130px;
+                                                            padding: 0 10px;
+                                                            top: 0%;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
+                                                        }
 
-                                                    }
-                                                </style>
-                                                <script>
-                                                    document.addEventListener('DOMContentLoaded', function() {
-                                                        var searchIcon = document.querySelector('.topbar-icon');
-                                                        var searchForm = document.querySelector('.app-search-topbar');
+                                                        .ville {
+                                                            position: absolute;
+                                                            right: 500px;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
+                                                            padding: 0 10px;
+                                                            top: 0%;
+                                                        
+                                                        }
 
-                                                        searchIcon.addEventListener('click', function() {
-                                                            searchForm.classList.add('active');
+                                                        .licence {
+                                                            position: absolute;
+                                                            right: 500px;
+                                                            padding: 0 10px;
+                                                            bottom: 10%;
+                                                            font-size: 18px;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
+                                                        }
+
+                                                        .name {
+                                                            position: absolute;
+                                                            left: 130px;
+                                                            padding: 0 10px;
+                                                            top: 0%;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
+                                                        }
+                                                        .namespecialit {
+                                                            position: absolute;
+                                                            left: 130px;
+                                                            padding: 0 10px;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
+                                                        }
+
+                                                        .date_naissance {
+                                                            position: absolute;
+                                                            left: 130px;
+                                                            padding: 0 10px;
+                                                            top: 2%;
+                                                            font-weight: bold;
+                                                            font-size: 19px;
+                                                        }
+
+                                                        .card-body.bg-image span,
+                                                        .card-body.bg-image p,
+                                                        .card-body.bg-image tr,
+                                                        .card-body.bg-image th,
+                                                        .card-body.bg-image {
+                                                            color: #000000;
+                                                            user-select: none;
+
+                                                        }
+                                                    </style>
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function() {
+                                                            var searchIcon = document.querySelector('.topbar-icon');
+                                                            var searchForm = document.querySelector('.app-search-topbar');
+
+                                                            searchIcon.addEventListener('click', function() {
+                                                                searchForm.classList.add('active');
+                                                            });
                                                         });
-                                                    });
-                                                </script>
+                                                    </script>
 
-                                                </head>
+                                                    </head>
 
-                                                <body>
-
-
-                                                    <div
-                                                        class="d-flex container-lg flex-column py-5 px-5 default_option">
-                                                        <header class="w-100 d-flex fle x-column">
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div
-                                                                    class="d-flex content-state-data flex-column align-items-center">
-                                                                    <span> REPUBLIQUE DU CAMEROUN </span>
-                                                                    <span> Paix - Travail - Patrie </span>
-                                                                    <span> ------------------------- </span>
-                                                                    <span> FACULTE DES SCIENCES </span>
-                                                                    <span style="font-size: smaller;"><em>FACULTY OF
-                                                                            SCIENCES</em></span>
-                                                                </div>
-
-                                                                <div
-                                                                    class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
-                                                                    <img class="imgatt" src="att.jpeg" alt=""
-                                                                        srcset="">
-                                                                    {{-- <img src="assets/img/logo_ui.png" alt="university of yaounde 1" class="img-fluid" /> --}}
-
-                                                                </div>
-                                                                <div
-                                                                    class="d-flex content-state-data flex-column align-items-center">
-                                                                    <span> REPUBLIC OF CAMEROON </span>
-                                                                    <span> Peace - Work - Fatherland </span>
-                                                                    <span> ------------------------- </span>
-                                                                    <span> UNIVERSITY OF YAOUNDE 1 </span>
-                                                                    <span style="font-size: smaller;"><em>UNIVERSITY OF
-                                                                            YAOUNDE 1 </em></span>
-                                                                </div>
-                                                            </section>
+                                                    <body>
 
 
-
-
-
-                                                        </header>
-                                                        <br>
-
-                                                        <section>
-                                                            <span>
-                                                                PB/P.O. Box 812 Yaoundé <br> Tel: (237)222 234 496 <br>
-                                                                Fax: (237)222 234 496 /<br>
-                                                                Email: diplome@facsciences.uy1.cm
-                                                            </span>
-
-                                                        </section>
-                                                        <br>
-
-                                                        <div class="d-flex flex-column align-items-center">
-                                                            <span class="lo text-center"> ATTESTATION DE REUSSITE
-                                                                AU</span>
-                                                            <span class="fs-2 text-center"> DIPLOME DE LICENCE</span>
-                                                            <span class="lo text-center"><em> BACHELOR'S DEGREE SUCSESS
-                                                                    TESTIMONIAL</em></span>
-                                                        </div>
-                                                        <div class="bottom-left">
-                                                            <div class="form-value ps-4 pt-1 text-uppercase">
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                                                                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                N° : {{ isset($etudiant) ? $etudiant->id_releve : '' }}
-                                                               
-                                                            </div>
-                                                            <!--to change dans la table releve-->
-                                                        </div>
-                                                        <br>
-                                                        <div class="d-flex flex-column align-items-center">
-                                                            <span>Le doyen de la faculté des Sciences de l'Université de
-                                                                Yaoundé, soussigné,</span>
-                                                            <span><em>The Dean of the Faculty of Science of the
-                                                                    University of Yaounde I, undersigned,</em></span>
-                                                        </div>
-                                                        <br>
-                                                        <main class="w-100 d-flex flex-column align-items-center">
-
-                                                            <section class="w-100">
-
+                                                        <div
+                                                            class="d-flex container-lg flex-column py-5 px-5 default_option">
+                                                            <header class="w-100 d-flex fle x-column">
                                                                 <section
                                                                     class="w-100 d-flex align-items-center justify-content-between">
-
-                                                                    <div class="d-flex flex-column align-items-center">
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                        &nbsp;&nbsp;
-                                                                        &nbsp;
-                                                                        <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vu
-                                                                            le proces-verbal des deliberations du
-                                                                            jury en date du
-                                                                        </span>
-                                                                        <span><em>
-                                                                                &nbsp;&nbsp;&nbsp;Mindful of the
-                                                                                official report of
-                                                                                the deliberation of the jury dated</em>
-                                                                        </span>
+                                                                    <div
+                                                                        class="d-flex content-state-data flex-column align-items-center">
+                                                                        <span> REPUBLIQUE DU CAMEROUN </span>
+                                                                        <span> Paix - Travail - Patrie </span>
+                                                                        <span> ------------------------- </span>
+                                                                        <span> FACULTE DES SCIENCES </span>
+                                                                        <span style="font-size: smaller;"><em>FACULTY OF
+                                                                                SCIENCES</em></span>
                                                                     </div>
-                                                                    <br>
+
+                                                                    <div
+                                                                        class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
+                                                                        <img class="imgatt" src="att.jpeg" alt=""
+                                                                            srcset="">
+                                                                        {{-- <img src="assets/img/logo_ui.png" alt="university of yaounde 1" class="img-fluid" /> --}}
+
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex content-state-data flex-column align-items-center">
+                                                                        <span> REPUBLIC OF CAMEROON </span>
+                                                                        <span> Peace - Work - Fatherland </span>
+                                                                        <span> ------------------------- </span>
+                                                                        <span> UNIVERSITY OF YAOUNDE 1 </span>
+                                                                        <span style="font-size: smaller;"><em>UNIVERSITY OF
+                                                                                YAOUNDE 1 </em></span>
+                                                                    </div>
+                                                                </section>
+
+
+
+
+
+                                                            </header>
+                                                            <br>
+
+                                                            <section>
+                                                                <span>
+                                                                    PB/P.O. Box 812 Yaoundé <br> Tel: (237)222 234 496 <br>
+                                                                    Fax: (237)222 234 496 /<br>
+                                                                    Email: diplome@facsciences.uy1.cm
+                                                                </span>
+
+                                                            </section>
+                                                            <br>
+
+                                                            <div class="d-flex flex-column align-items-center">
+                                                                <span class="lo text-center"> ATTESTATION DE REUSSITE
+                                                                    AU</span>
+                                                                <span class="fs-2 text-center"> DIPLOME DE LICENCE</span>
+                                                                <span class="lo text-center"><em> BACHELOR'S DEGREE SUCSESS
+                                                                        TESTIMONIAL</em></span>
+                                                            </div>
+                                                            <div class="bottom-left">
+                                                                <div class="form-value ps-4 pt-1 text-uppercase">
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                                                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                    &nbsp;&nbsp;
-                                                                    <p class="text"> <?php echo date('j F Y'); ?> &nbsp;&nbsp;
-                                                                      
-                                                                      
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                                                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                    N° : {{ isset($etudiant) ? $etudiant->id_releve : '' }}
+                                                                
+                                                                </div>
+                                                                <!--to change dans la table releve-->
+                                                            </div>
+                                                            <br>
+                                                            <div class="d-flex flex-column align-items-center">
+                                                                <span>Le doyen de la faculté des Sciences de l'Université de
+                                                                    Yaoundé, soussigné,</span>
+                                                                <span><em>The Dean of the Faculty of Science of the
+                                                                        University of Yaounde I, undersigned,</em></span>
+                                                            </div>
+                                                            <br>
+                                                            <main class="w-100 d-flex flex-column align-items-center">
+
+                                                                <section class="w-100">
+
+                                                                    <section
+                                                                        class="w-100 d-flex align-items-center justify-content-between">
+
+                                                                        <div class="d-flex flex-column align-items-center">
+                                                                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                            &nbsp;&nbsp;
+                                                                            &nbsp;
+                                                                            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vu
+                                                                                le proces-verbal des deliberations du
+                                                                                jury en date du
+                                                                            </span>
+                                                                            <span><em>
+                                                                                    &nbsp;&nbsp;&nbsp;Mindful of the
+                                                                                    official report of
+                                                                                    the deliberation of the jury dated</em>
+                                                                            </span>
+                                                                        </div>
+                                                                        <br>
+                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
                                                                         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                                                                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                                                         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp;
-                                                                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;
-                                                                    </p>
-                                                                    <br>
-                                                                    <div class="dash"></div>
-
-
-
-
-
-
-
-                                                                </section>
-                                                                <br>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-start">
-                                                                    <div class="d-flex form-item me-5 pe-5">
-                                                                        <div class="d-flex flex-column">
-                                                                            <span class="fs-5 fw-bolder bold_part">
-                                                                                Atteste que: </span>
-                                                                            <span class="english_subtitle"> Certify
-                                                                                that
-                                                                            </span>
-                                                                        </div>
-                                                                        <div
-                                                                            class="form-value ps-4 pt-1 text-uppercase">
-                                                                            {{-- {{ $etudiant->date_naissance }} --}}
-                                                                            {{-- {{ isset($etudiant) ? $etudiant->date_naissance : '' }} --}}
-                                                                        </div>
-                                                                    </div>
-
-                                                                </section>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-start">
-                                                                    <div class="d-flex form-item">
-                                                                        <div class="d-flex flex-column">
-                                                                            <span class="fs-5 fw-bolder bold_part">
-                                                                                M./Mme/Mlle </span>
-                                                                            <span class="english_subtitle">
-                                                                                Mr./Mrs./Mlle
-                                                                            </span>
-                                                                        </div>
-
-
-
-
-
-
-                                                                    </div>
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    <span class="name">
-                                                                        {{ isset($etudiant) ? $etudiant->nom : '' }}
-                                                                        {{ isset($etudiant) ? $etudiant->prenom : '' }}
+                                                                        <p class="text"> <?php echo date('j F Y'); ?> &nbsp;&nbsp;
                                                                         
-                                                                    </span>
-                                                                    <div class="dash"></div>
+                                                                        
+                                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                            &nbsp;&nbsp;
+                                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;
+                                                                        </p>
+                                                                        <br>
+                                                                        <div class="dash"></div>
+
+
+
+
+
+
+
+                                                                    </section>
                                                                     <br>
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    <div class="d-flex flex-column">
-                                                                        <span>Mle</span>
-                                                                        <span>Reg.N°</span>
+                                                                    <section
+                                                                        class="w-100 d-flex align-items-center justify-content-start">
+                                                                        <div class="d-flex form-item me-5 pe-5">
+                                                                            <div class="d-flex flex-column">
+                                                                                <span class="fs-5 fw-bolder bold_part">
+                                                                                    Atteste que: </span>
+                                                                                <span class="english_subtitle"> Certify
+                                                                                    that
+                                                                                </span>
+                                                                            </div>
+                                                                            <div
+                                                                                class="form-value ps-4 pt-1 text-uppercase">
+                                                                                {{-- {{ $etudiant->date_naissance }} --}}
+                                                                                {{-- {{ isset($etudiant) ? $etudiant->date_naissance : '' }} --}}
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </section>
+                                                                    <section
+                                                                        class="w-100 d-flex align-items-center justify-content-start">
+                                                                        <div class="d-flex form-item">
+                                                                            <div class="d-flex flex-column">
+                                                                                <span class="fs-5 fw-bolder bold_part">
+                                                                                    M./Mme/Mlle </span>
+                                                                                <span class="english_subtitle">
+                                                                                    Mr./Mrs./Mlle
+                                                                                </span>
+                                                                            </div>
+
+
+
+
+
+
+                                                                        </div>
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        <span class="name">
+                                                                            {{ isset($etudiant) ? $etudiant->nom : '' }}
+                                                                            {{ isset($etudiant) ? $etudiant->prenom : '' }}
+                                                                            
                                                                         </span>
-                                                                    </div>
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    <p class="texte">  {{ isset($etudiant) ? $etudiant->matricule : '' }}</p>
-                                                                    <div class="dash"></div>
+                                                                        <div class="dash"></div>
+                                                                        <br>
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        <div class="d-flex flex-column">
+                                                                            <span>Mle</span>
+                                                                            <span>Reg.N°</span>
+                                                                            </span>
+                                                                        </div>
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        <p class="texte">  {{ isset($etudiant) ? $etudiant->matricule : '' }}</p>
+                                                                        <div class="dash"></div>
+
+
+                                                                    </section>
+                                                                    <section
+                                                                        class="w-100 d-flex align-items-center justify-content-between">
+                                                                        <div class="d-flex form-item me-5 pe-5 ">
+                                                                            <div class="d-flex flex-column">
+                                                                                <span
+                                                                                    class="fs-5 fw-bolder bold_part">Né(e)
+                                                                                    le: &nbsp;</span>
+
+                                                                                <span class="english_subtitle"> Born on
+                                                                                </span>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        <div class="date_naissance">
+                                                                            {{ isset($etudiant) ? $etudiant->date_naissance : '' }}
+                                                                        </div>
+                                                                        <div class="dash"></div>
+                                                                        <br>
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        <div class="d-flex flex-column">
+                                                                            <span>a</span>
+                                                                            <span>at</span>
+                                                                            </span>
+                                                                        </div>
+                                                                        &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        <p class="ville">  {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</p>
+                                                                        <div class="dashv"></div>
+
+
+                                                                    </section>
+
+                                                                    <section
+                                                                        class="w-100 d-flex align-items-center justify-content-between">
+                                                                        <div class="d-flex flex-column">
+                                                                            <span>a subi avec succes,les epreuves
+                                                                                sanctionnant l examen de la</span>
+                                                                            <span class="english_subtitle"> has
+                                                                                successfully fulfiled the requirement of the
+                                                                            </span>
+                                                                        </div>
+
+                                                                        {{-- <div class="d-flex form-item">
+                                                                            <div class="d-flex flex-column">
+                                                                                <span class="fs-5 fw-bolder bold_part">
+                                                                                    Année Academique: </span>
+                                                                                <span class="english_subtitle"> Academic
+                                                                                    year </span>
+                                                                            </div>
+                                                                            <div class="form-value ps-4 pt-1">
+                                                                            
+                                                                            </div>
+                                                                        </div> --}}
+
+                                                                    </section>
 
 
                                                                 </section>
@@ -964,388 +1022,330 @@ a:hover {
                                                                     class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item me-5 pe-5 ">
                                                                         <div class="d-flex flex-column">
-                                                                            <span
-                                                                                class="fs-5 fw-bolder bold_part">Né(e)
-                                                                                le: &nbsp;</span>
+                                                                            <span class="fs-5 fw-bolder bold_part">Licence
+                                                                                de</span>
 
-                                                                            <span class="english_subtitle"> Born on
+                                                                            <span class="english_subtitle"> Bachelor's
+                                                                                Defree in</span>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    &nbsp;&nbsp;&nbsp;
+                                                                    <div class="name">
+
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        TECHNICIEN
+                                                                    </div>
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    <div class="dashl"></div>
+                                                                    <br>
+
+
+
+                                                                </section>
+
+
+                                                                <section
+                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <div class="d-flex form-item me-5 pe-5 ">
+                                                                        <div class="d-flex flex-column">
+                                                                            <span
+                                                                                class="fs-5 fw-bolder bold_part">Specialite/Option</span>
+
+                                                                            <span class="english_subtitle">
+                                                                                Speciality/Option
                                                                             </span>
                                                                         </div>
 
                                                                     </div>
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    <div class="date_naissance">
-                                                                        {{ isset($etudiant) ? $etudiant->date_naissance : '' }}
+                                                                    &nbsp;&nbsp;&nbsp;
+                                                                    &nbsp;&nbsp;&nbsp;
+                                                                    
+                                                                    
+                                                                    <div class="namespecialit">
+                                                                        
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        {{ isset($etudiant) ? $etudiant->filiere : '' }} <br>
+                                                                        
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                     </div>
-                                                                    <div class="dash"></div>
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    <div class="dashl"></div>
                                                                     <br>
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    <div class="d-flex flex-column">
-                                                                        <span>a</span>
-                                                                        <span>at</span>
-                                                                        </span>
-                                                                    </div>
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    <p class="ville">  {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</p>
-                                                                    <div class="dashv"></div>
+                                                                
+
 
 
                                                                 </section>
 
                                                                 <section
                                                                     class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <div class="d-flex form-item me-5 pe-5 ">
+                                                                        <div class="d-flex flex-column">
+                                                                            <span class="fs-5 fw-bolder bold_part"><em>Session
+                                                                                    de</em></span>
+
+                                                                            <span class="english_subtitle">Session</span>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    &nbsp;&nbsp;&nbsp;
                                                                     <div class="d-flex flex-column">
-                                                                        <span>a subi avec succes,les epreuves
-                                                                            sanctionnant l examen de la</span>
-                                                                        <span class="english_subtitle"> has
-                                                                            successfully fulfiled the requirement of the
-                                                                        </span>
+                                                                        <span class="fs-5 fw-bolder bold_part"> <?php echo date('F Y'); ?>
+                                                                            avec une moyenne generale pondere(MGP)
+                                                                            de: {{ isset($etudiant) ? $etudiant->mgp : '' }},credit(s):180 et la mention
+                                                                            Bien</span>
+
+                                                                        <span class="english_subtitle1">with a cummulate
+                                                                            grade point Average(GPA) of:{{ isset($etudiant) ? $etudiant->mgp : '' }}/4.00,credit:180
+                                                                            and Grade:Good</span>
+
                                                                     </div>
 
-                                                                    {{-- <div class="d-flex form-item">
-                                                                        <div class="d-flex flex-column">
-                                                                            <span class="fs-5 fw-bolder bold_part">
-                                                                                Année Academique: </span>
-                                                                            <span class="english_subtitle"> Academic
-                                                                                year </span>
+
+
+                                                                </section>
+                                                                <br>
+                                                                <section
+                                                                    class="w-100 d-flex align-items-center align-items-center">
+
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="fs-5 fw-bolder bold_part">
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En
+                                                                            foi de quoi la presente attestation est établie
+                                                                            et lui est délivrée pour servir et vqloir ce aue
+                                                                            de droit.</span>
+
+                                                                        <span class="english_subtitle1">
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In
+                                                                            writness where of the present Testimonial is
+                                                                            given with the privileges there into
+                                                                            pertaining./</span>
+
+                                                                    </div>
+
+
+
+                                                                </section>
+
+                                                                <section class="w-100 d-flex flex-column"
+                                                                    style="font-size: 12px">
+
+                                                                    <div>
+                                                                        <div class="d-flex ">
+
+                                                                            <div class="content-recap w-100 mt-3 bloc">
+                                                                                <table class="table w-100">
+                                                                                    <thead class="text-center">
+                                                                                        <th>
+                                                                                            <span> Systeme de notation /
+                                                                                                Grapping </span>
+                                                                                        </th>
+
+                                                                                    </thead>
+                                                                                    <thead>
+                                                                                        <th>
+                                                                                            <span>MGP/4 </span>
+                                                                                        </th>
+                                                                                        <th>
+                                                                                            <span>Cote </span>
+                                                                                        </th>
+                                                                                        <th>
+                                                                                            <span>Mention/Grade </span>
+                                                                                        </th>
+                                                                                        </th>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td> [200-220[ </td>
+                                                                                            <td class="text-center">C</td>
+                                                                                            <td>Passable/Pass</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> [220-240[" </td>
+                                                                                            <td class="text-center">C+</td>
+                                                                                            <td>Passable/Pass</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> [240-260[ </td>
+                                                                                            <td class="text-center">B-</td>
+                                                                                            <td>Assez-Bien / Fair</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> [260-280[ </td>
+                                                                                            <td class="text-center">B</td>
+                                                                                            <td>Assez-Bien / Fair</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> [280-300[ </td>
+                                                                                            <td class="text-center">B+</td>
+                                                                                            <td>Bien / Good</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> [300-320[ </td>
+                                                                                            <td class="text-center">A-</td>
+                                                                                            <td>Passable/Pass</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> [300-400[ </td>
+                                                                                            <td class="text-center">A</td>
+                                                                                            <td>Passable/Pass</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td> 4.00 </td>
+                                                                                            <td class="text-center">A+</td>
+                                                                                            <td>Excellent</td>
+                                                                                        </tr>
+
+                                                                                    </tbody>
+                                                                                </table>
+
+                                                                            
+                                                                            
+                                                                            </div>
+                                                                            {{-- <div class="content-recap w-100 mt-3 bloc">
+                                                                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                                                                <script type="text/javascript">
+                                                                                    function generateBarCode() {
+                                                                                        var nric = $('hhhh').val();
+                                                                                        var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=150x150';
+                                                                                        $('#barcode').attr('src', url);
+                                                                                        // print(nric);
+                                                                                    }
+                                                                                </script>
+                                                                                <!-- <?php
+                                                                                $type = 'png';
+                                                                                $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
+                                                                                // $nouvelleVariable = $hmacInfo;
+                                                                                $taille = '&amp;size=100x100';
+                                                                                
+                                                                                // Concaténation des parties de la chaîne avec la variable
+                                                                                // $chaineModifiee = $chaine . $nouvelleVariable . $taille;
+                                                                                // $data = file_get_contents($chaineModifiee);
+                                                                                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                                                                                ?> -->
+                                                                                <?php echo '<div class="company-logo">
+                                                                                                                        <img src="' .
+                                                                                    $base64 .
+                                                                                    '"  alt="base" />  </div>';
+                                                                                ?>
+                                                                            </div> --}}
                                                                         </div>
-                                                                        <div class="form-value ps-4 pt-1">
-                                                                           
-                                                                        </div>
-                                                                    </div> --}}
 
                                                                 </section>
 
 
-                                                            </section>
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div class="d-flex form-item me-5 pe-5 ">
-                                                                    <div class="d-flex flex-column">
-                                                                        <span class="fs-5 fw-bolder bold_part">Licence
-                                                                            de</span>
 
-                                                                        <span class="english_subtitle"> Bachelor's
-                                                                            Defree in</span>
+                                                                <section
+                                                                    class="w-100 d-flex flex-column align-items-center">
+                                                                    <span
+                                                                        class="w-100 decision-data d-flex flex-column w-auto">
+                                                                        <span class="yaous"> Yaouné le /The   <?php echo date('j F Y'); ?> </span>
+
+                                                                        <!--to change-->
+                                                                    </span>
+                                                                </section>
+                                                                <section
+                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <div class="d-flex flex-column">
+                                                                        <span>Le chef de departement de</span>
+                                                                        <span class="english_subtitle"> The Head of the
+                                                                            departement
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span
+                                                                                style="text-decoration: underline;">Information
+                                                                                and commucation Technologie</span> </span>
+                                                                    </div>
+                                                                    <div class="d-flex form-item">
+                                                                        <div class="d-flex flex-column">
+                                                                            <span class="fs-5 fw-bolder bold_part">
+                                                                                Le Doyen/The Dean</span>
+
+                                                                        </div>
+                                                                        <div class="form-value ps-4 pt-1">
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </section>
+                                                                <br>
+                                                                <section
+                                                                    class="w-100 d-flex align-items-center align-items-center">
+
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="english_subtitle"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                En foi de quoi la presente attestation est
+                                                                                établie et lui est délivrée pour servir et
+                                                                                vqloir ce aue de droit.</em></span>
+
+                                                                        <span class="english_subtitle">
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            In writness where of the present Testimonial is
+                                                                            given with the privileges there into
+                                                                            pertaining./</span>
 
                                                                     </div>
 
-                                                                </div>
-                                                                &nbsp;&nbsp;&nbsp;
-                                                                <div class="name">
 
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                    TECHNICIEN
-                                                                </div>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                <div class="dashl"></div>
+
+                                                                </section>
                                                                 <br>
-
-
-
-                                                            </section>
-
-
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div class="d-flex form-item me-5 pe-5 ">
+                                                                <section
+                                                                    class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex flex-column">
-                                                                        <span
-                                                                            class="fs-5 fw-bolder bold_part">Specialite/Option</span>
-
+                                                                        <span></span>
                                                                         <span class="english_subtitle">
-                                                                            Speciality/Option
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span
+                                                                                style="text-decoration: underline;"></span>
                                                                         </span>
                                                                     </div>
-
-                                                                </div>
-                                                                &nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp;&nbsp;
-                                                                 
-                                                                
-                                                                <div class="namespecialit">
-                                                                    
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                    {{ isset($etudiant) ? $etudiant->filiere : '' }} <br>
-                                                                     
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                </div>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                <div class="dashl"></div>
-                                                                <br>
-                                                               
-
-
-
-                                                            </section>
-
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div class="d-flex form-item me-5 pe-5 ">
-                                                                    <div class="d-flex flex-column">
-                                                                        <span class="fs-5 fw-bolder bold_part"><em>Session
-                                                                                de</em></span>
-
-                                                                        <span class="english_subtitle">Session</span>
-
-                                                                    </div>
-
-                                                                </div>
-                                                                &nbsp;&nbsp;&nbsp;
-                                                                <div class="d-flex flex-column">
-                                                                    <span class="fs-5 fw-bolder bold_part"> <?php echo date('F Y'); ?>
-                                                                        avec une moyenne generale pondere(MGP)
-                                                                        de: {{ isset($etudiant) ? $etudiant->mgp : '' }},credit(s):180 et la mention
-                                                                        Bien</span>
-
-                                                                    <span class="english_subtitle1">with a cummulate
-                                                                        grade point Average(GPA) of:{{ isset($etudiant) ? $etudiant->mgp : '' }}/4.00,credit:180
-                                                                        and Grade:Good</span>
-
-                                                                </div>
-
-
-
-                                                            </section>
-                                                            <br>
-                                                            <section
-                                                                class="w-100 d-flex align-items-center align-items-center">
-
-                                                                <div class="d-flex flex-column">
-                                                                    <span class="fs-5 fw-bolder bold_part">
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En
-                                                                        foi de quoi la presente attestation est établie
-                                                                        et lui est délivrée pour servir et vqloir ce aue
-                                                                        de droit.</span>
-
-                                                                    <span class="english_subtitle1">
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In
-                                                                        writness where of the present Testimonial is
-                                                                        given with the privileges there into
-                                                                        pertaining./</span>
-
-                                                                </div>
-
-
-
-                                                            </section>
-
-                                                            <section class="w-100 d-flex flex-column"
-                                                                style="font-size: 12px">
-
-                                                                <div>
-                                                                    <div class="d-flex ">
-
-                                                                        <div class="content-recap w-100 mt-3 bloc">
-                                                                            <table class="table w-100">
-                                                                                <thead class="text-center">
-                                                                                    <th>
-                                                                                        <span> Systeme de notation /
-                                                                                            Grapping </span>
-                                                                                    </th>
-
-                                                                                </thead>
-                                                                                <thead>
-                                                                                    <th>
-                                                                                        <span>MGP/4 </span>
-                                                                                    </th>
-                                                                                    <th>
-                                                                                        <span>Cote </span>
-                                                                                    </th>
-                                                                                    <th>
-                                                                                        <span>Mention/Grade </span>
-                                                                                    </th>
-                                                                                    </th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td> [200-220[ </td>
-                                                                                        <td class="text-center">C</td>
-                                                                                        <td>Passable/Pass</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> [220-240[" </td>
-                                                                                        <td class="text-center">C+</td>
-                                                                                        <td>Passable/Pass</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> [240-260[ </td>
-                                                                                        <td class="text-center">B-</td>
-                                                                                        <td>Assez-Bien / Fair</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> [260-280[ </td>
-                                                                                        <td class="text-center">B</td>
-                                                                                        <td>Assez-Bien / Fair</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> [280-300[ </td>
-                                                                                        <td class="text-center">B+</td>
-                                                                                        <td>Bien / Good</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> [300-320[ </td>
-                                                                                        <td class="text-center">A-</td>
-                                                                                        <td>Passable/Pass</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> [300-400[ </td>
-                                                                                        <td class="text-center">A</td>
-                                                                                        <td>Passable/Pass</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td> 4.00 </td>
-                                                                                        <td class="text-center">A+</td>
-                                                                                        <td>Excellent</td>
-                                                                                    </tr>
-
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        
-                                                                        
-                                                                        </div>
-                                                                        {{-- <div class="content-recap w-100 mt-3 bloc">
-                                                                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                                                                            <script type="text/javascript">
-                                                                                function generateBarCode() {
-                                                                                    var nric = $('hhhh').val();
-                                                                                    var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=150x150';
-                                                                                    $('#barcode').attr('src', url);
-                                                                                    // print(nric);
-                                                                                }
-                                                                            </script>
-                                                                            <!-- <?php
-                                                                            $type = 'png';
-                                                                            $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
-                                                                            // $nouvelleVariable = $hmacInfo;
-                                                                            $taille = '&amp;size=100x100';
-                                                                            
-                                                                            // Concaténation des parties de la chaîne avec la variable
-                                                                            // $chaineModifiee = $chaine . $nouvelleVariable . $taille;
-                                                                            // $data = file_get_contents($chaineModifiee);
-                                                                            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                                                                            ?> -->
-                                                                            <?php echo '<div class="company-logo">
-                                                                                                                    <img src="' .
-                                                                                $base64 .
-                                                                                '"  alt="base" />  </div>';
-                                                                            ?>
-                                                                        </div> --}}
-                                                                    </div>
-
-                                                            </section>
-
-
-
-                                                            <section
-                                                                class="w-100 d-flex flex-column align-items-center">
-                                                                <span
-                                                                    class="w-100 decision-data d-flex flex-column w-auto">
-                                                                    <span class="yaous"> Yaouné le /The   <?php echo date('j F Y'); ?> </span>
-
-                                                                    <!--to change-->
-                                                                </span>
-                                                            </section>
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div class="d-flex flex-column">
-                                                                    <span>Le chef de departement de</span>
-                                                                    <span class="english_subtitle"> The Head of the
-                                                                        departement
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        <span
-                                                                            style="text-decoration: underline;">Information
-                                                                            and commucation Technologie</span> </span>
-                                                                </div>
-                                                                <div class="d-flex form-item">
-                                                                    <div class="d-flex flex-column">
-                                                                        <span class="fs-5 fw-bolder bold_part">
-                                                                            Le Doyen/The Dean</span>
-
-                                                                    </div>
                                                                     <div class="form-value ps-4 pt-1">
-
                                                                     </div>
-                                                                </div>
+                                                                    <div class="d-flex form-item">
+                                                                        <div class="d-flex flex-column">
+                                                                            <span class="english_subtitle">
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                a/FS.Imprimé le 06/01/2023</span>
+                                                                            <span class="english_subtitle">
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight
+                                                                                GICA</span>
+                                                                            <span class="english_subtitle">
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                SUNGO</span>
 
-                                                            </section>
-                                                            <br>
-                                                            <section
-                                                                class="w-100 d-flex align-items-center align-items-center">
-
-                                                                <div class="d-flex flex-column">
-                                                                    <span class="english_subtitle"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            En foi de quoi la presente attestation est
-                                                                            établie et lui est délivrée pour servir et
-                                                                            vqloir ce aue de droit.</em></span>
-
-                                                                    <span class="english_subtitle">
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        In writness where of the present Testimonial is
-                                                                        given with the privileges there into
-                                                                        pertaining./</span>
-
-                                                                </div>
-
-
-
-                                                            </section>
-                                                            <br>
-                                                            <section
-                                                                class="w-100 d-flex align-items-center justify-content-between">
-                                                                <div class="d-flex flex-column">
-                                                                    <span></span>
-                                                                    <span class="english_subtitle">
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        <span
-                                                                            style="text-decoration: underline;"></span>
-                                                                    </span>
-                                                                </div>
-                                                                <div class="form-value ps-4 pt-1">
-                                                                </div>
-                                                                <div class="d-flex form-item">
-                                                                    <div class="d-flex flex-column">
-                                                                        <span class="english_subtitle">
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            a/FS.Imprimé le 06/01/2023</span>
-                                                                        <span class="english_subtitle">
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight
-                                                                            GICA</span>
-                                                                        <span class="english_subtitle">
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            SUNGO</span>
-
+                                                                        </div>
+                
                                                                     </div>
-            
-                                                                </div>
 
-                                                            </section>
-                                            </ul>
-                                            <div  class="col-sm-4">
-                                            <form method="POST"  action="{{ route('getAttestation') }}" method="post">
-                                                @csrf
-                                                    <button id="downloadButton" >Télécharger le PDF</button>
-                                                </form>
+                                                                </section>
+                                                </ul>
+                                               
+        
                                             </div>
-      
-                                        </div>
                                         <!--end card-body-->
-
+                                        <div  class="col-sm-4">
+                                                
+                                            <button id="downloadButton" >Télécharger le PDF</button>
+                                    
+                                    </div>
+                                        </div>
                                     </div>
                                     <!--end card-->
                                 </div>
@@ -1373,7 +1373,26 @@ a:hover {
     <!-- end page-wrapper -->
 
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#downloadButton').click(function() {
+                var content = $('.contents').html();
+              
+                var printWindow = window.open('', 'Auth.doc');
+    printWindow.document.write('<html><head><title>Auth.doc</title>');
+    printWindow.document.write('<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+    printWindow.document.write('<link href="assets/css/card.css" rel="stylesheet" type="text/css" />');
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(content);
+    printWindow.document.write('</body></html>');
 
+    // Appelez la fonction d'impression de la fenêtre d'impression
+    printWindow.document.close();
+    printWindow.print();
+            });
+        });
+    </script>
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
