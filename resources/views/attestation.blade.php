@@ -38,6 +38,8 @@ a:hover {
 }
 
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+
 </head>
 
 <body class="dark-sidenav">
@@ -467,7 +469,7 @@ a:hover {
                                     <!--end row-->
 
                                     <div class="card w-100">
-                                        <div class="contents">
+                                        <div id="contents">
                                             <div class="card-body bg-image">
                                                 <ul class="list-unstyled mb-0">
                                                     <style>
@@ -480,7 +482,7 @@ a:hover {
                                                             margin-right: 20px;
                                                         }
 
-                                                        .contents{
+                                                        .bg-image {
                                                             background-image: url('Uy.png');
                                                             background-repeat: no-repeat;
                                                             background-size: cover;
@@ -1342,8 +1344,14 @@ a:hover {
                                         <!--end card-body-->
                                         <div  class="col-sm-4">
                                                 
-                                            <button id="downloadButton" >Télécharger le PDF</button>
-                                    
+                                            
+
+                                            <form action="{{ route('genererPDF') }}" method="POST">
+                                                @csrf
+                                                <button type="submit">Télécharger le PDF</button>
+                                            </form>
+                                            
+
                                     </div>
                                         </div>
                                     </div>
@@ -1371,32 +1379,18 @@ a:hover {
     <!-- end page content -->
     </div>
     <!-- end page-wrapper -->
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#downloadButton').click(function() {
-                var content = $('.contents').html();
-              
-                var printWindow = window.open('', 'Auth.doc');
-    printWindow.document.write('<html><head><title>Auth.doc</title>');
-    printWindow.document.write('<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
-    printWindow.document.write('<link href="assets/css/card.css" rel="stylesheet" type="text/css" />');
-    printWindow.document.write('</head><body>');
-    printWindow.document.write(content);
-    printWindow.document.write('</body></html>');
-
-    // Appelez la fonction d'impression de la fenêtre d'impression
-    printWindow.document.close();
-    printWindow.print();
-            });
-        });
     </script>
+   <!-- Vue Blade (attestation.blade.php) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ 
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="assets/js/bootstrap.bundle.min.js"></script> --}}
     <script src="assets/js/metismenu.min.js"></script>
     <script src="assets/js/waves.js"></script>
     <script src="assets/js/feather.min.js"></script>

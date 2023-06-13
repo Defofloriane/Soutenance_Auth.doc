@@ -1,0 +1,31 @@
+{
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_4533e5a8872d03058fb40b20fa4ea945"
+    },
+    "font awesome 5 free": {
+        "normal": "font_awesome_5_free_normal_c0c8611ddf657134698de4d0a1142f2c",
+        "900": "D:\\projet\\soutenance\\another\\Soutenance_Auth.doc\\Soutenance_Auth.doc\\public\\assets\/fonts\/font_awesome_5_free_900_0c53ea342e3c4d36a20f5ec8a18f1311"
+    },
+    "line awesome brands": {
+        "normal": "line_awesome_brands_normal_c67647ccc69ff525983cd361b25e7ba8"
+    },
+    "line awesome free": {
+        "normal": "line_awesome_free_normal_7219d0a1cc2817815960e66c77ed25a0",
+        "900": "D:\\projet\\soutenance\\another\\Soutenance_Auth.doc\\Soutenance_Auth.doc\\public\\assets\/fonts\/line_awesome_free_900_ca3af2f20c919239b7130850e9ccb465"
+    },
+    "material design icons": {
+        "normal": "material_design_icons_normal_3a77fc8d55bb15ac57a015bb5d234d89"
+    },
+    "dripicons-v2": {
+        "normal": "dripicons_v2_normal_794546afc00a844b8a42fcb3f5b60cbb"
+    },
+    "feather": {
+        "normal": "feather_normal_21a968e41717aff19cca3a19d6d35a44"
+    },
+    "themify": {
+        "normal": "themify_normal_34713e4e38ca287a21184b4b02bf6929"
+    },
+    "typicons": {
+        "normal": "typicons_normal_e4a4c6b1581f9130a77c96039e978877"
+    }
+}

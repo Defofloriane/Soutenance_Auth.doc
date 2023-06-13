@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Etudiant;
+use Dompdf\Dompdf;
+use Illuminate\Http\Response;
+use Symfony\Component\DomCrawler\Crawler;
+
 
 class AttestationController extends Controller
 {
@@ -77,4 +81,70 @@ class AttestationController extends Controller
 
         // dd($etudiant_attestation);
     }
+ 
+    
+    public function genererPDF()
+    {
+        // Récupérer le contenu de la vue avec l'ID "contents"
+        $contenu = view('attestation')->render();
+    
+        // Inclure les liens vers les fichiers CSS dans le contenu HTML
+        $contenu = $this->includeCssFiles($contenu);
+    
+      
+        // Créer une instance de Crawler et charger le contenu HTML
+        $crawler = new Crawler();
+        $crawler->addHtmlContent($contenu);
+    
+        // Récupérer le contenu de la partie avec l'ID "contents"
+        $contenuContents = $crawler->filter('#contents')->html();
+    
+        // Créer une instance de Dompdf
+        $dompdf = new Dompdf();
+    
+        // Charger le contenu HTML dans Dompdf
+        $dompdf->loadHtml($contenuContents);
+    
+        // (Optionnel) Configurer les options de Dompdf
+        $dompdf->set_option('isRemoteEnabled', true); // Permet le chargement de fichiers distants (CSS)
+        $dompdf->set_option('isHtml5ParserEnabled', true); // Active le parseur HTML5
+        $dompdf->set_option('fontDir', storage_path('fonts/')); // Chemin vers le répertoire des polices (s'il y en a)
+        $dompdf->set_option('tempDir', storage_path('temp/')); // Chemin vers le répertoire temporaire de Dompdf
+    
+        // Rendre le contenu HTML en PDF
+        $dompdf->render();
+    
+        // Générer le nom du fichier PDF
+        $nomFichier = 'test' . time() . '.pdf';
+    
+        // Télécharger le fichier PDF
+        return $dompdf->stream($nomFichier, ['Attachment' => true]);
+    }
+    
+    private function includeCssFiles($contenu)
+    {
+        // Liste des liens vers les fichiers CSS
+        $cssFiles = [
+            public_path('assets/css/bootstrap.min.css'),
+            public_path('assets/css/jquery-ui.min.css'),
+            public_path('assets/css/icons.min.css'),
+            public_path('assets/css/metisMenu.min.css'),
+            public_path('../plugins/daterangepicker/daterangepicker.css'),
+            public_path('assets/css/app.min.css'),
+        ];
+    
+        // Construire les balises <link> pour chaque fichier CSS
+        $cssTags = '';
+        foreach ($cssFiles as $cssFile) {
+            $cssTags .= '<link href="' . $cssFile . '" rel="stylesheet" type="text/css" />' . "\n";
+        }
+    
+        // Inclure les balises <link> dans le contenu HTML
+        $contenu = $cssTags . $contenu;
+    
+        return $contenu;
+    }
+    
+    
+    
 }

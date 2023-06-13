@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head >
+<head>
     <meta charset="utf-8" />
     <title>Auth.doc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,22 +22,29 @@
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-  <style>
-    #downloadButton {
-  border: 1px solid blue; /* Ajoute un bord de 1 pixel avec la couleur bleue */
-  padding: 5px 10px; /* Ajuste le rembourrage intérieur du bouton */
-  background-color: white; /* Définit la couleur de fond du bouton */
-  color: blue; 
- 
-}
-.col-sm-4{
-    margin-bottom: 2%;
-}
-#downloadButton:hover {
-  background-color: blue; /* Définit la couleur de fond du bouton au survol */
-  color: white; /* Définit la couleur du texte du bouton au survol */
-}
-  </style>
+    <style>
+        #downloadButton {
+            border: 1px solid blue;
+            /* Ajoute un bord de 1 pixel avec la couleur bleue */
+            padding: 5px 10px;
+            /* Ajuste le rembourrage intérieur du bouton */
+            background-color: white;
+            /* Définit la couleur de fond du bouton */
+            color: blue;
+
+        }
+
+        .col-sm-4 {
+            margin-bottom: 2%;
+        }
+
+        #downloadButton:hover {
+            background-color: blue;
+            /* Définit la couleur de fond du bouton au survol */
+            color: white;
+            /* Définit la couleur du texte du bouton au survol */
+        }
+    </style>
 </head>
 
 <body class="dark-sidenav">
@@ -632,6 +639,20 @@
                                                             padding-left: 12px;
                                                             padding-top: 12px;
                                                         }
+
+                                                        body {
+                                                            margin: 0;
+                                                            padding: 0;
+                                                        }
+
+                                                        table {
+                                                            margin-bottom: 10px;
+                                                        }
+
+                                                        .div-suivante {
+                                                            margin-top: 10px;
+                                                        }
+                                                        
                                                     </style>
                                                     <script>
                                                         document.addEventListener('DOMContentLoaded', function() {
@@ -663,7 +684,9 @@
                                                                     </div>
                                                                     <div
                                                                         class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
-                                                                        <img src="assets/images/UyLogo.png" alt="university of yaounde 1" class="img-fluid" />
+                                                                        <img src="assets/images/UyLogo.png"
+                                                                            alt="university of yaounde 1"
+                                                                            class="img-fluid" />
 
                                                                     </div>
                                                                     <div
@@ -969,7 +992,7 @@
                                                                             <span> NC: Non Capitalisé </span>
                                                                         </div>
                                                                     </div>
-                                                                    <div>
+                                                                    <div class="div-suivante">
                                                                         <div class="d-flex ">
 
                                                                             <div class="content-recap w-100 mt-3 bloc">
@@ -1171,7 +1194,7 @@
                                                                                 <script type="text/javascript">
                                                                                     function generateBarCode() {
                                                                                         var nric = $('hhhh').val();
-                                                                                        var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=150x150';
+                                                                                        var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=100x100';
                                                                                         $('#barcode').attr('src', url);
                                                                                         // print(nric);
                                                                                     }
@@ -1188,7 +1211,7 @@
                                                                                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
                                                                                 ?> -->
                                                                                 <?php echo '<div class="company-logo">
-                                                                                                                        <img src="' .
+                                                                                                                                                                                                        <img src="' .
                                                                                     $base64 .
                                                                                     '"  alt="base" />  </div>';
                                                                                 ?>
@@ -1240,10 +1263,10 @@
 
 
 
-                                   <div  class="col-sm-4">
+                                        <div class="col-sm-4">
 
-                                       <button id="downloadButton">Télécharger le PDF</button>
-                                   </div>
+                                            <button id="downloadButton">Télécharger le PDF</button>
+                                        </div>
 
                                     </div>
                                     <!--end card-->
@@ -1261,7 +1284,7 @@
 
         </div><!-- container -->
 
-        
+
         <!--end footer-->
     </div>
     <!-- end page content -->
@@ -1272,21 +1295,43 @@
         $(document).ready(function() {
             $('#downloadButton').click(function() {
                 var content = $('.contents').html();
-              
+    
                 var printWindow = window.open('', 'Auth.doc');
-    printWindow.document.write('<html><head><title>Auth.doc</title>');
-    printWindow.document.write('<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
-    printWindow.document.write('<link href="assets/css/card.css" rel="stylesheet" type="text/css" />');
-    printWindow.document.write('</head><body>');
-    printWindow.document.write(content);
-    printWindow.document.write('</body></html>');
-
-    // Appelez la fonction d'impression de la fenêtre d'impression
-    printWindow.document.close();
-    printWindow.print();
+                printWindow.document.write('<html><head><title>Auth.doc</title>');
+                printWindow.document.write(
+                    '<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+                printWindow.document.write(
+                    '<link href="assets/css/card.css" rel="stylesheet" type="text/css" />');
+                printWindow.document.write(
+                    '<style> @page { size: A4; margin: 0; } body { margin: 1cm; }</style>');
+                printWindow.document.write('</head><body>');
+                printWindow.document.write(content);
+                printWindow.document.write('</body></html>');
+    
+                printWindow.document.close();
+    
+                // Attendre que le contenu soit chargé dans la fenêtre d'impression
+                printWindow.onload = function() {
+                    var printDocument = printWindow.document.documentElement;
+                    var scaleFactor = 1;
+    
+                    // Calculer l'échelle de réduction nécessaire pour s'adapter à une seule page A4
+                    while (printDocument.offsetHeight > (11.7 * scaleFactor * 96)) {
+                        scaleFactor -= 0.05;
+                        printDocument.style.transform = 'scale(' + scaleFactor + ')';
+                    }
+    
+                    // Appeler la fonction d'impression de la fenêtre d'impression
+                    printWindow.print();
+                };
             });
         });
     </script>
+    
+    
+    
+    
+    
 
 
 
