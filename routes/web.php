@@ -13,6 +13,7 @@ use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\ScanQrController;
 use App\Http\Controllers\GeneratePDFController;
 use App\Http\Controllers\NiveauController;
+use App\Http\Controllers\PythonController;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 /*
@@ -79,3 +80,4 @@ Route::post('/niveau',[NiveauController::class,'index'])->name('niveau');
 Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->name('getAttestation');
 Route::get('/view_attestation', [AttestationController::class,'view_attestation'])->name('view_attestation');
+
