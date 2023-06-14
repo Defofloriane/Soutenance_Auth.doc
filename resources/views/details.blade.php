@@ -746,8 +746,7 @@
                                                                     &nbsp;&nbsp; &nbsp;
                                                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                     &nbsp;&nbsp; &nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                   
 
                                                                     N° : {{ isset($releve) ? $releve->id_releve : '' }}
                                                                 </div>
