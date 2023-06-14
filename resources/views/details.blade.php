@@ -660,6 +660,9 @@
     .print-table td {
         padding: 5px; /* Espacement réduit entre les cellules */
     }
+    .print-table1 td {
+        padding: 3px; /* Espacement réduit entre les cellules */
+    }
                                                         
                                                     </style>
                                                     <script>
@@ -988,7 +991,7 @@
                                                                     </span>
                                                                 </section>
                                                                 <section class="w-100 d-flex flex-column"
-                                                                    style="font-size: 12px">
+                                                                    style="font-size: 10px">
                                                                     <div class="d-flex">
                                                                         <div><u> Légende: </u></div>
 
@@ -1000,11 +1003,10 @@
                                                                             <span> NC: Non Capitalisé </span>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="div-suivante">
+                                                                   
                                                                         <div class="d-flex ">
-
                                                                             <div class="content-recap w-100 mt-3 bloc">
-                                                                                <table class="table w-100">
+                                                                                <table class="table table-sm w-100">
                                                                                     <thead>
                                                                                         <th>
                                                                                             <span> Note / 100 </span>
@@ -1227,51 +1229,18 @@
                                                                            
 
                                                                         </div>
-                                                                        <br>
+                                                                      
                                                                        
                                                                 </section>
+                                                                
 
-
-
-                                                                {{-- @if (isset($etudiant))
-                        <h3>Récapitulatif des notes de l'étudiant {{ $etudiant->nom }} {{ $etudiant->prenom }} (matricule: {{ $etudiant->matricule }})</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Code UE</th>
-                                    <th>Nom UE</th>
-                                    <th>Crédits</th>
-                                    <th>Note</th>
-                                    <th>Mention</th>
-                                    <th>Semestre</th>
-                                    <th>Année</th>
-                                    <th>Décision</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($notes as $note)
-                                <tr>
-                                    <td>{{ $note->ue }}</td>
-                                    <td>{{ $note->nom_ue }}</td>
-                                    <td>{{ $note->credit }}</td>
-                                    <td>{{ $note->note }}</td>
-                                    <td>{{ $note->mention }}</td>
-                                    <td>{{ $note->semestre }}</td>
-                                    <td>{{ $note->annee }}</td>
-                                    <td>{{ $note->decision }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        @elseif(isset($message))
-                        <p>{{ $message }}</p>
-                        @endif --}}
 
 
                                                 </ul>
                                             </div>
                                             <!--end card-body-->
                                         </div>
+                                        <br>
 
 
 
