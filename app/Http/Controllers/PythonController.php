@@ -9,15 +9,20 @@ use GuzzleHttp\Client;
 class PythonController extends Controller
 {
     public function signature(Request $request){
-        $imagePath = 'images/image1.jpg';
+        $imagePath = 'images/david.jpeg';
+        $imagePath1 = 'images/david1.jpeg';
 
         $client = new \GuzzleHttp\Client();
         
         $response = $client->request('POST', 'http://localhost:5000/endpoint', [
             'multipart' => [
                 [
-                    'name'     => 'image',
+                    'name'     => 'image_1',
                     'contents' => fopen($imagePath, 'r'),
+                ],
+                [
+                    'name'     => 'image_2',
+                    'contents' => fopen($imagePath1, 'r'),
                 ],
             ]
         ]);
