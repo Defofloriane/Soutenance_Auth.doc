@@ -21,24 +21,35 @@
     <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
     <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-<style>
-    a {
-  display: inline-block;
-  color: #000;
-  text-decoration: none;
-}
+    <style>
+        a {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+        }
 
-a i {
-  font-size: 20px;
-  margin-right: 5px;
-}
+        a i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
 
-a:hover {
-  color: #00f; /* Couleur au survol */
-}
+        a:hover {
+            color: #00f;
+            /* Couleur au survol */
+        }
 
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+        .col-sm-4 {
+            margin-bottom: 2%;
+        }
+
+        #downloadButton:hover {
+            background-color: blue;
+            /* Définit la couleur de fond du bouton au survol */
+            color: white;
+            /* Définit la couleur du texte du bouton au survol */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
 
 </head>
 
@@ -187,35 +198,36 @@ a:hover {
                     </li>
 
                     <li class="dropdown">
-                       
-                        
+
+
                     </li>
-                   
+
                 </ul>
                 &nbsp;&nbsp; &nbsp;
                 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp; &nbsp;
-                    <div class="form-group">
-                        &nbsp;&nbsp; &nbsp;
-                                                               
-                        <a href="{{ route('view_attestation') }}">
-                            <i class="fa fa-list"></i>
-                          </a>
+                <div class="form-group">
+                    &nbsp;&nbsp; &nbsp;
 
-                        <label for="niveau">Consulter la liste des Etudiants Pouvant avoir une Attestation/Ou faire une recherche de son Matricule.</label>
-                       
+                    <a href="{{ route('view_attestation') }}">
+                        <i class="fa fa-list"></i>
+                    </a>
 
-                          
+                    <label for="niveau">Consulter la liste des Etudiants Pouvant avoir une Attestation/Ou faire une
+                        recherche de son Matricule.</label>
 
-                    </div>
 
-               
+
+
+                </div>
+
+
                 <!--end topbar-nav-->
                 <div class="col-auto align-self-center">
                     @if (session('message'))
-                    <div class="alert alert-danger">
-                        {{ session('message') }}
-                    </div>
+                        <div class="alert alert-danger">
+                            {{ session('message') }}
+                        </div>
                     @endif
                 </div>
                 <ul class="list-unstyled topbar-nav mb-0">
@@ -231,13 +243,15 @@ a:hover {
                                 <div>
                                     <button type="submit" class="ti-search"></button>
                                     <a class="btn btn-sm btn-soft-primary" href="#" role="button">
-                                        <input type="search" name="search" id="searchInput" class="form-control top-search mb-0" placeholder="Matricule/Name" required>
+                                        <input type="search" name="search" id="searchInput"
+                                            class="form-control top-search mb-0" placeholder="Matricule/Name"
+                                            required>
                                     </a>
                                 </div>
                                 <button type="submit" class="ti-search" onclick="searchEtudiant(event)"></button>
 
                             </form>
-                            
+
                         </div>
                     </li>
                 </ul>
@@ -469,7 +483,7 @@ a:hover {
                                     <!--end row-->
 
                                     <div class="card w-100">
-                                        <div id="contents">
+                                        <div class="contents">
                                             <div class="card-body bg-image">
                                                 <ul class="list-unstyled mb-0">
                                                     <style>
@@ -482,10 +496,23 @@ a:hover {
                                                             margin-right: 20px;
                                                         }
 
+
                                                         .bg-image {
+                                                            position: relative;
+                                                        }
+
+                                                        .bg-image::before {
+                                                            content: "";
+                                                            position: absolute;
+                                                            top: 0;
+                                                            left: 0;
+                                                            width: 100%;
+                                                            height: 100%;
                                                             background-image: url('Uy.png');
                                                             background-repeat: no-repeat;
                                                             background-size: cover;
+                                                            opacity: 0.5;
+                                                            /* Réglez l'opacité selon vos besoins */
                                                         }
 
                                                         .fs-2 {
@@ -511,20 +538,33 @@ a:hover {
                                                             font-size: 10px;
                                                             font-weight: bold;
                                                         }
+                                                        .bold_part1 {
+                                                            font-size: 13px !important;
+                                                            color: #000000;
+                                                            font-size: 10px;
+                                                            font-weight: bold;
+                                                        }
 
                                                         .english_subtitle {
                                                             font-style: italic;
                                                             font-size: 13px;
                                                             margin-top: -5px;
-                                                        
+
                                                         }
+
                                                         .english_subtitle1 {
                                                             font-style: italic;
                                                             font-size: 13px;
                                                             font-size: 14px;
                                                             font-weight: bold;
                                                             text-align: center
-                                                        
+                                                        }
+                                                        .english_subtitle2 {
+                                                            font-style: italic;
+                                                            font-size: 10px;
+                                                            font-size: 14px;
+                                                            font-weight: bold;
+                                                            text-align: center
                                                         }
 
                                                         .content-uy1-logo {
@@ -675,11 +715,11 @@ a:hover {
 
                                                         .text {
                                                             position: absolute;
-                                                            right:0;
+                                                            right: 0;
                                                             padding: 0 3px;
                                                             top: 14%;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
 
                                                         }
 
@@ -689,17 +729,17 @@ a:hover {
                                                             padding: 0 10px;
                                                             top: 0%;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
                                                         }
 
                                                         .ville {
                                                             position: absolute;
-                                                            right: 500px;
+                                                            right: 130px;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
                                                             padding: 0 10px;
                                                             top: 0%;
-                                                        
+
                                                         }
 
                                                         .licence {
@@ -709,7 +749,7 @@ a:hover {
                                                             bottom: 10%;
                                                             font-size: 18px;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
                                                         }
 
                                                         .name {
@@ -718,14 +758,15 @@ a:hover {
                                                             padding: 0 10px;
                                                             top: 0%;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
                                                         }
+
                                                         .namespecialit {
                                                             position: absolute;
                                                             left: 130px;
                                                             padding: 0 10px;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
                                                         }
 
                                                         .date_naissance {
@@ -734,7 +775,7 @@ a:hover {
                                                             padding: 0 10px;
                                                             top: 2%;
                                                             font-weight: bold;
-                                                            font-size: 19px;
+                                                            font-size: 17px;
                                                         }
 
                                                         .card-body.bg-image span,
@@ -746,6 +787,35 @@ a:hover {
                                                             user-select: none;
 
                                                         }
+
+                                                        #downloadButton {
+                                                            border: 1px solid blue;
+                                                            /* Ajoute un bord de 1 pixel avec la couleur bleue */
+                                                            padding: 5px 10px;
+                                                            /* Ajuste le rembourrage intérieur du bouton */
+                                                            background-color: white;
+                                                            /* Définit la couleur de fond du bouton */
+                                                            color: blue;
+
+                                                        }
+
+                                                        .print-table {
+                                                            font-size: 12px;
+                                                            /* Taille de police réduite */
+                                                        }
+
+                                                        .print-table th,
+                                                        .print-table td {
+                                                            padding: 5px;
+                                                            /* Espacement réduit entre les cellules */
+                                                        }
+                                                        @media print {
+        body.print-bg {
+            background-image: url('Uy.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
                                                     </style>
                                                     <script>
                                                         document.addEventListener('DOMContentLoaded', function() {
@@ -774,14 +844,15 @@ a:hover {
                                                                         <span> Paix - Travail - Patrie </span>
                                                                         <span> ------------------------- </span>
                                                                         <span> FACULTE DES SCIENCES </span>
-                                                                        <span style="font-size: smaller;"><em>FACULTY OF
+                                                                        <span style="font-size: smaller;"><em>FACULTY
+                                                                                OF
                                                                                 SCIENCES</em></span>
                                                                     </div>
 
                                                                     <div
                                                                         class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
-                                                                        <img class="imgatt" src="att.jpeg" alt=""
-                                                                            srcset="">
+                                                                        <img class="imgatt" src="att.jpeg"
+                                                                            alt="" srcset="">
                                                                         {{-- <img src="assets/img/logo_ui.png" alt="university of yaounde 1" class="img-fluid" /> --}}
 
                                                                     </div>
@@ -791,7 +862,8 @@ a:hover {
                                                                         <span> Peace - Work - Fatherland </span>
                                                                         <span> ------------------------- </span>
                                                                         <span> UNIVERSITY OF YAOUNDE 1 </span>
-                                                                        <span style="font-size: smaller;"><em>UNIVERSITY OF
+                                                                        <span style="font-size: smaller;"><em>UNIVERSITY
+                                                                                OF
                                                                                 YAOUNDE 1 </em></span>
                                                                     </div>
                                                                 </section>
@@ -805,7 +877,8 @@ a:hover {
 
                                                             <section>
                                                                 <span>
-                                                                    PB/P.O. Box 812 Yaoundé <br> Tel: (237)222 234 496 <br>
+                                                                    PB/P.O. Box 812 Yaoundé <br> Tel: (237)222 234 496
+                                                                    <br>
                                                                     Fax: (237)222 234 496 /<br>
                                                                     Email: diplome@facsciences.uy1.cm
                                                                 </span>
@@ -816,8 +889,10 @@ a:hover {
                                                             <div class="d-flex flex-column align-items-center">
                                                                 <span class="lo text-center"> ATTESTATION DE REUSSITE
                                                                     AU</span>
-                                                                <span class="fs-2 text-center"> DIPLOME DE LICENCE</span>
-                                                                <span class="lo text-center"><em> BACHELOR'S DEGREE SUCSESS
+                                                                <span class="fs-2 text-center"> DIPLOME DE
+                                                                    LICENCE</span>
+                                                                <span class="lo text-center"><em> BACHELOR'S DEGREE
+                                                                        SUCSESS
                                                                         TESTIMONIAL</em></span>
                                                             </div>
                                                             <div class="bottom-left">
@@ -841,20 +916,21 @@ a:hover {
                                                                     &nbsp;&nbsp; &nbsp;
                                                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                     &nbsp;&nbsp; &nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    N° : {{ isset($etudiant) ? $etudiant->id_releve : '' }}
-                                                                
+                                                                  
+                                                                    N° :
+                                                                    {{ isset($etudiant) ? $etudiant->id_releve : '' }}
+
                                                                 </div>
                                                                 <!--to change dans la table releve-->
                                                             </div>
                                                             <br>
                                                             <div class="d-flex flex-column align-items-center">
-                                                                <span>Le doyen de la faculté des Sciences de l'Université de
+                                                                <span>Le doyen de la faculté des Sciences de
+                                                                    l'Université de
                                                                     Yaoundé, soussigné,</span>
                                                                 <span><em>The Dean of the Faculty of Science of the
-                                                                        University of Yaounde I, undersigned,</em></span>
+                                                                        University of Yaounde I,
+                                                                        undersigned,</em></span>
                                                             </div>
                                                             <br>
                                                             <main class="w-100 d-flex flex-column align-items-center">
@@ -864,36 +940,44 @@ a:hover {
                                                                     <section
                                                                         class="w-100 d-flex align-items-center justify-content-between">
 
-                                                                        <div class="d-flex flex-column align-items-center">
+                                                                        <div
+                                                                            class="d-flex flex-column align-items-center">
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                             &nbsp;&nbsp;
                                                                             &nbsp;
-                                                                            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vu
+                                                                            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                Vu
                                                                                 le proces-verbal des deliberations du
                                                                                 jury en date du
                                                                             </span>
                                                                             <span><em>
                                                                                     &nbsp;&nbsp;&nbsp;Mindful of the
                                                                                     official report of
-                                                                                    the deliberation of the jury dated</em>
+                                                                                    the deliberation of the jury
+                                                                                    dated</em>
                                                                             </span>
                                                                         </div>
                                                                         <br>
-                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-                                                                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                                                                         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp;
-                                                                        <p class="text"> <?php echo date('j F Y'); ?> &nbsp;&nbsp;
-                                                                        
-                                                                        
-                                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp;
+                                                                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                        &nbsp;&nbsp;
+                                                                        <p class="text"> <?php echo date('j F Y'); ?>
+                                                                            &nbsp;&nbsp;
+
+
+                                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                            &nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                             &nbsp;&nbsp;
                                                                             &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                                                                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+                                                                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                                            &nbsp;&nbsp;
                                                                             &nbsp;&nbsp;
                                                                         </p>
                                                                         <br>
@@ -946,7 +1030,7 @@ a:hover {
                                                                         <span class="name">
                                                                             {{ isset($etudiant) ? $etudiant->nom : '' }}
                                                                             {{ isset($etudiant) ? $etudiant->prenom : '' }}
-                                                                            
+
                                                                         </span>
                                                                         <div class="dash"></div>
                                                                         <br>
@@ -957,7 +1041,9 @@ a:hover {
                                                                             </span>
                                                                         </div>
                                                                         &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                        <p class="texte">  {{ isset($etudiant) ? $etudiant->matricule : '' }}</p>
+                                                                        <p class="texte">
+                                                                            {{ isset($etudiant) ? $etudiant->matricule : '' }}
+                                                                        </p>
                                                                         <div class="dash"></div>
 
 
@@ -988,7 +1074,9 @@ a:hover {
                                                                             </span>
                                                                         </div>
                                                                         &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                        <p class="ville">  {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}</p>
+                                                                        <p class="ville">
+                                                                            {{ isset($etudiant) ? $etudiant->lieu_naissance : '' }}
+                                                                        </p>
                                                                         <div class="dashv"></div>
 
 
@@ -1000,7 +1088,8 @@ a:hover {
                                                                             <span>a subi avec succes,les epreuves
                                                                                 sanctionnant l examen de la</span>
                                                                             <span class="english_subtitle"> has
-                                                                                successfully fulfiled the requirement of the
+                                                                                successfully fulfiled the requirement of
+                                                                                the
                                                                             </span>
                                                                         </div>
 
@@ -1024,7 +1113,8 @@ a:hover {
                                                                     class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item me-5 pe-5 ">
                                                                         <div class="d-flex flex-column">
-                                                                            <span class="fs-5 fw-bolder bold_part">Licence
+                                                                            <span
+                                                                                class="fs-5 fw-bolder bold_part">Licence
                                                                                 de</span>
 
                                                                             <span class="english_subtitle"> Bachelor's
@@ -1063,21 +1153,22 @@ a:hover {
                                                                     </div>
                                                                     &nbsp;&nbsp;&nbsp;
                                                                     &nbsp;&nbsp;&nbsp;
-                                                                    
-                                                                    
+
+
                                                                     <div class="namespecialit">
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                         
-                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        {{ isset($etudiant) ? $etudiant->filiere : '' }} <br>
-                                                                        
+                                                                        {{ isset($etudiant) ? $etudiant->filiere : '' }}
+                                                                        <br>
+
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                     </div>
                                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                     <div class="dashl"></div>
                                                                     <br>
-                                                                
+
 
 
 
@@ -1090,20 +1181,26 @@ a:hover {
                                                                             <span class="fs-5 fw-bolder bold_part"><em>Session
                                                                                     de</em></span>
 
-                                                                            <span class="english_subtitle">Session</span>
+                                                                            <span
+                                                                                class="english_subtitle">Session</span>
 
                                                                         </div>
 
                                                                     </div>
                                                                     &nbsp;&nbsp;&nbsp;
                                                                     <div class="d-flex flex-column">
-                                                                        <span class="fs-5 fw-bolder bold_part"> <?php echo date('F Y'); ?>
+                                                                        <span class="fs-5 fw-bolder bold_part1">
+                                                                            <?php echo date('F Y'); ?>
                                                                             avec une moyenne generale pondere(MGP)
-                                                                            de: {{ isset($etudiant) ? $etudiant->mgp : '' }},credit(s):180 et la mention
+                                                                            de:
+                                                                            {{ isset($etudiant) ? $etudiant->mgp : '' }},credit(s):180
+                                                                            et la mention
                                                                             Bien</span>
 
-                                                                        <span class="english_subtitle1">with a cummulate
-                                                                            grade point Average(GPA) of:{{ isset($etudiant) ? $etudiant->mgp : '' }}/4.00,credit:180
+                                                                        <span class="english_subtitle1">with a
+                                                                            cummulate
+                                                                            grade point Average(GPA)
+                                                                            of:{{ isset($etudiant) ? $etudiant->mgp : '' }}/4.00,credit:180
                                                                             and Grade:Good</span>
 
                                                                     </div>
@@ -1116,14 +1213,16 @@ a:hover {
                                                                     class="w-100 d-flex align-items-center align-items-center">
 
                                                                     <div class="d-flex flex-column">
-                                                                        <span class="fs-5 fw-bolder bold_part">
+                                                                        <span class="fs-5 fw-bolder bold_part1 english_subtitle1">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En
-                                                                            foi de quoi la presente attestation est établie
-                                                                            et lui est délivrée pour servir et vqloir ce aue
-                                                                            de droit.</span>
+                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            En foi de quoi la presente attestation
+                                                                                est
+                                                                                établie et lui est délivrée pour servir
+                                                                                et
+                                                                                valoir ce  droit</span>
 
-                                                                        <span class="english_subtitle1">
+                                                                        <span class="english_subtitle2">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1145,7 +1244,7 @@ a:hover {
                                                                         <div class="d-flex ">
 
                                                                             <div class="content-recap w-100 mt-3 bloc">
-                                                                                <table class="table w-100">
+                                                                                <table class=" table-sm">
                                                                                     <thead class="text-center">
                                                                                         <th>
                                                                                             <span> Systeme de notation /
@@ -1168,50 +1267,58 @@ a:hover {
                                                                                     <tbody>
                                                                                         <tr>
                                                                                             <td> [200-220[ </td>
-                                                                                            <td class="text-center">C</td>
+                                                                                            <td class="text-center">C
+                                                                                            </td>
                                                                                             <td>Passable/Pass</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> [220-240[" </td>
-                                                                                            <td class="text-center">C+</td>
+                                                                                            <td class="text-center">C+
+                                                                                            </td>
                                                                                             <td>Passable/Pass</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> [240-260[ </td>
-                                                                                            <td class="text-center">B-</td>
+                                                                                            <td class="text-center">B-
+                                                                                            </td>
                                                                                             <td>Assez-Bien / Fair</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> [260-280[ </td>
-                                                                                            <td class="text-center">B</td>
+                                                                                            <td class="text-center">B
+                                                                                            </td>
                                                                                             <td>Assez-Bien / Fair</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> [280-300[ </td>
-                                                                                            <td class="text-center">B+</td>
+                                                                                            <td class="text-center">B+
+                                                                                            </td>
                                                                                             <td>Bien / Good</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> [300-320[ </td>
-                                                                                            <td class="text-center">A-</td>
+                                                                                            <td class="text-center">A-
+                                                                                            </td>
                                                                                             <td>Passable/Pass</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> [300-400[ </td>
-                                                                                            <td class="text-center">A</td>
+                                                                                            <td class="text-center">A
+                                                                                            </td>
                                                                                             <td>Passable/Pass</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td> 4.00 </td>
-                                                                                            <td class="text-center">A+</td>
+                                                                                            <td class="text-center">A+
+                                                                                            </td>
                                                                                             <td>Excellent</td>
                                                                                         </tr>
 
                                                                                     </tbody>
                                                                                 </table>
 
-                                                                            
-                                                                            
+
+
                                                                             </div>
                                                                             {{-- <div class="content-recap w-100 mt-3 bloc">
                                                                                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -1235,9 +1342,9 @@ a:hover {
                                                                                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
                                                                                 ?> -->
                                                                                 <?php echo '<div class="company-logo">
-                                                                                                                        <img src="' .
+                                                                                                                                                                                                                                                                                        <img src="' .
                                                                                     $base64 .
-                                                                                    '"  alt="base" />  </div>';
+                                                                                    '"  alt="base"  style="width: 180px; height: 180px;" />  </div>';
                                                                                 ?>
                                                                             </div> --}}
                                                                         </div>
@@ -1250,7 +1357,8 @@ a:hover {
                                                                     class="w-100 d-flex flex-column align-items-center">
                                                                     <span
                                                                         class="w-100 decision-data d-flex flex-column w-auto">
-                                                                        <span class="yaous"> Yaouné le /The   <?php echo date('j F Y'); ?> </span>
+                                                                        <span class="yaous"> Yaouné le /The
+                                                                            <?php echo date('j F Y'); ?> </span>
 
                                                                         <!--to change-->
                                                                     </span>
@@ -1264,37 +1372,41 @@ a:hover {
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             <span
                                                                                 style="text-decoration: underline;">Information
-                                                                                and commucation Technologie</span> </span>
+                                                                                and commucation Technologie</span>
+                                                                        </span>
                                                                     </div>
-                                                                    <div class="d-flex form-item">
+                                                                    
                                                                         <div class="d-flex flex-column">
-                                                                            <span class="fs-5 fw-bolder bold_part">
+                                                                            <span class="fs-5 fw-bolder bold_part1">
                                                                                 Le Doyen/The Dean</span>
 
                                                                         </div>
                                                                         <div class="form-value ps-4 pt-1">
 
                                                                         </div>
-                                                                    </div>
+                                                                   
 
                                                                 </section>
                                                                 <br>
                                                                 <section
-                                                                    class="w-100 d-flex align-items-center align-items-center">
+                                                                    >
 
                                                                     <div class="d-flex flex-column">
-                                                                        <span class="english_subtitle"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        <span class="english_subtitle1"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                En foi de quoi la presente attestation est
-                                                                                établie et lui est délivrée pour servir et
-                                                                                vqloir ce aue de droit.</em></span>
+                                                                                En foi de quoi la presente attestation
+                                                                                est
+                                                                                établie et lui est délivrée pour servir
+                                                                                et
+                                                                                valoir ce  droit.</em></span>
 
                                                                         <span class="english_subtitle">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            In writness where of the present Testimonial is
+                                                                            In writness where of the present Testimonial
+                                                                            is
                                                                             given with the privileges there into
                                                                             pertaining./</span>
 
@@ -1323,38 +1435,28 @@ a:hover {
                                                                                 a/FS.Imprimé le 06/01/2023</span>
                                                                             <span class="english_subtitle">
                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight
-                                                                                GICA</span>
-                                                                            <span class="english_subtitle">
-                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                SUNGO</span>
+                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight
+                                                                                GICA SUNGO</span>
+                                                                            
 
                                                                         </div>
-                
+
                                                                     </div>
 
                                                                 </section>
                                                 </ul>
-                                               
-        
+
+
                                             </div>
-                                        <!--end card-body-->
-                                        <div  class="col-sm-4">
-                                                
-                                            
+                                            <!--end card-body-->
 
-                                            <form action="{{ route('genererPDF') }}" method="POST">
-                                                @csrf
-                                                <button type="submit">Télécharger le PDF</button>
-                                            </form>
-                                            
+                                        </div>
+                                        <div class="col-sm-4">
 
-                                    </div>
+                                            <button id="downloadButton">Télécharger le PDF</button>
                                         </div>
                                     </div>
+
                                     <!--end card-->
                                 </div>
                                 <!--end col-->
@@ -1379,14 +1481,58 @@ a:hover {
     <!-- end page content -->
     </div>
     <!-- end page-wrapper -->
-   
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Vue Blade (attestation.blade.php) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#downloadButton').click(function() {
+                var content = $('.contents').html();
+    
+                var printWindow = window.open('', 'Auth.doc');
+                printWindow.document.write('<html><head><title>Auth.doc</title>');
+                printWindow.document.write(
+                    '<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+                printWindow.document.write(
+                    '<link href="assets/css/jquery-ui.min.css" rel="stylesheet">');
+                printWindow.document.write(
+                    '<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />');
+                printWindow.document.write(
+                    '<style>@page { size: A4; margin: 0; } body { margin: 1cm; } .print-page { background-image: url(\'Uy.png\'); background-repeat: no-repeat; background-size: cover; }</style>');
+                printWindow.document.write('</head><body>');
+                printWindow.document.write('<div class="print-page">' + content + '</div>');
+                printWindow.document.write('</body></html>');
+    
+                printWindow.document.close();
+    
+                // Attendre que le contenu soit chargé dans la fenêtre d'impression
+                printWindow.onload = function() {
+                    var printDocument = printWindow.document.documentElement;
+                    var printPage = printDocument.querySelector('.print-page');
+    
+                    // Calculer la hauteur maximale d'une page A4
+                    var pageHeight = 11.7 * 96; // Hauteur en pixels
+    
+                    // Réduire la hauteur des éléments pour s'adapter à une seule page
+                    var elements = printPage.querySelectorAll('*');
+                    for (var i = 0; i < elements.length; i++) {
+                        var element = elements[i];
+                        var elementHeight = element.offsetHeight;
+                        if (elementHeight > pageHeight) {
+                            element.style.height = pageHeight + 'px';
+                        }
+                    }
+    
+                    // Appeler la fonction d'impression de la fenêtre d'impression
+                    printWindow.print();
+                };
+            });
+        });
     </script>
-   <!-- Vue Blade (attestation.blade.php) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
- 
+    
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>

@@ -80,5 +80,6 @@ Route::post('/niveau',[NiveauController::class,'index'])->name('niveau');
 Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->name('getAttestation');
 Route::get('/view_attestation', [AttestationController::class,'view_attestation'])->name('view_attestation');
+Route::get('/genererPDF', [AttestationController::class,'genererPDF'])->name('genererPDF');
 Route::get('/signature', [PythonController::class,'signature'])->name('signature');
 
