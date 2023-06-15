@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ArchiveController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\home;
 use App\Http\Controllers\UserController;
@@ -16,6 +18,8 @@ use App\Http\Controllers\NiveauController;
 use App\Http\Controllers\PythonController;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,4 +85,13 @@ Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->name('getAttestation');
 Route::get('/view_attestation', [AttestationController::class,'view_attestation'])->name('view_attestation');
 Route::get('/signature', [PythonController::class,'signature'])->name('signature');
+Route::get('/archive',[ArchiveController::class,'index'])->name('archive');
+Route::get('/archive/{path}', function ($path) {
+    // Récupération de l'URL de la photo
+    $photoUrl = Storage::url($path);
+
+    // Affichage de la blade avec la photo
+    return view('archive')->with('photoUrl', $photoUrl);
+})->name('archive');
+
 

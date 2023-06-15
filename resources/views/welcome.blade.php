@@ -15,7 +15,6 @@
   <header class="header-main dark">
     <nav>
       <a href="#" class="logo" rel="Auth.Doc">  <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm"><span>Auth.Doc</span></a>
-      {{-- <div class="nav-toggle"></div> --}}
       <ul class="inline">
         <li><a href="#" class="active">Home</a></li>
         <!-- <li><a href="pricing.html">Pricing</a></li> -->

@@ -7,6 +7,7 @@ use App\Models\Note;
 use App\Models\Releve;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ApiController extends Controller
 {
@@ -58,4 +59,20 @@ public function getUser(Request $request){
    }
    return response()->json($DataSend);
 }
+
+public function store(Request $request){
+   $image = $request->input('file');
+   $image = str_replace('data:image/jpeg;base64,', '', $image);
+   $image = str_replace('data:image/jpg;base64,', '', $image);
+   $image = str_replace(' ','+',$image);
+   $image = base64_decode($image);     
+   $temp = tmpfile();
+   fwrite($temp, $image);   
+   $meta_data = stream_get_meta_data($temp);
+   $target_path = $meta_data['uri'];
+   // return response()->json($target_path)->header('Location', '/archive');
+   return Redirect::to('/archive')->with('photoPath', $target_path);
+   }
+
+
 }

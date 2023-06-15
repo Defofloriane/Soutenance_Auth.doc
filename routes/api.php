@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ArchiveController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -23,4 +24,6 @@ Route::middleware('api')->group(function () {
     Route::post('/endpoint', [UserController::class, 'endpoint']);
     Route::post('/decode', [ApiController::class, 'decode']);
     Route::post('/getUser', [ApiController::class, 'getUser']);
+    Route::post('/store',[ApiController::class,'store']);
+ 
 });
