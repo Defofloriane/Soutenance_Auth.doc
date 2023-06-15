@@ -26,8 +26,8 @@ class ApiController extends Controller
          $h2 = hash_hmac('sha256', $datas, $secretKey);
 
          if($h1==$h2){
-            $releve=Releve::where(['etudiant'=>$matricule])->get();
-            $etudiant=Etudiant::where(['matricule'=>$matricule])->get();
+            $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
+            $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
             $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
              $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
                         ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
