@@ -86,12 +86,6 @@ Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->
 Route::get('/view_attestation', [AttestationController::class,'view_attestation'])->name('view_attestation');
 Route::get('/signature', [PythonController::class,'signature'])->name('signature');
 Route::get('/archive',[ArchiveController::class,'index'])->name('archive');
-Route::get('/archive/{path}', function ($path) {
-    // Récupération de l'URL de la photo
-    $photoUrl = Storage::url($path);
 
-    // Affichage de la blade avec la photo
-    return view('archive')->with('photoUrl', $photoUrl);
-})->name('archive');
 
 
