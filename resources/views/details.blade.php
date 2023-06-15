@@ -652,6 +652,17 @@
                                                         .div-suivante {
                                                             margin-top: 10px;
                                                         }
+                                                        .print-table {
+        font-size: 12px; /* Taille de police réduite */
+    }
+
+    .print-table th,
+    .print-table td {
+        padding: 5px; /* Espacement réduit entre les cellules */
+    }
+    .print-table1 td {
+        padding: 3px; /* Espacement réduit entre les cellules */
+    }
                                                         
                                                     </style>
                                                     <script>
@@ -735,8 +746,7 @@
                                                                     &nbsp;&nbsp; &nbsp;
                                                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                     &nbsp;&nbsp; &nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                                                    &nbsp;&nbsp; &nbsp;&nbsp;
+                                                                   
 
                                                                     N° : {{ isset($releve) ? $releve->id_releve : '' }}
                                                                 </div>
@@ -888,7 +898,7 @@
                                                                     </section>
                                                                 </section>
                                                                 <section class="w-100 mt-2">
-                                                                    <table class="w-100 table">
+                                                                    <table class="w-100 table print-table">
                                                                         <thead>
                                                                             <tr>
                                                                                 <th>
@@ -980,7 +990,7 @@
                                                                     </span>
                                                                 </section>
                                                                 <section class="w-100 d-flex flex-column"
-                                                                    style="font-size: 12px">
+                                                                    style="font-size: 10px">
                                                                     <div class="d-flex">
                                                                         <div><u> Légende: </u></div>
 
@@ -992,11 +1002,10 @@
                                                                             <span> NC: Non Capitalisé </span>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="div-suivante">
+                                                                   
                                                                         <div class="d-flex ">
-
                                                                             <div class="content-recap w-100 mt-3 bloc">
-                                                                                <table class="table w-100">
+                                                                                <table class="table table-sm w-100">
                                                                                     <thead>
                                                                                         <th>
                                                                                             <span> Note / 100 </span>
@@ -1189,7 +1198,7 @@
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                             &nbsp;&nbsp;
-                                                                            <div class="content-recap w-100 mt-3 bloc">
+                                                                            <div>
                                                                                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
                                                                                 <script type="text/javascript">
                                                                                     function generateBarCode() {
@@ -1211,55 +1220,26 @@
                                                                                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
                                                                                 ?> -->
                                                                                 <?php echo '<div class="company-logo">
-                                                                                                                                                                                                        <img src="' .
+                                                                                   <img src="' .
                                                                                     $base64 .
-                                                                                    '"  alt="base" />  </div>';
+                                                                                    '"  alt="base" style="width: 180px; height: 180px;" />  </div>';
                                                                                 ?>
                                                                             </div>
+                                                                           
+
                                                                         </div>
+                                                                      
+                                                                       
                                                                 </section>
+                                                                
 
-
-
-                                                                {{-- @if (isset($etudiant))
-                        <h3>Récapitulatif des notes de l'étudiant {{ $etudiant->nom }} {{ $etudiant->prenom }} (matricule: {{ $etudiant->matricule }})</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Code UE</th>
-                                    <th>Nom UE</th>
-                                    <th>Crédits</th>
-                                    <th>Note</th>
-                                    <th>Mention</th>
-                                    <th>Semestre</th>
-                                    <th>Année</th>
-                                    <th>Décision</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($notes as $note)
-                                <tr>
-                                    <td>{{ $note->ue }}</td>
-                                    <td>{{ $note->nom_ue }}</td>
-                                    <td>{{ $note->credit }}</td>
-                                    <td>{{ $note->note }}</td>
-                                    <td>{{ $note->mention }}</td>
-                                    <td>{{ $note->semestre }}</td>
-                                    <td>{{ $note->annee }}</td>
-                                    <td>{{ $note->decision }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        @elseif(isset($message))
-                        <p>{{ $message }}</p>
-                        @endif --}}
 
 
                                                 </ul>
                                             </div>
                                             <!--end card-body-->
                                         </div>
+                                        <br>
 
 
 
@@ -1305,7 +1285,7 @@
                 printWindow.document.write(
                     '<style> @page { size: A4; margin: 0; } body { margin: 1cm; }</style>');
                 printWindow.document.write('</head><body>');
-                printWindow.document.write(content);
+                printWindow.document.write('<div class="print-page">' + content + '</div>');
                 printWindow.document.write('</body></html>');
     
                 printWindow.document.close();
@@ -1313,12 +1293,19 @@
                 // Attendre que le contenu soit chargé dans la fenêtre d'impression
                 printWindow.onload = function() {
                     var printDocument = printWindow.document.documentElement;
-                    var scaleFactor = 1;
+                    var printPage = printDocument.querySelector('.print-page');
     
-                    // Calculer l'échelle de réduction nécessaire pour s'adapter à une seule page A4
-                    while (printDocument.offsetHeight > (11.7 * scaleFactor * 96)) {
-                        scaleFactor -= 0.05;
-                        printDocument.style.transform = 'scale(' + scaleFactor + ')';
+                    // Calculer la hauteur maximale d'une page A4
+                    var pageHeight = 11.7 * 96; // Hauteur en pixels
+    
+                    // Réduire la hauteur des éléments pour s'adapter à une seule page
+                    var elements = printPage.querySelectorAll('*');
+                    for (var i = 0; i < elements.length; i++) {
+                        var element = elements[i];
+                        var elementHeight = element.offsetHeight;
+                        if (elementHeight > pageHeight) {
+                            element.style.height = pageHeight + 'px';
+                        }
                     }
     
                     // Appeler la fonction d'impression de la fenêtre d'impression
@@ -1327,6 +1314,11 @@
             });
         });
     </script>
+    
+    
+
+    
+    
     
     
     
