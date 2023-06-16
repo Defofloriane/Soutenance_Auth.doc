@@ -307,7 +307,7 @@
                                 <div class="card">
                                     <div class="card-header"> 
                                         <h4 class="card-title">Open Mobile Application </h4>
-                                        <span class="text-muted mb-0">And Inter Your information of Login</span>
+                                        <span class="text-muted mb-0">And Inter Your information of Login And Click to Button Refresh to Get All archive</span>
                                     </div>
                                     <!--end card-header-->
 
@@ -366,58 +366,7 @@
 
 
                 }
-            </script>
-            <!-- <script language="JavaScript">
-                var aspectRatio = 1.4142; // A4 paper aspect ratio (width / height)
-                var canvasWidth = 490; // set canvas width
-                var canvasHeight = Math.round(canvasWidth / aspectRatio); // calculate canvas height based on aspect ratio
-
-                Webcam.set({
-                    width: canvasWidth,
-                    height: canvasHeight,
-                    image_format: 'jpeg',
-                    jpeg_quality: 90
-                });
-
-                Webcam.attach('#my_camera');
-
-                function take_snapshot() {
-                    Webcam.snap(function(data_uri) {
-                        $(".image-tag").val(data_uri);
-                        document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
-                    });
-                }
-            </script> -->
-            <!-- <script>
-                function startCamera() {
-                    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                        navigator.mediaDevices.getUserMedia({
-                                video: true
-                            })
-                            .then(function(stream) {
-                                var video = document.createElement('video');
-                                video.srcObject = stream;
-                                video.play();
-                                document.getElementById('image-container').replaceChild(video, document.getElementById(
-                                    'captured-image'));
-                            })
-                            .catch(function(error) {
-                                console.log('Error: ', error);
-                            });
-                    }
-                }
-
-                function captureImage() {
-                    var video = document.querySelector('video');
-                    var canvas = document.createElement('canvas');
-                    canvas.width = video.videoWidth;
-                    canvas.height = video.videoHeight;
-                    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-                    var dataUrl = canvas.toDataURL('images/jpeg');
-                    document.getElementById('captured-image-data').value = dataUrl;
-                    video.parentNode.replaceChild(document.getElementById('captured-image'), video);
-                }
-            </script> -->
+            </script>         
             <script src="assets/js/jquery-3.3.1.min.js"></script>
             <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

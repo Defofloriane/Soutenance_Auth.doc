@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
          NoteSeeder::class,
         // UeFiliereNiveauSpecialiteSeeder::class,
         EtudiantFiliereNiveauSeeder::class,
+        ArchivesSeeder::class,
 
        ]);
     }

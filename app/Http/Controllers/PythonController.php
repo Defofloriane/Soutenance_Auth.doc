@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use GuzzleHttp\Client;
 
 class PythonController extends Controller
@@ -12,7 +11,7 @@ class PythonController extends Controller
         $imagePath = 'images/david.jpeg';
         $imagePath1 = 'images/david1.jpeg';
 
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         
         $response = $client->request('POST', 'http://localhost:5000/endpoint', [
             'multipart' => [
@@ -26,7 +25,8 @@ class PythonController extends Controller
                 ],
             ]
         ]);
-        $body = $response->getBody();
-        echo $body;
+        
+        $body = $response->getBody()->getContents();
+        return $body;
 }
 }

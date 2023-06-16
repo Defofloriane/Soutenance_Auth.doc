@@ -13,6 +13,7 @@ use App\Models\Ue;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Aws\Textract\TextractClient;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Hash;
 use Nette\Utils\Floats;
 use PhpParser\Node\Expr\Cast\Double;
@@ -191,7 +192,6 @@ if($lumunosite>=20 && $lumunosite<=90){ // si la luminosite est normal donc comp
       }
     }
     if(!empty($niveau) &&!empty($matricule) &&!empty($annee) &&!empty($numero) &&!empty($decision) &&!empty($mgp) &&!empty($filiere)){// si toutes les donnees ont ete recuperer
-    $message='';
     $data1= trim($numero[1]).trim($matricule[1]).trim($decision[1]).trim($filiere[1]).trim($niveau[1]).trim((float)implode(".", explode(',',$mgp[1]))).trim($annee[1]);
     $secretKey = 'auth.document';
     $hmac1 = hash_hmac('sha256', $data1, $secretKey);
@@ -209,9 +209,13 @@ if($lumunosite>=20 && $lumunosite<=90){ // si la luminosite est normal donc comp
                     ->select('notes.*', 'ues.nom_ue','ues.credit')
                     ->distinct()
                     ->get();
-
-        $message='ok';
-        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>$message]);
+        
+        $extension = 'jpeg';
+        $user_id = trim($matricule[1]).'_'.trim($niveau[1]);
+        $timestamp = time();
+        $filename1 = $user_id . '_' . $timestamp . '.' . $extension;
+       
+        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
         return response()->json($DataSend);   
     }else{
         $message='no';
