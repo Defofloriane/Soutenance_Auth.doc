@@ -329,13 +329,14 @@ $sum = array_sum(str_split($birthDayDigits));
       //  $details = Releve::find($id);
       // $id_releve = request('id_releve');
       $id_releve=$request->id_releve;
-      $matricule=$request->matricule_;
-      $niveau=$request->niveau_;
+      $matricule=$request->matricule;
+      $niveau=$request->niveau;
       $da=$request->data;
       $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
       //hachage des informations 
       $secretKey = 'auth.document';//cle secrete
       $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
+     
       $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
       $hmac=hash_hmac('sha256', $data, $secretKey);
       $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
