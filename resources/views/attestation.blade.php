@@ -73,24 +73,18 @@
             <ul class="metismenu left-sidenav-menu">
                 <li class="menu-label mt-0">Main</li>
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home"
-                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
-                                    class="ti-control-record"></i>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid"
-                            class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span
-                                    class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Projects <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href="apps-project-overview.html">Overview</a></li>
                                 <li><a href="apps-project-projects.html">Projects</a></li>
@@ -106,14 +100,10 @@
             </li>
 
             <li>
-                <a href="javascript: void(0);"><i data-feather="lock"
-                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
-                                class="ti-control-record"></i>Add Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i
-                                class="ti-control-record"></i>List Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i class="ti-control-record"></i>Add Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i class="ti-control-record"></i>List Admin</a></li>
 
                 </ul>
             </li>
@@ -123,36 +113,27 @@
 
 
             <li>
-                <a href="{{ route('faculte') }}"><i data-feather="layers"
-                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
-                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
+                <a href="{{ route('faculte') }}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>List Etudiant</span><span class="badge badge-soft-success menu-arrow">Exemple</span></a>
             </li>
 
             <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
-                                class="ti-control-record"></i>Repord card</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i class="ti-control-record"></i>Repord card</a></li>
 
                 </ul>
             </li>
             <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('attestation') }}"><i
-                                class="ti-control-record"></i>Attestation de reussite</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('attestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
 
                 </ul>
             </li>
             </ul>
 
             <div class="update-msg text-center">
-                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
-                    aria-label="Close" aria-hidden="true">
+                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg" aria-label="Close" aria-hidden="true">
                     <i class="mdi mdi-close"></i>
                 </a>
                 <h5 class="mt-3">Auth.doc</h5>
@@ -225,9 +206,9 @@
                 <!--end topbar-nav-->
                 <div class="col-auto align-self-center">
                     @if (session('message'))
-                        <div class="alert alert-danger">
-                            {{ session('message') }}
-                        </div>
+                    <div class="alert alert-danger">
+                        {{ session('message') }}
+                    </div>
                     @endif
                 </div>
                 <ul class="list-unstyled topbar-nav mb-0">
@@ -243,9 +224,7 @@
                                 <div>
                                     <button type="submit" class="ti-search"></button>
                                     <a class="btn btn-sm btn-soft-primary" href="#" role="button">
-                                        <input type="search" name="search" id="searchInput"
-                                            class="form-control top-search mb-0" placeholder="Matricule/Name"
-                                            required>
+                                        <input type="search" name="search" id="searchInput" class="form-control top-search mb-0" placeholder="Matricule/Name" required>
                                     </a>
                                 </div>
                                 <button type="submit" class="ti-search" onclick="searchEtudiant(event)"></button>
@@ -285,26 +264,21 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade " id="Profile_Project" role="tabpanel"
-                                aria-labelledby="Profile_Project_tab">
+                            <div class="tab-pane fade " id="Profile_Project" role="tabpanel" aria-labelledby="Profile_Project_tab">
                                 <div class="row mb-4">
                                     <div class="col">
                                         <form>
                                             <div class="input-group input-group-lg">
-                                                <input type="text" id="example-input1-group2"
-                                                    name="example-input1-group2" class="form-control"
-                                                    placeholder="Search">
+                                                <input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control" placeholder="Search">
                                                 <span class="input-group-append">
-                                                    <button type="button" class="btn btn-soft-primary"><i
-                                                            class="fas fa-search "></i></button>
+                                                    <button type="button" class="btn btn-soft-primary"><i class="fas fa-search "></i></button>
                                                 </span>
                                             </div>
                                         </form>
                                     </div>
                                     <!--end col-->
                                     <div class="col-auto">
-                                        <button type="button" class="btn btn-soft-primary btn-lg"><i
-                                                class="fas fa-filter"></i></button>
+                                        <button type="button" class="btn btn-soft-primary btn-lg"><i class="fas fa-filter"></i></button>
                                         <button type="button" class="btn btn-soft-primary btn-lg">Add
                                             Project</button>
                                     </div>
@@ -315,8 +289,7 @@
                                     <div class="col-3">
                                         <div class="card ">
                                             <div class="card-body  text-center">
-                                                <img src="assets/images/widgets/project2.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project2.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Body Care
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -336,8 +309,7 @@
                                     <div class="col-3">
                                         <div class="card w-100">
                                             <div class="card-body">
-                                                <img src="assets/images/widgets/project4.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project4.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Book My
                                                     World</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -359,8 +331,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project1.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project1.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Transfer
                                                     money</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -383,8 +354,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body  text-center">
-                                                <img src="assets/images/widgets/project4.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project4.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Body Care
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -404,8 +374,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body  text-center">
-                                                <img src="assets/images/widgets/project3.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project3.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Book My
                                                     World</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -425,8 +394,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project1.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project1.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Banking
                                                 </h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -446,8 +414,7 @@
                                     <div class="col-3">
                                         <div class="card">
                                             <div class="card-body text-center">
-                                                <img src="assets/images/widgets/project2.jpg" alt=""
-                                                    class="rounded-circle d-block mx-auto mt-2" height="70">
+                                                <img src="assets/images/widgets/project2.jpg" alt="" class="rounded-circle d-block mx-auto mt-2" height="70">
                                                 <h4 class="m-0 font-weight-semibold text-dark font-16 mt-3">Transfer
                                                     money</h4>
                                                 <p class="text-muted  mb-0 font-13"><span class="text-dark">Client :
@@ -467,8 +434,7 @@
                                 </div>
                                 <!--end row-->
                             </div>
-                            <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel"
-                                aria-labelledby="Profile_Post_tab">
+                            <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel" aria-labelledby="Profile_Post_tab">
                                 <div class="row">
                                     <div class="col-lg-9">
                                         <div class="row">
@@ -538,6 +504,7 @@
                                                             font-size: 10px;
                                                             font-weight: bold;
                                                         }
+
                                                         .bold_part1 {
                                                             font-size: 13px !important;
                                                             color: #000000;
@@ -559,6 +526,7 @@
                                                             font-weight: bold;
                                                             text-align: center
                                                         }
+
                                                         .english_subtitle2 {
                                                             font-style: italic;
                                                             font-size: 10px;
@@ -809,13 +777,14 @@
                                                             padding: 5px;
                                                             /* Espacement réduit entre les cellules */
                                                         }
+
                                                         @media print {
-        body.print-bg {
-            background-image: url('Uy.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    }
+                                                            body.print-bg {
+                                                                background-image: url('Uy.png');
+                                                                background-repeat: no-repeat;
+                                                                background-size: cover;
+                                                            }
+                                                        }
                                                     </style>
                                                     <script>
                                                         document.addEventListener('DOMContentLoaded', function() {
@@ -833,13 +802,10 @@
                                                     <body>
 
 
-                                                        <div
-                                                            class="d-flex container-lg flex-column py-5 px-5 default_option">
+                                                        <div class="d-flex container-lg flex-column py-5 px-5 default_option">
                                                             <header class="w-100 d-flex fle x-column">
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
-                                                                    <div
-                                                                        class="d-flex content-state-data flex-column align-items-center">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <div class="d-flex content-state-data flex-column align-items-center">
                                                                         <span> REPUBLIQUE DU CAMEROUN </span>
                                                                         <span> Paix - Travail - Patrie </span>
                                                                         <span> ------------------------- </span>
@@ -849,15 +815,12 @@
                                                                                 SCIENCES</em></span>
                                                                     </div>
 
-                                                                    <div
-                                                                        class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
-                                                                        <img class="imgatt" src="att.jpeg"
-                                                                            alt="" srcset="">
+                                                                    <div class="d-flex content-uy1-logo d-flex justify-content-center align-items-center">
+                                                                        <img class="imgatt" src="att.jpeg" alt="" srcset="">
                                                                         {{-- <img src="assets/img/logo_ui.png" alt="university of yaounde 1" class="img-fluid" /> --}}
 
                                                                     </div>
-                                                                    <div
-                                                                        class="d-flex content-state-data flex-column align-items-center">
+                                                                    <div class="d-flex content-state-data flex-column align-items-center">
                                                                         <span> REPUBLIC OF CAMEROON </span>
                                                                         <span> Peace - Work - Fatherland </span>
                                                                         <span> ------------------------- </span>
@@ -916,7 +879,7 @@
                                                                     &nbsp;&nbsp; &nbsp;
                                                                     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                     &nbsp;&nbsp; &nbsp;
-                                                                  
+
                                                                     N° :
                                                                     {{ isset($etudiant) ? $etudiant->id_releve : '' }}
 
@@ -937,11 +900,9 @@
 
                                                                 <section class="w-100">
 
-                                                                    <section
-                                                                        class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <section class="w-100 d-flex align-items-center justify-content-between">
 
-                                                                        <div
-                                                                            class="d-flex flex-column align-items-center">
+                                                                        <div class="d-flex flex-column align-items-center">
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                             &nbsp;&nbsp;
@@ -982,17 +943,9 @@
                                                                         </p>
                                                                         <br>
                                                                         <div class="dash"></div>
-
-
-
-
-
-
-
                                                                     </section>
                                                                     <br>
-                                                                    <section
-                                                                        class="w-100 d-flex align-items-center justify-content-start">
+                                                                    <section class="w-100 d-flex align-items-center justify-content-start">
                                                                         <div class="d-flex form-item me-5 pe-5">
                                                                             <div class="d-flex flex-column">
                                                                                 <span class="fs-5 fw-bolder bold_part">
@@ -1001,16 +954,14 @@
                                                                                     that
                                                                                 </span>
                                                                             </div>
-                                                                            <div
-                                                                                class="form-value ps-4 pt-1 text-uppercase">
+                                                                            <div class="form-value ps-4 pt-1 text-uppercase">
                                                                                 {{-- {{ $etudiant->date_naissance }} --}}
                                                                                 {{-- {{ isset($etudiant) ? $etudiant->date_naissance : '' }} --}}
                                                                             </div>
                                                                         </div>
 
                                                                     </section>
-                                                                    <section
-                                                                        class="w-100 d-flex align-items-center justify-content-start">
+                                                                    <section class="w-100 d-flex align-items-center justify-content-start">
                                                                         <div class="d-flex form-item">
                                                                             <div class="d-flex flex-column">
                                                                                 <span class="fs-5 fw-bolder bold_part">
@@ -1048,12 +999,10 @@
 
 
                                                                     </section>
-                                                                    <section
-                                                                        class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <section class="w-100 d-flex align-items-center justify-content-between">
                                                                         <div class="d-flex form-item me-5 pe-5 ">
                                                                             <div class="d-flex flex-column">
-                                                                                <span
-                                                                                    class="fs-5 fw-bolder bold_part">Né(e)
+                                                                                <span class="fs-5 fw-bolder bold_part">Né(e)
                                                                                     le: &nbsp;</span>
 
                                                                                 <span class="english_subtitle"> Born on
@@ -1082,8 +1031,7 @@
 
                                                                     </section>
 
-                                                                    <section
-                                                                        class="w-100 d-flex align-items-center justify-content-between">
+                                                                    <section class="w-100 d-flex align-items-center justify-content-between">
                                                                         <div class="d-flex flex-column">
                                                                             <span>a subi avec succes,les epreuves
                                                                                 sanctionnant l examen de la</span>
@@ -1109,12 +1057,10 @@
 
 
                                                                 </section>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item me-5 pe-5 ">
                                                                         <div class="d-flex flex-column">
-                                                                            <span
-                                                                                class="fs-5 fw-bolder bold_part">Licence
+                                                                            <span class="fs-5 fw-bolder bold_part">Licence
                                                                                 de</span>
 
                                                                             <span class="english_subtitle"> Bachelor's
@@ -1138,12 +1084,10 @@
                                                                 </section>
 
 
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item me-5 pe-5 ">
                                                                         <div class="d-flex flex-column">
-                                                                            <span
-                                                                                class="fs-5 fw-bolder bold_part">Specialite/Option</span>
+                                                                            <span class="fs-5 fw-bolder bold_part">Specialite/Option</span>
 
                                                                             <span class="english_subtitle">
                                                                                 Speciality/Option
@@ -1157,7 +1101,7 @@
 
                                                                     <div class="namespecialit">
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                        
+
                                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                         {{ isset($etudiant) ? $etudiant->filiere : '' }}
                                                                         <br>
@@ -1174,15 +1118,13 @@
 
                                                                 </section>
 
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex form-item me-5 pe-5 ">
                                                                         <div class="d-flex flex-column">
                                                                             <span class="fs-5 fw-bolder bold_part"><em>Session
                                                                                     de</em></span>
 
-                                                                            <span
-                                                                                class="english_subtitle">Session</span>
+                                                                            <span class="english_subtitle">Session</span>
 
                                                                         </div>
 
@@ -1209,18 +1151,17 @@
 
                                                                 </section>
                                                                 <br>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center align-items-center">
+                                                                <section class="w-100 d-flex align-items-center align-items-center">
 
                                                                     <div class="d-flex flex-column">
                                                                         <span class="fs-5 fw-bolder bold_part1 english_subtitle1">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                             En foi de quoi la presente attestation
-                                                                                est
-                                                                                établie et lui est délivrée pour servir
-                                                                                et
-                                                                                valoir ce  droit</span>
+                                                                            est
+                                                                            établie et lui est délivrée pour servir
+                                                                            et
+                                                                            valoir ce droit</span>
 
                                                                         <span class="english_subtitle2">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1237,8 +1178,7 @@
 
                                                                 </section>
 
-                                                                <section class="w-100 d-flex flex-column"
-                                                                    style="font-size: 12px">
+                                                                <section class="w-100 d-flex flex-column" style="font-size: 12px">
 
                                                                     <div>
                                                                         <div class="d-flex ">
@@ -1318,7 +1258,7 @@
                                                                                 </table>
 
 
-                                                                                
+
                                                                             </div>
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp; &nbsp;
@@ -1342,53 +1282,73 @@
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp; &nbsp;
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                            <div >
-                                                                                <img src="im2.png" alt="tof">
-                                                                             
-                                                                            </div> 
+                                                                            <div>
+                                                                                <!-- <img src="im2.png" alt="tof"> -->
+                                                                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                                                                                <script type="text/javascript">
+                                                                                    function generateBarCode() {
+                                                                                        var nric = $('hhhh').val();
+                                                                                        var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=100x100';
+                                                                                        $('#barcode').attr('src', url);
+                                                                                        // print(nric);
+                                                                                    }
+                                                                                </script>
+                                                                                <!-- <?php
+                                                                                        $type = 'png';
+                                                                                        $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
+                                                                                        $nouvelleVariable = $hmacInfo;
+                                                                                        $taille = '&amp;size=100x100';
+
+                                                                                        // Concaténation des parties de la chaîne avec la variable
+                                                                                        $chaineModifiee = $chaine . $nouvelleVariable . $taille;
+                                                                                        $data = file_get_contents($chaineModifiee);
+                                                                                        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                                                                                        ?> -->
+                                                                                <?php echo '<div class="company-logo">
+                                                                                   <img src="' .
+                                                                                    $base64 .
+                                                                                    '"  alt="base" style="width: 180px; height: 180px;" />  </div>';
+                                                                                ?>
+
+                                                                            </div>
                                                                         </div>
 
                                                                 </section>
 
 
 
-                                                                <section
-                                                                    class="w-100 d-flex flex-column align-items-center">
-                                                                    <span
-                                                                        class="w-100 decision-data d-flex flex-column w-auto">
+                                                                <section class="w-100 d-flex flex-column align-items-center">
+                                                                    <span class="w-100 decision-data d-flex flex-column w-auto">
                                                                         <span class="yaous"> Yaouné le /The
                                                                             <?php echo date('j F Y'); ?> </span>
 
                                                                         <!--to change-->
                                                                     </span>
                                                                 </section>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex flex-column">
                                                                         <span>Le chef de departement de</span>
                                                                         <span class="english_subtitle"> The Head of the
                                                                             departement
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            <span
-                                                                                style="text-decoration: underline;">Information
+                                                                            <span style="text-decoration: underline;">Information
                                                                                 and commucation Technologie</span>
                                                                         </span>
                                                                     </div>
-                                                                    
-                                                                        <div class="d-flex flex-column">
-                                                                            <span class="fs-5 fw-bolder bold_part1">
-                                                                                Le Doyen/The Dean</span>
 
-                                                                        </div>
-                                                                        <div class="form-value ps-4 pt-1">
+                                                                    <div class="d-flex flex-column">
+                                                                        <span class="fs-5 fw-bolder bold_part1">
+                                                                            Le Doyen/The Dean</span>
 
-                                                                        </div>
-                                                                   
+                                                                    </div>
+                                                                    <div class="form-value ps-4 pt-1">
+
+                                                                    </div>
+
 
                                                                 </section>
                                                                 <br>
-                                                                <section
-                                                                    >
+                                                                <section>
 
                                                                     <div class="d-flex flex-column">
                                                                         <span class="english_subtitle1"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1398,7 +1358,7 @@
                                                                                 est
                                                                                 établie et lui est délivrée pour servir
                                                                                 et
-                                                                                valoir ce  droit.</em></span>
+                                                                                valoir ce droit.</em></span>
 
                                                                         <span class="english_subtitle">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1415,14 +1375,12 @@
 
                                                                 </section>
                                                                 <br>
-                                                                <section
-                                                                    class="w-100 d-flex align-items-center justify-content-between">
+                                                                <section class="w-100 d-flex align-items-center justify-content-between">
                                                                     <div class="d-flex flex-column">
                                                                         <span></span>
                                                                         <span class="english_subtitle">
                                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                            <span
-                                                                                style="text-decoration: underline;"></span>
+                                                                            <span style="text-decoration: underline;"></span>
                                                                         </span>
                                                                     </div>
                                                                     <div class="form-value ps-4 pt-1">
@@ -1436,7 +1394,7 @@
                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyRight
                                                                                 GICA SUNGO</span>
-                                                                            
+
 
                                                                         </div>
 
@@ -1490,7 +1448,7 @@
         $(document).ready(function() {
             $('#downloadButton').click(function() {
                 var content = $('.contents').html();
-    
+
                 var printWindow = window.open('', 'Auth.doc');
                 printWindow.document.write('<html><head><title>Auth.doc</title>');
                 printWindow.document.write(
@@ -1504,17 +1462,17 @@
                 printWindow.document.write('</head><body>');
                 printWindow.document.write('<div class="print-page">' + content + '</div>');
                 printWindow.document.write('</body></html>');
-    
+
                 printWindow.document.close();
-    
+
                 // Attendre que le contenu soit chargé dans la fenêtre d'impression
                 printWindow.onload = function() {
                     var printDocument = printWindow.document.documentElement;
                     var printPage = printDocument.querySelector('.print-page');
-    
+
                     // Calculer la hauteur maximale d'une page A4
                     var pageHeight = 11.7 * 96; // Hauteur en pixels
-    
+
                     // Réduire la hauteur des éléments pour s'adapter à une seule page
                     var elements = printPage.querySelectorAll('*');
                     for (var i = 0; i < elements.length; i++) {
@@ -1524,14 +1482,14 @@
                             element.style.height = pageHeight + 'px';
                         }
                     }
-    
+
                     // Appeler la fonction d'impression de la fenêtre d'impression
                     printWindow.print();
                 };
             });
         });
     </script>
-    
+
 
     <!-- jQuery  -->
     <script src="assets/js/jquery.min.js"></script>
