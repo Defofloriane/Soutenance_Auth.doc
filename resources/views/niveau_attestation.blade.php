@@ -39,7 +39,6 @@
             outline: none;
             border-color: #5c5cff;
         }
-        
     </style>
 </head>
 
@@ -157,8 +156,7 @@
             <nav class="navbar-custom">
                 <ul class="list-unstyled topbar-nav float-right mb-0">
                     <li class="dropdown hide-phone">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i data-feather="search" class="topbar-icon"></i>
                         </a>
 
@@ -166,8 +164,7 @@
                             <!-- Top Search Bar -->
                             <div class="app-search-topbar">
                                 <form action="#" method="get">
-                                    <input type="search" name="search" class="from-control top-search mb-0"
-                                        placeholder="Type text...">
+                                    <input type="search" name="search" class="from-control top-search mb-0" placeholder="Type text...">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </form>
                             </div>
@@ -175,15 +172,13 @@
                     </li>
 
                     <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i data-feather="bell" class="align-self-center topbar-icon"></i>
                             <span class="badge badge-danger badge-pill noti-icon-badge">2</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-lg pt-0">
 
-                            <h6
-                                class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
+                            <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
                                 Notifications <span class="badge badge-primary badge-pill">2</span>
                             </h6>
                             <div class="notification-menu" data-simplebar>
@@ -209,8 +204,7 @@
                                     <small class="float-right text-muted pl-2">10 min ago</small>
                                     <div class="media">
                                         <div class="avatar-md bg-soft-primary">
-                                            <img src="assets/images/users/user-4.jpg" alt=""
-                                                class="thumb-sm rounded-circle">
+                                            <img src="assets/images/users/user-4.jpg" alt="" class="thumb-sm rounded-circle">
                                         </div>
                                         <div class="media-body align-self-center ml-2 text-truncate">
                                             <h6 class="my-0 font-weight-normal text-dark">Meeting with designers</h6>
@@ -243,8 +237,7 @@
                                     <small class="float-right text-muted pl-2">1 hr ago</small>
                                     <div class="media">
                                         <div class="avatar-md bg-soft-primary">
-                                            <img src="assets/images/users/user-5.jpg" alt=""
-                                                class="thumb-sm rounded-circle">
+                                            <img src="assets/images/users/user-5.jpg" alt="" class="thumb-sm rounded-circle">
                                         </div>
                                         <div class="media-body align-self-center ml-2 text-truncate">
                                             <h6 class="my-0 font-weight-normal text-dark">Your order is placed</h6>
@@ -281,42 +274,21 @@
                     </li>
 
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="ml-1 nav-user-name hidden-sm">Nick</span>
                             <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i data-feather="user"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i data-feather="settings"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i data-feather="settings" class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
                             <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item" href="#"><i data-feather="power"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
+                            <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
                 <!--end topbar-nav-->
 
-                <ul class="list-unstyled topbar-nav mb-0">
-                    <li>
-                        <button class="nav-link button-menu-mobile">
-                            <i data-feather="menu" class="align-self-center topbar-icon"></i>
-                        </button>
-                    </li>
-                    <li class="creat-btn">
-                        <form method="POST" action="{{ route('upload') }}"  enctype="multipart/form-data">
-                            @csrf
-                            <div class="nav-link">
-                                <input class=" btn btn-sm btn-soft-primary"  type="file" name="name_file" id="name_file">
-                                <button class=" btn btn-sm btn-soft-primary"  type="submit">upload</button>  
-                                
-                            </div>
-                           
-                        </form>
-                    </li>
-                </ul>
+
             </nav>
             <!-- end navbar-->
         </div>
@@ -330,19 +302,7 @@
                     <div class="col-sm-12">
                         <div class="page-title-box">
                             <div class="row">
-                                <div class="col-auto align-self-center">
-                                    <select class="form-select" id="select">
-                                        <option value="" style="color: gray;" disabled selected>Matricule
-                                        </option>
-                                        {{-- <option value="">{{ $etudiant->matricule }}</option> --}}
-                                        <option value="20V2512">20V2512</option>
-                                        <option value="20V2412">20V2412</option>
-                                        <option value="19K2779">19K2779</option>
-                                    </select>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" id="add-matricule">
-                                        <i data-feather="plus" class="align-self-center icon-xs"></i>
-                                    </a>
-                                </div>
+
                             </div>
 
                             <script>
@@ -379,8 +339,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel"
-                            aria-labelledby="Profile_Post_tab">
+                        <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel" aria-labelledby="Profile_Post_tab">
                             <div class="row">
 
 
@@ -392,54 +351,46 @@
                                             <div class="card-header">
                                                 <h4 class="card-title">Student's global information</h4>
                                                 <p class="text-muted mb-0">
-                                                    some summary information of the students present in the database, your Last Name  ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
+                                                    some summary information of the students present in the database, your Last Name ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
                                                 </p>
                                             </div>
                                             <!--end card-header-->
 
-                                            <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
                                                     <tr>
-                                                        <th> Last Name </th>
-                                                        <th>First Name</th>
-                                                        <th>Matricule</th>
-                                                        <th>Level</th>
-                                                        <th>Filiere</th>
-                                                        <th>Anne Scolaire</th>
-                                                        <th>Decision</th>
-                                                        <th>MGP</th>
+                                                        <th> Niveau</th>
+                                                        <th> Name</th>
+
                                                         <th>Check</th>
-                                                        
+
                                                     </tr>
                                                 </thead>
 
 
                                                 <tbody>
-                                                        @foreach($etudiant_attestation as $etudiant)
-                                                       
-                                                                <tr>
-                                                                <td>{{ $etudiant->nom }}</td>
-                                                                <td>{{ $etudiant->prenom }}</td>
-                                                                <td>{{ $etudiant->matricule }}</td>
-                                                                <td>{{ $etudiant->niveau }}</td>
-                                                                <td>{{ $etudiant->filiere }}</td><!--filiere-->
-                                                                <td>{{ $etudiant->anneeAcademique }}</td>
-                                                                <td>{{ $etudiant->decision }}</td>
-                                                                <td>{{ $etudiant->mgp }}</td>
-                                                                 
-                                                                <td>
-                                                                    <form method="POST" action="{{ route('showAttestation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="matricule" value="{{ $etudiant->matricule }}" id="matricule">
-                                                                        <button class="btn btn-sm btn-soft-primary" type="submit">Voir l'attestation</button>
-                                                                    </form>
-                                                                </td>
+                                                @foreach($niveau as $niveau)
 
-                                                                </tr>
-                                                            
-                                                        @endforeach
-                                                  
+                                                    <tr>
+                                                        <td>{{ $niveau->id_niveau }}</td>
+                                                        <td>{{ $niveau ->nom_niveau}}</td>
+                                                       
+
+                                                        <td>
+                                                            <form method="POST" action="{{ route('etudiantAttestation') }}">
+                                                                @csrf
+                                                                <input type="hidden" name="id_niveau" value="{{ $niveau ->id_niveau }}" id="id_niveau">
+                                                                <input type="hidden" name="filiere" value="{{ $filiere}}" id="filiere">
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Voir les étudiants</button>
+                                                            </form>
+
+
+                                                        </td>
+
+                                                    </tr>
+
+                                        
+                                                    @endforeach
                                                 </tbody>
                                             </table>
 

@@ -15,10 +15,12 @@ use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\ScanQrController;
 use App\Http\Controllers\GeneratePDFController;
 use App\Http\Controllers\NiveauController;
+use App\Http\Controllers\NiveauControllerAttestation;
 use App\Http\Controllers\PythonController;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -82,10 +84,13 @@ Route::post('/departement',[DepartementController::class,'index'])->name('depart
 Route::post('/filiere',[FiliereController::class,'index'])->name('filiere');
 Route::post('/niveau',[NiveauController::class,'index'])->name('niveau');
 Route::post('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
+Route::post('/etudiantAttestation',[NiveauControllerAttestation::class,'etudiantAttestation'])->name('etudiantAttestation');
 Route::post('/getAttestation',[AttestationController::class,'getAttestation'])->name('getAttestation');
 Route::get('/view_attestation', [AttestationController::class,'view_attestation'])->name('view_attestation');
 Route::get('/signature', [PythonController::class,'signature'])->name('signature');
 Route::get('/archive',[ArchiveController::class,'index'])->name('archive');
-
+Route::post('/niveauAttestation',[NiveauControllerAttestation::class,'niveauAttestation'])->name('niveauAttestation');
+Route::get('/filiereAttestation',[NiveauControllerAttestation::class,'filiereAttestation'])->name('filiereAttestation');
+Route::post('/show_Attestation',[NiveauControllerAttestation::class,'show_Attestation'])->name('show_Attestation');
 
 

@@ -49,18 +49,24 @@
             <ul class="metismenu left-sidenav-menu">
                 <li class="menu-label mt-0">Main</li>
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"> <i data-feather="home"
+                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i class="ti-control-record"></i>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
+                                    class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="grid"
+                            class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
+                                class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
+                                    class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li><a href="{{ route('view_add_releve') }}">Add Releve</a></li>
                                 {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
@@ -73,10 +79,14 @@
             </li>
 
             <li>
-                <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="lock"
+                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i class="ti-control-record"></i>Add Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i class="ti-control-record"></i>List Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
+                                class="ti-control-record"></i>Add Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i
+                                class="ti-control-record"></i>List Admin</a></li>
 
                 </ul>
             </li>
@@ -86,27 +96,36 @@
 
 
             <li>
-                <a href=" {{ route('faculte') }}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>List Etudiant</span><span class="badge badge-soft-success menu-arrow">Exemple</span></a>
+                <a href=" {{ route('faculte') }}"><i data-feather="layers"
+                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
+                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
             </li>
 
             <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i class="ti-control-record"></i>Repord card</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
+                                class="ti-control-record"></i>Repord card</a></li>
 
                 </ul>
             </li>
             <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('attestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i
+                                class="ti-control-record"></i>Attestation de reussite</a></li>
 
                 </ul>
             </li>
             </ul>
 
             <div class="update-msg text-center">
-                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg" aria-label="Close" aria-hidden="true">
+                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
+                    aria-label="Close" aria-hidden="true">
                     <i class="mdi mdi-close"></i>
                 </a>
                 <h5 class="mt-3">Auth.doc</h5>

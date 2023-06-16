@@ -52,9 +52,9 @@
                 <span>
                     <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm">
                 </span>
-            
-                    <h4 class="logo-lg logo-light">Auth.doc</h4>
-             
+
+                <h4 class="logo-lg logo-light">Auth.doc</h4>
+
             </a>
         </div>
         <!--end logo-->
@@ -66,7 +66,7 @@
                             class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('index')}}"><i
+                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
                                     class="ti-control-record"></i>Home</a></li>
                     </ul>
                 </li>
@@ -76,58 +76,64 @@
                             class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
                                 class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                      
+
                         <li>
                             <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
                                     class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="{{route('view_add_releve')}}">Add Releve</a></li>
+                                <li><a href="{{ route('view_add_releve') }}">Add Releve</a></li>
                                 {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
-    
+
                             </ul>
                         </li>
-                       
-                        </li>
-                    </ul>
+
                 </li>
+            </ul>
+            </li>
 
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="lock"
-                            class="align-self-center menu-icon"></i><span>Authentication</span><span
-                            class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href="{{route('signup')}}"><i
-                                    class="ti-control-record"></i>Add Admin</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('view_admin')}}"><i
-                                        class="ti-control-record"></i>List Admin</a></li>
-                       
-                    </ul>
-                </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="lock"
+                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
+                                class="ti-control-record"></i>Add Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i
+                                class="ti-control-record"></i>List Admin</a></li>
 
-                <hr class="hr-dashed hr-menu">
-                <li class="menu-label my-2">olders</li>
+                </ul>
+            </li>
+
+            <hr class="hr-dashed hr-menu">
+            <li class="menu-label my-2">olders</li>
 
 
-                <li>
-                    <a href=" {{route('faculte')}}"><i data-feather="layers"
-                            class="align-self-center menu-icon"></i><span >List Etudiant</span><span
-                            class="badge badge-soft-success menu-arrow">Exemple</span></a>
-                </li>
+            <li>
+                <a href=" {{ route('faculte') }}"><i data-feather="layers"
+                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
+                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
+            </li>
 
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{route('details')}}"><i class="ti-control-record"></i>Repord card</a></li>
-                     
-                    </ul>
-                </li>  
-                <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{route('attestation')}}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
-                     
-                    </ul>
-                </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
+                                class="ti-control-record"></i>Repord card</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="file-plus"
+                        class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
+                            class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i
+                                class="ti-control-record"></i>Attestation de reussite</a></li>
+
+                </ul>
+            </li>
             </ul>
 
             <div class="update-msg text-center">

@@ -133,7 +133,7 @@
                         class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('attestation') }}"><i
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i
                                 class="ti-control-record"></i>Attestation de reussite</a></li>
 
                 </ul>
