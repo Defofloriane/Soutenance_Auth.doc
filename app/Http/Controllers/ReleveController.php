@@ -131,6 +131,7 @@ $sum = array_sum(str_split($birthDayDigits));
          $notes->etudiant = $matricule;
          $notes->ue = $ueId;
          $notes->note = $note_total;
+         $notes->annee = 2022;
          // dd($note_total);
          // Déterminez la décision et la mention en fonction de la note totale
          // Par exemple, si la note totale est supérieure ou égale à un certain seuil, vous pouvez définir la décision et la mention comme suit :
@@ -238,8 +239,13 @@ $sum = array_sum(str_split($birthDayDigits));
 
       // Message de succès
        $request->session()->put('success', 'Le relevé a été ajouté avec succès.');
-      
+       $secretKey = 'auth.document';//cle secrete
        $releve = Releve::where('id_releve', $id_new_rel)->firstOrFail();
+       $donnees= Releve::where(['id_releve'=>$id_new_rel,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
+       $data= trim($id_new_rel).trim($matricule).trim($decision_releve).trim("INFORMATION AND COMMUNICATION TECHNOLOGIE").trim($id_niv).trim((float)$formatted_mgp).trim($anneeAcademique);
+      $hmac=hash_hmac('sha256', $data, $secretKey);
+      $hmacInfo=$hmac.' '.$matricule.' '.$id_niv;
+
        $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
        $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
           ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
@@ -250,8 +256,10 @@ $sum = array_sum(str_split($birthDayDigits));
           ->get();
        //  return $etudiant;
       //  dd($etudiant,$id_niv,$releve,$notes);
+      
+      
        // Passez les données à la vue de détails
-       return view("details", compact('releve', 'etudiant', 'notes'));
+       return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
     
      
 
