@@ -47,17 +47,32 @@
         <!--end logo-->
         <div class="menu-content h-100" data-simplebar>
             <ul class="metismenu left-sidenav-menu">
-                <li class="menu-label mt-0">Main</li>
+
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home"
-                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
+                    <a href="{{ route('index') }}"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Home</span></a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
                                     class="ti-control-record"></i>Home</a></li>
-                    </ul>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="{{ route('login') }}"> <i data-feather="user" class="align-self-center menu-icon"></i>
+                        <span>Login</span></a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
+                                    class="ti-control-record"></i>Home</a></li>
+                    </ul> -->
                 </li>
 
+                <li>
+                    <a>  <i data-feather="scanner" class="align-self-center menu-icon"></i>
+                        <span>Scan document</span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('scan_code') }}"><i class="ti-control-record"></i>With Qr code</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#downloadModal"><i class="ti-control-record"></i>With OCR</a></li>
+                    </ul>
+                </li>
+                <!-- 
                 <li>
                     <a href="javascript: void(0);"><i data-feather="grid"
                             class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
@@ -74,11 +89,11 @@
                             </ul>
                         </li>
 
-                </li>
+                </li> -->
             </ul>
             </li>
 
-            <li>
+            <!-- <li>
                 <a href="javascript: void(0);"><i data-feather="lock"
                         class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
@@ -89,19 +104,18 @@
                                 class="ti-control-record"></i>List Admin</a></li>
 
                 </ul>
-            </li>
-
-            <hr class="hr-dashed hr-menu">
-            <li class="menu-label my-2">olders</li>
+            </li> -->
 
 
-            <li>
+
+
+            <!-- <li>
                 <a href=" {{ route('faculte') }}"><i data-feather="layers"
                         class="align-self-center menu-icon"></i><span>List Etudiant</span><span
                         class="badge badge-soft-success menu-arrow">Exemple</span></a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
                 <a href="javascript: void(0);"><i data-feather="file-plus"
                         class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
@@ -110,8 +124,8 @@
                                 class="ti-control-record"></i>Repord card</a></li>
 
                 </ul>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <a href="javascript: void(0);"><i data-feather="file-plus"
                         class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
@@ -120,9 +134,9 @@
                                 class="ti-control-record"></i>Attestation de reussite</a></li>
 
                 </ul>
-            </li>
+            </li> -->
             </ul>
-
+            <!-- 
             <div class="update-msg text-center">
                 <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
                     aria-label="Close" aria-hidden="true">
@@ -131,7 +145,7 @@
                 <h5 class="mt-3">Auth.doc</h5>
                 <p class="mb-3">Checks the integrity of the documents, in particular the transcripts or Report Card
                     of the university of yaounde 1</p>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- end left-sidenav-->
@@ -203,7 +217,25 @@
                 </div>
                 <!--end row-->
                 <!-- end page title end breadcrumb -->
-
+                <!-- fenetre modal -->
+                <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitle">Télécharger l'application mobile</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Contenu de la modal -->
+                                <p>Pour profiter de cette fonctionnalité, téléchargez notre application mobile puis installer la dans votre mobile</p>
+                                <a href="http://192.168.43.108:8000/apk/app-debug.apk" class="btn btn-primary" download="app-debug.apk">Télécharger l'application</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin -->
 
                 <div class="container">
                     <div class="row" id="ocr_det">
@@ -387,11 +419,11 @@
                                     let niveau_ = document.getElementById("niveau");
                                     let matri = document.getElementById("matricule");
                                     id_releve.value = releve.id_releve;
-                               
+
                                     niveau_.value = releve.niveau;
-                                 
+
                                     matri.value = releve.etudiant;
-                               
+
                                     let message = document.getElementById("message");
                                     message.textContent = "Document authentique"
                                     message.style.color = 'green';

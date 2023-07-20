@@ -204,7 +204,7 @@
                         </div>
                     </li>
                 </ul>
-                <form method="POST" action="{{ route('search') }}">
+                <!-- <form method="POST" action="{{ route('search') }}">
                     @csrf
                     <div class="form-group">
                         <label for="niveau">Selectionner le niveau de l etudiant et entrer son Matricule / Nom
@@ -228,7 +228,7 @@
 
                     </div>
 
-                </form>
+                </form> -->
                 <!--end topbar-nav-->
                 <div class="col-auto align-self-center">
 
@@ -239,12 +239,12 @@
                             <i data-feather="menu" class="align-self-center topbar-icon"></i>
                         </button>
                     </li>
-                    <li class="creat-btn">
+                    <!-- <li class="creat-btn">
                         <div class="nav-link">
                             <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i
                                     class="fas fa-plus mr-2"></i>New Task</a>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
             <!-- end navbar-->
@@ -293,12 +293,12 @@
                                         </form>
                                     </div>
                                     <!--end col-->
-                                    <div class="col-auto">
+                                    <!-- <div class="col-auto">
                                         <button type="button" class="btn btn-soft-primary btn-lg"><i
                                                 class="fas fa-filter"></i></button>
                                         <button type="button" class="btn btn-soft-primary btn-lg">Add
                                             Project</button>
-                                    </div>
+                                    </div> -->
                                     <!--end col-->
                                 </div>
                                 <!--end row-->

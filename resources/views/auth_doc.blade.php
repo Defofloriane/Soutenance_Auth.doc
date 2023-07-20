@@ -170,7 +170,7 @@
                     </li>
                     <li class="creat-btn">
 
-                        <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data">
+                        <!-- <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="nav-link">
                                 <input class=" btn btn-sm btn-soft-primary" type="file" name="name_file"
@@ -179,7 +179,7 @@
 
                             </div>
 
-                        </form>
+                        </form> -->
 
                     </li>
                 </ul>
@@ -242,7 +242,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Cliquez sur le lien pour télécharger l'application mobile pour Use l ocr
+                                            <p>Cliquez sur le lien pour télécharger l'application mobile pour Authentifier avec l ocr
                                                 :</p>
                                             <p id="downloadLink"><a id="downloadHref" href="#"
                                                     target="_blank"></a></p>
@@ -265,17 +265,13 @@
                         </div> --}}
                         <div class="col-one-half">
                             <div class="ocr" onclick="showScanForm()">
+
+                            <a href="{{route('scan_code')}}">
                                 <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
                                 <h4>Scan Qr Code</h4>
-                                <?php if (isset($DataSend['message'])) : ?>
-                                <p><?php echo $DataSend['message']; ?></p>
-                                <?php endif; ?>
-
-                                <!-- Bouton pour afficher le relevé correspondant -->
-                                <?php if (isset($DataSend['releve'])) : ?>
-                                <a href="{{ route('details', ['DataSend' => $DataSend]) }}" class="btn">Voir le
-                                    relevé</a>
-                                <?php endif; ?>
+                          
+                            </a>
+        
                             </div>
                         </div>
 
@@ -317,7 +313,7 @@
                                             <form action="{{ route('store') }}" method="post" id="form">
                                                 @csrf
                                                 <input type="hidden" name="data" id="data">
-                                                <input class="btn" type="submit" value="Envoyer">
+                                                <!-- <input class="btn" type="submit" value="Envoyer"> -->
                                             </form>
                                         </div>
                                         {{-- <div id="my_camera">
@@ -335,7 +331,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-lg-5"> {{-- 11111111111111111111111111111 --}}
+                            <div class="col-lg-5"> 
 
                                 <div class="card">
                                     <div class="card-header">
@@ -494,9 +490,9 @@
             <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
             <script>
                 function onScanSuccess(decodedText, decodedResult) {
-                    // console.log(`Code matched = ${decodedText}`, decodedResult);
+                    console.log(`Code matched = ${decodedText}`, decodedResult);
                     document.getElementById('data').value = decodedText;
-                    // document.getElementById('form').submit();
+                    document.getElementById('form').submit();
                 }
 
                 function onScanFailure(error) {
@@ -516,10 +512,6 @@
                     },
                     false);
                 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-
-                window.addEventListener('DOMContentLoaded', function () {
-        onScanSuccess(votreTexteDecode, votreResultatDecode);
-    });
             </script>
 </body>
 

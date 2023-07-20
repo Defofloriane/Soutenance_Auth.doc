@@ -66,6 +66,9 @@ class ScanQrController extends Controller
     public function index(){
         return view('scan_code');
     }
+    public function index1(){
+        return view('scan_code1');
+    }
 
     public function test(Request $request)
    {

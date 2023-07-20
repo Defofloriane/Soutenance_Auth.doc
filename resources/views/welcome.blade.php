@@ -16,7 +16,7 @@
     <nav>
       <a href="#" class="logo" rel="Auth.Doc">  <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm"><span>Auth.Doc</span></a>
       <ul class="inline">
-        <li><a href="#" class="active">Home</a></li>
+        <!-- <li><a href="#" class="active">Home</a></li> -->
         <!-- <li><a href="pricing.html">Pricing</a></li> -->
         <li><a href="{{route('about')}}">About</a></li>
       </ul>
@@ -39,7 +39,7 @@
             <div>
               <h1 class="hero">Auth.Doc</h1>
               <p class="lead">Checks the integrity of the documents, in particular the transcripts or Report Card  of the university of yaounde 1.</p>
-              <a href="{{route('login')}}" class="button button-primary space-top" role="button">Get Started</a>
+              <a href="{{route('scan_code')}}" class="button button-primary space-top" role="button">Get Started</a>
             </div>
           </div>
         </div>

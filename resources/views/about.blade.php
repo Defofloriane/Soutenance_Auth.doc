@@ -20,7 +20,7 @@
       </ul>
       <ul class="inline right">
         <li><a href="{{route('login')}}">Log In</a></li>
-        <li><a href="{{route('signup')}}" class="button button-secondary button-m full-width-tablet" role="button">Sign Up</a></li>
+        <!-- <li><a href="{{route('signup')}}" class="button button-secondary button-m full-width-tablet" role="button">Sign Up</a></li> -->
       </ul>
     </nav>
   </header>
