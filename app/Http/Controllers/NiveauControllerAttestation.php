@@ -19,7 +19,7 @@ class NiveauControllerAttestation extends Controller
     return view('niveau_attestation', compact('niveau', 'filiere'));
 }
 public function filiereAttestation(Request $request){
-    $filiere = Filiere::where('id_filiere', 'ICT4D')->get();
+    $filiere = Filiere::all();
     return view('filiere_attestation', compact('filiere'));
     
 }
@@ -35,10 +35,10 @@ public function etudiantAttestation(Request $request){
 public function show_Attestation(Request $request)
     {
         $id_releve = $request->id_releve;
-        $matricule = $request->matricule_;
-        $niveau = $request->niveau_;
-        $da = $request->data;
-        
+        $matricule = $request->matricule;
+        $niveau = $request->niveau;
+        // $da = $request->data;
+        // dd($request->all());
         $releve = Releve::where(['id_releve' => $id_releve, 'etudiant' => $matricule, 'niveau' => $niveau])->first();
         
         // Vérifier si le relevé existe
@@ -53,7 +53,7 @@ public function show_Attestation(Request $request)
             return redirect()->back()->with('message', "L'étudiant associé au relevé n'existe pas.");
         }
         
-        $dataCont= trim($releve->id_releve).'?'.trim($releve->etudiant).'?'.trim($releve->decision).'?'.trim($releve->filiere).'?'.trim($releve->niveau).'?'.trim((float)$releve->mgp).'?'.trim($releve->anneeAcademique);
+        $dataCont= 'attest'.'?'.trim($releve->id_releve).'?'.trim($releve->etudiant).'?'.trim($releve->decision).'?'.trim($releve->filiere).'?'.trim($releve->niveau).'?'.trim((float)$releve->mgp).'?'.trim($releve->anneeAcademique);
         // hachage et crypthage des inforamtions
         // Récupération des clés de chiffrement et de hachage HMAC à partir de la variable d'environnement
          $encryptionKey = env('ENCRYPTION_KEY');
@@ -79,6 +79,7 @@ public function show_Attestation(Request $request)
         // Passez les données à la vue de détails
         return view("attestation", compact('releve', 'etudiant', 'hmacInfo'));
         
+        // return $hmacInfo;
         
         // Passez le tableau contenant l'étudiant, le relevé et les informations HMAC à la vue de détails
         

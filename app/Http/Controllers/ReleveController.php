@@ -332,44 +332,89 @@ $sum = array_sum(str_split($birthDayDigits));
       $id_releve=$request->id_releve;
       $matricule=$request->matricule;
       $niveau=$request->niveau;
-      // dd($request);
-      $da=$request->data;
-      $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-      $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-      $dataCont= trim($donnees->id_releve).'?'.trim($donnees->etudiant).'?'.trim($donnees->decision).'?'.trim($donnees->filiere).'?'.trim($donnees->niveau).'?'.trim((float)$donnees->mgp).'?'.trim($donnees->anneeAcademique);
-      // hachage et crypthage des inforamtions
-      // Récupération des clés de chiffrement et de hachage HMAC à partir de la variable d'environnement
-       $encryptionKey = env('ENCRYPTION_KEY');
-       $hmacKey = env('HMAC_KEY'); 
-       // Données à chiffrer
-       $data = $dataCont;
-      // Chiffrement avec AES-GCM
-       $iv = random_bytes(12); // Génération d'un IV aléatoire
-       $tag = openssl_random_pseudo_bytes(16); // Génération d'un tag aléatoire
-       $ciphertext = openssl_encrypt($data, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag, '', 16);
+      $type=$request->type;
+      // $da=$request->data;
+   
+      if($type=='releve'){
+         $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
+         $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
+         $dataCont= 'releve'.'?'.trim($donnees->id_releve).'?'.trim($donnees->etudiant).'?'.trim($donnees->decision).'?'.trim($donnees->filiere).'?'.trim($donnees->niveau).'?'.trim((float)$donnees->mgp).'?'.trim($donnees->anneeAcademique);
+         // hachage et crypthage des inforamtions
+         // Récupération des clés de chiffrement et de hachage HMAC à partir de la variable d'environnement
+          $encryptionKey = env('ENCRYPTION_KEY');
+          $hmacKey = env('HMAC_KEY'); 
+          // Données à chiffrer
+          $data = $dataCont;
+         // Chiffrement avec AES-GCM
+          $iv = random_bytes(12); // Génération d'un IV aléatoire
+          $tag = openssl_random_pseudo_bytes(16); // Génération d'un tag aléatoire
+          $ciphertext = openssl_encrypt($data, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag, '', 16);
+   
+         // Calcul du HMAC pour les données chiffrées
+         $hmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+   
+         // Concaténation du IV, du ciphertext, du tag et du HMAC
+         $encryptedData = $iv . $ciphertext . $tag . $hmac;
+   
+         // Encodage en base64 pour être inclus dans le QR code
+         $encodedData = base64_encode($encryptedData);
+        //fin hachage et crypthage des informations
+         $hmacInfo=$encodedData;
+         $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
+         $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+            ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+            ->where('notes.etudiant', '=', $releve->etudiant)
+            ->where('niveaux.nom_niveau', '=', $releve->niveau)
+            ->select('notes.*', 'ues.nom_ue', 'ues.credit')
+            ->distinct()
+            ->get();
 
-      // Calcul du HMAC pour les données chiffrées
-      $hmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+       return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
+       }
+      else{
 
-      // Concaténation du IV, du ciphertext, du tag et du HMAC
-      $encryptedData = $iv . $ciphertext . $tag . $hmac;
+         $releve = Releve::where(['id_releve' => $id_releve, 'etudiant' => $matricule, 'niveau' => $niveau])->first();
+        
+         // Vérifier si le relevé existe
+         if (!$releve) {
+             return redirect()->back()->with('message', "L'attestation demandée n'existe pas.");
+         }
+         
+         $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
+         
+         // Vérifier si l'étudiant associé au relevé existe
+         if (!$etudiant) {
+             return redirect()->back()->with('message', "L'étudiant associé au relevé n'existe pas.");
+         }
+         
+         $dataCont= 'attest'.'?'.trim($releve->id_releve).'?'.trim($releve->etudiant).'?'.trim($releve->decision).'?'.trim($releve->filiere).'?'.trim($releve->niveau).'?'.trim((float)$releve->mgp).'?'.trim($releve->anneeAcademique);
+         // hachage et crypthage des inforamtions
+         // Récupération des clés de chiffrement et de hachage HMAC à partir de la variable d'environnement
+          $encryptionKey = env('ENCRYPTION_KEY');
+          $hmacKey = env('HMAC_KEY'); 
+          // Données à chiffrer
+          $data = $dataCont;
+         // Chiffrement avec AES-GCM
+          $iv = random_bytes(12); // Génération d'un IV aléatoire
+          $tag = openssl_random_pseudo_bytes(16); // Génération d'un tag aléatoire
+          $ciphertext = openssl_encrypt($data, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag, '', 16);
+   
+         // Calcul du HMAC pour les données chiffrées
+         $hmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+   
+         // Concaténation du IV, du ciphertext, du tag et du HMAC
+         $encryptedData = $iv . $ciphertext . $tag . $hmac;
+   
+         // Encodage en base64 pour être inclus dans le QR code
+         $encodedData = base64_encode($encryptedData);
+        //fin hachage et crypthage des informations
+         $hmacInfo=$encodedData;
+         
+         // Passez les données à la vue de détails
+         return view("attestation", compact('releve', 'etudiant', 'hmacInfo'));
 
-      // Encodage en base64 pour être inclus dans le QR code
-      $encodedData = base64_encode($encryptedData);
-     //fin hachage et crypthage des informations
-      $hmacInfo=$encodedData;
-      $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
-      $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
-         ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
-         ->where('notes.etudiant', '=', $releve->etudiant)
-         ->where('niveaux.nom_niveau', '=', $releve->niveau)
-         ->select('notes.*', 'ues.nom_ue', 'ues.credit')
-         ->distinct()
-         ->get();
-      //  return $etudiant;
-
-      // Passez les données à la vue de détails
-      return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
+      }
+     
       //  return  $encodedData;
    }
   

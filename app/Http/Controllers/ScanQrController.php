@@ -44,23 +44,24 @@ class ScanQrController extends Controller
     // return response()->json(['data' => $decrypted]);
     
       $datas=explode("?",$decrypted);
-      $h1=$datas[0];
-      $matricule=$datas[1];
-      $niveau=$datas[4];
+      $type=$datas[0];
+      $matricule=$datas[2];
+      $niveau=$datas[5];
        $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
        $datasH= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
           $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
           $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
           $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
-           $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+          $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
                       ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
                       ->where('notes.etudiant', '=', $data)
                       ->where('niveaux.nom_niveau','=',$niveau)
                       ->select('notes.*', 'ues.nom_ue','ues.credit')
                       ->distinct()
                       ->get();
+
           $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant]);
-          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $DataSend]);
+          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $DataSend,'type'=>$type]);
     
     }
     public function index(){

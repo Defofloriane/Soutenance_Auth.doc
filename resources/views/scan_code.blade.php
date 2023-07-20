@@ -307,7 +307,7 @@
                             <!--end card-->
                             <div class="card " id="affirmation">
                                 <div class="card-header">
-                                    <h4 class="card-title">Les differents resultats de votre releve affirme que:
+                                    <h4 class="card-title">Les differents resultats de votre document affirme que:
                                     </h4>
                                     <h3>
                                         <p id="message"></p>
@@ -315,20 +315,18 @@
                                 </div>
                                 <!--end card-header-->
                                 <div class="card-body">
-
+                               
                                     <form method="POST" action="{{ route('show') }}" id="mon-formulaire" style="display: none;">
                                         @csrf
                                         <input type="hidden" name="id_releve" value="" id="id_releve">
                                         <input type="hidden" name="niveau" value="" id="niveau">
                                         <input type="hidden" name="matricule" value="" id="matricule">
-                                        <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
+                                        <input type="hidden" name="type" value="" id="type">
+                                        <button class="btn btn-sm btn-soft-primary" type="submit">Voir le document</button>
                                     </form>
-
-                                    <!-- <form method="POST" action="{{ route('show') }}">
-                                            @csrf
-                                            <input type="hidden" name="id_releve" value="" id="id_releve">
-                                            <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
-                                        </form> -->
+                            
+                              
+        
 
                                 </div>
                                 <!--end card-body-->
@@ -394,7 +392,6 @@
                             success: function(response) {
                                 console.log(response);
                                 if (response.status == 200) {
-                                    document.getElementById("mon-formulaire").style.display = "block";
                                     document.getElementById("info-etu").style.display = "block";
                                     let etudiant = response.data.etudiant;
                                     let releve = response.data.releve;
@@ -418,6 +415,7 @@
                                     let id_releve = document.getElementById("id_releve");
                                     let niveau_ = document.getElementById("niveau");
                                     let matri = document.getElementById("matricule");
+                                    document.getElementById("type").value=response.type;
                                     id_releve.value = releve.id_releve;
 
                                     niveau_.value = releve.niveau;
@@ -427,6 +425,9 @@
                                     let message = document.getElementById("message");
                                     message.textContent = "Document authentique"
                                     message.style.color = 'green';
+
+
+                                    document.getElementById("mon-formulaire").style.display = "block";
 
                                 } else if (response.status == 400) {
                                     let message = document.getElementById("message");
