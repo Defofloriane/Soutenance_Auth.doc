@@ -74,7 +74,7 @@ Route::get('/attestation', [AttestationController::class, 'attestation'])->name(
 Route::get('/details_releve',[ReleveController::class, 'details_releve'])->name('details_releve');
 Route::post('/import_excel',[ReleveController::class, 'import_excel'])->name('import_excel');
 Route::get('/scan_code',[ScanQrController::class,'index'])->name('scan_code');
-Route::get('/scan',[ScanQrController::class,'index1'])->name('scan');
+Route::get('/scan_code',[ScanQrController::class,'index'])->name('scan_code');
 Route::post('/store',[ScanQrController::class,'store'])->name('store');
 Route::post('/test',[ScanQrController::class,'test'])->name('test');
 // Route::get('/details/{id}', 'ReleveController@show')->name('details.show');

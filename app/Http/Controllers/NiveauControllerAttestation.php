@@ -43,7 +43,7 @@ public function show_Attestation(Request $request)
         
         // Vérifier si le relevé existe
         if (!$releve) {
-            return redirect()->back()->with('message', "Le relevé demandé n'existe pas.");
+            return redirect()->back()->with('message', "L'attestation demandée n'existe pas.");
         }
         
         $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
@@ -53,11 +53,28 @@ public function show_Attestation(Request $request)
             return redirect()->back()->with('message', "L'étudiant associé au relevé n'existe pas.");
         }
         
-        // Hachage des informations
-        $secretKey = 'auth.document'; // Clé secrète
-        $data = trim($releve->id_releve) . trim($releve->etudiant) . trim($releve->decision) . trim($releve->filiere) . trim($releve->niveau) . trim((float) $releve->mgp) . trim($releve->anneeAcademique);
-        $hmac = hash_hmac('sha256', $data, $secretKey);
-        $hmacInfo = $hmac . ' ' . $releve->etudiant . ' ' . $releve->niveau;
+        $dataCont= trim($releve->id_releve).'?'.trim($releve->etudiant).'?'.trim($releve->decision).'?'.trim($releve->filiere).'?'.trim($releve->niveau).'?'.trim((float)$releve->mgp).'?'.trim($releve->anneeAcademique);
+        // hachage et crypthage des inforamtions
+        // Récupération des clés de chiffrement et de hachage HMAC à partir de la variable d'environnement
+         $encryptionKey = env('ENCRYPTION_KEY');
+         $hmacKey = env('HMAC_KEY'); 
+         // Données à chiffrer
+         $data = $dataCont;
+        // Chiffrement avec AES-GCM
+         $iv = random_bytes(12); // Génération d'un IV aléatoire
+         $tag = openssl_random_pseudo_bytes(16); // Génération d'un tag aléatoire
+         $ciphertext = openssl_encrypt($data, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag, '', 16);
+  
+        // Calcul du HMAC pour les données chiffrées
+        $hmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+  
+        // Concaténation du IV, du ciphertext, du tag et du HMAC
+        $encryptedData = $iv . $ciphertext . $tag . $hmac;
+  
+        // Encodage en base64 pour être inclus dans le QR code
+        $encodedData = base64_encode($encryptedData);
+       //fin hachage et crypthage des informations
+        $hmacInfo=$encodedData;
         
         // Passez les données à la vue de détails
         return view("attestation", compact('releve', 'etudiant', 'hmacInfo'));

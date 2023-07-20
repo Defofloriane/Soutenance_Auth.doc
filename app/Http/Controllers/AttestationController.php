@@ -11,11 +11,8 @@ use Illuminate\Http\Response;
 
 class AttestationController extends Controller
 {
+   
     public function attestation()
-    {
-        return View('attestation');
-    }
-    public function view_attestation()
     {
         $etudiant_attestation = Etudiant::join('releves', 'etudiants.matricule', '=', 'releves.etudiant')
             ->where('releves.niveau', 'Licence 3')
