@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Departement;
 use App\Models\Etudiant;
-use App\Models\Faculte;
-use App\Models\Hashe;
-use App\Models\InfoReleve;
+use App\Models\Niveau;
+use GuzzleHttp\Client;
 use App\Models\Note;
 use App\Models\Releve;
-use App\Models\Ue;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Aws\Textract\TextractClient;
-use GuzzleHttp\Client;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
-use Nette\Utils\Floats;
-use PhpParser\Node\Expr\Cast\Double;
 
 class UserController extends Controller
 { 
@@ -28,7 +24,7 @@ class UserController extends Controller
  
 
     public function endpoint(Request $request) {
-
+        set_time_limit(120);
         //reception de l'image depuis le frontend
         $image = $request->input('file');
         $image = str_replace('data:image/jpeg;base64,', '', $image);
@@ -72,7 +68,14 @@ if($lumunosite>=20 && $lumunosite<=90){ // si la luminosite est normal donc comp
         ],
         
     ]);
-    $filename = $target_path;
+ //modification de l'image pour la rendre plus claire
+    $imageManager = new ImageManager(['driver' => 'gd']);
+    $image = $imageManager->make($target_path);
+    $image->brightness(20);
+    $image->contrast(50);
+    $image->save('images/imagesM.jpg');
+// fin de la modification
+    $filename =$target_path;
     $file = fopen($filename, "rb");
     $contents = fread($file, filesize($filename));
     fclose($file);
@@ -177,6 +180,15 @@ if($lumunosite>=20 && $lumunosite<=90){ // si la luminosite est normal donc comp
                         preg_match('/°:\s*([^\n]+)\s*/', $text, $numero);
                         if(empty($numero)){
                             preg_match('/°:([^\n]+)\s*/', $text, $numero);
+                            if(empty($numero)){
+                                preg_match('/Nt:([^\n]+)\s*/', $text, $numero);   
+                                if(empty($numero)){
+                                    preg_match('/N\":([^\n]+)\s*/', $text, $numero);   
+                                    if(empty($numero)){
+                                        preg_match('/N\*:([^\n]+)\s*/', $text, $numero); 
+                                      }
+                                  }
+                              }
                           }
                       }
                     }
@@ -212,23 +224,40 @@ if($lumunosite>=20 && $lumunosite<=90){ // si la luminosite est normal donc comp
         
         $extension = 'jpeg';
         $user_id = trim($matricule[1]).'_'.trim($niveau[1]);
-        $timestamp = time();
-        $filename1 = $user_id . '_' . $timestamp . '.' . $extension;
-       
-        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
-        return response()->json($DataSend);   
-    }else{
-        $message='no';
-        return response()->json((['message'=>$message,'text'=>$text,'data1'=>$data1,'data2'=>$data2])); 
-    }  
+        $filename1 ='images/releves/'.$user_id .'.' . $extension;
+        $filename2='images/imagesM.jpg';
+        $client = new Client();
+        $response = $client->request('POST', 'http://localhost:5000/endpoint', [
+            'multipart' => [
+                [
+                    'name'     => 'image_1',
+                    'contents' => fopen($filename1, 'r'),
+                ],
+                [
+                    'name'     => 'image_2',
+                    'contents' => fopen($filename2, 'r'),
+                ],
+            ]
+        ]);    
+        $body = $response->getBody()->getContents();
+        if(json_decode($body)->statut==200)
+        {$DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
+        return response()->json($DataSend); 
+         }  
+         else{
+            return response()->json((['message'=>'no','text'=>$text,'data1'=>$data1,'data2'=>$data2])); 
+         }
 
+    }else{
    
-  
+        return response()->json((['message'=>'no','text'=>$text,'data1'=>$data1,'data2'=>$data2])); 
+    }      
 }
 else{
     return response()->json((['message'=>'pas']));
 }
 
+return response()->json((['message'=>'recu','data'=>[$text,$numero,$niveau,$matricule,$filiere,$annee,$mgp,$decision]]));
 }
 
 else if($lumunosite>90){

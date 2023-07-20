@@ -116,7 +116,7 @@
                         class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('niveauAttestation') }}"><i
+                    <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i
                                 class="ti-control-record"></i>Attestation de reussite</a></li>
 
                 </ul>
@@ -317,6 +317,7 @@
                                             <form action="{{ route('store') }}" method="post" id="form">
                                                 @csrf
                                                 <input type="hidden" name="data" id="data">
+                                                <input class="btn" type="submit" value="Envoyer">
                                             </form>
                                         </div>
                                         {{-- <div id="my_camera">
@@ -495,8 +496,7 @@
                 function onScanSuccess(decodedText, decodedResult) {
                     // console.log(`Code matched = ${decodedText}`, decodedResult);
                     document.getElementById('data').value = decodedText;
-                    document.getElementById('form').submit();
-                    alert(decodedText);
+                    // document.getElementById('form').submit();
                 }
 
                 function onScanFailure(error) {
@@ -505,15 +505,21 @@
                 }
 
                 let html5QrcodeScanner = new Html5QrcodeScanner(
-                    "reader", {
+                    "reader", 
+                    {
                         fps: 10,
                         qrbox: {
                             width: 250,
                             height: 250
-                        }
+                        },
+
                     },
                     false);
                 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+                window.addEventListener('DOMContentLoaded', function () {
+        onScanSuccess(votreTexteDecode, votreResultatDecode);
+    });
             </script>
 </body>
 

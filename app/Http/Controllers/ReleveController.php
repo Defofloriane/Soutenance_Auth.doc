@@ -11,6 +11,7 @@ use App\Models\Releve;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Laravel\SerializableClosure\Signers\Hmac;
 use LengthException;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -256,17 +257,9 @@ $sum = array_sum(str_split($birthDayDigits));
           ->get();
        //  return $etudiant;
       //  dd($etudiant,$id_niv,$releve,$notes);
-      
-      
+        
        // Passez les données à la vue de détails
        return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
-    
-     
-
-      
-
-      
-  
    }
 
    public function view_etudiant()
@@ -337,17 +330,33 @@ $sum = array_sum(str_split($birthDayDigits));
       //  $details = Releve::find($id);
       // $id_releve = request('id_releve');
       $id_releve=$request->id_releve;
-      $matricule=$request->matricule;
-      $niveau=$request->niveau;
+      $matricule=$request->matricule_;
+      $niveau=$request->niveau_;
       $da=$request->data;
       $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-      //hachage des informations 
-      $secretKey = 'auth.document';//cle secrete
       $donnees= Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
-     
-      $data= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim((float)$donnees->mgp).trim($donnees->anneeAcademique);
-      $hmac=hash_hmac('sha256', $data, $secretKey);
-      $hmacInfo=$hmac.' '.$donnees->etudiant.' '.$donnees->niveau;
+      $dataCont= trim($donnees->id_releve).'?'.trim($donnees->etudiant).'?'.trim($donnees->decision).'?'.trim($donnees->filiere).'?'.trim($donnees->niveau).'?'.trim((float)$donnees->mgp).'?'.trim($donnees->anneeAcademique);
+      // hachage et crypthage des inforamtions
+      // Récupération des clés de chiffrement et de hachage HMAC à partir de la variable d'environnement
+       $encryptionKey = env('ENCRYPTION_KEY');
+       $hmacKey = env('HMAC_KEY'); 
+       // Données à chiffrer
+       $data = $dataCont;
+      // Chiffrement avec AES-GCM
+       $iv = random_bytes(12); // Génération d'un IV aléatoire
+       $tag = openssl_random_pseudo_bytes(16); // Génération d'un tag aléatoire
+       $ciphertext = openssl_encrypt($data, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag, '', 16);
+
+      // Calcul du HMAC pour les données chiffrées
+      $hmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+
+      // Concaténation du IV, du ciphertext, du tag et du HMAC
+      $encryptedData = $iv . $ciphertext . $tag . $hmac;
+
+      // Encodage en base64 pour être inclus dans le QR code
+      $encodedData = base64_encode($encryptedData);
+     //fin hachage et crypthage des informations
+      $hmacInfo=$encodedData;
       $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
       $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
          ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
@@ -356,10 +365,11 @@ $sum = array_sum(str_split($birthDayDigits));
          ->select('notes.*', 'ues.nom_ue', 'ues.credit')
          ->distinct()
          ->get();
-      //  return $etudiant;////
+      //  return $etudiant;
 
       // Passez les données à la vue de détails
       return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
+      //  return  $encodedData;
    }
   
    public function import_excel(Request $request)

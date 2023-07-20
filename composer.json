@@ -9,11 +9,14 @@
         "aws/aws-sdk-php": "^3.263",
         "barryvdh/laravel-snappy": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
+        "illuminate/encryption": "*",
+        "intervention/image": "^2.7",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "phpoffice/phpspreadsheet": "^1.28",
         "realrashid/sweet-alert": "^6.0",
+        "spatie/image": "^2.2",
         "tecnickcom/tcpdf": "^6.6"
     },
     "require-dev": {

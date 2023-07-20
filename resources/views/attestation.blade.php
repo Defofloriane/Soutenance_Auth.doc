@@ -994,8 +994,7 @@
                                                                         </div>
                                                                         &nbsp;&nbsp; &nbsp;&nbsp;
                                                                         <span class="name">
-                                                                            {{ isset($etudiant) ? $etudiant->nom : '' }}
-                                                                            {{ isset($etudiant) ? $etudiant->prenom : '' }}
+                                                                         nom  et prenom
 
                                                                         </span>
                                                                         <div class="dash"></div>
@@ -1391,6 +1390,8 @@
                                                                     </div>
 
                                                                 </section>
+
+                                                            </main>
                                                 </ul>
 
 

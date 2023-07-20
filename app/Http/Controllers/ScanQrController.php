@@ -10,16 +10,45 @@ use Illuminate\Http\Request;
 class ScanQrController extends Controller
 {
     public function store(Request $request){
-      $data = $request->input('data');
-      $datas=explode(" ",$data);
+    //   $data = $request->input('data');
+
+      $encryptionKey = env('ENCRYPTION_KEY');
+      $hmacKey = env('HMAC_KEY');
+      $encodedData = $request->input('data');
+      $encryptedData = base64_decode(trim($encodedData));
+      // Décodage de la chaîne depuis la base64
+    // Extraction du IV, du ciphertext, du tag et du HMAC à partir des données chiffrées
+      $iv = substr($encryptedData, 0, 12);
+      $ciphertext = substr($encryptedData, 12, -48);
+      $tag = substr($encryptedData, -48, 16);
+      $hmac = substr($encryptedData, -32);
+
+    // Calcul du HMAC pour les données déchiffrées
+      $expectedHmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+
+    // Vérification de l'authenticité des données en comparant le HMAC calculé avec le HMAC extrait
+    if (!hash_equals($hmac, $expectedHmac)) {
+        // Les données n'ont pas passé la vérification d'authenticité
+        return response()->json(['status' => 400, 'message' => 'Failure']);
+    }
+
+    // Déchiffrement du ciphertext en utilisant la clé de chiffrement, l'IV et le tag
+    $decrypted = openssl_decrypt($ciphertext, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag);
+
+    if ($decrypted === false) {
+        // Échec du déchiffrement
+        return response()->json(['status' => 402, 'message' => 'Failure']);
+    }
+
+    // Les données sont authentiques et ont été déchiffrées avec succès
+    // return response()->json(['data' => $decrypted]);
+    
+      $datas=explode("?",$decrypted);
       $h1=$datas[0];
       $matricule=$datas[1];
-      $niveau=$datas[2].' '.$datas[3];
+      $niveau=$datas[4];
        $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
        $datasH= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
-       $secretKey = 'auth.document';
-       $h2 = hash_hmac('sha256', $datasH, $secretKey);
-       if($h1==$h2){
           $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
           $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
           $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
@@ -32,14 +61,7 @@ class ScanQrController extends Controller
                       ->get();
           $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant]);
           return response()->json(['status' => 200, 'message' => 'Success', 'data' => $DataSend]);
-        }
-        else if($donnees && $h1!==$h2){
-            return response()->json(['status' => 400, 'message' => 'Failure']);
-        }
-        else if(count($datas)<3){
-            return response()->json(['status' => 402, 'message' => 'Failure']);
-        }
-
+    
     }
     public function index(){
         return view('scan_code');

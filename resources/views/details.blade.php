@@ -1212,7 +1212,7 @@
                                                                                 $type = 'png';
                                                                                 $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
                                                                                 $nouvelleVariable = $hmacInfo;
-                                                                                $taille = '&amp;size=100x100';
+                                                                                $taille = '&amp;size=50x50';
                                                                                 
                                                                                 // Concaténation des parties de la chaîne avec la variable
                                                                                 $chaineModifiee = $chaine . $nouvelleVariable . $taille;

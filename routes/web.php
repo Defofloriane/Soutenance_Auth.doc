@@ -92,5 +92,5 @@ Route::get('/archive',[ArchiveController::class,'index'])->name('archive');
 Route::post('/niveauAttestation',[NiveauControllerAttestation::class,'niveauAttestation'])->name('niveauAttestation');
 Route::get('/filiereAttestation',[NiveauControllerAttestation::class,'filiereAttestation'])->name('filiereAttestation');
 Route::post('/show_Attestation',[NiveauControllerAttestation::class,'show_Attestation'])->name('show_Attestation');
-
+Route::get('/encode',[ApiController::class,'encode'])->name('encode');
 
