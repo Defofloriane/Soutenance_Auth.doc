@@ -470,7 +470,7 @@ $sum = array_sum(str_split($birthDayDigits));
               }
              
               $matricule = $studentData[0];
-              $note = $studentData[1];
+              $note = $studentData[3];
               $etudiant = Etudiant::where(['matricule'=> $matricule])->first();             
               $evaluation = new Evaluation();
               $evaluation->type_evaluation = $evaluationtype;

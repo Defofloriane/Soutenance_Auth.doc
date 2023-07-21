@@ -270,17 +270,16 @@
                             </div><!-- end card-body -->
                         </div> <!-- end card -->
                         @endif
-                        <div class="row">
+                        <div class="card">
                             @if($method=='Manuel')
-                            <div class="col-lg-8" id="manuel-form">
+                    
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Les Notes d'un Etudiant</h4>
-                                        <p class="text-muted mb-0">Les informations suivantes concernent uniquement les procces verbaux de chaque unite d enseignements du <code class="highlighter-rouge">&lt;CC,SN/RATRAPPAGE ET OU TP&gt;</code>des differentEs
-                                            Unites d enseignement<code class="highlighter-rouge">.Choisir au prealable le niveau</code>, et aussi <code class="highlighter-rouge">L'annee Academique</code>.
+                                        <h4 class="card-title">Notes of Student</h4>
+                                        <p class="text-muted mb-0">The following information concerns only the minutes of each teaching unit of the <code class="highlighter-rouge">&lt;CC,SN/RATRAPPAGE AND OU OR&gt;</code> the differents
                                         </p>
                                     </div><!--end card-header-->
-                                    <div class="card-body">
+                                    <div class="card-body bootstrap-select-1">
                                         @if(isset($resultats) )
 
                                         <form id="hidden_form" method="POST" action="{{ route('add_releve') }}">
@@ -398,7 +397,7 @@
 
                                     </div><!--end card-body-->
                                 </div><!--end card-->
-                            </div><!--end col-->
+                          
                             @endif
                             <!--end col-->
                         </div><!--end row-->
