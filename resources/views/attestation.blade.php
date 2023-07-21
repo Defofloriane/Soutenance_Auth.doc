@@ -48,6 +48,10 @@
             color: white;
             /* Définit la couleur du texte du bouton au survol */
         }
+        .Qrcode{
+            margin-top: 50px;
+            margin-left: -100px;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
 
@@ -1294,33 +1298,9 @@
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                                             &nbsp;&nbsp; &nbsp;
                                                                             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                                                            <div>
-                                                                                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-                                                                                <script type="text/javascript">
-                                                                                    function generateBarCode() {
-                                                                                        var nric = $('hhhh').val();
-                                                                                        var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=100x100';
-                                                                                        $('#barcode').attr('src', url);
-                                                                                        // print(nric);
-                                                                                    }
-                                                                                </script>
-                                                                                <!-- <?php
-                                                                                $type = 'png';
-                                                                                $chaine = 'https://api.qrserver.com/v1/create-qr-code/?data=';
-                                                                                $nouvelleVariable = $hmacInfo;
-                                                                                $taille = '&amp;size=50x50';
-                                                                                
-                                                                                // Concaténation des parties de la chaîne avec la variable
-                                                                                $chaineModifiee = $chaine . $nouvelleVariable . $taille;
-                                                                                $data = file_get_contents($chaineModifiee);
-                                                                                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-                                                                                ?> -->
-                                                                                <?php echo '<div class="company-logo">
-                                                                                   <img src="' .
-                                                                                    $base64 .
-                                                                                    '"  alt="base" style="width: 180px; height: 180px;" />  </div>';
-                                                                                ?>
-                                                                            </div>
+                                                                            <div class="Qrcode" >
+                                                                            {{QrCode::size(150)->generate($hmacInfo)}}
+                                                                           </div>
                                                                         </div>
 
                                                                 </section>

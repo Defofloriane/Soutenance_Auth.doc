@@ -14,38 +14,84 @@ class ApiController extends Controller
 {
     public function decode(Request $request){
 
-        $DataSend=(['message'=>'no']); 
-        $data=$request->all();
-        if(array_key_exists('hache',$data) && array_key_exists('matricule',$data)&& array_key_exists('niveau',$data)){
-        $h1=$data['hache'];
-        $matricule=$data['matricule'];
-        $niveau=$data['niveau'];
-         $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
-         if($donnees){
-         $datas= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
-         $secretKey = 'auth.document';
-         $h2 = hash_hmac('sha256', $datas, $secretKey);
 
-         if($h1==$h2){
-            $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
-            $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
-            $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
-             $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
-                        ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
-                        ->where('notes.etudiant', '=', $data)
-                        ->where('niveaux.nom_niveau','=',$niveau)
-                        ->select('notes.*', 'ues.nom_ue','ues.credit')
-                        ->distinct()
-                        ->get();
-            $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
-         }
-         }    
-       return response()->json($DataSend);
+      $encryptionKey = env('ENCRYPTION_KEY');
+      $hmacKey = env('HMAC_KEY');
+      $encodedData = $request->input('data');
+      $encryptedData = base64_decode(trim($encodedData));
+      // Décodage de la chaîne depuis la base64
+      // Extraction du IV, du ciphertext, du tag et du HMAC à partir des données chiffrées
+      $iv = substr($encryptedData, 0, 12);
+      $ciphertext = substr($encryptedData, 12, -48);
+      $tag = substr($encryptedData, -48, 16);
+      $hmac = substr($encryptedData, -32);
+
+    // Calcul du HMAC pour les données déchiffrées
+      $expectedHmac = hash_hmac('sha256', $ciphertext . $tag, $hmacKey, true);
+
+    // Vérification de l'authenticité des données en comparant le HMAC calculé avec le HMAC extrait
+    if (!hash_equals($hmac, $expectedHmac)) {
+        // Les données n'ont pas passé la vérification d'authenticité
+        return response()->json(['status' => 400, 'message' => 'Failure']);
     }
-     else{
-        $DataSend=(['message'=>'no document']);
+
+    // Déchiffrement du ciphertext en utilisant la clé de chiffrement, l'IV et le tag
+    $decrypted = openssl_decrypt($ciphertext, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag);
+
+    if ($decrypted === false) {
+        // Échec du déchiffrement
+        return response()->json(['status' => 402, 'message' => 'Failure']);
+    }
+
+    $datas=explode("?",$decrypted);
+      $type=$datas[0];
+      $matricule=$datas[2];
+      $niveau=$datas[5];
+          $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
+          $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
+          $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
+          $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+                      ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+                      ->where('notes.etudiant', '=', $data)
+                      ->where('niveaux.nom_niveau','=',$niveau)
+                      ->select('notes.*', 'ues.nom_ue','ues.credit')
+                      ->distinct()
+                      ->get();
+        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'statut'=>200,'type'=>$type]);
         return response()->json($DataSend);
-   }
+
+   //      $DataSend=(['message'=>'no']); 
+   //      $data=$request->all();
+   //      if(array_key_exists('hache',$data) && array_key_exists('matricule',$data)&& array_key_exists('niveau',$data)){
+   //       $h1=$data['hache'];
+   //       $matricule=$data['matricule'];
+   //       $niveau=$data['niveau'];
+   //       $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
+   //       if($donnees){
+   //       $datas= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
+   //       $secretKey = 'auth.document';
+   //       $h2 = hash_hmac('sha256', $datas, $secretKey);
+
+   //       if($h1==$h2){
+   //          $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
+   //          $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
+   //          $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
+   //           $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+   //                      ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+   //                      ->where('notes.etudiant', '=', $data)
+   //                      ->where('niveaux.nom_niveau','=',$niveau)
+   //                      ->select('notes.*', 'ues.nom_ue','ues.credit')
+   //                      ->distinct()
+   //                      ->get();
+   //          $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'message'=>'ok']);
+   //       }
+   //       }    
+   //     return response()->json($DataSend);
+   //  }
+   //   else{
+   //      $DataSend=(['message'=>' ']);
+   //      return response()->json($DataSend);
+   // }c v
   
 }
 public function getUser(Request $request){

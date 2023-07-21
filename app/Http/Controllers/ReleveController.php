@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 use Laravel\SerializableClosure\Signers\Hmac;
 use LengthException;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use BaconQrCode\Renderer\Image\Png;
+use BaconQrCode\Writer;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class ReleveController extends Controller
 {
@@ -368,8 +371,8 @@ $sum = array_sum(str_split($birthDayDigits));
             ->select('notes.*', 'ues.nom_ue', 'ues.credit')
             ->distinct()
             ->get();
-
        return view("details", compact('releve', 'etudiant', 'notes','hmacInfo'));
+      
        }
       else{
 

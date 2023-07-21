@@ -47,8 +47,6 @@ class ScanQrController extends Controller
       $type=$datas[0];
       $matricule=$datas[2];
       $niveau=$datas[5];
-       $donnees=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
-       $datasH= trim($donnees->id_releve).trim($donnees->etudiant).trim($donnees->decision).trim($donnees->filiere).trim($donnees->niveau).trim($donnees->mgp).trim($donnees->anneeAcademique);
           $releve=Releve::where(['etudiant'=>$matricule, 'niveau'=>$niveau])->first();
           $etudiant=Etudiant::where(['matricule'=>$matricule])->first();
           $data=Etudiant::where(['matricule'=>$matricule])->firstOrFail()->matricule;
