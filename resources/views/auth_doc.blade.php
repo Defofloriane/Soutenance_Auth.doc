@@ -47,91 +47,86 @@
         <!--end logo-->
         <div class="menu-content h-100" data-simplebar>
             <ul class="metismenu left-sidenav-menu">
-                <li class="menu-label mt-0">Main</li>
+
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home"
-                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
+                    <a href="{{ route('view_admin') }}">
+                        <i data-feather="user" class="align-self-center menu-icon"></i>
+                        <span>Account</span>
+                        <!-- <span class="menu-arrow">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span> -->
+                    </a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
                                     class="ti-control-record"></i>Home</a></li>
+                    </ul> -->
+                </li>
+                <br />
+
+                <li>
+                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                        <span>Students</span>
+                        <!-- <span class="menu-arrow">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span> -->
+                    </a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false"> -->
+                </li>
+                <br />
+                <li>
+                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+
+                        <span>Note</span>
+                        <!-- <span class="menu-arrow">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span> -->
+                    </a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false"> -->
+                </li>
+
+
+
+                <!-- <li>
+                    <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i class="ti-control-record"></i>Add Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i class="ti-control-record"></i>List Admin</a></li>
+
                     </ul>
+                </li> -->
+
+                <!-- <hr class="hr-dashed hr-menu">
+                <li class="menu-label my-2">olders</li>
+
+
+                <li>
+                    <a href=" {{ route('faculte') }}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>List Etudiant</span><span class="badge badge-soft-success menu-arrow">Exemple</span></a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid"
-                            class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i class="ti-control-record"></i>Repord card</a></li>
 
-                        <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
-                                    class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="{{ route('view_add_releve') }}">Add Releve</a></li>
-                                {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
+                    </ul>
+                </li> -->
+                <!-- <li>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
 
-                            </ul>
-                        </li>
-
-                </li>
-            </ul>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);"><i data-feather="lock"
-                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
-                                class="ti-control-record"></i>Add Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i
-                                class="ti-control-record"></i>List Admin</a></li>
-
-                </ul>
-            </li>
-
-            <hr class="hr-dashed hr-menu">
-            <li class="menu-label my-2">olders</li>
-
-
-            <li>
-                <a href=" {{ route('faculte') }}"><i data-feather="layers"
-                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
-                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
-                                class="ti-control-record"></i>Repord card</a></li>
-
-                </ul>
-            </li>
-            <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i
-                                class="ti-control-record"></i>Attestation de reussite</a></li>
-
-                </ul>
-            </li>
+                    </ul>
+                </li> -->
             </ul>
 
-            <div class="update-msg text-center">
-                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
-                    aria-label="Close" aria-hidden="true">
+            <!-- <div class="update-msg text-center">
+                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg" aria-label="Close" aria-hidden="true">
                     <i class="mdi mdi-close"></i>
                 </a>
                 <h5 class="mt-3">Auth.doc</h5>
                 <p class="mb-3">Checks the integrity of the documents, in particular the transcripts or Report Card
                     of the university of yaounde 1</p>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- end left-sidenav-->
@@ -147,16 +142,14 @@
 
 
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             {{-- <span class="">{{ $name }}</span> --}}
 
                             <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
 
-                            <a class="dropdown-item" href="{{ route('signOut') }}"><i data-feather="power"
-                                    class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
+                            <a class="dropdown-item" href="{{ route('signOut') }}"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -229,27 +222,23 @@
                                     <h4>Scan document with Ocr</h4>
                                 </div>
                             </div>
-                            <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog"
-                                aria-labelledby="downloadModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="downloadModalLabel">Télécharger l'application
                                                 Mobile <span> Auth.doc </span></h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
                                             <p>Cliquez sur le lien pour télécharger l'application mobile pour Authentifier avec l ocr
                                                 :</p>
-                                            <p id="downloadLink"><a id="downloadHref" href="#"
-                                                    target="_blank"></a></p>
+                                            <p id="downloadLink"><a id="downloadHref" href="#" target="_blank"></a></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Fermer</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                         </div>
                                     </div>
                                 </div>
@@ -266,12 +255,12 @@
                         <div class="col-one-half">
                             <div class="ocr" onclick="showScanForm()">
 
-                            <a href="{{route('scan_code')}}">
-                                <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
-                                <h4>Scan Qr Code</h4>
-                          
-                            </a>
-        
+                                <a href="{{route('scan_code')}}">
+                                    <img src="assets/images/qrscanner.jpg" alt="OCR Icon">
+                                    <h4>Scan Qr Code</h4>
+
+                                </a>
+
                             </div>
                         </div>
 
@@ -295,8 +284,7 @@
                             <p class="paragraph serif"> </p>
                         </div>
                     </div>
-                    <form method="POST" action="{{ route('webcam.capture') }}" id="scan-form"
-                        style="display: none;">
+                    <form method="POST" action="{{ route('webcam.capture') }}" id="scan-form" style="display: none;">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
@@ -323,15 +311,14 @@
                                         {{-- <div id="image-container" >
                                         </div> --}}
                                         <br />
-                                        <input class="btn btn-primary" type=button value="Scan Qr-code"
-                                            onClick="take_snapshot()">
+                                        <input class="btn btn-primary" type=button value="Scan Qr-code" onClick="take_snapshot()">
                                         <input type="hidden" name="image" class="image-tag">
 
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="col-lg-5"> 
+                            <div class="col-lg-5">
 
                                 <div class="card">
                                     <div class="card-header">
@@ -355,8 +342,7 @@
                                     <!--end card-header-->
                                     <div class="card-body">
                                         <div class="button-items">
-                                            <a class="btn btn-outline-primary popup-youtube"
-                                                href="http://www.youtube.com/watch?v=0O2aH4XLbto">Document?</a>
+                                            <a class="btn btn-outline-primary popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Document?</a>
 
                                         </div>
                                     </div>
@@ -371,8 +357,7 @@
                         </div><!-- container -->
 
                         <footer class="footer text-center text-sm-left">
-                            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
+                            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
                         </footer>
                         <!--end footer-->
                 </div>
@@ -456,11 +441,9 @@
             </script> -->
             <script src="assets/js/jquery-3.3.1.min.js"></script>
             <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
             </script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
             </script>
             <script src="assets/js/jquery.backstretch.min.js"></script>
             <script src="assets/js/wow.min.js"></script>
@@ -481,11 +464,9 @@
             <script src="assets/pages/jquery.Auth.doc.init.js"></script>
             <!-- App js -->
             <script src="assets/js/app.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
             </script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
             </script>
             <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
             <script>
@@ -501,8 +482,7 @@
                 }
 
                 let html5QrcodeScanner = new Html5QrcodeScanner(
-                    "reader", 
-                    {
+                    "reader", {
                         fps: 10,
                         qrbox: {
                             width: 250,

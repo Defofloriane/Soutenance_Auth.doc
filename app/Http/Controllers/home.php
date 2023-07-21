@@ -17,8 +17,7 @@ use GuzzleHttp\Client;
 use  Illuminate\Http\Response;
 use thiagoalessio\TesseractOCR\ImageNotFoundException;
 use Exception;
-use Intervention\Image\ImageManagerStatic as Image;
-use PhpParser\Node\Stmt\Return_;
+
 use Aws\Textract\TextractClient;
 use App\Models\Departement;
 use App\Models\Etudiant;
@@ -109,7 +108,7 @@ class home extends Controller
         $data = $request->all();
         $check = $this->create($data);
          
-        return redirect("login")->withSuccess('You have signed-in');
+        return redirect("view_admin")->withSuccess('admin added successfully');
     }
 
     public function create(array $data)
@@ -136,11 +135,6 @@ class home extends Controller
     }
     public function customLogin(Request $request)
     {
-
-        // $request->validate([
-        //     'email' => 'required',
-        //     'password' => 'required',
-        // ]);
         
         $credentials = $request->only('email','password');
         $email=$request->input('email');
@@ -149,11 +143,9 @@ class home extends Controller
        $user = User::where([
             'email' => $request->email,
             'password' => $request->password,
-            // 'password' => Hash::make($data['password'])
           ])->first();
         if ( $user ) {
-          print("erreur");
-             return redirect("auth_doc")->withSuccess('Login details are  valid');
+             return redirect("view_admin")->withSuccess('Login details are  valid');
             echo("good");
             echo( $request->id);
         }else{

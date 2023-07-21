@@ -42,13 +42,10 @@
               <label for="remember-me" class="checkbox">Remember Me</label>
             </div>
             <button class="button button-primary full-width"  type="submit" type="button">Login</button>
-            {{-- <a href="{{route('auth_doc')}}" class="button button-primary full-width" role="button">Log In</a> --}}
+            <!-- {{-- <a href="{{route('auth_doc')}}" class="button button-primary full-width" role="button">Log In</a> --}} -->
             @include('sweetalert::alert')
           </form>
         </div>
-        {{-- <div class="center max-width-s space-top">
-          <span class="muted">Don't have an account? </span><a href="{{route('signup')}}">Sign Up</a>
-        </div> --}}
       </div>
       <div class="col-one-half middle ">
         <img src="media/content/log.JPG" alt="login" style="width: 90%;">

@@ -254,7 +254,7 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Scan Qr-codw </h4>
+                                    <h4 class="card-title">Scan Qr-code </h4>
                                     <span class="text-muted mb-0">Scan Qr-code here</span>
                                 </div>
                                 <!--end card-header-->
@@ -280,10 +280,10 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Information d'entete du Qr-code</h4>
+                                    <h4 class="card-title"> header information read in the Qr-code</h4>
 
                                     <div id="info-etu">
-                                        <h3>Informations étudiant</h3>
+                                        <h3>Student Information</h3>
                                         <ul>
                                             <li id="nom"><strong>Nom :</strong> Dupont</li>
                                             <li id="pre"><strong>Prénom :</strong> Jean</li>
@@ -307,7 +307,7 @@
                             <!--end card-->
                             <div class="card " id="affirmation">
                                 <div class="card-header">
-                                    <h4 class="card-title">Les differents resultats de votre document affirme que:
+                                    <h4 class="card-title">The various results of your document states that:
                                     </h4>
                                     <h3>
                                         <p id="message"></p>
@@ -404,12 +404,12 @@
                                     const mgp = document.getElementById("mgp");
                                     const decision = document.getElementById("dec");
                                     const numero = document.getElementById("num");
-                                    nom.innerHTML = "<strong>Nom :</strong> " + etudiant.nom;
-                                    prenom.innerHTML = "<strong>Prenom :</strong> " + etudiant.prenom;
-                                    matricule.innerHTML = "<strong>Matricule:</strong> " + etudiant.matricule;
-                                    niveau.innerHTML = "<strong>Niveau :</strong> " + releve.niveau;
-                                    filiere.innerHTML = "<strong>Filiere :</strong> " + releve.filiere;
-                                    numero.innerHTML = "<strong>Numéro du relevé  :</strong> " + releve.id_releve;
+                                    nom.innerHTML = "<strong>Last Name :</strong> " + etudiant.nom;
+                                    prenom.innerHTML = "<strong>First Name:</strong> " + etudiant.prenom;
+                                    matricule.innerHTML = "<strong>Registration:</strong> " + etudiant.matricule;
+                                    niveau.innerHTML = "<strong>Level :</strong> " + releve.niveau;
+                                    filiere.innerHTML = "<strong>Discipline :</strong> " + releve.filiere;
+                                    numero.innerHTML = "<strong>Document number  :</strong> " + releve.id_releve;
                                     mgp.innerHTML = "<strong>Mgp :</strong> " + releve.mgp;
                                     decision.innerHTML = "<strong>" + releve.decision + "</strong>";
                                     let id_releve = document.getElementById("id_releve");
@@ -423,7 +423,7 @@
                                     matri.value = releve.etudiant;
 
                                     let message = document.getElementById("message");
-                                    message.textContent = "Document authentique"
+                                    message.textContent = "Authentic document"
                                     message.style.color = 'green';
 
 

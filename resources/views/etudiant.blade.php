@@ -59,91 +59,86 @@
         <!--end logo-->
         <div class="menu-content h-100" data-simplebar>
             <ul class="metismenu left-sidenav-menu">
-                <li class="menu-label mt-0">Main</li>
+
                 <li>
-                    <a href="javascript: void(0);"> <i data-feather="home"
-                            class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
+                    <a href="{{ route('view_admin') }}">
+                        <i data-feather="user" class="align-self-center menu-icon"></i>
+                        <span>Account</span>
+                        <!-- <span class="menu-arrow">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span> -->
+                    </a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{ route('index') }}"><i
                                     class="ti-control-record"></i>Home</a></li>
+                    </ul> -->
+                </li>
+                <br />
+
+                <li>
+                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                        <span>Students</span>
+                        <!-- <span class="menu-arrow">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span> -->
+                    </a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false"> -->
+                </li>
+                <br />
+                <li>
+                    <a href=" {{ route('faculte') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+
+                        <span>Note</span>
+                        <!-- <span class="menu-arrow">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </span> -->
+                    </a>
+                    <!-- <ul class="nav-second-level" aria-expanded="false"> -->
+                </li>
+
+
+
+                <!-- <li>
+                    <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i class="ti-control-record"></i>Add Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i class="ti-control-record"></i>List Admin</a></li>
+
                     </ul>
+                </li> -->
+
+                <!-- <hr class="hr-dashed hr-menu">
+                <li class="menu-label my-2">olders</li>
+
+
+                <li>
+                    <a href=" {{ route('faculte') }}"><i data-feather="layers" class="align-self-center menu-icon"></i><span>List Etudiant</span><span class="badge badge-soft-success menu-arrow">Exemple</span></a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);"><i data-feather="grid"
-                            class="align-self-center menu-icon"></i><span>Apps</span><span class="menu-arrow"><i
-                                class="mdi mdi-chevron-right"></i></span></a>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i class="ti-control-record"></i>Repord card</a></li>
 
-                        <li>
-                            <a href="javascript: void(0);"><i class="ti-control-record"></i>Auth.doc <span
-                                    class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="{{ route('view_add_releve') }}">Add Releve</a></li>
-                                {{-- <li><a href="apps-project-projects.html">Projects</a></li> --}}
+                    </ul>
+                </li> -->
+                <!-- <li>
+                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
 
-                            </ul>
-                        </li>
-
-                </li>
-            </ul>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);"><i data-feather="lock"
-                        class="align-self-center menu-icon"></i><span>Authentication</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('signup') }}"><i
-                                class="ti-control-record"></i>Add Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('view_admin') }}"><i
-                                class="ti-control-record"></i>List Admin</a></li>
-
-                </ul>
-            </li>
-
-            <hr class="hr-dashed hr-menu">
-            <li class="menu-label my-2">olders</li>
-
-
-            <li>
-                <a href=" {{ route('faculte') }}"><i data-feather="layers"
-                        class="align-self-center menu-icon"></i><span>List Etudiant</span><span
-                        class="badge badge-soft-success menu-arrow">Exemple</span></a>
-            </li>
-
-            <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Search Releve</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('details') }}"><i
-                                class="ti-control-record"></i>Repord card</a></li>
-
-                </ul>
-            </li>
-            <li>
-                <a href="javascript: void(0);"><i data-feather="file-plus"
-                        class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i
-                            class="mdi mdi-chevron-right"></i></span></a>
-                <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i
-                                class="ti-control-record"></i>Attestation de reussite</a></li>
-
-                </ul>
-            </li>
+                    </ul>
+                </li> -->
             </ul>
 
-            <div class="update-msg text-center">
-                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg"
-                    aria-label="Close" aria-hidden="true">
+            <!-- <div class="update-msg text-center">
+                <a href="javascript: void(0);" class="float-right close-btn text-white" data-dismiss="update-msg" aria-label="Close" aria-hidden="true">
                     <i class="mdi mdi-close"></i>
                 </a>
                 <h5 class="mt-3">Auth.doc</h5>
                 <p class="mb-3">Checks the integrity of the documents, in particular the transcripts or Report Card
                     of the university of yaounde 1</p>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- end left-sidenav-->
@@ -383,11 +378,10 @@
                                                                 @csrf
                                                                 <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
                                                                 <input type="hidden" name="matricule" value="{{ $etudiant ->matricule}}" id="matricule ">
-                                                                <input type="hidden" name="niveau" value="{{$niveau}}" id="niveau">
+                                                                <input type="hidden" name="niveau" value="{{$niveau->nom_niveau}}" id="niveau">
                                                                 <input type="hidden" name="type" value="releve" id="type">
                                                                 <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
                                                             </form>
-
 
                                                         </td>
 
@@ -399,7 +393,7 @@
                                                     @endforeach
                                                 </tbody>
                                             </table>
-
+                                            <button id="eltb" class="btn btn-primary mb-3"  data-toggle="modal" data-target="#modalEnregistrementEtudiant" >Add Student</button>  
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -415,7 +409,59 @@
             </div>
             <!--end row-->
         </div>
+<!-- fenetre modal -->
+<div class="modal fade" id="modalEnregistrementEtudiant" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Register a student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formEnregistrementEtudiant" action="{{ route('addStudent') }}" method="post">
+        @csrf
+          <div class="form-group">
+            <label for="nom">Last name</label>
+            <input type="text" class="form-control" id="nom" name="nom" >
+          </div>
+          <div class="form-group">
+            <label for="prenom">First name</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" >
+          </div>
+          <div class="form-group">
+            <label for="matricule">Registration</label>
+            <input type="text" class="form-control" id="matricule" name="matricule" >
+          </div>
+          <div class="form-group">
+            <label for="dateNaissance">Date of birth</label>
+            <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" >
+          </div>
+          <div class="form-group">
+            <label for="lieuNaissance">Place of birth</label>
+            <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance" >
+            <input type="hidden" class="form-control"  name="niveau" value="{{$niveau->id_niveau}}">
+            <input type="hidden" class="form-control"  name="filiere" value="{{$filiere->id_filiere}}">
+          </div>
+          <div class="form-group">
+            <label for="dateNaissance">Academic year</label>
+            <input type="text" class="form-control" id="dateNaissance" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+          </div>
+          <!-- Boutons "Annuler" et "Enregistrer" inclus dans le formulaire -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            <input type="submit" class="btn btn-primary" value="Enregistrer"  > 
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+
+<!-- fin -->
 
     </div>
     </div>
@@ -433,7 +479,7 @@
     </div>
     <!-- end page-wrapper -->
 
-
+   
 
 
     <!-- jQuery  -->
@@ -453,6 +499,22 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+    <script>
+function enregistrerEtudiant() {
+  // Récupérer les valeurs des champs du formulaire
+  var nom = document.getElementById('nom').value;
+  var prenom = document.getElementById('prenom').value;
+  var matricule = document.getElementById('matricule').value;
+  var dateNaissance = document.getElementById('dateNaissance').value;
+  var lieuNaissance = document.getElementById('lieuNaissance').value;
+
+  // Vous pouvez maintenant faire ce que vous voulez avec ces valeurs, par exemple, les envoyer à votre serveur pour les enregistrer dans une base de données.
+
+  // Fermer la modal après l'enregistrement
+  $('#modalEnregistrementEtudiant').modal('hide');
+  alert('Enregist.')
+}
+</script>
 
 </body>
 

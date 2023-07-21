@@ -93,4 +93,6 @@ Route::post('/niveauAttestation',[NiveauControllerAttestation::class,'niveauAtte
 Route::get('/filiereAttestation',[NiveauControllerAttestation::class,'filiereAttestation'])->name('filiereAttestation');
 Route::post('/show_Attestation',[NiveauControllerAttestation::class,'show_Attestation'])->name('show_Attestation');
 Route::get('/encode',[ApiController::class,'encode'])->name('encode');
+Route::post('/addStudent',[EtudiantController::class,'addStudent'])->name('addStudent');
+
 

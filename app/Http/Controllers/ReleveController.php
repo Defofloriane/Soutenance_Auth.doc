@@ -31,6 +31,8 @@ class ReleveController extends Controller
       $niveau = $request->input('niveau');
       $anneeAcademique = $request->input('anneeAcamdemique');
       $filiere = $request->input('filiere');
+      $method=$request->input('radio');
+
       // Recherche des UE correspondantes au niveau
       $request->session()->put('niveau', $niveau);
       $request->session()->put('filiere', $filiere);
@@ -42,14 +44,16 @@ class ReleveController extends Controller
             'niveau' => $niveau,
             'filiere' => $filiere,
          ])->get();
-       return view('add_releve',compact('resultats','listeMatiere'));
 
-      // return response()->json(['code_ue' => $ue->nom_ue, 'credit' => $ue->credit]);
+         $request->session()->put('method', $method);
+       return view('add_releve',compact('resultats','listeMatiere','method'));
+
    }
    public function view_add_releve()
    {
       $listeMatiere=null;
-      return view('add_releve',compact('listeMatiere'));
+      $method=null;
+      return view('add_releve',compact('listeMatiere','method'));
    }
    public function add_releve(Request $request)
    {
@@ -91,7 +95,7 @@ $sum = array_sum(str_split($birthDayDigits));
       $etudiant->date_naissance = $formattedBirthDay;
       $etudiant->lieu_naissance = $placeBirth;
       // Enregistrer l'étudiant dans la base de données
-      $etudiant->save();
+      // $etudiant->save();
       
 
       // Enregistrer l'UE dans la table "ues"
@@ -230,8 +234,9 @@ $sum = array_sum(str_split($birthDayDigits));
 
 
       // Enregistrement du relevé dans la base de données
+
+      $id_new_rel = "000$sum/$initia2/$niveau/FS/ICT/$id_anne"; 
       $releve = new Releve();
-       $id_new_rel = "000$sum/$initia2/$niveau/FS/ICT/$id_anne"; 
       $releve->id_releve = $id_new_rel;// Générez un ID unique pour chaque relevé
       $releve->etudiant = $matricule;
       $releve->decision = $decision_releve; // Définissez la décision appropriée
@@ -239,7 +244,7 @@ $sum = array_sum(str_split($birthDayDigits));
       $releve->niveau = $id_niv;
       $releve->mgp = $formatted_mgp;
       $releve->anneeAcademique = $anneeAcademique;
-      $releve->save();
+      // $releve->save();
 
       // Message de succès
        $request->session()->put('success', 'Le relevé a été ajouté avec succès.');
@@ -247,8 +252,8 @@ $sum = array_sum(str_split($birthDayDigits));
        $releve = Releve::where('id_releve', $id_new_rel)->firstOrFail();
        $donnees= Releve::where(['id_releve'=>$id_new_rel,'etudiant'=>$matricule,'niveau'=>$niveau])->first();
        $data= trim($id_new_rel).trim($matricule).trim($decision_releve).trim("INFORMATION AND COMMUNICATION TECHNOLOGIE").trim($id_niv).trim((float)$formatted_mgp).trim($anneeAcademique);
-      $hmac=hash_hmac('sha256', $data, $secretKey);
-      $hmacInfo=$hmac.' '.$matricule.' '.$id_niv;
+       $hmac=hash_hmac('sha256', $data, $secretKey);
+       $hmacInfo=$hmac.' '.$matricule.' '.$id_niv;
 
        $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
        $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
@@ -420,6 +425,8 @@ $sum = array_sum(str_split($birthDayDigits));
      
       //  return  $encodedData;
    }
+
+
   
    public function import_excel(Request $request)
     {
@@ -436,16 +443,6 @@ $sum = array_sum(str_split($birthDayDigits));
 
         // Vérifiez si un fichier a été téléchargé
         if ($file) {
-            // Définissez le chemin de destination pour le fichier
-            // $destinationPath = storage_path('app/excel');
-        
-            // // Déplacez le fichier vers le dossier de destination
-            // $file->move($destinationPath, $file->getClientOriginalName());
-        
-            // // Obtenez le chemin complet du fichier
-            // $filePath = $destinationPath . '/' . $file->getClientOriginalName();
-        
-            // Utilisez la bibliothèque PhpSpreadsheet pour charger le fichier Excel
             $spreadsheet = IOFactory::load($file);
         
             // Obtenez la feuille active du fichier Excel
