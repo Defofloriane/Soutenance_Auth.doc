@@ -16,7 +16,7 @@
     <nav>
       <a href="#" class="logo" rel="Auth.Doc">  <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm"><span>Auth.Doc</span></a>
       <ul class="inline">
-        <!-- <li><a href="#" class="active">Home</a></li> -->
+        <li><a href="#" class="active">Home</a></li>
         <!-- <li><a href="pricing.html">Pricing</a></li> -->
         <li><a href="{{route('about')}}">About</a></li>
       </ul>

@@ -444,7 +444,7 @@ $sum = array_sum(str_split($birthDayDigits));
         // Vérifiez si un fichier a été téléchargé
         if ($file) {
             $spreadsheet = IOFactory::load($file);
-        
+      
             // Obtenez la feuille active du fichier Excel
             $sheet = $spreadsheet->getActiveSheet();
         
@@ -471,7 +471,8 @@ $sum = array_sum(str_split($birthDayDigits));
              
               $matricule = $studentData[0];
               $note = $studentData[3];
-              $etudiant = Etudiant::where(['matricule'=> $matricule])->first();             
+              $etudiant = Etudiant::where(['matricule'=> $matricule])->first();
+             
               $evaluation = new Evaluation();
               $evaluation->type_evaluation = $evaluationtype;
               if($evaluationtype=='CC' && $chooseMat=='OUI'){
@@ -488,12 +489,25 @@ $sum = array_sum(str_split($birthDayDigits));
                }
                elseif($evaluationtype=='SN' && $chooseMat=='NON'){
                 $evaluation->noteSur=70;
+                
                }
-              $evaluation->etudiant=$etudiant->matricule;
+             $listEtudiant=Evaluation::where(['note_evaluation'=>$note,'type_evaluation'=>$evaluationtype,'niveau'=>$niveau,'etudiant'=>$matricule,'ue'=>$matiere,'filiere'=>$filiere,'noteSur'=>$evaluation->noteSur,])->first();
+             if(!$listEtudiant){
+              $evaluation->etudiant=$etudiant->matricule;        
               $evaluation->ue=$matiere;
               $evaluation->semestre=$semestre;
               $evaluation->note_evaluation=$note;
+              $evaluation->niveau=$niveau;
+              $evaluation->filiere=$filiere;
               $evaluation->save();       
+            }
+            else{
+               $eval=Evaluation::where(['note_evaluation'=>$note,'type_evaluation'=>$evaluationtype,'niveau'=>$niveau,'etudiant'=>$matricule,'ue'=>$matiere,'filiere'=>$filiere,'noteSur'=>$evaluation->noteSur,])->first()->id;
+                $eval=Evaluation::find($eval);
+               // dd($eval);
+               $eval->note_evaluation=$note;
+               $eval->save();
+            }
 
               $noteTp=Evaluation::where(['etudiant'=>$etudiant->matricule,'type_evaluation'=>'TP','ue'=>$matiere])->first();
               $noteCC=Evaluation::where(['etudiant'=>$etudiant->matricule,'type_evaluation'=>'CC','ue'=>$matiere])->first();
@@ -508,65 +522,65 @@ $sum = array_sum(str_split($birthDayDigits));
                
             //   print_r($note_total);
                // Enregistrement de la note dans la base de données
-         $notes = new Note();
-         $notes->etudiant = $matricule;
-         $notes->ue = $matiere;
-         $notes->note = $note_total;
-         // dd($note_total);
-         // Déterminez la décision et la mention en fonction de la note totale
-         // Par exemple, si la note totale est supérieure ou égale à un certain seuil, vous pouvez définir la décision et la mention comme suit :
-         if ($note_total >= 80) {
+             $notes = new Note();
+             $notes->etudiant = $matricule;
+             $notes->ue = $matiere;
+             $notes->note = $note_total;
+            // dd($note_total);
+            // Déterminez la décision et la mention en fonction de la note totale
+            // Par exemple, si la note totale est supérieure ou égale à un certain seuil, vous pouvez définir la décision et la mention comme suit :
+           if ($note_total >= 80) {
             $notes->decision = 'CA';
             $notes->mention = 'A';
             $quantitePoints = 4;
-         } elseif ($note_total >= 75 && $note_total < 80) {
+          } elseif ($note_total >= 75 && $note_total < 80) {
             $notes->decision = 'CA';
             $notes->mention = 'A-';
             $quantitePoints = 3.70;
-         } elseif ($note_total >= 70 && $note_total < 75) {
+          } elseif ($note_total >= 70 && $note_total < 75) {
             $notes->decision = 'CA';
             $notes->mention = 'B+';
             $quantitePoints = 3.30;
-         } elseif ($note_total >= 65 && $note_total < 70) {
+          } elseif ($note_total >= 65 && $note_total < 70) {
             $notes->decision = 'CA';
             $notes->mention = 'B';
             $quantitePoints = 3;
-         } elseif ($note_total >= 60 && $note_total < 70) {
+          } elseif ($note_total >= 60 && $note_total < 70) {
             $notes->decision = 'CA';
             $notes->mention = 'B-';
             $quantitePoints = 2.70;
-         } elseif ($note_total >= 55 && $note_total < 60) {
+          } elseif ($note_total >= 55 && $note_total < 60) {
             $notes->decision = 'CA';
             $notes->mention = 'C+';
             $quantitePoints =2.30;
-         } elseif ($note_total >= 50 && $note_total < 55) {
+          } elseif ($note_total >= 50 && $note_total < 55) {
             $notes->decision = 'CA';
             $notes->mention = 'C';
             $quantitePoints =2;
-         } elseif ($note_total >= 45 && $note_total < 50) {
+          } elseif ($note_total >= 45 && $note_total < 50) {
             $notes->decision = 'CANT';
             $notes->mention = 'C-';
             $quantitePoints =1.70;
-         } elseif ($note_total >= 40 && $note_total < 45) {
+          } elseif ($note_total >= 40 && $note_total < 45) {
             $notes->decision = 'CANT';
             $notes->mention = 'D+';
             $quantitePoints =1.30;
-         } elseif ($note_total >= 35 && $note_total < 40) {
+          } elseif ($note_total >= 35 && $note_total < 40) {
             $notes->decision = 'CANT';
             $notes->mention = 'D';
             $quantitePoints =1;
-         } elseif ($note_total >= 30 && $note_total < 35) {
+          } elseif ($note_total >= 30 && $note_total < 35) {
             $notes->decision = 'Echec';
             $notes->mention = 'E';
             $quantitePoints =0;
-         } else {
+          } else {
             $notes->decision = 'Echec';
             $notes->mention = 'F';
             $quantitePoints =0;
-         }
-         $notes->semestre = $semestre;
-         // dd($notes);
-         $notes->annee=2022;
+          }
+           $notes->semestre = $semestre;
+          // dd($notes);
+          $notes->annee=2022;
 
           $notes->save();
                       
@@ -576,8 +590,12 @@ $sum = array_sum(str_split($birthDayDigits));
         // Redirigez ou affichez une réponse appropriée après l'importation
         // par exemple :
         // return redirect()->back()->with('success', 'Le fichier Excel a été importé avec succès.');
-         $resultats=null;$listeMatiere=null;
-         return view('add_releve',compact('resultats','listeMatiere'));
+         
+         $listEtudiant=Evaluation::where(['type_evaluation'=>$evaluationtype,'niveau'=>$niveau,'ue'=>$matiere,'filiere'=>$filiere])->get();
+         $resultats=null;$listeMatiere=null;$method=null;
+         $etudiants=Etudiant::all();
+      //   return response()->json($listEtudiant);
+         return view('add_releve',compact('resultats','listeMatiere','method','listEtudiant','etudiants'));
       }
 
 }

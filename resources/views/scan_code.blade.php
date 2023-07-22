@@ -322,7 +322,7 @@
                                         <input type="hidden" name="niveau" value="" id="niveau">
                                         <input type="hidden" name="matricule" value="" id="matricule">
                                         <input type="hidden" name="type" value="" id="type">
-                                        <button class="btn btn-sm btn-soft-primary" type="submit">Voir le document</button>
+                                        <button class="btn btn-sm btn-soft-primary" type="submit">Get document</button>
                                     </form>
                             
                               

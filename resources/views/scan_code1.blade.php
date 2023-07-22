@@ -289,7 +289,7 @@
                                         <input type="hidden" name="id_releve" value="" id="id_releve">
                                         <input type="hidden" name="niveau" value="" id="niveau">
                                         <input type="hidden" name="matricule" value="" id="matricule">
-                                        <button class="btn btn-sm btn-soft-primary" type="submit">Voir le releve</button>
+                                        <button class="btn btn-sm btn-soft-primary" type="submit">Get document</button>
                                     </form>
 
                                     <!-- <form method="POST" action="{{ route('show') }}">

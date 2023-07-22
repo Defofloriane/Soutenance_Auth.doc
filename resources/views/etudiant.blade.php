@@ -336,11 +336,7 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel" aria-labelledby="Profile_Post_tab">
                             <div class="row">
-
-
-
                                 <div class="card  mx-auto">
-
                                     <div class="card-body">
                                         <ul class="list-unstyled mb-0">
                                             <div class="card-header">
@@ -364,14 +360,14 @@
 
 
                                                 <tbody>
-                                                @foreach($etudiants as $etudiant)
-                                                @foreach($releves as $releve)
-                                                @if($releve->etudiant === $etudiant->matricule)
+                                                    @foreach($etudiants as $etudiant)
+                                                    @foreach($releves as $releve)
+                                                    @if($releve->etudiant === $etudiant->matricule)
                                                     <tr>
                                                         <td>{{ $etudiant ->matricule }}</td>
                                                         <td>{{ $etudiant ->nom}}</td>
                                                         <td>{{ $etudiant ->prenom}}</td>
-                                                       
+
 
                                                         <td>
                                                             <form method="POST" action="{{ route('show') }}">
@@ -388,12 +384,23 @@
                                                     </tr>
 
                                                     @endif
-                                                   
+
                                                     @endforeach
                                                     @endforeach
                                                 </tbody>
                                             </table>
-                                            <button id="eltb" class="btn btn-primary mb-3"  data-toggle="modal" data-target="#modalEnregistrementEtudiant" >Add Student</button>  
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <button id="eltb" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalEnregistrementEtudiant">Add Student</button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <button id="eltb" class="btn btn-secondary mb-3" data-toggle="modal" data-target="#myModal">Add Many Student With Excel file</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -409,59 +416,90 @@
             </div>
             <!--end row-->
         </div>
-<!-- fenetre modal -->
-<div class="modal fade" id="modalEnregistrementEtudiant" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTitle">Register a student</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="formEnregistrementEtudiant" action="{{ route('addStudent') }}" method="post">
-        @csrf
-          <div class="form-group">
-            <label for="nom">Last name</label>
-            <input type="text" class="form-control" id="nom" name="nom" >
-          </div>
-          <div class="form-group">
-            <label for="prenom">First name</label>
-            <input type="text" class="form-control" id="prenom" name="prenom" >
-          </div>
-          <div class="form-group">
-            <label for="matricule">Registration</label>
-            <input type="text" class="form-control" id="matricule" name="matricule" >
-          </div>
-          <div class="form-group">
-            <label for="dateNaissance">Date of birth</label>
-            <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" >
-          </div>
-          <div class="form-group">
-            <label for="lieuNaissance">Place of birth</label>
-            <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance" >
-            <input type="hidden" class="form-control"  name="niveau" value="{{$niveau->id_niveau}}">
-            <input type="hidden" class="form-control"  name="filiere" value="{{$filiere->id_filiere}}">
-          </div>
-          <div class="form-group">
-            <label for="dateNaissance">Academic year</label>
-            <input type="text" class="form-control" id="dateNaissance" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
-          </div>
-          <!-- Boutons "Annuler" et "Enregistrer" inclus dans le formulaire -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <input type="submit" class="btn btn-primary" value="Enregistrer"  > 
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Fenêtre Modale -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- En-tête de la Fenêtre Modale -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Form to Send an Excel File</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Corps de la Fenêtre Modale -->
+                    <div class="modal-body">
+                        <!-- Formulaire pour envoyer le fichier Excel -->
+                        <form action="{{ route('addStudent_excel') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <label for="dateNaissance">Academic year</label>
+                                <input type="text" class="form-control" id="dateNaissance" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+                            </div>
+                            <div class="form-group">
+                                <label for="fileInput">Select an Excel file:</label>
+                                <input type="file" class="form-control-file" id="fileInput" name="file">
+                                <input type="hidden" class="form-control" name="niveau" value="{{$niveau->id_niveau}}">
+                                <input type="hidden" class="form-control" name="filiere" value="{{$filiere->id_filiere}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fenetre modal -->
+        <div class="modal fade" id="modalEnregistrementEtudiant" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Register a student</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formEnregistrementEtudiant" action="{{ route('addStudent') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="nom">Last name</label>
+                                <input type="text" class="form-control" id="nom" name="nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">First name</label>
+                                <input type="text" class="form-control" id="prenom" name="prenom">
+                            </div>
+                            <div class="form-group">
+                                <label for="matricule">Registration</label>
+                                <input type="text" class="form-control" id="matricule" name="matricule">
+                            </div>
+                            <div class="form-group">
+                                <label for="dateNaissance">Date of birth</label>
+                                <input type="date" class="form-control" id="dateNaissance" name="dateNaissance">
+                            </div>
+                            <div class="form-group">
+                                <label for="lieuNaissance">Place of birth</label>
+                                <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance">
+                                <input type="hidden" class="form-control" name="niveau" value="{{$niveau->id_niveau}}">
+                                <input type="hidden" class="form-control" name="filiere" value="{{$filiere->id_filiere}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dateNaissance">Academic year</label>
+                                <input type="text" class="form-control" id="dateNaissance" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+                            </div>
+                            <!-- Boutons "Annuler" et "Enregistrer" inclus dans le formulaire -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <input type="submit" class="btn btn-primary" value="Enregistrer">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-<!-- fin -->
+        <!-- fin -->
 
     </div>
     </div>
@@ -479,7 +517,7 @@
     </div>
     <!-- end page-wrapper -->
 
-   
+
 
 
     <!-- jQuery  -->
@@ -500,21 +538,21 @@
     <!-- App js -->
     <script src="assets/js/app.js"></script>
     <script>
-function enregistrerEtudiant() {
-  // Récupérer les valeurs des champs du formulaire
-  var nom = document.getElementById('nom').value;
-  var prenom = document.getElementById('prenom').value;
-  var matricule = document.getElementById('matricule').value;
-  var dateNaissance = document.getElementById('dateNaissance').value;
-  var lieuNaissance = document.getElementById('lieuNaissance').value;
+        function enregistrerEtudiant() {
+            // Récupérer les valeurs des champs du formulaire
+            var nom = document.getElementById('nom').value;
+            var prenom = document.getElementById('prenom').value;
+            var matricule = document.getElementById('matricule').value;
+            var dateNaissance = document.getElementById('dateNaissance').value;
+            var lieuNaissance = document.getElementById('lieuNaissance').value;
 
-  // Vous pouvez maintenant faire ce que vous voulez avec ces valeurs, par exemple, les envoyer à votre serveur pour les enregistrer dans une base de données.
+            // Vous pouvez maintenant faire ce que vous voulez avec ces valeurs, par exemple, les envoyer à votre serveur pour les enregistrer dans une base de données.
 
-  // Fermer la modal après l'enregistrement
-  $('#modalEnregistrementEtudiant').modal('hide');
-  alert('Enregist.')
-}
-</script>
+            // Fermer la modal après l'enregistrement
+            $('#modalEnregistrementEtudiant').modal('hide');
+            alert('Enregist.')
+        }
+    </script>
 
 </body>
 

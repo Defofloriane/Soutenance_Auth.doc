@@ -86,7 +86,7 @@
                 </li>
                 <br />
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
 
                         <span>Note</span>
                         <!-- <span class="menu-arrow">
