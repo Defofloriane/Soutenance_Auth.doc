@@ -40,33 +40,6 @@
             border-color: #5c5cff;
         }
     </style>
-    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    {{-- <script>
-        $(document).ready(function() {
-            // Masquer le formulaire par défaut
-            $('form#edit-admin').addClass('d-none');
-            
-            // Afficher le formulaire lorsqu'on clique sur le bouton "Update"
-            $('button.update-btn').click(function() {
-                $('form#edit-admin').removeClass('d-none');
-            });
-        });
-    </script> --}}
-    <!-- srcipt de suppression--->
-    <script>
-        document.querySelectorAll('[data-confirm]').forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                var message = this.getAttribute('data-confirm');
-                if (confirm(message)) {
-                    var form = this.closest('form');
-                    form.submit();
-                }
-            });
-        });
-    </script>
-
-
 </head>
 
 <body class="dark-sidenav">
@@ -103,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>
@@ -156,10 +129,10 @@
 
                         </i><span>Attestation</span>
                         <!-- < span class="menu-arrow"> -->
-                            <!-- <i class="mdi mdi-chevron-right"></i> -->
-                            <!-- </span> -->
+                        <!-- <i class="mdi mdi-chevron-right"></i> -->
+                        <!-- </span> -->
                     </a>
- 
+
                 </li>
             </ul>
 
@@ -181,7 +154,7 @@
         <div class="topbar">
             <!-- Navbar -->
             <nav class="navbar-custom">
-              
+               
             <ul class="list-unstyled topbar-nav mb-0">
                     <li>
                         <button class="nav-link button-menu-mobile">
@@ -195,6 +168,9 @@
                         </div>
                     </li>
                 </ul>
+                <!--end topbar-nav-->
+
+
             </nav>
             <!-- end navbar-->
         </div>
@@ -247,103 +223,128 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel" aria-labelledby="Profile_Post_tab">
                             <div class="row">
-
-
-
                                 <div class="card  mx-auto">
-
                                     <div class="card-body">
                                         <ul class="list-unstyled mb-0">
                                             <div class="card-header">
-                                                <h4 class="card-title">List Administrator</h4>
+                                                <h4 class="card-title">Student's global information</h4>
                                                 <p class="text-muted mb-0">
-                                                    The List of different administrators.You can change or Delete an administrator if you have the rigth.
+                                                    some summary information of the students present in the database, your Last Name ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
                                                 </p>
                                             </div>
                                             <!--end card-header-->
+                                            <div class="card-body bootstrap-select-1">
+                                    <form method="POST" action="{{ route('get_ue_credit') }}">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label class="mb-3">Filiere</label>
+                                                <select id="filiere_select" name="filiere"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
+
+                                                    <option value="ICT4D">ICT4D</option>
+                                                    <option value="INFO">INFO</option>
+                                                    <option value="MATHS">MATHS</option>
+                                                    <option value="PHYSIQUE">PHYSIQUE</option>
+                                                    <option value="CHIMIE">CHIMIE</option>
+                                                    <option value="BIOS">BIOS</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="mb-3" for="niveau">Level</label>
+                                                <select id="niveau" name="niveau"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
+                                                    <option value="L1"> L1</option>
+                                                    <option value="L2"> L2</option>
+                                                    <option value="L3"> L3</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <label class="mb-3" for="anneeAcademique">Academic year</label>
+                                                <input type="text" class="form-control" id="anneeAcademique"
+                                                    name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+
+                                            </div> <!-- end col -->
+                                            <div class="col-md-3">
+                                                <label class="mb-3">Addition Method</label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="radio1" name="radio"
+                                                        value="Excel">
+                                                    <label for="radio1">Excel</label>
+                                                    <input type="radio" id="radio2" name="radio"
+                                                        value="Manuel">
+                                                    <label for="radio2">Manual</label>
+                                                </div>
+                                            </div>
+
+                                        </div><!-- end row -->
+                                        <button id="eltb" class="btn btn-primary mb-3" type="submit">
+                                            validate</button>
+                                    </form>
+
+                                </div>
 
                                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
                                                     <tr>
+                                                        <th> Matricule</th>
                                                         <th> Name</th>
-                                                        <th>Email</th>
-                                                        <th>Change</th>
-                                                        <th>Delete</th>
+                                                        <th> FirstName</th>
+                                                        <th>Check</th>
 
                                                     </tr>
                                                 </thead>
 
 
                                                 <tbody>
-
-                                                    @foreach($admins as $admin)
+                                                    @if(isset($etudiants))
+                                                    @foreach($etudiants as $etudiant)
+                                                    @foreach($releves as $releve)
+                                                    @if($releve->etudiant === $etudiant->matricule)
                                                     <tr>
-                                                        <td>{{$admin->name}} </td>
-                                                        <td> {{$admin->email}}</td>
+                                                        <td>{{ $etudiant ->matricule }}</td>
+                                                        <td>{{ $etudiant ->nom}}</td>
+                                                        <td>{{ $etudiant ->prenom}}</td>
+
 
                                                         <td>
-                                                            <form>
+                                                            <form method="POST" action="{{ route('detail_student') }}">
                                                                 @csrf
-                                                                {{-- <button class="edit-button btn-sm btn-soft-primary"  type="submit">Update</button> --}}
-                                                                <button class="btn btn-sm btn-soft-primary edit-button" data-admin-id="{{ $admin->id }}">Update</button>
-
-
-                                                                <!-- Champs du formulaire ici -->
-                                                                {{-- <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}"> --}}
-
+                                                                <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
+                                                                <input type="hidden" name="matricule" value="{{ $etudiant ->matricule}}" id="matricule ">
+                                                                <input type="hidden" name="niveau" value="{{$niveau->id_niveau}}" id="niveau">
+                                                                <input type="hidden" name="filiere" value="{{$filiere->id_filiere}}" id="filiere">
+                                                                <input type="hidden" name="type" value="releve" id="type">
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">retail</button>
                                                             </form>
-
-
-                                                        </td>
-
-                                                        <td>
-                                                            <form method="POST" action="{{ route('admin_delete', $admin->id) }}">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button class="btn btn-sm btn-soft-danger" type="submit" data-confirm="Are you sure you want to delete this admin?">Delete</button>
-                                                            </form>
-
-
 
                                                         </td>
 
                                                     </tr>
-                                                    @endforeach
 
+                                                    @endif
+
+                                                    @endforeach
+                                                    @endforeach
+                                                    @endif
                                                 </tbody>
                                             </table>
-                                            <button id="eltb" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalEnregistrementEtudiant">Add Administrator</button>
-                                            {{-- <form id="edit-form" method="POST" action="{{ route('admin_update', $admin->id) }}" class="d-none"> --}}
-                                            @foreach ($admins as $admin)
-                                            <form id="edit-form-{{ $admin->id }}" method="POST" action="{{ route('admin_update', $admin->id) }}" class="d-none">
 
-                                                @csrf
-                                                @method('PUT')
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <button id="eltb" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalEnregistrementEtudiant">Add Student</button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <button id="eltb" class="btn btn-secondary mb-3" data-toggle="modal" data-target="#myModal">Add Many Student With Excel file</button>
 
-                                                <div class="form-group">
-                                                    <label for="name">Name:</label>
-                                                    <input type="text" class="form-control" id="name" name="name" value="{{ $admin->name }}">
+                                                    </div>
                                                 </div>
-
-                                                <div class="form-group">
-                                                    <label for="email">Email:</label>
-                                                    <input type="email" class="form-control" id="email" name="email" value="{{ $admin->email }}">
-                                                </div>
-
-                                                <button class="btn btn-sm btn-soft-primary" data-admin-id="{{ $admin->id }}">Update</button>
-
-                                            </form>
-                                            @endforeach
-
-
-
-                                            @if (session('success'))
-                                            <div class="alert alert-success">
-                                                {{ session('success') }}
                                             </div>
-                                            @endif
-
-
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -359,48 +360,81 @@
             </div>
             <!--end row-->
         </div>
+        <!-- Fenêtre Modale -->
+        
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- En-tête de la Fenêtre Modale -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Form to Send an Excel File</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Corps de la Fenêtre Modale -->
+                    <div class="modal-body">
+                        <!-- Formulaire pour envoyer le fichier Excel -->
+                        <form action="{{ route('addStudent_excel') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group">
+                                <label for="dateNaissance">Academic year</label>
+                                <input type="text" class="form-control" id="dateNaissance" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+                            </div>
+                            <div class="form-group">
+                                <label for="fileInput">Select an Excel file:</label>
+                                <input type="file" class="form-control-file" id="fileInput" name="file">
+                                <input type="hidden" class="form-control" name="niveau" value="{{$niveau->id_niveau}}">
+                                <input type="hidden" class="form-control" name="filiere" value="{{$filiere->id_filiere}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- fenetre modal -->
         <div class="modal fade" id="modalEnregistrementEtudiant" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalTitle">Add administrator</h5>
+                        <h5 class="modal-title" id="modalTitle">Register a student</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="formEnregistrementEtudiant" action="{{route('customRegistration')}}" method="post">
+                        <form id="formEnregistrementEtudiant" action="{{ route('addStudent') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="nom">Last name</label>
-                                <input type="text" class="form-control" id="nom" name="name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="text" class="form-control" id="nom" name="nom">
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="prenom">First name</label>
+                                <input type="text" class="form-control" id="prenom" name="prenom">
                             </div>
                             <div class="form-group">
-                                <label for="lieuNaissance">Rule</label>
-                                <select class="form-control" id="rule" name="rule" required>
-                                    <!-- Options de la liste déroulante -->
-                                    <!-- <option value=" "></option> -->
-                                    <option value="note ">note administrator</option>
-                                    <option value="student">student administrator</option>
-                                    <option value="super">super administrator</option>
-                                    <!-- Ajoutez d'autres options de règles si nécessaire -->
-                                </select>
+                                <label for="matricule">Registration</label>
+                                <input type="text" class="form-control" id="matricule" name="matricule">
                             </div>
-
+                            <div class="form-group">
+                                <label for="dateNaissance">Date of birth</label>
+                                <input type="date" class="form-control" id="dateNaissance" name="dateNaissance">
+                            </div>
+                            <div class="form-group">
+                                <label for="lieuNaissance">Place of birth</label>
+                                <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance">
+                                <input type="hidden" class="form-control" name="niveau" value="{{$niveau->id_niveau}}">
+                                <input type="hidden" class="form-control" name="filiere" value="{{$filiere->id_filiere}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dateNaissance">Academic year</label>
+                                <input type="text" class="form-control" id="dateNaissance" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+                            </div>
                             <!-- Boutons "Annuler" et "Enregistrer" inclus dans le formulaire -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <input type="submit" class="btn btn-primary" value="Add">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                <input type="submit" class="btn btn-primary" value="Enregistrer">
                             </div>
                         </form>
                     </div>
@@ -420,7 +454,7 @@
 
     <footer class="footer text-center text-sm-left">
         {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                    class="mdi mdi-heart text-danger"></i> Groupe 6</span> --}}
+                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span> --}}
     </footer>
     <!--end footer-->
     </div>
@@ -428,23 +462,6 @@
     </div>
     <!-- end page-wrapper -->
 
-
-
-    <script>
-        const editButtons = document.querySelectorAll('.edit-button');
-
-        editButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                const adminId = this.getAttribute('data-admin-id');
-                const editForm = document.querySelector(`#edit-form-${adminId}`);
-                const formAction = editForm.getAttribute('action');
-                const newFormAction = formAction.replace(`${adminId}`, adminId);
-                editForm.setAttribute('action', newFormAction);
-                editForm.classList.remove('d-none');
-            });
-        });
-    </script>
 
 
 
@@ -465,6 +482,22 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+    <script>
+        function enregistrerEtudiant() {
+            // Récupérer les valeurs des champs du formulaire
+            var nom = document.getElementById('nom').value;
+            var prenom = document.getElementById('prenom').value;
+            var matricule = document.getElementById('matricule').value;
+            var dateNaissance = document.getElementById('dateNaissance').value;
+            var lieuNaissance = document.getElementById('lieuNaissance').value;
+
+            // Vous pouvez maintenant faire ce que vous voulez avec ces valeurs, par exemple, les envoyer à votre serveur pour les enregistrer dans une base de données.
+
+            // Fermer la modal après l'enregistrement
+            $('#modalEnregistrementEtudiant').modal('hide');
+            alert('Enregist.')
+        }
+    </script>
 
 </body>
 

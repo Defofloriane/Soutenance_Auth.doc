@@ -76,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>
@@ -170,14 +170,14 @@
                     </li>
                 </ul>
                 <ul class="list-unstyled topbar-nav float-right mb-0">
-                    <li class="dropdown hide-phone">
+                    <!-- <li class="dropdown hide-phone">
                         <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
                             href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i data-feather="search" class="topbar-icon"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right dropdown-lg p-0">
-                            <!-- Top Search Bar -->
+                           
                             <div class="app-search-topbar">
                                 <form action="#" method="get">
                                     <input type="search" name="search" class="from-control top-search mb-0"
@@ -186,7 +186,7 @@
                                 </form>
                             </div>
                         </div>
-                    </li>
+                  </li> -->
 
 
 
@@ -257,9 +257,9 @@
                                             <div class="card-header">
                                                 <h4 class="card-title">Student's global information</h4>
                                                 <p class="text-muted mb-0">
-                                                    some summary information of the students present in the database,
+                                                    <!-- some summary information of the students present in the database,
                                                     your Last Name ,FirstName, Matricule, Level, Filiere, MGP,
-                                                    Decision;Anne Scolaire
+                                                    Decision;Anne Scolaire -->
                                                 </p>
                                             </div>
                                             <!--end card-header-->

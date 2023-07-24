@@ -76,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>

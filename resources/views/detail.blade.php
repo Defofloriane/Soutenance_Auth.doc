@@ -331,28 +331,13 @@
                                                             <input type="hidden" name="niveau" value="{{$niveau->nom_niveau}}" id="niveau">
                                                             <input type="hidden" name="filiere" value="{{$filiere->id_filiere}}" id="filiere">
                                                             <input type="hidden" name="type" value="releve" id="type">
-
+                                                            @if(isset($note))
                                                             <button type="submit" id="eltb" class="btn btn-primary mb-3">Get Transcript</button>
-
+                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>
-                                                <div class="col">
-                                                    <!-- etudiantAttestation -->
-                                                    @if($niveau->id_niveau=='L3')
-                                                    <div class="col">
-
-                                                    <form method="POST" action="{{ route('show_Attestation') }}">
-                                                                @csrf
-                                                                <!-- <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
-                                                                <input type="hidden" name="matricule" value="{{ $etudiant ->matricule}}" id="matricule ">
-                                                                <input type="hidden" name="niveau" value="{{ $niveau}}" id="niveau"> -->
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Get Attestation</button>
-                                                            </form>
-                                                    </div>
-                                                    @endif
-
-                                                </div>
+                                            
                                             </div>
                                     </div>
                                 </div>
@@ -387,7 +372,7 @@
 
     <footer class="footer text-center text-sm-left">
         {{-- &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
-                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span> --}}
+                    class="mdi mdi-heart text-danger"></i> by groupe 6</span> --}}
     </footer>
     <!--end footer-->
     </div>

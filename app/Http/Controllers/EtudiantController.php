@@ -17,13 +17,23 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx\Rels;
 class EtudiantController extends Controller
 {
     public function index(Request $request){
-        $niv_id=$request->input('id_niveau');
+        $niv_id=$request->input('niveau');
         $fil_id=$request->input('filiere');
+        // dd($request->all());
+        if(isset($niv_id) && isset($fil_id)){
         $niveau=Niveau::where('id_niveau',$niv_id)->first();
         $filiere=Filiere::where('id_filiere',$fil_id)->first();
          $releves=Releve::where(['niveau'=>$niveau->nom_niveau, 'filiere'=>$filiere->nom_filiere])->get(); 
          $etudiants=Etudiant::all();
          return view('etudiant',compact('etudiants','niveau','releves','filiere'));
+        }
+        else {
+            return redirect()->back()->with('error', 'Un étudiant avec les mêmes informations existe déjà.');
+        }
+    }
+
+    public function etud(){
+        return view('etudiant');
     }
 
     public function addStudent(Request $request){

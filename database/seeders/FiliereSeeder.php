@@ -37,8 +37,38 @@ class FiliereSeeder extends Seeder
                 'departement'=> $depMath
             ]
             ];
+            $depPhy=Departement::where(['id_departement'=>'depPhy'])->firstOrFail()->id_departement;
+            $filierePhy=[
+                [
+                    'id_filiere' => 'PHY',
+                    'nom_filiere' => 'PHYSIQUE',
+                    'departement'=> $depPhy
+                ]
+                ];
+                $depChim=Departement::where(['id_departement'=>'depChim'])->firstOrFail()->id_departement;
+                $filiereChim=[
+                    [
+                        'id_filiere' => 'CHIM',
+                        'nom_filiere' => 'CHIMIE',
+                        'departement'=> $depChim
+                    ]
+                    ];
+                    Filiere::insert($filiereInfo);
+                    Filiere::insert($filiereMath);
+                    Filiere::insert($filiereChim);
+                    Filiere::insert($filierePhy);
 
-            Filiere::insert($filiereInfo);
-            Filiere::insert($filiereMath);
+                    $depBios=Departement::where(['id_departement'=>'depBios'])->firstOrFail()->id_departement;
+                    $filiereChim=[
+                        [
+                            'id_filiere' => 'BIOS',
+                            'nom_filiere' => 'BIOSCIENCE',
+                            'departement'=> $depBios
+                        ]
+                        ];
+                        Filiere::insert($filiereChim);
+
+
+          
     }
 }
