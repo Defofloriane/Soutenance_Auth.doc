@@ -322,12 +322,9 @@
                                         <input type="hidden" name="niveau" value="" id="niveau">
                                         <input type="hidden" name="matricule" value="" id="matricule">
                                         <input type="hidden" name="type" value="" id="type">
-                                        <button class="btn btn-sm btn-soft-primary" type="submit">Get document</button>
+                                        <button class="btn btn-sm btn-soft-primary" type="submit">Verify</button>
                                     </form>
-                            
-                              
-        
-
+                        
                                 </div>
                                 <!--end card-body-->
                             </div>
@@ -379,7 +376,7 @@
                     // alert(decodedText);
                     $('#result').val(decodedText);
                     let id = decodedText;
-                    alert(decodedText);
+                    console.log(decodedText);
                     html5QrcodeScanner.clear().then(_ => {
                         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                         $.ajax({
@@ -425,16 +422,19 @@
                                     let message = document.getElementById("message");
                                     message.textContent = "Authentic document"
                                     message.style.color = 'green';
-
-
                                     document.getElementById("mon-formulaire").style.display = "block";
 
                                 } else if (response.status == 400) {
                                     let message = document.getElementById("message");
                                     message.style.color = 'red';
                                     message.textContent = "Document non authentique"
-                                } else {
-                                    alert('error');
+                                    document.getElementById("mon-formulaire").style.display = "none";
+                                } else if(response.status == 402) {
+                                    // alert('Impossible de dechiffrer les informations contenues dans le Qr code!');
+                                    let message = document.getElementById("message");
+                                    message.style.color = 'red';
+                                    message.textContent = "Impossible to decipher the information contained in the Qr code!"
+                                    document.getElementById("mon-formulaire").style.display = "none";
                                 }
 
                             }
@@ -464,6 +464,7 @@
                 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
                 function scanner() {
+                    document.getElementById("mon-formulaire").style.display = "none";
                     let html5QrcodeScanner = new Html5QrcodeScanner(
                         "reader", {
                             fps: 10,
