@@ -92,6 +92,8 @@ Route::get('/archive',[ArchiveController::class,'index'])->name('archive');
 Route::post('/niveauAttestation',[NiveauControllerAttestation::class,'niveauAttestation'])->name('niveauAttestation');
 Route::get('/filiereAttestation',[NiveauControllerAttestation::class,'filiereAttestation'])->name('filiereAttestation');
 Route::post('/show_Attestation',[NiveauControllerAttestation::class,'show_Attestation'])->name('show_Attestation');
+Route::get('/view_attestation_phone', [NiveauControllerAttestation::class,'view_attestation_phone'])->name('view_attestation_phone');
+
 Route::get('/encode',[ApiController::class,'encode'])->name('encode');
 Route::post('/addStudent',[EtudiantController::class,'addStudent'])->name('addStudent');
 Route::post('/addStudent_excel',[EtudiantController::class,'etudiant'])->name('addStudent_excel');

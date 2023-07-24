@@ -85,4 +85,14 @@ public function show_Attestation(Request $request)
         
    
     }
+    public function view_attestation_phone(Request $request)
+    {
+        return view("view_attestation_phone");
+        
+        // return $hmacInfo;
+        
+        // Passez le tableau contenant l'étudiant, le relevé et les informations HMAC à la vue de détails
+        
+   
+    }
 }
