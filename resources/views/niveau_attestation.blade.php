@@ -263,7 +263,8 @@
                                                                 @csrf
                                                                 <input type="hidden" name="id_niveau" value="{{ $niveau ->id_niveau }}" id="id_niveau">
                                                                 <input type="hidden" name="filiere" value="{{ $filiere}}" id="filiere">
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Voir les étudiants</button>
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">
+                                                                    View students</button>
                                                             </form>
 
 

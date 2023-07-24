@@ -286,7 +286,8 @@
                                                                     <form method="POST" action="{{ route('showAttestation') }}">
                                                                         @csrf
                                                                         <input type="hidden" name="matricule" value="{{ $etudiant->matricule }}" id="matricule">
-                                                                        <button class="btn btn-sm btn-soft-primary" type="submit">Voir l'attestation</button>
+                                                                        <button class="btn btn-sm btn-soft-primary" type="submit">
+                                                                            See the certificate</button>
                                                                     </form>
                                                                 </td>
 

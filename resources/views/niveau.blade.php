@@ -86,7 +86,8 @@
                 </li>
                 <br />
                 <li>
-                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book"
+                            class="align-self-center menu-icon"></i>
 
                         <span>Note</span>
                         <!-- <span class="menu-arrow">
@@ -129,10 +130,10 @@
 
                         </i><span>Attestation</span>
                         <!-- < span class="menu-arrow"> -->
-                            <!-- <i class="mdi mdi-chevron-right"></i> -->
-                            <!-- </span> -->
+                        <!-- <i class="mdi mdi-chevron-right"></i> -->
+                        <!-- </span> -->
                     </a>
- 
+
                 </li>
             </ul>
 
@@ -154,8 +155,8 @@
         <div class="topbar">
             <!-- Navbar -->
             <nav class="navbar-custom">
-             
-            <ul class="list-unstyled topbar-nav mb-0">
+
+                <ul class="list-unstyled topbar-nav mb-0">
                     <li>
                         <button class="nav-link button-menu-mobile">
                             <i data-feather="menu" class="align-self-center topbar-icon"></i>
@@ -167,9 +168,11 @@
 
                         </div>
                     </li>
-                </ul>   <ul class="list-unstyled topbar-nav float-right mb-0">
+                </ul>
+                <ul class="list-unstyled topbar-nav float-right mb-0">
                     <li class="dropdown hide-phone">
-                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown"
+                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i data-feather="search" class="topbar-icon"></i>
                         </a>
 
@@ -177,14 +180,15 @@
                             <!-- Top Search Bar -->
                             <div class="app-search-topbar">
                                 <form action="#" method="get">
-                                    <input type="search" name="search" class="from-control top-search mb-0" placeholder="Type text...">
+                                    <input type="search" name="search" class="from-control top-search mb-0"
+                                        placeholder="Type text...">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </form>
                             </div>
                         </div>
                     </li>
 
-              
+
 
                 </ul>
                 <!--end topbar-nav-->
@@ -240,7 +244,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel" aria-labelledby="Profile_Post_tab">
+                        <div class="tab-pane fade show active" id="Profile_Post" role="tabpanel"
+                            aria-labelledby="Profile_Post_tab">
                             <div class="row">
 
 
@@ -252,12 +257,15 @@
                                             <div class="card-header">
                                                 <h4 class="card-title">Student's global information</h4>
                                                 <p class="text-muted mb-0">
-                                                    some summary information of the students present in the database, your Last Name ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
+                                                    some summary information of the students present in the database,
+                                                    your Last Name ,FirstName, Matricule, Level, Filiere, MGP,
+                                                    Decision;Anne Scolaire
                                                 </p>
                                             </div>
                                             <!--end card-header-->
 
-                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
                                                     <tr>
                                                         <th> Niveau</th>
@@ -270,27 +278,30 @@
 
 
                                                 <tbody>
-                                                @foreach($niveau as $niveau)
-
-                                                    <tr>
-                                                        <td>{{ $niveau->id_niveau }}</td>
-                                                        <td>{{ $niveau ->nom_niveau}}</td>
-                                                       
-
-                                                        <td>
-                                                            <form method="POST" action="{{ route('etudiant') }}">
-                                                                @csrf
-                                                                <input type="hidden" name="id_niveau" value="{{ $niveau ->id_niveau }}" id="id_niveau">
-                                                                <input type="hidden" name="filiere" value="{{ $filiere}}" id="filiere">
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Voir les étudiants</button>
-                                                            </form>
+                                                    @foreach ($niveau as $niveau)
+                                                        <tr>
+                                                            <td>{{ $niveau->id_niveau }}</td>
+                                                            <td>{{ $niveau->nom_niveau }}</td>
 
 
-                                                        </td>
+                                                            <td>
+                                                                <form method="POST"
+                                                                    action="{{ route('etudiant') }}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="id_niveau"
+                                                                        value="{{ $niveau->id_niveau }}"
+                                                                        id="id_niveau">
+                                                                    <input type="hidden" name="filiere"
+                                                                        value="{{ $filiere }}" id="filiere">
+                                                                    <button class="btn btn-sm btn-soft-primary"
+                                                                        type="submit">
+                                                                        View students</button>
+                                                                </form>
 
-                                                    </tr>
 
-                                        
+                                                            </td>
+
+                                                        </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>

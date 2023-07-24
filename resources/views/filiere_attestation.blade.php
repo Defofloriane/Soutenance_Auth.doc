@@ -261,7 +261,7 @@
                                                             <form method="POST" action="{{ route('niveauAttestation') }}">
                                                                 @csrf
                                                                 <input type="hidden" name="id_filiere" value="{{ $filiere->id_filiere }}" id="id_filiere">
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Niveaux</button>
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Levels</button>
                                                             </form>
 
 

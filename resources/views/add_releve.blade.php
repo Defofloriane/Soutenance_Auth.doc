@@ -101,7 +101,8 @@
                 </li>
                 <br />
                 <li>
-                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book"
+                            class="align-self-center menu-icon"></i>
 
                         <span>Note</span>
                         <!-- <span class="menu-arrow">
@@ -144,10 +145,10 @@
 
                         </i><span>Attestation</span>
                         <!-- < span class="menu-arrow"> -->
-                            <!-- <i class="mdi mdi-chevron-right"></i> -->
-                            <!-- </span> -->
+                        <!-- <i class="mdi mdi-chevron-right"></i> -->
+                        <!-- </span> -->
                     </a>
- 
+
                 </li>
             </ul>
 
@@ -202,209 +203,279 @@
                                         <li class="breadcrumb-item"><a href="javascript:void(0);">Forms</a></li>
                                         <li class="breadcrumb-item active">Etudiants</li>
                                     </ol>
-                                </div><!--end col-->
+                                </div>
+                                <!--end col-->
 
-                            </div><!--end row-->
-                        </div><!--end page-title-box-->
-                    </div><!--end col-->
-                </div><!--end row-->
+                            </div>
+                            <!--end row-->
+                        </div>
+                        <!--end page-title-box-->
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
                 <!-- end page title end breadcrumb -->
 
                 <div class="row">
                     <div class="col-12">
-                        @if($method==null)
-                        <div class="card">
-                            @if(session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                                <a href="{{ route('details_releve', ['id' => isset($releve) ? $releve->id_releve : '', 'etudiant' => isset($etudiant) ? $etudiant : '', 'notes' => isset($notes) ? $notes : '']) }}">Voir le relevé</a>
-                            </div>
-                            @endif
-                            <div class="card-header">
-                                <h4 class="card-title">Select ton niveau par le code de ce niveau</h4>
-                                <p class="text-muted mb-0">Selectionner ton niveu et Votre faculte
-                                </p>
-                            </div><!--end card-header-->
-                            <div class="card-body bootstrap-select-1">
-                                <form method="POST" action="{{ route('get_ue_credit') }}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label class="mb-3">Filiere</label>
-                                            <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                        @if ($method == null)
+                            <div class="card">
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                        <a
+                                            href="{{ route('details_releve', ['id' => isset($releve) ? $releve->id_releve : '', 'etudiant' => isset($etudiant) ? $etudiant : '', 'notes' => isset($notes) ? $notes : '']) }}">Voir
+                                            le relevé</a>
+                                    </div>
+                                @endif
+                                <div class="card-header">
+                                    <h4 class="card-title">Select ton niveau par le code de ce niveau</h4>
+                                    <p class="text-muted mb-0">Selectionner ton niveu et Votre faculte
+                                    </p>
+                                </div>
+                                <!--end card-header-->
+                                <div class="card-body bootstrap-select-1">
+                                    <form method="POST" action="{{ route('get_ue_credit') }}">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label class="mb-3">Filiere</label>
+                                                <select id="filiere_select" name="filiere"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
 
-                                                <option value="ICT4D">ICT4D</option>
-                                                <option value="INFO">INFO</option>
-                                                <option value="MATHS">MATHS</option>
-                                                <option value="PHYSIQUE">PHYSIQUE</option>
-                                                <option value="CHIMIE">CHIMIE</option>
-                                                <option value="BIOS">BIOS</option>
+                                                    <option value="ICT4D">ICT4D</option>
+                                                    <option value="INFO">INFO</option>
+                                                    <option value="MATHS">MATHS</option>
+                                                    <option value="PHYSIQUE">PHYSIQUE</option>
+                                                    <option value="CHIMIE">CHIMIE</option>
+                                                    <option value="BIOS">BIOS</option>
 
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label class="mb-3" for="niveau">Level</label>
-                                            <select id="niveau" name="niveau" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
-                                                <option value="L1"> L1</option>
-                                                <option value="L2"> L2</option>
-                                                <option value="L3"> L3</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <label class="mb-3" for="anneeAcademique">Academic year</label>
-                                            <input type="text" class="form-control" id="anneeAcademique" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
-
-                                        </div> <!-- end col -->
-                                        <div class="col-md-3">
-                                            <label class="mb-3">Addition Method</label>
-                                            <div class="radio-group">
-                                                <input type="radio" id="radio1" name="radio" value="Excel">
-                                                <label for="radio1">Excel</label>
-                                                <input type="radio" id="radio2" name="radio" value="Manuel">
-                                                <label for="radio2">Manual</label>
+                                                </select>
                                             </div>
-                                        </div>
+                                            <div class="col-md-3">
+                                                <label class="mb-3" for="niveau">Level</label>
+                                                <select id="niveau" name="niveau"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
+                                                    <option value="L1"> L1</option>
+                                                    <option value="L2"> L2</option>
+                                                    <option value="L3"> L3</option>
+                                                </select>
+                                            </div>
 
-                                    </div><!-- end row -->
-                                    <button id="eltb" class="btn btn-primary mb-3" type="submit">Valider le niveau</button>
-                                </form>
+                                            <div class="col-md-3">
+                                                <label class="mb-3" for="anneeAcademique">Academic year</label>
+                                                <input type="text" class="form-control" id="anneeAcademique"
+                                                    name="anneeAcademique" placeholder=" Exemple : 2020/2022">
 
-                            </div><!-- end card-body -->
-                        </div> <!-- end card -->
+                                            </div> <!-- end col -->
+                                            <div class="col-md-3">
+                                                <label class="mb-3">Addition Method</label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="radio1" name="radio"
+                                                        value="Excel">
+                                                    <label for="radio1">Excel</label>
+                                                    <input type="radio" id="radio2" name="radio"
+                                                        value="Manuel">
+                                                    <label for="radio2">Manual</label>
+                                                </div>
+                                            </div>
+
+                                        </div><!-- end row -->
+                                        <button id="eltb" class="btn btn-primary mb-3" type="submit">
+                                            validate</button>
+                                    </form>
+
+                                </div><!-- end card-body -->
+                            </div> <!-- end card -->
                         @endif
                         <div class="card">
-                            @if($method=='Manuel')
-                    
+                            @if ($method == 'Manuel')
+
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Notes of Student</h4>
-                                        <p class="text-muted mb-0">The following information concerns only the minutes of each teaching unit of the <code class="highlighter-rouge">&lt;CC,SN/RATRAPPAGE AND OU OR&gt;</code> the differents
+                                        <p class="text-muted mb-0">The following information concerns only the minutes
+                                            of each teaching unit of the <code
+                                                class="highlighter-rouge">&lt;CC,SN/RATRAPPAGE AND OU OR&gt;</code> the
+                                            differents
                                         </p>
-                                    </div><!--end card-header-->
+                                    </div>
+                                    <!--end card-header-->
                                     <div class="card-body bootstrap-select-1">
-                                        @if(isset($resultats) )
+                                        @if (isset($resultats))
 
-                                        <form id="hidden_form" method="POST" action="{{ route('add_releve') }}">
-                                            @csrf
-                                            <div class="form-row">
-                                                <div class="col-md-4 mb-3">
-                                                    <label for="validationCustom01">First name</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="firstName" placeholder="First name" required>
-                                                    <div class="valid-feedback">
-                                                        Looks good!
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-4 mb-3">
-                                                    <label for="validationCustom02">Last name</label>
-                                                    <input type="text" class="form-control" id="validationCustom02" name="lastName" placeholder="Last name" required>
-                                                    <div class="valid-feedback">
-                                                        Looks good!
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-4 mb-3">
-                                                    <label for="validationCustomUsername">Matricule</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" id="inputGroupPrepend">#00A</span>
-                                                        </div>
-                                                        <input name="matricule" type="text" class="form-control" id="validationCustomUsername" placeholder="Matricule" aria-describedby="inputGroupPrepend" required>
-                                                        <div class="invalid-feedback">
-                                                            Please choose a Matricule.
+                                            <form id="hidden_form" method="POST"
+                                                action="{{ route('add_releve') }}">
+                                                @csrf
+                                                <div class="form-row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom01">First name</label>
+                                                        <input type="text" class="form-control"
+                                                            id="validationCustom01" name="firstName"
+                                                            placeholder="First name" required>
+                                                        <div class="valid-feedback">
+                                                            Looks good!
                                                         </div>
                                                     </div>
-                                                </div><!--end col-->
-                                            </div><!--end form-row-->
-                                            <div class="form-row">
-                                                <div class="col-md-4 mb-3">
-                                                    <label for="validationCustom01">Birth Day</label>
-                                                    <input name="birthDay" type="text" class="form-control" id="date_naissance" placeholder="04/04/2003" value="" required>
-                                                    <div class="valid-feedback">
-                                                        Looks good!
+                                                    <!--end col-->
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom02">Last name</label>
+                                                        <input type="text" class="form-control"
+                                                            id="validationCustom02" name="lastName"
+                                                            placeholder="Last name" required>
+                                                        <div class="valid-feedback">
+                                                            Looks good!
+                                                        </div>
                                                     </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-4 mb-3">
-                                                    <label for="validationCustom02">Place of Birth</label>
-                                                    <input name="placeBirth" type="text" class="form-control" id="lieu_naissance" placeholder="Doula" value="" required>
-                                                    <div class="valid-feedback">
-                                                        Looks good!
+                                                    <!--end col-->
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustomUsername">Matricule</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"
+                                                                    id="inputGroupPrepend">#00A</span>
+                                                            </div>
+                                                            <input name="matricule" type="text"
+                                                                class="form-control" id="validationCustomUsername"
+                                                                placeholder="Matricule"
+                                                                aria-describedby="inputGroupPrepend" required>
+                                                            <div class="invalid-feedback">
+                                                                Please choose a Matricule.
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div><!--end col-->
-                                            </div>
-                                            <div class="form-row">
-
-                                                @foreach ($resultats as $ue)
-                                                <div class="col-md-2 mb-2">
-                                                    <label for="code_ue_input">Code Ue</label>
-                                                    <input type="text" class="form-control" id="validationCustom05" value="{{ $ue->id_ue }}" name="notes[{{ $ue->id_ue }}][code_ue]" required style="font-weight: bold;">
-                                                    <div class="invalid-feedback">
-                                                        Please provide a valid state.
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-1 mb-1">
-                                                    <label for="credit_input">Credit</label>
-                                                    <input type="text" class="form-control" id="validationCustom05" value="{{ $ue->credit }}" name="notes[{{ $ue->id_ue }}][credit]" required style="font-weight: bold;">
-                                                    <div class="invalid-feedback">
-                                                        Please provide a valid zip.
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-2 mb-2">
-                                                    <label for="credit_input">Semestre</label>
-                                                    <select id="niveau_select" name="notes[{{ $ue->id_ue }}][semestre]" class="select2 form-control mb-3 custom-select" style="font-weight: bold;" required>
-                                                        <option value="" style="font-weight: bold;">Semestre</option>
-
-                                                        <optgroup label="Le 1er semestre">
-                                                            <option class="option" value="1">Semestre 1</option>
-                                                            <option class="option" value="2">Semestre 2</option>
-                                                        </optgroup>
-                                                        <optgroup label="Le 2ème semestre">
-                                                            <option class="option" value="3">Semestre 3</option>
-                                                            <option class="option" value="4">Semestre 4</option>
-                                                        </optgroup>
-
-
-                                                    </select>
-                                                </div><!--end col-->
-                                                <div class="col-md-2 mb-2">
-                                                    <label for="validationCustom04">Note(CC)</label>
-                                                    <input type="numerics" class="form-control" id="validationCustom04" placeholder="CC" name="notes[{{ $ue->id_ue }}][note_cc]" required style="font-weight: bold;">
-                                                    <div class="invalid-feedback">
-                                                        Please provide a valid state.
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-3 mb-3">
-                                                    <label for="validationCustom05">Note(SN)</label>
-                                                    <input type="numerics" class="form-control" id="validationCustom05" placeholder="SN/RATRAPPAGE" name="notes[{{ $ue->id_ue }}][note_sn]" required style="font-weight: bold;">
-                                                    <div class="invalid-feedback">
-                                                        Please provide a valid zip.
-                                                    </div>
-                                                </div><!--end col-->
-                                                <div class="col-md-2 mb-2">
-                                                    <label for="validationCustom05">Note(TP)</label>
-                                                    <input type="numerics" class="form-control" id="validationCustom05" placeholder="TP" name="notes[{{ $ue->id_ue }}][note_tp]" style="font-weight: bold;">
-                                                    <div class="invalid-feedback">
-                                                        Please provide a valid zip.
-                                                    </div>
+                                                    <!--end col-->
                                                 </div>
-                                                @endforeach
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <!--end form-row-->
+                                                <div class="form-row">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom01">Birth Day</label>
+                                                        <input name="birthDay" type="text" class="form-control"
+                                                            id="date_naissance" placeholder="04/04/2003"
+                                                            value="" required>
+                                                        <div class="valid-feedback">
+                                                            Looks good!
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom02">Place of Birth</label>
+                                                        <input name="placeBirth" type="text" class="form-control"
+                                                            id="lieu_naissance" placeholder="Doula" value=""
+                                                            required>
+                                                        <div class="valid-feedback">
+                                                            Looks good!
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                                <div class="form-row">
 
+                                                    @foreach ($resultats as $ue)
+                                                        <div class="col-md-2 mb-2">
+                                                            <label for="code_ue_input">Code Ue</label>
+                                                            <input type="text" class="form-control"
+                                                                id="validationCustom05" value="{{ $ue->id_ue }}"
+                                                                name="notes[{{ $ue->id_ue }}][code_ue]" required
+                                                                style="font-weight: bold;">
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid state.
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-md-1 mb-1">
+                                                            <label for="credit_input">Credit</label>
+                                                            <input type="text" class="form-control"
+                                                                id="validationCustom05" value="{{ $ue->credit }}"
+                                                                name="notes[{{ $ue->id_ue }}][credit]" required
+                                                                style="font-weight: bold;">
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid zip.
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-md-2 mb-2">
+                                                            <label for="credit_input">Semestre</label>
+                                                            <select id="niveau_select"
+                                                                name="notes[{{ $ue->id_ue }}][semestre]"
+                                                                class="select2 form-control mb-3 custom-select"
+                                                                style="font-weight: bold;" required>
+                                                                <option value="" style="font-weight: bold;">
+                                                                    Semestre</option>
+
+                                                                <optgroup label="Le 1er semestre">
+                                                                    <option class="option" value="1">Semestre 1
+                                                                    </option>
+                                                                    <option class="option" value="2">Semestre 2
+                                                                    </option>
+                                                                </optgroup>
+                                                                <optgroup label="Le 2ème semestre">
+                                                                    <option class="option" value="3">Semestre 3
+                                                                    </option>
+                                                                    <option class="option" value="4">Semestre 4
+                                                                    </option>
+                                                                </optgroup>
+
+
+                                                            </select>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-md-2 mb-2">
+                                                            <label for="validationCustom04">Note(CC)</label>
+                                                            <input type="numerics" class="form-control"
+                                                                id="validationCustom04" placeholder="CC"
+                                                                name="notes[{{ $ue->id_ue }}][note_cc]" required
+                                                                style="font-weight: bold;">
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid state.
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-md-3 mb-3">
+                                                            <label for="validationCustom05">Note(SN)</label>
+                                                            <input type="numerics" class="form-control"
+                                                                id="validationCustom05" placeholder="SN/RATRAPPAGE"
+                                                                name="notes[{{ $ue->id_ue }}][note_sn]" required
+                                                                style="font-weight: bold;">
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid zip.
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-md-2 mb-2">
+                                                            <label for="validationCustom05">Note(TP)</label>
+                                                            <input type="numerics" class="form-control"
+                                                                id="validationCustom05" placeholder="TP"
+                                                                name="notes[{{ $ue->id_ue }}][note_tp]"
+                                                                style="font-weight: bold;">
+                                                            <div class="invalid-feedback">
+                                                                Please provide a valid zip.
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
                                                 @else
-                                                <!--end col-->
-                                                @endif
-                                            </div><!--end form-row-->
-                                        </form>
+                                                    <!--end col-->
+                                        @endif
+                                    </div>
+                                    <!--end form-row-->
+                                    </form>
 
-                                        <!--end form-->
+                                    <!--end form-->
 
 
-                                    </div><!--end card-body-->
-                                </div><!--end card-->
-                          
-                            @endif
-                            <!--end col-->
-                        </div><!--end row-->
-                        @if($method=='Excel')
+                                </div>
+                                <!--end card-body-->
+                        </div>
+                        <!--end card-->
+
+                        @endif
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                    @if ($method == 'Excel')
                         <div class="col-lg-12" id="excel-form">
                             <div class="card">
                                 <div class="card-header">
@@ -412,16 +483,20 @@
                                     <!-- <p class="text-muted mb-0">Vous pouvez Soumetre Le(s) Etudiant(s) en utilisant<code class="highlighter-rouge"></code>
                                         <code class="highlighter-rouge">Excel. </code>Mais d abord charger ces <code class="highlighter-rouge">informations du formulaire</code>.
                                     </p> -->
-                                </div><!--end card-header-->
+                                </div>
+                                <!--end card-header-->
                                 <div class="card-body">
-                                    <form id="eltb" method="POST" action="{{route('import_excel')}}" enctype="multipart/form-data">
+                                    <form id="eltb" method="POST" action="{{ route('import_excel') }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
 
 
                                             <div class="col-md-3">
                                                 <label class="mb-6">Type of Evaluation</label>
-                                                <select id="filiere_select" name="evaluation" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                <select id="filiere_select" name="evaluation"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
 
                                                     <option value="CC">CC</option>
 
@@ -433,7 +508,9 @@
 
                                             <div class="col-md-2">
                                                 <label class="mb-6">Matiere</label>
-                                                <select id="filiere_select" name="matiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                <select id="filiere_select" name="matiere"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
                                                     <option value="">Liste des matieres</option>
 
                                                     <optgroup label="Code Ue">
@@ -441,9 +518,10 @@
 
                                                         @if ($listeMatiere)
 
-                                                        @foreach($listeMatiere as $matiere)
-                                                        <option value="{{ $matiere->id_ue }}">{{ $matiere->id_ue }}</option>
-                                                        @endforeach
+                                                            @foreach ($listeMatiere as $matiere)
+                                                                <option value="{{ $matiere->id_ue }}">
+                                                                    {{ $matiere->id_ue }}</option>
+                                                            @endforeach
                                                         @endif
 
                                                     </optgroup>
@@ -454,7 +532,9 @@
 
                                             <div class="col-md-2">
                                                 <label class="mb-6">Semestre</label>
-                                                <select id="semestre" name="semestre" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                <select id="semestre" name="semestre"
+                                                    class="select2 form-control mb-3 custom-select"
+                                                    style="width: 100%; height:36px;" required>
                                                     <option value="1">Semestre 1</option>
                                                     <option value="2">Semestre 2</option>
                                                     <option value="3">Semestre 3</option>
@@ -464,77 +544,85 @@
                                             <div class="col-md-2">
                                                 <label class="mb-6">Matiere A TP</label>
                                                 <div class="radio-group">
-                                                    <input type="radio" id="yes" name="radioschoose" value="OUI">
+                                                    <input type="radio" id="yes" name="radioschoose"
+                                                        value="OUI">
                                                     <label for="yes">OUI</label>
-                                                    <input type="radio" id="no" name="radioschoose" value="NON">
+                                                    <input type="radio" id="no" name="radioschoose"
+                                                        value="NON">
                                                     <label for="no">NON</label>
                                                 </div>
                                             </div>
                                         </div>
-                                         <div style="margin-top: 30px;">
-                                        <input class="btn btn-sm btn-soft-primary " value="Import Fichier Excel" type="file" accept=".xlsx, .xls" name="excel_file" id="excel_file" required>
-                                         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                                        <button class="btn btn-primary" type="submit" id="submit_btn" >Upload/.xlsx, .xls</button>
+                                        <div style="margin-top: 30px;">
+                                            <input class="btn btn-sm btn-soft-primary " value="Import Fichier Excel"
+                                                type="file" accept=".xlsx, .xls" name="excel_file"
+                                                id="excel_file" required>
+                                            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                            <button class="btn btn-primary" type="submit"
+                                                id="submit_btn">Upload/.xlsx, .xls</button>
                                         </div>
                                         <!-- Code HTML du formulaire -->
                                     </form>
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div>
-                        @endif
-
-                           <div class="card  mx-auto">
-                                    <div class="card-body">
-                                        <ul class="list-unstyled mb-0">
-                                        
-                                            <!--end card-header-->
-
-                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th> Matricule</th>
-                                                        <th> Name</th>
-                                                        <th> FirstName</th>
-                                                        <th>Note</th>
-
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-                                                @if(isset($etudiants))
-                                                @foreach($etudiants as $etudiant)
-                                                @foreach($listEtudiant as $releve)
-                                                @if($releve->etudiant === $etudiant->matricule)
-                                                    <tr>
-                                                        <td>{{ $etudiant ->matricule }}</td>
-                                                        <td>{{ $etudiant ->nom}}</td>
-                                                        <td>{{ $etudiant ->prenom}}</td>
-                                                        <td>{{ $releve ->note_evaluation}} / {{ $releve ->noteSur}} </td>
-                                                    </tr>
-
-                                                    @endif
-                                                   
-                                                    @endforeach
-                                                    @endforeach
-                                                    @endif
-                                                </tbody>
-                                            </table>
-                                            <!-- <button id="eltb" class="btn btn-primary mb-3"  data-toggle="modal" data-target="#modalEnregistrementEtudiant" >Add Student</button>   -->
-                                    </div>
                                 </div>
-                    </div> <!-- end col -->
-                    <!-- end col -->
-                </div> <!-- end row -->
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                    @endif
 
-                <!-- end row -->
+                    <div class="card  mx-auto">
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
 
-            </div><!-- container -->
+                                <!--end card-header-->
 
-            <footer class="footer text-center text-sm-left">
-                &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
-            </footer>
-        </div>
-        <!-- end page content -->
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th> Matricule</th>
+                                            <th> Name</th>
+                                            <th> FirstName</th>
+                                            <th>Note</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @if (isset($etudiants))
+                                            @foreach ($etudiants as $etudiant)
+                                                @foreach ($listEtudiant as $releve)
+                                                    @if ($releve->etudiant === $etudiant->matricule)
+                                                        <tr>
+                                                            <td>{{ $etudiant->matricule }}</td>
+                                                            <td>{{ $etudiant->nom }}</td>
+                                                            <td>{{ $etudiant->prenom }}</td>
+                                                            <td>{{ $releve->note_evaluation }} /
+                                                                {{ $releve->noteSur }} </td>
+                                                        </tr>
+                                                    @endif
+                                                @endforeach
+                                            @endforeach
+                                        @endif
+                                    </tbody>
+                                </table>
+                                <!-- <button id="eltb" class="btn btn-primary mb-3"  data-toggle="modal" data-target="#modalEnregistrementEtudiant" >Add Student</button>   -->
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+                <!-- end col -->
+            </div> <!-- end row -->
+
+            <!-- end row -->
+
+        </div><!-- container -->
+
+        <footer class="footer text-center text-sm-left">
+            &copy; 2023 Auth.doc <span class="d-none d-sm-inline-block float-right">Crafted with <i
+                    class="mdi mdi-heart text-danger"></i> by KemgneFloriane</span>
+        </footer>
+    </div>
+    <!-- end page content -->
     </div>
     <!-- end page-wrapper -->
 
@@ -542,9 +630,7 @@
 
 
     <!-- jQuery  -->
-    <script>
-
-    </script>
+    <script></script>
     <script>
         function showHiddenForm() {
             var hiddenForm = document.getElementById('hidden_form');

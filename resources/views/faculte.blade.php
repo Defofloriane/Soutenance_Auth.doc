@@ -273,7 +273,7 @@
                                                             <form method="POST" action="{{ route('departement') }}">
                                                                 @csrf
                                                                 <input type="hidden" name="id_faculte" value="{{ $faculte->id_faculte }}" id="id_faculte">
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">Voir les departements</button>
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">View the departments</button>
                                                             </form>
 
 
