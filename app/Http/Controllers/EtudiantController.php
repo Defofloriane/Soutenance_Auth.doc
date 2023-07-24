@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
 use App\Models\EtudiantFiliereNiveau;
+use App\Models\Evaluation;
 use App\Models\Filiere;
 use App\Models\Niveau;
+use App\Models\Note;
 use App\Models\Releve;
+use App\Models\Ue;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx\Rels;
@@ -228,6 +231,33 @@ class EtudiantController extends Controller
      $releves=Releve::where(['niveau'=>$niveau->nom_niveau, 'filiere'=>$filiere->nom_filiere])->get(); 
      $etudiants=Etudiant::all();
      return view('etudiant',compact('etudiants','niveau','releves','filiere'));
+    // return response()->json($niveau);
+     }
+
+     public function detail_student(Request $request){
+        $id_releve=$request->id_releve;
+        $matricule=$request->matricule;
+        $niveau=Niveau::where('id_niveau',$request->niveau)->first();
+        $type=$request->type;
+        $filiere=$request->filiere;
+        
+        if($type=='releve'){
+            $releve = Releve::where(['id_releve'=>$id_releve,'etudiant'=>$matricule,'niveau'=>$niveau->nom_niveau])->first();
+            $filiere=Filiere::where(['id_filiere'=>$filiere])->first();
+    
+            $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
+            $notes = Note::join('ues', 'notes.ue', '=', 'ues.id_ue')
+               ->join('niveaux', 'ues.niveau', '=', 'niveaux.id_niveau')
+               ->where('notes.etudiant', '=', $releve->etudiant)
+               ->where('niveaux.nom_niveau', '=', $releve->niveau)
+               ->select('notes.*', 'ues.nom_ue', 'ues.credit')
+               ->distinct()
+               ->get();
+           
+          return view("detail", compact('releve', 'etudiant', 'notes','filiere','niveau'));
+
+        }
+
     // return response()->json($niveau);
      }
 }

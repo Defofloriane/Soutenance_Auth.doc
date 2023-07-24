@@ -113,7 +113,7 @@
                 </li>
                 <br />
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
 
                         <span>Note</span>
                         <!-- <span class="menu-arrow">
@@ -149,13 +149,18 @@
 
                     </ul>
                 </li> -->
-                <!-- <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                <br>
+                <li>
+                    <a href=" {{ route('filiereAttestation') }}">
+                        <i data-feather="file-plus" class="align-self-center menu-icon">
 
-                    </ul>
-                </li> -->
+                        </i><span>Attestation</span>
+                        <!-- < span class="menu-arrow"> -->
+                            <!-- <i class="mdi mdi-chevron-right"></i> -->
+                            <!-- </span> -->
+                    </a>
+ 
+                </li>
             </ul>
 
             <!-- <div class="update-msg text-center">
@@ -176,40 +181,19 @@
         <div class="topbar">
             <!-- Navbar -->
             <nav class="navbar-custom">
-                <ul class="list-unstyled topbar-nav float-right mb-0">
-
-                    <li class="dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="ml-1 nav-user-name hidden-sm">Nick</span>
-                            <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i data-feather="settings" class="align-self-center icon-xs icon-dual mr-1"></i> Settings</a>
-                            <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
-                        </div>
-                    </li>
-                </ul>
-                <!--end topbar-nav-->
-
-                <ul class="list-unstyled topbar-nav mb-0">
+              
+            <ul class="list-unstyled topbar-nav mb-0">
                     <li>
                         <button class="nav-link button-menu-mobile">
                             <i data-feather="menu" class="align-self-center topbar-icon"></i>
                         </button>
                     </li>
-                    <!-- <li class="creat-btn">
-                        <form method="POST" action="{{ route('upload') }}"  enctype="multipart/form-data">
-                            @csrf
-                            <div class="nav-link">
-                                <input class=" btn btn-sm btn-soft-primary"  type="file" name="name_file" id="name_file">
-                                <button class=" btn btn-sm btn-soft-primary"  type="submit">upload</button>  
-                                
-                            </div>
-                           
-                        </form>
-                    </li> -->
+                    <li class="creat-btn">
+                        <div class="nav ">
+
+
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <!-- end navbar-->
@@ -328,7 +312,7 @@
 
                                                 </tbody>
                                             </table>
-                                            <button id="eltb" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalEnregistrementEtudiant">Add Student</button>
+                                            <button id="eltb" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalEnregistrementEtudiant">Add Administrator</button>
                                             {{-- <form id="edit-form" method="POST" action="{{ route('admin_update', $admin->id) }}" class="d-none"> --}}
                                             @foreach ($admins as $admin)
                                             <form id="edit-form-{{ $admin->id }}" method="POST" action="{{ route('admin_update', $admin->id) }}" class="d-none">
@@ -392,7 +376,7 @@
                                 <label for="nom">Last name</label>
                                 <input type="text" class="form-control" id="nom" name="name" required>
                             </div>
-                        
+
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
@@ -412,7 +396,7 @@
                                     <!-- Ajoutez d'autres options de règles si nécessaire -->
                                 </select>
                             </div>
-                          
+
                             <!-- Boutons "Annuler" et "Enregistrer" inclus dans le formulaire -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

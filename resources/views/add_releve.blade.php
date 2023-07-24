@@ -137,13 +137,18 @@
 
                     </ul>
                 </li> -->
-                <!-- <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                <br>
+                <li>
+                    <a href=" {{ route('filiereAttestation') }}">
+                        <i data-feather="file-plus" class="align-self-center menu-icon">
 
-                    </ul>
-                </li> -->
+                        </i><span>Attestation</span>
+                        <!-- < span class="menu-arrow"> -->
+                            <!-- <i class="mdi mdi-chevron-right"></i> -->
+                            <!-- </span> -->
+                    </a>
+ 
+                </li>
             </ul>
 
             <!-- <div class="update-msg text-center">
@@ -164,22 +169,6 @@
         <div class="topbar">
             <!-- Navbar -->
             <nav class="navbar-custom">
-                <ul class="list-unstyled topbar-nav float-right mb-0">
-
-
-
-
-                    <li class="dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="ml-1 nav-user-name hidden-sm">Name admin</span>
-                            <img src="assets/images/users/user-5.jpg" alt="profile-user" class="rounded-circle" />
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Logout</a>
-                        </div>
-                    </li>
-                </ul><!--end topbar-nav-->
-
                 <ul class="list-unstyled topbar-nav mb-0">
                     <li>
                         <button class="nav-link button-menu-mobile">
