@@ -31,7 +31,7 @@ class ScanQrController extends Controller
         // Les données n'ont pas passé la vérification d'authenticité
         return response()->json(['status' => 400, 'message' => 'Failure']);
     }
-
+  
     // Déchiffrement du ciphertext en utilisant la clé de chiffrement, l'IV et le tag
     $decrypted = openssl_decrypt($ciphertext, 'aes-256-gcm', $encryptionKey, OPENSSL_RAW_DATA, $iv, $tag);
 
@@ -39,7 +39,6 @@ class ScanQrController extends Controller
         // Échec du déchiffrement
         return response()->json(['status' => 402, 'message' => 'Failure']);
     }
-
     // Les données sont authentiques et ont été déchiffrées avec succès
     // return response()->json(['data' => $decrypted]);
     
