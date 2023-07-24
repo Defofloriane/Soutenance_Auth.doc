@@ -469,7 +469,7 @@
 
                                     <div class="contents">
                                     <div class="card w-100">
-                                                    
+                                        <div class="card-body bg-image">               
                                                 <ul class="list-unstyled mb-0">
                                                     <style>
                                                         * {
@@ -486,16 +486,19 @@
                                          
 
                                                         .bg-image::before {
-                                                        
-   
-                                                            width: 100%;
-    height: 200px; /* Ajustez la hauteur de l'image selon vos besoins */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('Uy.png');
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.5; /* R
-                                                            /* Réglez l'opacité selon vos besoins */
-                                                        } 
+    opacity: 0.5;
+    background-attachment: fixed; /* Ajout de cette propriété pour afficher l'arrière-plan sur mobile */
+}
+
 
                                                         .fs-2 {
                                                             color: #000000;
@@ -884,7 +887,7 @@
                                                                     </div>
                                                             
                                                                     <div class="d-flex content-uy1-logo justify-content-center align-items-center">
-                                                                        <img class="imgatt" src="att.jpeg" alt="" srcset="" style="max-width: 100%; max-height: 150px;">
+                                                                        <img class="imgatt" src="unilog.png" alt="" srcset="" style="max-width: 100%; max-height: 150px;">
                                                                     </div>
                                                             
                                                                     <div class="d-flex content-state-data flex-column align-items-center">
@@ -1358,7 +1361,7 @@
                                                 
                                                    
                                                         </ul>
-                                                  
+                                                    </div> 
                                             </div>
                                             <!--end card-body-->
 
