@@ -873,15 +873,12 @@
 
                                                     
                                                                 <body> <section class="w-100 d-flex flex-column" style="font-size: 12px">
-                                                                    <div class="card-body bg-image d-flex justify-content-center align-items-center" style="height: 100vh; position: relative;">
-                                                                        <section class="w-100 d-flex flex-wrap align-items-center justify-content-between">
-                                                                            <div class="content">
                                                         <!-- Vos éléments de contenu -->
                                                         <div class="d-flex container-lg flex-column py-5 px-5 default_option">
 
-                                                            <header class="w-100 d-flex flex-column">
-                                                                <section class="w-100 d-flex flex-column align-items-center">
-                                                                    <div class="d-flex content-state-data flex-column align-items-center mb-2">
+                                                            <section class="w-100 d-flex flex-column align-items-center">
+                                                                <div class="d-flex flex-row align-items-center mb-2">
+                                                                    <div class="d-flex content-state-data flex-column align-items-center">
                                                                         <span class="text-center">REPUBLIQUE DU CAMEROUN</span>
                                                                         <span class="text-center">Paix - Travail - Patrie</span>
                                                                         <span class="text-center">-------------------------</span>
@@ -892,16 +889,19 @@
                                                                     <div class="d-flex content-uy1-logo justify-content-center align-items-center">
                                                                         <img class="imgatt" src="att.jpeg" alt="" srcset="" style="max-width: 100%; max-height: 150px;">
                                                                     </div>
-                                                                    
-                                                                    <div class="d-flex content-state-data flex-column align-items-center mb-2">
+                                                            
+                                                                    <div class="d-flex content-state-data flex-column align-items-center">
                                                                         <span class="text-center">REPUBLIC OF CAMEROON</span>
                                                                         <span class="text-center">Peace - Work - Fatherland</span>
                                                                         <span class="text-center">-------------------------</span>
                                                                         <span class="text-center">UNIVERSITY OF YAOUNDE 1</span>
                                                                         <span style="font-size: smaller;" class="text-center"><em>UNIVERSITY OF YAOUNDE 1</em></span>
                                                                     </div>
-                                                                </section>
-                                                            </header>
+                                                                </div>
+                                                            </section>
+                                                            
+                                                            
+                                                           
                                                             
                                                             
                                                             <br>
@@ -938,6 +938,7 @@
                                                                 <!--to change dans la table releve-->
                                                             </div>
                                                             <br>
+                                                            <br>  <br>  <br>
                                                             <div class="d-flex flex-column align-items-center text-center">
                                                                 <span style="font-size: smaller;">Le doyen de la faculté des Sciences de l'Université de Yaoundé, soussigné,</span>
                                                                 <span style="font-size: smaller;"><em>The Dean of the Faculty of Science of the University of Yaounde I, undersigned,</em></span>
@@ -945,28 +946,36 @@
                                                             
                                                             <br>
                                                             <main class="w-100 d-flex flex-column align-items-center">
-
+                                                                <div class="card-body bg-image d-flex justify-content-center align-items-center" style="height: 100vh; position: relative;">
+                                                                    <section class="w-100 d-flex flex-wrap align-items-center justify-content-between">
                                                                 <section class="w-100">
 
                                                                     <section class="w-100 d-flex flex-wrap align-items-center justify-content-between">
                                                                        
-                                                                        
+                                                                        <div class="d-flex flex-column align-items-center">
+                                                                            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                Vu
+                                                                                le proces-verbal des deliberations du
+                                                                                jury en date du
+                                                                            </span>
+                                                                         
+                                                                        </div>
                                                                         <div class="d-flex flex-column align-items-center mb-2">
                                                                            
-                                                                                <span class="text-center">Vu le proces-verbal des délibérations du jury en date du</span>
-                                                                                <span class="text-center"><em>Mindful of the official report of the deliberation of the jury dated</em></span>
-                                                                            
+                                                                               
                                                                             <span class="text-center">Le <?php echo date('j F Y'); ?></span>
                                                                             <div class="dash"></div>
                                                                         </div>
                                                                     </section>
                                                                     
                                                                     
-                                                                    
+                                                            
                                                                     
                                                                     
                                                                     <br>
                                                                     <section class="w-100 d-flex align-items-center justify-content-start">
+
+                                                                                <div class="content">
                                                                         <div class="d-flex form-item me-5 pe-5">
                                                                             <div class="d-flex flex-column">
                                                                                 <span class="fs-5 fw-bolder bold_part">
