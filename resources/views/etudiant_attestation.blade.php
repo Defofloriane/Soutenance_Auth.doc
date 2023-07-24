@@ -76,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>
@@ -251,7 +251,7 @@
                                                 <tbody>
                                                 @foreach($etudiants as $etudiant)
                                                 @foreach($releves as $releve)
-                                                @if($releve->etudiant === $etudiant->matricule)
+                                                @if($releve->etudiant === $etudiant->matricule && $releve->mgp>=2)
                                                     <tr>
                                                         <td>{{ $etudiant ->matricule }}</td>
                                                         <td>{{ $etudiant ->nom}}</td>
@@ -264,6 +264,7 @@
                                                                 <input type="hidden" name="id_releve" value="{{ $releve->id_releve }}" id="id_releve">
                                                                 <input type="hidden" name="matricule" value="{{ $etudiant ->matricule}}" id="matricule ">
                                                                 <input type="hidden" name="niveau" value="{{ $niveau}}" id="niveau">
+                        
                                                                 <button class="btn btn-sm btn-soft-primary" type="submit">See the certificate</button>
                                                             </form>
 

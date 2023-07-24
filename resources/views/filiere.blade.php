@@ -76,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>
@@ -232,7 +232,7 @@
                                             <div class="card-header">
                                                 <h4 class="card-title">Student's global information</h4>
                                                 <p class="text-muted mb-0">
-                                                    some summary information of the students present in the database, your Last Name ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
+                                                    <!-- some summary information of the students present in the database, your Last Name ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire -->
                                                 </p>
                                             </div>
                                             <!--end card-header-->

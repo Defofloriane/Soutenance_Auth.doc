@@ -25,7 +25,22 @@ class DepartementSeeder extends Seeder
                 'id_departement' =>'depMath',
                 'nom_departement' =>'departement mathematique',
                 'faculte'=>$faculte_id
-             ]
+            ],
+            [
+                'id_departement' =>'depBios',
+                'nom_departement' =>'departement bioscience',
+                'faculte'=>$faculte_id
+            ],
+            [
+                'id_departement' =>'depChim',
+                'nom_departement' =>'departement chimie',
+                'faculte'=>$faculte_id
+            ],
+            [
+                'id_departement' =>'depPhy',
+                'nom_departement' =>'departement physique',
+                'faculte'=>$faculte_id
+            ],
 
             ];
             Departement::insert($departement);

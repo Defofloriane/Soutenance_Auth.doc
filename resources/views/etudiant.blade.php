@@ -76,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>
@@ -154,8 +154,8 @@
         <div class="topbar">
             <!-- Navbar -->
             <nav class="navbar-custom">
-               
-            <ul class="list-unstyled topbar-nav mb-0">
+
+                <ul class="list-unstyled topbar-nav mb-0">
                     <li>
                         <button class="nav-link button-menu-mobile">
                             <i data-feather="menu" class="align-self-center topbar-icon"></i>
@@ -233,8 +233,63 @@
                                                 </p>
                                             </div>
                                             <!--end card-header-->
+                                            <div class="card-body bootstrap-select-1">
+                                                <form method="POST" action="{{ route('etudiant') }}">
+                                                    @csrf
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label class="mb-3">Filiere</label>
+                                                            <select id="filiere_select" name="filiere" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                                <option value=""></option>
+                                                                <option value="ICT4D">ICT4D</option>
+                                                                <option value="INFO">INFO</option>
+                                                                <option value="MATH">MATHS</option>
+                                                                <option value="PHY">PHYSIQUE</option>
+                                                                <option value="CHIM">CHIMIE</option>
+                                                                <option value="BIOS">BIOS</option>
 
-                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <label class="mb-3" for="niveau">Level</label>
+                                                            <select id="niveau" name="niveau" class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" required>
+                                                            <option value=""> </option>
+                                                            <option value="L1"> L1</option>
+                                                                <option value="L2"> L2</option>
+                                                                <option value="L3"> L3</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- <div class="col-md-3">
+                                                            <label class="mb-3" for="anneeAcademique">Academic year</label>
+                                                            <input type="text" class="form-control" id="anneeAcademique" name="anneeAcademique" placeholder=" Exemple : 2020/2022">
+
+                                                        </div>  -->
+                                                        <!-- <div class="col-md-3">
+                                                            <label class="mb-3">Addition Method</label>
+                                                            <div class="radio-group">
+                                                                <input type="radio" id="radio1" name="radio" value="Excel">
+                                                                <label for="radio1">Excel</label>
+                                                                <input type="radio" id="radio2" name="radio" value="Manuel">
+                                                                <label for="radio2">Manual</label>
+                                                            </div>
+                                                        </div> -->
+
+                                                    </div><!-- end row -->
+                                                    <button id="eltb" class="btn btn-primary mb-3" type="submit">
+                                                        validate</button>
+                                                </form>
+
+                                             </div>
+
+                                             @if(isset($releves))
+                                             <div class="card-header">
+                                                <h4 class="">List of Students {{$filiere->id_filiere}} level {{isset($niveau)?$niveau->id_niveau: ''}}</h4>
+                                                <!-- <p class="text-muted mb-0">
+                                                    some summary information of the students present in the database, your Last Name ,FirstName, Matricule, Level, Filiere, MGP, Decision;Anne Scolaire
+                                                </p> -->
+                                            </div>
+                                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
                                                     <tr>
                                                         <th> Matricule</th>
@@ -247,6 +302,7 @@
 
 
                                                 <tbody>
+                                                  
                                                     @foreach($etudiants as $etudiant)
                                                     @foreach($releves as $releve)
                                                     @if($releve->etudiant === $etudiant->matricule)
@@ -275,9 +331,10 @@
 
                                                     @endforeach
                                                     @endforeach
+                                            
                                                 </tbody>
                                             </table>
-
+                                        
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col">
@@ -289,6 +346,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endif
                                     </div>
                                 </div>
                             </div> <!-- end col -->
@@ -305,6 +363,7 @@
             <!--end row-->
         </div>
         <!-- Fenêtre Modale -->
+
         <div class="modal fade" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -326,8 +385,8 @@
                             <div class="form-group">
                                 <label for="fileInput">Select an Excel file:</label>
                                 <input type="file" class="form-control-file" id="fileInput" name="file">
-                                <input type="hidden" class="form-control" name="niveau" value="{{$niveau->id_niveau}}">
-                                <input type="hidden" class="form-control" name="filiere" value="{{$filiere->id_filiere}}">
+                                <input type="hidden" class="form-control" name="niveau" value="{{isset($niveau)?$niveau->id_niveau: ''}}">
+                                <input type="hidden" class="form-control" name="filiere" value="{{isset($niveau)?$filiere->id_filiere: ''}}">
                             </div>
                             <button type="submit" class="btn btn-primary">Register</button>
                         </form>
@@ -367,8 +426,8 @@
                             <div class="form-group">
                                 <label for="lieuNaissance">Place of birth</label>
                                 <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance">
-                                <input type="hidden" class="form-control" name="niveau" value="{{$niveau->id_niveau}}">
-                                <input type="hidden" class="form-control" name="filiere" value="{{$filiere->id_filiere}}">
+                                <input type="hidden" class="form-control" name="niveau" value="{{isset($niveau)?$niveau->id_niveau:''}}">
+                                <input type="hidden" class="form-control" name="filiere" value="{{isset($filiere)?$filiere->id_filiere:''}}">
                             </div>
                             <div class="form-group">
                                 <label for="dateNaissance">Academic year</label>
