@@ -312,8 +312,8 @@
                                                         @endforeach
                                                         @else
                                                         <tr>
-                                                            <td colspan="8">Aucune note
-                                                                trouvée pour cet étudiant</td>
+                                                            <!-- <td colspan="8">Aucune note
+                                                                trouvée pour cet étudiant</td> -->
                                                         </tr>
                                                         @endif
 

@@ -323,7 +323,7 @@
                                                                 <input type="hidden" name="niveau" value="{{$niveau->id_niveau}}" id="niveau">
                                                                 <input type="hidden" name="filiere" value="{{$filiere->id_filiere}}" id="filiere">
                                                                 <input type="hidden" name="type" value="releve" id="type">
-                                                                <button class="btn btn-sm btn-soft-primary" type="submit">retail</button>
+                                                                <button class="btn btn-sm btn-soft-primary" type="submit">detail</button>
                                                             </form>
 
                                                         </td>
