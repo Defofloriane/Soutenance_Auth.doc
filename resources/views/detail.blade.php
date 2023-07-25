@@ -76,7 +76,7 @@
                 <br />
 
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('etud') }}"><i data-feather="users" class="align-self-center menu-icon"></i>
                         <span>Students</span>
                         <!-- <span class="menu-arrow">
                             <i class="mdi mdi-chevron-right"></i>
@@ -86,7 +86,7 @@
                 </li>
                 <br />
                 <li>
-                    <a href=" {{ route('faculte') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
+                    <a href=" {{ route('view_add_releve') }}"><i data-feather="book" class="align-self-center menu-icon"></i>
 
                         <span>Note</span>
                         <!-- <span class="menu-arrow">
@@ -122,13 +122,18 @@
 
                     </ul>
                 </li> -->
-                <!-- <li>
-                    <a href="javascript: void(0);"><i data-feather="file-plus" class="align-self-center menu-icon"></i><span>Attestation</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li class="nav-item"><a class="nav-link" href=" {{ route('filiereAttestation') }}"><i class="ti-control-record"></i>Attestation de reussite</a></li>
+                <br>
+                <li>
+                    <a href=" {{ route('filiereAttestation') }}">
+                        <i data-feather="file-plus" class="align-self-center menu-icon">
 
-                    </ul>
-                </li> -->
+                        </i><span>Attestation</span>
+                        <!-- < span class="menu-arrow"> -->
+                        <!-- <i class="mdi mdi-chevron-right"></i> -->
+                        <!-- </span> -->
+                    </a>
+
+                </li>
             </ul>
 
             <!-- <div class="update-msg text-center">

@@ -65,7 +65,7 @@
                 </li>
 
                 <li>
-                    <a>  <i data-feather="scanner" class="align-self-center menu-icon"></i>
+                    <a> <i data-feather="scanner" class="align-self-center menu-icon"></i>
                         <span>Scan document</span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="{{ route('scan_code') }}"><i class="ti-control-record"></i>With Qr code</a></li>
@@ -237,20 +237,9 @@
                 </div>
                 <!-- fin -->
 
-                <div class="container">
-                    <div class="row" id="ocr_det">
-
-
-
-
-
-                    </div>
-                    <br>
-                    <div class="row reduce-spacing" id="scan-details">
-
-                    </div>
-
-                    <div class="row">
+                <div class="container"  >
+            
+                    <div class="row" style="justify-content: center;">
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
@@ -276,63 +265,77 @@
 
                             </div>
                         </div>
-                        <div class="col-lg-5">
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title"> header information read in the Qr-code</h4>
-
-                                    <div id="info-etu">
-                                        <h3>Student Information</h3>
-                                        <ul>
-                                            <li id="nom"><strong>Nom :</strong> Dupont</li>
-                                            <li id="pre"><strong>Prénom :</strong> Jean</li>
-                                            <li id="niv"><strong>Niveau :</strong> L3</li>
-                                            <li id="mat"><strong>Matricule :</strong> 123456</li>
-                                            <li id="fil"><strong>Filière :</strong> Informatique</li>
-                                            <li id="num"><strong>Numéro du relevé :</strong> Informatique</li>
-                                            <li id="mgp"><strong>Numéro du relevé :</strong> Informatique</li>
-                                            <li id="dec"><strong>Numéro du relevé :</strong> Informatique</li>
-                                        </ul>
+                    
+                        <!-- Fenêtre modale -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <!-- Style pour le titre de la fenêtre modale en rouge -->
+                                        <h5 class="modal-title text-danger" id="exampleModalLabel">Document not authentic</h5>
+                                        <button type="button" class="close" aria-label="Fermer" onclick="fermerFenetreModale()">
+                                            <!-- Style pour la croix en rouge -->
+                                            <span aria-hidden="true" style="color: red;">&times;</span>
+                                        </button>
                                     </div>
-
+                                    <div class="modal-body">
+                                        <!-- Style pour le message en rouge -->
+                                        <p style="color: red;">Document not authentic.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" onclick="fermerFenetreModale()">Fermer</button>
+                                    </div>
                                 </div>
-                                <!--end card-header-->
-                                <div class="card-body" id="results">
-
-
-                                </div>
-                                <!--end card-body-->
                             </div>
-                            <!--end card-->
-                            <div class="card " id="affirmation">
-                                <div class="card-header">
-                                    <h4 class="card-title">The various results of your document states that:
-                                    </h4>
-                                    <h3>
-                                        <p id="message"></p>
-                                    </h3>
-                                </div>
-                                <!--end card-header-->
-                                <div class="card-body">
-                               
-                                    <form method="POST" action="{{ route('show') }}" id="mon-formulaire" style="display: none;">
-                                        @csrf
-                                        <input type="hidden" name="id_releve" value="" id="id_releve">
-                                        <input type="hidden" name="niveau" value="" id="niveau">
-                                        <input type="hidden" name="matricule" value="" id="matricule">
-                                        <input type="hidden" name="type" value="" id="type">
-                                        <button class="btn btn-sm btn-soft-primary" type="submit">Verify</button>
-                                    </form>
-                        
-                                </div>
-                                <!--end card-body-->
-                            </div>
-                            <!--end card-->
                         </div>
 
-
                         <!--end row-->
+                        <div class="modal fade" id="modalAuthentique" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-success">
+                                        <!-- Style pour le titre de la fenêtre modale en vert -->
+                                        <h5 class="modal-title text-white" id="modalTitle">Document is authentic</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer" onclick="fermerFenetreModaleAuthentique()">
+                                            <!-- Style pour la croix en blanc -->
+                                            <span aria-hidden="true" class="text-white">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Style pour le message en vert -->
+                                        <p class="text-success">Document is authentic.</p>
+                                        <div id="info-etu">
+                                            <h3>Student Information</h3>
+                                            <ul>
+                                                <li id="nom"><strong>Nom :</strong> Dupont</li>
+                                                <li id="pre"><strong>Prénom :</strong> Jean</li>
+                                                <li id="niv"><strong>Niveau :</strong> L3</li>
+                                                <li id="mat"><strong>Matricule :</strong> 123456</li>
+                                                <li id="fil"><strong>Filière :</strong> Informatique</li>
+                                                <li id="num"><strong>Numéro du relevé :</strong> Informatique</li>
+                                                <li id="mgp"><strong>Numéro du relevé :</strong> Informatique</li>
+                                                <li id="dec"><strong>Numéro du relevé :</strong> Informatique</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="card-body">
+
+                                            <form method="POST" action="{{ route('show') }}" id="mon-formulaire">
+                                                @csrf
+                                                <input type="hidden" name="id_releve" value="" id="id_releve">
+                                                <input type="hidden" name="niveau" value="" id="niveau">
+                                                <input type="hidden" name="matricule" value="" id="matricule">
+                                                <input type="hidden" name="type" value="" id="type">
+                                                <button class="btn btn-primary" type="submit">Verify</button>
+                                            </form>
+
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" onclick="fermerFenetreModaleAuthentique()">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div><!-- container -->
 
@@ -412,7 +415,7 @@
                                     let id_releve = document.getElementById("id_releve");
                                     let niveau_ = document.getElementById("niveau");
                                     let matri = document.getElementById("matricule");
-                                    document.getElementById("type").value=response.type;
+                                    document.getElementById("type").value = response.type;
                                     id_releve.value = releve.id_releve;
 
                                     niveau_.value = releve.niveau;
@@ -420,16 +423,25 @@
                                     matri.value = releve.etudiant;
 
                                     let message = document.getElementById("message");
-                                    message.textContent = "Authentic document"
-                                    message.style.color = 'green';
+                                    // message.textContent = "Authentic document"
+                                    // message.style.color = 'green';
+                                    $('#modalAuthentique').modal('show');
                                     document.getElementById("mon-formulaire").style.display = "block";
 
                                 } else if (response.status == 400) {
                                     let message = document.getElementById("message");
-                                    message.style.color = 'red';
-                                    message.textContent = "Document non authentique"
+                                    // message.style.color = 'red';
+                                    // message.textContent = "Document non authentique"
+                                    // Trouver la fenêtre modale par son ID
+                                    var modal = document.getElementById('exampleModal');
+
+                                    // Créer un nouvel objet Modal à partir de la fenêtre modale
+                                    var modalInstance = new bootstrap.Modal(modal);
+
+                                    // Ouvrir la fenêtre modale
+                                    modalInstance.show();
                                     document.getElementById("mon-formulaire").style.display = "none";
-                                } else if(response.status == 402) {
+                                } else if (response.status == 402) {
                                     // alert('Impossible de dechiffrer les informations contenues dans le Qr code!');
                                     let message = document.getElementById("message");
                                     message.style.color = 'red';
@@ -449,6 +461,16 @@
                     // handle scan failure, usually better to ignore and keep scanning.
                     // for example:
                     // console.warn(`Code scan error = ${error}`);
+                }
+
+                function fermerFenetreModale() {
+                    // Fermer la fenêtre modale en utilisant la méthode 'modal' de Bootstrap avec l'argument 'hide'
+                    $('#exampleModal').modal('hide');
+                }
+
+                function fermerFenetreModaleAuthentique() {
+                    // Fermer la fenêtre modale en utilisant la méthode 'modal' de Bootstrap avec l'argument 'hide'
+                    $('#modalAuthentique').modal('hide');
                 }
 
                 let html5QrcodeScanner = new Html5QrcodeScanner(

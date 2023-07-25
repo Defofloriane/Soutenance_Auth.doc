@@ -295,6 +295,8 @@
                                                         <th> Matricule</th>
                                                         <th> Name</th>
                                                         <th> FirstName</th>
+                                                        <th> Date of birth</th>
+                                                        <th> Place of birth</th>
                                                         <th>Check</th>
 
                                                     </tr>
@@ -310,8 +312,9 @@
                                                         <td>{{ $etudiant ->matricule }}</td>
                                                         <td>{{ $etudiant ->nom}}</td>
                                                         <td>{{ $etudiant ->prenom}}</td>
-
-
+                                                        <td>{{ $etudiant ->date_naissance}}</td>
+                                                        <td>{{ $etudiant ->lieu_naissance}}</td>
+                                                             
                                                         <td>
                                                             <form method="POST" action="{{ route('detail_student') }}">
                                                                 @csrf
@@ -435,8 +438,8 @@
                             </div>
                             <!-- Boutons "Annuler" et "Enregistrer" inclus dans le formulaire -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                <input type="submit" class="btn btn-primary" value="Enregistrer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <input type="submit" class="btn btn-primary" value="Add Student">
                             </div>
                         </form>
                     </div>
