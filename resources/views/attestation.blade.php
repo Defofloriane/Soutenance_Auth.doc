@@ -898,7 +898,7 @@
                                                                     &nbsp;&nbsp; &nbsp;
 
                                                                     N° :
-                                                                    {{ isset($releve) ? $releve->id_releve : '' }}
+                                                                    {{ isset($attestion) ? $attestion->id_attestion: '' }}
                                                                    
                                                                 </div>
                                                                 <!--to change dans la table releve-->
@@ -945,7 +945,7 @@
                                                                         &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                                                                         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                                                                         &nbsp;&nbsp;
-                                                                        <p class="text"> <?php echo date('j F Y'); ?>
+                                                                        <p class="text"> {{ isset($attestion) ? $attestion->date_delib: '' }}
                                                                             &nbsp;&nbsp;
 
 

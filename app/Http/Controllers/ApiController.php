@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attetation;
 use App\Models\Etudiant;
 use App\Models\Niveau;
 use App\Models\Note;
@@ -43,7 +44,11 @@ class ApiController extends Controller
                       ->select('notes.*', 'ues.nom_ue','ues.credit')
                       ->distinct()
                       ->get();
-        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'statut'=>200,'type'=>$type]);
+         $attetion=Attetation::where('id_attestion',$donnees->id_releve.'1')->first();
+         if($type=='attest')
+        $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'statut'=>200,'type'=>$type,'attestation'=>$attetion]);
+         else
+         $DataSend=(['releve'=>$releve,'notes'=>$notes,'etudiant'=>$etudiant,'statut'=>200,'type'=>$type]);
         return response()->json($DataSend);
           }
           else{

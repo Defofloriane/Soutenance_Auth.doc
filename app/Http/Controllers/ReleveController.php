@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attetation;
 use App\Models\Etudiant;
 use App\Models\Evaluation;
 use App\Models\Filiere;
@@ -367,7 +368,8 @@ $sum = array_sum(str_split($birthDayDigits));
          if (!$etudiant) {
              return redirect()->back()->with('message', "L'étudiant associé  l'attestation n'existe pas.");
          }
-         
+      //   $s= $releve->$id_releve.'1';
+          $attestion=Attetation::where('id_attestion',$releve->id_releve.'1')->first();
           $dataCont=trim($donnees->id_releve).'?'.trim($donnees->etudiant).'?'.trim($donnees->decision).'?'.trim($donnees->filiere).'?'.trim($donnees->niveau).'?'.trim((float)$donnees->mgp).'?'.trim($donnees->anneeAcademique);
           $data = $dataCont;
           $hmac = hash_hmac('sha256', $dataCont, $hmacKey);
@@ -375,7 +377,7 @@ $sum = array_sum(str_split($birthDayDigits));
          // Encodage en base64 pour être inclus dans le QR code
          $hmacInfo=base64_encode(trim($encryptedData));
          // Passez les données à la vue de détails
-         return view("attestation", compact('releve', 'etudiant', 'hmacInfo'));
+         return view("attestation", compact('releve', 'etudiant', 'hmacInfo','attestion'));
 
       }
      

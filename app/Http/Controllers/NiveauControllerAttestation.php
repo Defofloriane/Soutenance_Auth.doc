@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attetation;
 use App\Models\Niveau;
 use Illuminate\Http\Request;
 use App\Models\Filiere;
@@ -39,6 +40,10 @@ public function show_Attestation(Request $request)
         $niveau = $request->niveau;
         // $da = $request->data;
         // dd($request->all());
+       
+
+        // return $dateActuelle;
+   
        $donnees= $releve = Releve::where(['id_releve' => $id_releve, 'etudiant' => $matricule, 'niveau' => $niveau])->first();
        $hmacKey = env('HMAC_KEY'); 
         // Vérifier si le relevé existe
@@ -47,22 +52,33 @@ public function show_Attestation(Request $request)
         }
         
         $etudiant = Etudiant::where('matricule', $releve->etudiant)->first();
-        
-        // Vérifier si l'étudiant associé au relevé existe
-        if (!$etudiant) {
-            return redirect()->back()->with('message', "L'étudiant associé au relevé n'existe pas.");
+        $dateActuelle = date("j F Y");
+        $id_attestion=$id_releve.'1';
+        $type= 'TECHNICIEN';
+        $verifAttest=Attetation::where('id_attestion',$id_attestion)->first();
+         $attestion=new Attetation();
+        if($verifAttest){
+            $attestion=Attetation::where('id_attestion',$id_attestion)->first();  
+            // return response()->json($attestion) ;
         }
-        
+        else{
 
+            $attestion->id_attestion=$id_attestion;
+            $attestion->etudiant=$matricule;
+            $attestion->filiere=$donnees->filiere;
+            $attestion->date_delib=$dateActuelle;
+            $attestion->type_licence=$type;
+            $attestion->save();
+        }
         $dataCont=trim($donnees->id_releve).'?'.trim($donnees->etudiant).'?'.trim($donnees->decision).'?'.trim($donnees->filiere).'?'.trim($donnees->niveau).'?'.trim((float)$donnees->mgp).'?'.trim($donnees->anneeAcademique);
         $data = $dataCont;
         $hmac = hash_hmac('sha256', $dataCont, $hmacKey);
         $encryptedData = $hmac.'?'. $matricule .'?'. $niveau.'?'. 'attest';
        // Encodage en base64 pour être inclus dans le QR code
-        $hmacInfo=base64_encode(trim($encryptedData));
-        
+        $hmacInfo=base64_encode(trim($encryptedData));           
         // Passez les données à la vue de détails
-        return view("attestation", compact('releve', 'etudiant', 'hmacInfo'));
+        return view("attestation", compact('releve', 'etudiant', 'hmacInfo','attestion'));
+       
         
         // return $hmacInfo;
         

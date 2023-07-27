@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('attetations', function (Blueprint $table) {
-            $table->id();
+            $table->string('id_attestion');
+            $table->string('etudiant');
+            $table->string('filiere');
+            $table->string('date_delib');
+            $table->string('type_licence');
             $table->timestamps();
         });
     }
