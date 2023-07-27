@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Etudiant;
+use App\Models\Releve;
 use Illuminate\Http\Response;
 
 
@@ -25,7 +26,6 @@ class AttestationController extends Controller
     public function showAttestation(Request $request)
     {
         $matricule = $request->input('matricule');
-
         $etudiant_attestation = Etudiant::join('releves', 'etudiants.matricule', '=', 'releves.etudiant')
             ->whereIn('releves.niveau', ['Licence 3'])
             ->where('releves.mgp', '>=', 2)
@@ -34,16 +34,24 @@ class AttestationController extends Controller
             ->get();
 
         $licence3_found = false; // Variable pour vérifier si la licence 3 est trouvée
-
+        
         foreach ($etudiant_attestation as $etudiant) {
             if ($etudiant->niveau == 'LICENCE 3' && $etudiant->mgp >= 2) {
                 $licence3_found = true;
                 break;
             }
         }
+        $hmacKey = env('HMAC_KEY'); 
+        $donnees= $releve = Releve::where(['etudiant' => $matricule, 'niveau' =>'LICENCE 3'])->first();
+        $dataCont=trim($donnees->id_releve).'?'.trim($donnees->etudiant).'?'.trim($donnees->decision).'?'.trim($donnees->filiere).'?'.trim($donnees->niveau).'?'.trim((float)$donnees->mgp).'?'.trim($donnees->anneeAcademique);
+        $data = $dataCont;
+        $hmac = hash_hmac('sha256', $dataCont, $hmacKey);
+        $encryptedData = $hmac.'?'. $matricule .'?'. 'LICENCE 3'.'?'.'attest';
+       // Encodage en base64 pour être inclus dans le QR code
+       $hmacInfo=base64_encode(trim($encryptedData));
         // Logique pour récupérer l'attestation correspondante à l'étudiant
 
-        return view('attestation', compact('etudiant'));
+        return view("attestation", compact('releve', 'etudiant', 'notes','hmacInfo'));
     }
 
     public function getAttestation(Request $request)

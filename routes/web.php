@@ -69,7 +69,7 @@ Route::get('/view_add_releve', [ReleveController::class,'view_add_releve'])->nam
 Route::post('/get_ue_credit', [ReleveController::class,'get_ue_credit'])->name('get_ue_credit');
 Route::get('/hachage', [UserController::class, 'hachage']);
 Route::post('/show', [ReleveController::class, 'show'])->name('show');
-Route::post('/showAttestation', [AttestationController::class, 'showAttestation'])->name('showAttestation');
+Route::post('/showAttestation', [AttestationController::class, 'show'])->name('showAttestation');
 Route::get('/attestation', [AttestationController::class, 'attestation'])->name('attestation');
 Route::get('/details_releve',[ReleveController::class, 'details_releve'])->name('details_releve');
 Route::post('/import_excel',[ReleveController::class, 'import_excel'])->name('import_excel');

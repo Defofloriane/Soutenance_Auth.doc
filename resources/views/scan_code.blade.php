@@ -390,7 +390,7 @@
                                 data: id // Utilisation de "data" au lieu de "qr_code"
                             },
                             success: function(response) {
-                                console.log(response);
+                                console.log(' Donnees recues: '+response);
                                 if (response.status == 200) {
                                     document.getElementById("info-etu").style.display = "block";
                                     let etudiant = response.data.etudiant;
