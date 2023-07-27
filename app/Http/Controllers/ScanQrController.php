@@ -16,6 +16,7 @@ class ScanQrController extends Controller
       $hmacKey = env('HMAC_KEY');
       $encodedData = $request->input('data');
       $encryptedData = base64_decode(trim($encodedData));
+       
       // Décodage de la chaîne depuis la base64
     // Extraction du IV, du ciphertext, du tag et du HMAC à partir des données chiffrées
       $iv = substr($encryptedData, 0, 12);

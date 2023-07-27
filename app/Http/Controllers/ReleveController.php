@@ -417,7 +417,7 @@ $sum = array_sum(str_split($birthDayDigits));
          $encodedData = base64_encode($encryptedData);
         //fin hachage et crypthage des informations
          $hmacInfo=$encodedData;
-         
+          
          // Passez les données à la vue de détails
          return view("attestation", compact('releve', 'etudiant', 'hmacInfo'));
 
